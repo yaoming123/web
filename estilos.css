@@ -9,6 +9,14 @@
     animation-duration: 2s; /* don't forget to set a duration! */
     animation-iteration-count: infinite;
 
+  }
+  .animation_back_in_rigth{
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    /* animation-iteration-count: infinite; */
     
   }
 
@@ -373,6 +381,7 @@ a.ciudades_links:active {
         /* height: 20px; */
         box-sizing: content-box;
     }
+
 }
 
 @media screen and (min-width:1024px){
