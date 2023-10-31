@@ -386,6 +386,10 @@ a.ciudades_links:active {
         /* height: 20px; */
         box-sizing: content-box;
     }
+    .scroll-section {
+        margin-top: -7rem;
+        padding-top: 7rem;
+    }
 
 }
 
