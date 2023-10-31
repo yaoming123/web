@@ -1,6 +1,11 @@
 :root {
     --rojo: #eee --fondo: #222
 }
+.scroll-section {
+    margin-top: -4rem; /* Ajusta según sea necesario para que el título sea visible */
+    padding-top: 4rem; /* Asegura que el contenido no quede oculto por el margen superior negativo */
+}
+
 .my-element {
     display: inline-block;
     margin: 0 0.5rem;
