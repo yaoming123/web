@@ -1,29 +1,37 @@
 :root {
     --rojo: #eee --fondo: #222
 }
+
 .scroll-section {
-    margin-top: -4rem; /* Ajusta según sea necesario para que el título sea visible */
-    padding-top: 4rem; /* Asegura que el contenido no quede oculto por el margen superior negativo */
+    margin-top: -4rem;
+    /* Ajusta según sea necesario para que el título sea visible */
+    padding-top: 4rem;
+    /* Asegura que el contenido no quede oculto por el margen superior negativo */
 }
 
 .my-element {
     display: inline-block;
     margin: 0 0.5rem;
-  
-    animation: bounce; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s; /* don't forget to set a duration! */
+
+    animation: bounce;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
     animation-iteration-count: infinite;
 
-  }
-  .animation_back_in_rigth{
+}
+
+.animation_back_in_rigth {
     display: inline-block;
     margin: 0 0.5rem;
-  
-    animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s; /* don't forget to set a duration! */
+
+    animation: slideInRight;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
     /* animation-iteration-count: infinite; */
-    
-  }
+
+}
 
 .responsive-iframe {
     width: 100%;
@@ -161,23 +169,27 @@ main {
     background-color: #1a73e8;
     background-size: cover;
 }
-#servicios-listado{
+
+#servicios-listado {
     /* background-color: #333; */
     top: 0;
     text-align: center;
     z-index: 1;
     font-size: 3rem;
 }
-#servicios-listado ul{
+
+#servicios-listado ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#servicios-listado li{
+
+#servicios-listado li {
     display: inline-block;
     margin: 0 5px;
 }
-#servicios-listado li a{
+
+#servicios-listado li a {
     display: inline-block;
     padding: 10px;
     text-decoration: none;
@@ -185,17 +197,20 @@ main {
     transition: color 0.3s ease-in-out;
     font-size: 0.9em;
 }
+
 /* h1 al h6 */
-#servicios h1, h3 {
+#servicios h1,
+h3 {
     font-size: 4rem;
     color: #ffffffbd;
     padding: inherit;
 }
 
-#servicios h2,h4 {
+#servicios h2,
+h4 {
     font-size: 3rem;
     /* color: crimson; */
-    color:#fa8231;
+    color: #fa8231;
 }
 
 #servicios p {
@@ -213,7 +228,7 @@ main {
 }
 
 .servicio h1 {
-    font-size: 4rem ;
+    font-size: 4rem;
     color: darkorange;
 }
 
@@ -255,7 +270,8 @@ main {
     color: #ffffffbd;
 }
 
-#contacto, #opciones h2 {
+#contacto,
+#opciones h2 {
     font-size: 3rem;
     color: #fa8231;
 }
@@ -318,13 +334,15 @@ footer a {
     margin: 0;
     background-color: #333;
 }
-.box_paginaswebhere{
+
+.box_paginaswebhere {
     width: fit-content;
     padding-top: 1em;
     float: left;
-    transition: 1s; 
+    transition: 1s;
 }
-.box_paginaswebhere:hover{
+
+.box_paginaswebhere:hover {
     /* background-color: #e8f4c8; */
     background-color: #1a73e8;
     transition-timing-function: linear;
@@ -345,22 +363,22 @@ footer a {
 /* unvisited link */
 a.ciudades_links:link {
     color: #FFF;
-  }
-  
-  /* visited link */
+}
+
+/* visited link */
 a.ciudades_links:visited {
     color: #FFF;
-  }
-  
-  /* mouse over link */
+}
+
+/* mouse over link */
 a.ciudades_links:hover {
     color: #FFF;
-  }
-  
-  /* selected link */
+}
+
+/* selected link */
 a.ciudades_links:active {
     color: #FFF;
-  }
+}
 
 /* Media querys */
 @media screen and (max-width: 767px) {
@@ -372,7 +390,7 @@ a.ciudades_links:active {
         border-radius: 5px;
         /* aspect-ratio: 1 / 1; */
     }
-    
+
 }
 
 @media screen and (max-width: 600px) {
@@ -386,6 +404,7 @@ a.ciudades_links:active {
         /* height: 20px; */
         box-sizing: content-box;
     }
+
     .scroll-section {
         margin-top: -7rem;
         padding-top: 7rem;
@@ -393,10 +412,14 @@ a.ciudades_links:active {
 
 }
 
-@media screen and (min-width:1024px){
-    header h1, #servicios h1, #contacto h1{
+@media screen and (min-width:1024px) {
+
+    header h1,
+    #servicios h1,
+    #contacto h1 {
         font-size: 7rem;
     }
+
     #servicios {
         padding-top: 5em;
         padding-bottom: 5em;
@@ -405,7 +428,8 @@ a.ciudades_links:active {
         background-color: #1a73e8;
         background-size: cover;
     }
-    #servicios p{
+
+    #servicios p {
         color: #FFF;
     }
 }
@@ -413,20 +437,56 @@ a.ciudades_links:active {
 
 /* Estilos para el botón "Subir" */
 .scroll-to-top {
-    display: none; /* Inicialmente oculto */
+    display: none;
+    /* Inicialmente oculto */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    border-radius: 50%; /* Hacerlo circular */
+    background-color: #007bff;
+    /* Color de fondo */
+    color: #fff;
+    /* Color del texto */
+    border-radius: 50%;
+    /* Hacerlo circular */
     padding: 10px 15px;
     text-align: center;
     cursor: pointer;
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    z-index: 1000;
+    /* Asegura que esté encima de otros elementos */
 }
 
 /* Estilos al pasar el mouse por encima del botón */
 .scroll-to-top:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse por encima */
+    background-color: #0056b3;
+    /* Cambia el color de fondo al pasar el mouse por encima */
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-variant: normal;
+}
+
+.button1 {
+    background-color: #528fd8;
+    color: white;
+    border: 0.2em solid #0573ce;
+}
+.button2 {
+    background-color: #528fd8;
+    color: white;
+    border: 0.2em solid #0573ce;
+}
+.button1:hover {
+    background-color: white;
+    color: black;
 }
