@@ -48,7 +48,19 @@
 <!-- BODY -->
 
 <body>
+<!-- TEST -->
+<section id="aca-quiero-mostrar-los-datos">test section</section>
 
+<script>
+    // Obtiene el número de visitas a la sección actual de la página.
+    const visitas = ga('get', 'ga:visits', {
+    dimension: 'ga:pagePath',
+    value: location.pathname,
+    });
+
+    // Muestra el número de visitas en el cuerpo de la página.
+    document.querySelector('#aca-quiero-mostrar-los-datos').innerHTML += `<p>Visitas: ${visitas}</p>`;
+</script>
 
     <!-- LOGO -->
     <div class="box_logo">
