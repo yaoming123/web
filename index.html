@@ -48,20 +48,6 @@
 <!-- BODY -->
 
 <body>
-<!-- TEST -->
-<section id="aca-quiero-mostrar-los-datos"></section>
-
-  <script>
-    // Obtiene el número de visitas a la sección actual de la página.
-    const visitas = gtag('get', 'ga4:sessions', {
-      dimension: 'ga4:pagePath',
-      value: location.pathname,
-    });
-
-    // Muestra el número de visitas en el cuerpo de la página.
-    document.querySelector('#aca-quiero-mostrar-los-datos').innerHTML += `<p>Visitas: ${visitas}</p>`;
-  </script>
-
     <!-- LOGO -->
     <div class="box_logo">
         <img src="camioneta.png" class="logo animation_back_in_rigth" alt="logotipo">
