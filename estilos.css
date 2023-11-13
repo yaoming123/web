@@ -120,7 +120,7 @@ nav ul li a.active::before {
 
 header {
     text-align: center;
-    /* min-height: 40.69em; */
+    font-variant: all-petite-caps;
 
 }
 
@@ -160,6 +160,8 @@ header p {
 main {
     height: auto;
     text-align: center;
+    font-variant: all-petite-caps;
+
 }
 
 #servicios {
@@ -320,6 +322,7 @@ footer img {
     width: 2em;
     height: 2em;
     text-decoration: none;
+    margin-top: auto; margin-bottom: -7px;
 }
 
 footer a {
@@ -333,6 +336,12 @@ footer a {
     padding: 0;
     margin: 0;
     background-color: #333;
+}
+.box_logo p{
+    color: chocolate;
+}
+.box_logo img{
+    height: 150px;
 }
 
 .box_paginaswebhere {
@@ -351,13 +360,6 @@ footer a {
 .box_paginaswebhere a:hover {
     text-decoration: none;
     color: #FFF;
-}
-
-/* .box_logo h1{
-    font-weight: normal;
-} */
-.logo {
-    height: 150px;
 }
 
 /* unvisited link */
