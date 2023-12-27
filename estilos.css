@@ -50,13 +50,14 @@ html {
 }
 
 body {
+    background-color: #528fd8;
     text-transform: uppercase;
     font-size: 16px;
 }
 
 /* NAV */
 nav {
-    background-color: #333;
+    background-color: #528fd8;
     position: sticky;
     top: 0;
     text-align: center;
@@ -103,7 +104,7 @@ nav ul li a::before {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #333;
+    /* background-color: #333; */
     vertical-align: middle;
 }
 
@@ -127,8 +128,8 @@ header {
 #contenido-principal {
     padding-top: 40px;
     padding-bottom: 40px;
-    background: linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%);
-    background-position: center, center;
+    /* background: linear-gradient(rgb(181 195 206) 15%, #1a73e8 100%);    background-position: center, center; */
+    background:linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 40.69em;
@@ -198,6 +199,10 @@ main {
     color: #ffffffbd;
     transition: color 0.3s ease-in-out;
     font-size: 0.9em;
+}
+#servicios-listado li a:hover{
+    background-color: white;
+    color: black;
 }
 
 /* h1 al h6 */
@@ -335,10 +340,11 @@ footer a {
     text-align: center;
     padding: 0;
     margin: 0;
-    background-color: #333;
+    background-color: #0573ce;
 }
 .box_logo p{
     color: chocolate;
+    font-size: x-large;
 }
 .box_logo img{
     height: 150px;
@@ -426,7 +432,7 @@ a.ciudades_links:active {
         padding-top: 5em;
         padding-bottom: 5em;
         /* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%), url(abog.svg); */
-        background: url(llavellavesvg.svg);
+        /* background: url(llavellavesvg.svg); */
         background-color: #1a73e8;
         background-size: cover;
     }
@@ -479,16 +485,19 @@ a.ciudades_links:active {
 }
 
 .button1 {
-    background-color: #528fd8;
+    background-color: #b5c3ce;
     color: white;
-    border: 0.2em solid #0573ce;
+    /* border: 0.2em solid #0573ce; */
 }
 .button2 {
-    background-color: #528fd8;
+    background-color: #b5c3ce;
     color: white;
-    border: 0.2em solid #0573ce;
+    /* border: 0.2em solid #0573ce; */
 }
 .button1:hover {
     background-color: white;
     color: black;
+}
+a{
+    color: white;
 }
