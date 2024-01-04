@@ -343,7 +343,7 @@ footer a {
     background-color: #0573ce;
 }
 .box_logo p{
-    color: chocolate;
+    color: rgb(255, 255, 255);
     font-size: x-large;
 }
 .box_logo img{
@@ -500,4 +500,21 @@ a.ciudades_links:active {
 }
 a{
     color: white;
+}
+
+/* Boton de ir al pie de la pagina */
+.button-flotante {
+    border: 0.2em solid #5a5a5a;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #838383;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    border-radius: 0.4em;
+    text-decoration: none;
+    margin-bottom: -10px;
 }
