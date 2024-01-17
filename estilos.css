@@ -32,6 +32,17 @@
     /* animation-iteration-count: infinite; */
 
 }
+.animation_bounce {
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    animation: bounce;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
+    /* animation-iteration-count: infinite; */
+
+}
 
 .responsive-iframe {
     width: 100%;
@@ -46,13 +57,14 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue';
 }
 
 body {
     background-color: #528fd8;
     text-transform: uppercase;
     font-size: 16px;
+    color: white;
 }
 
 /* NAV */
@@ -76,21 +88,23 @@ nav li {
     margin: 0 5px;
 }
 
+a{
+    color: white;
+}
+
 nav ul li a {
-    /* color: #fff;
-    text-decoration: none;
-    font-size: 30px;
-    line-height: 30px; */
+    /* color: black; */
     display: inline-block;
     padding: 10px;
     text-decoration: none;
-    color: #fff;
     transition: color 0.3s ease-in-out;
     font-size: 0.5em;
 }
 
 nav ul li a:hover {
     color: #666;
+
+
 }
 
 nav ul li a:active {
@@ -115,6 +129,7 @@ nav ul li a.active::before {
 /* FIN NAV */
 
 .contenedor {
+    background-color: #0573ce;
     width: 95%;
     margin: auto;
 }
@@ -122,35 +137,36 @@ nav ul li a.active::before {
 header {
     text-align: center;
     font-variant: all-petite-caps;
+    /* background-color: #5099f1; */
 
 }
 
 #contenido-principal {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    /* background: linear-gradient(rgb(181 195 206) 15%, #1a73e8 100%);    background-position: center, center; */
-    background:linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 40.69em;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
+    /* background: linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%); */
+    /* background-position: center, center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    min-height: 20.345em;
 }
 
 
 header h1 {
     font-size: 4rem;
-    color: #FFF;
+    /* color: #FFF; */
 }
 
 header h2 {
     font-size: 3rem;
     /* color: #fbfbfbc9; */
-    color: #fa8231;
+    /* color: #fa8231; */
 
 }
 
 header p {
     font-size: 2rem;
-    color: #ffffffe3;
+    /* color: #ffffffe3; */
     column-count: 1;
 }
 
@@ -166,11 +182,10 @@ main {
 }
 
 #servicios {
-    padding-top: 5em;
-    padding-bottom: 5em;
-    /* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%), url(abog.svg); */
-    background-color: #1a73e8;
-    background-size: cover;
+    margin-top: auto;
+    /* padding-top: 5em;
+    padding-bottom: 5em; */
+    /* background-color: #a56a43; */
 }
 
 #servicios-listado {
@@ -196,32 +211,42 @@ main {
     display: inline-block;
     padding: 10px;
     text-decoration: none;
-    color: #ffffffbd;
+    /* color: #ffffffbd; */
     transition: color 0.3s ease-in-out;
     font-size: 0.9em;
 }
-#servicios-listado li a:hover{
+
+#servicios-listado li a:hover {
     background-color: white;
     color: black;
 }
-
 /* h1 al h6 */
 #servicios h1,
 h3 {
     font-size: 4rem;
-    color: #ffffffbd;
-    padding: inherit;
+    color: white;
+    padding: initial;
 }
 
 #servicios h2,
 h4 {
     font-size: 3rem;
-    /* color: crimson; */
-    color: #fa8231;
+    color: white;
 }
 
 #servicios p {
     font-size: 1.5rem;
+    color: white;
+}
+
+#servicios .button1 {
+    background-color: #ffffff;
+    color: black;
+}
+
+#servicios .button1:hover {
+    background-color: #528fd8;
+    color: white;
 }
 
 .servicio {
@@ -236,7 +261,7 @@ h4 {
 
 .servicio h1 {
     font-size: 4rem;
-    color: darkorange;
+    /* color: darkorange; */
 }
 
 /* .servicios h1 al h6 */
@@ -260,27 +285,27 @@ h4 {
     /* aspect-ratio: 1 / 1;  */
     font-size: 1.5em;
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
     background-color: #333333e8;
 
 }
 
-#contacto {
-    padding-top: 3em;
-    padding-bottom: 3em;
+/* #contacto {
+    /* padding-top: 3em;
+    padding-bottom: 3em; */
     /* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%); */
-    background-color: #1a73e8;
-}
+    /* background-color: #1a73e8; 
+} */
 
 #contacto h1 {
     font-size: 4rem;
-    color: #ffffffbd;
+    /* color: white; */
 }
 
 #contacto,
 #opciones h2 {
     font-size: 3rem;
-    color: #fa8231;
+    /* color: white; */
 }
 
 #contato p {
@@ -305,18 +330,15 @@ h4 {
     /* aspect-ratio: 1 / 1;  */
     font-size: 1.5em;
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
     background-color: #333333e8;
 
 }
 
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
     text-decoration: none;
-
     position: static;
     bottom: 0;
     width: 100%;
@@ -327,13 +349,14 @@ footer img {
     width: 2em;
     height: 2em;
     text-decoration: none;
-    margin-top: auto; margin-bottom: -7px;
+    margin-top: auto;
+    /* margin-bottom: -7px; */
 }
 
 footer a {
     text-decoration: none;
-    font-size: 1.69em;
-    color: #1a73e8;
+    /* font-size: 1.69em; */
+    color: black;
 }
 
 .box_logo {
@@ -342,30 +365,34 @@ footer a {
     margin: 0;
     background-color: #0573ce;
 }
-.box_logo p{
-    color: rgb(255, 255, 255);
+
+.box_logo p {
     font-size: x-large;
+    /* color: black; */
 }
-.box_logo img{
+
+.box_logo img {
     height: 150px;
 }
 
-.box_paginaswebhere {
+.box_footer {
     width: fit-content;
     padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
     float: left;
     transition: 1s;
 }
 
-.box_paginaswebhere:hover {
-    /* background-color: #e8f4c8; */
-    background-color: #1a73e8;
+.box_footer:hover {
+    /* color: white; */
+    background-color: #0573ce;
     transition-timing-function: linear;
 }
 
-.box_paginaswebhere a:hover {
+.box_footer a:hover {
     text-decoration: none;
-    color: #FFF;
+    color: white;
 }
 
 /* unvisited link */
@@ -380,10 +407,29 @@ a.ciudades_links:visited {
 
 /* mouse over link */
 a.ciudades_links:hover {
+    background-color: #528fd8;
     color: #FFF;
 }
 
 /* selected link */
+@media screen and (max-width: 600px) {
+
+    .servicio a.boton {
+        display: block;
+        width: 80%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        /* ser:ser1; */
+        /* height: 20px; */
+        box-sizing: content-box;
+    }
+
+    .scroll-section {
+        margin-top: -7rem;
+        padding-top: 7rem;
+    }
+}
+
 a.ciudades_links:active {
     color: #FFF;
 }
@@ -401,44 +447,28 @@ a.ciudades_links:active {
 
 }
 
-@media screen and (max-width: 600px) {
-
-    .servicio a.boton {
-        display: block;
-        width: 80%;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        /* ser:ser1; */
-        /* height: 20px; */
-        box-sizing: content-box;
-    }
-
-    .scroll-section {
-        margin-top: -7rem;
-        padding-top: 7rem;
-    }
-
-}
-
 @media screen and (min-width:1024px) {
 
     header h1,
     #servicios h1,
     #contacto h1 {
         font-size: 7rem;
+        color: white;
     }
 
     #servicios {
-        padding-top: 5em;
+        padding-top: 8em;
         padding-bottom: 5em;
-        /* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%), url(abog.svg); */
-        /* background: url(llavellavesvg.svg); */
-        background-color: #1a73e8;
-        background-size: cover;
+
     }
 
     #servicios p {
         color: #FFF;
+    }
+
+    #contacto {
+        padding-top: 3em;
+        padding-bottom: 5em;
     }
 }
 
@@ -450,7 +480,7 @@ a.ciudades_links:active {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
+    /* background-color: #007bff; */
     /* Color de fondo */
     color: #fff;
     /* Color del texto */
@@ -465,14 +495,13 @@ a.ciudades_links:active {
 
 /* Estilos al pasar el mouse por encima del botón */
 .scroll-to-top:hover {
-    background-color: #0056b3;
+    background-color: #d6694b;
     /* Cambia el color de fondo al pasar el mouse por encima */
 }
 
 .button {
-    background-color: #4CAF50;
     border: none;
-    color: white;
+    /* color: white; */
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -485,21 +514,50 @@ a.ciudades_links:active {
 }
 
 .button1 {
-    background-color: #b5c3ce;
-    color: white;
-    /* border: 0.2em solid #0573ce; */
+    border-radius: 0.4em;
+    color: black;
+    background-color: white;
 }
+
 .button2 {
-    background-color: #b5c3ce;
-    color: white;
-    /* border: 0.2em solid #0573ce; */
-}
-.button1:hover {
     background-color: white;
     color: black;
 }
-a{
+
+.button1:hover {
     color: white;
+    background-color: #528fd8;
+}
+
+
+/* Seccion marcas */
+.marcas {
+    text-align: center;
+    padding: 20px;
+    height: auto;
+}
+
+.carousel {
+    background-color: white;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.img-marcas {
+    /* max-width: 100px;
+    max-height: 100px; */
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
 }
 
 /* Boton de ir al pie de la pagina */
@@ -517,4 +575,12 @@ a{
     border-radius: 0.4em;
     text-decoration: none;
     margin-bottom: -10px;
+}
+
+.separador_box_footer{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
