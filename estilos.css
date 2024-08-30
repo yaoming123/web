@@ -144,6 +144,10 @@ header {
 #contenido-principal {
     /* padding-top: 40px;
     padding-bottom: 40px; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 4em;
     /* background: linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%); */
     /* background-position: center, center; */
     /* background-size: cover; */
@@ -223,9 +227,11 @@ main {
 /* h1 al h6 */
 #servicios h1,
 h3 {
+    margin-top: auto;
     font-size: 4rem;
     color: white;
     padding: initial;
+    margin-bottom: 1em;
 }
 
 #servicios h2,
@@ -583,4 +589,54 @@ a.ciudades_links:active {
     margin-bottom: auto;
     margin-right: 0.5em;
     margin-left: 0.5em;
+}
+
+
+/* Mejora en Media Queries para Móviles */
+@media screen and (max-width: 480px) {
+    nav ul {
+        display: none;
+    }
+
+    nav::after {
+        content: "Menu";
+        font-size: 1.5rem;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+        padding: 1rem;
+        background-color: #528fd8;
+    }
+
+    nav.active ul {
+        display: block;
+    }
+
+    .contenedor,
+    .servicio {
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h2,
+    header p {
+        font-size: 1.5rem;
+    }
+
+    #servicios h1,
+    #contacto h1 {
+        font-size: 5rem;
+    }
+
+    .scroll-section {
+        padding-top: 5rem;
+    }
+
+    .button-flotante {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
