@@ -614,7 +614,8 @@ a.ciudades_links:active {
 
     .contenedor,
     .servicio {
-        padding: 0 1rem;
+        /* padding: 0 1rem; */
+        padding-top: auto;
     }
 
     header h1 {
@@ -631,9 +632,9 @@ a.ciudades_links:active {
         font-size: 5rem;
     }
 
-    .scroll-section {
+    /* .scroll-section {
         padding-top: 5rem;
-    }
+    } */
 
     .button-flotante {
         font-size: 14px;

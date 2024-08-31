@@ -220,7 +220,7 @@
 </div>
             <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
 
-            <div id="opciones" style="padding-top: 150px;">
+            <div id="opciones" style="padding-top: 2em;">
                 <h2 class="scroll-section" id="localidades_provincia">Elija una localidad</h2>
                 <select id="localidades" class="button button2" style="width:100%;"> 
                 <option value="">Selecciona una localidad</option>
@@ -792,7 +792,7 @@
 
     
     <!-- FOOTER -->
-    <footer id="footer">
+    <footer id="footer" style="margin-bottom: 3em;">
         <!-- Pie de página de tu sitio web aquí -->
         <div class="contenedor">
             <div class="box_footer">
@@ -813,5 +813,14 @@
     <!-- FIN FOOTER -->
     
 </body>
+    <!-- Script de Menú Interactivo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nav = document.querySelector('nav');
+            nav.addEventListener('click', function () {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </html>
         
