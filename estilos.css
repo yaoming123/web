@@ -1,5 +1,6 @@
 :root {
-    --rojo: #eee --fondo: #222
+    --rojo: #eee;
+    --fondo: #222
 }
 
 .scroll-section {
@@ -32,17 +33,7 @@
     /* animation-iteration-count: infinite; */
 
 }
-.animation_bounce {
-    display: inline-block;
-    margin: 0 0.5rem;
 
-    animation: bounce;
-    /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s;
-    /* don't forget to set a duration! */
-    /* animation-iteration-count: infinite; */
-
-}
 
 .responsive-iframe {
     width: 100%;
