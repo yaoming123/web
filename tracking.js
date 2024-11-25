@@ -60,8 +60,4 @@ function trackDynamicWhatsAppClick(button) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(datosEvento);
 
-    // Depuración en consola (solo en desarrollo)
-    if (window.location.hostname === 'localhost') {
-        console.log('Datos enviados al dataLayer:', datosEvento);
-    }
 }
