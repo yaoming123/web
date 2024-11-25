@@ -45,22 +45,4 @@ function trackDynamicWhatsAppClick(button) {
         conexion: conexion // Tipo de conexión
     });
 
-    // Opcional: Mostrar en consola para depuración
-    console.log("Datos enviados al dataLayer:", {
-        event: "click_whatsapp",
-        servicio: servicio,
-        contacto: "WhatsApp",
-        seccion: seccion,
-        dispositivo: dispositivo,
-        hora: hora,
-        accion: accion,
-        url_referencia: urlReferencia,
-        url_actual: urlActual,
-        idioma: idioma,
-        scroll_depth: scrollDepth,
-        tiempo_en_pagina: tiempoEnPagina,
-        clics_totales: window.numClicsWhatsApp,
-        tipo_usuario: tipoUsuario,
-        conexion: conexion
-    });
 }
