@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const address = document.getElementById('address').value || 'No especificado';
         const mapLink = document.getElementById('mapLink').value || 'No especificado';
         const payment = document.getElementById('payment').value || 'No especificado';
+        const details = document.getElementById('details').value || 'No especificado';
+
 
         // Formatea el mensaje
         const whatsappMessage = `
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             - Dirección: ${address}
             - Link de Google Maps: ${mapLink}
             - Medios de Pago: ${payment}
+            - Detalles Adicionales: ${details}
         `;
 
         // Configura el enlace de WhatsApp
