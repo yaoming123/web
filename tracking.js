@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Captura la URL actual
+    const currentURL = window.location.href;
+
+    // Encuentra todos los enlaces a publicidad.html
+    const publicidadLinks = document.querySelectorAll('a[href*="publicidad.html"]');
+
+    // Modifica cada enlace para incluir el parámetro "from"
+    publicidadLinks.forEach(link => {
+        const url = new URL(link.href, currentURL); // Crea la URL completa
+        if (!url.searchParams.has('from')) { // Evita duplicados
+            url.searchParams.set('from', currentURL); // Añade el parámetro "from"
+            link.href = url.toString(); // Actualiza el enlace
+        }
+    });
+});
+
+
 function trackDynamicWhatsAppClick(button) {
     if (!button) {
         console.error('El botón proporcionado es nulo o inválido.');
@@ -93,3 +111,5 @@ document.querySelectorAll('a.back-button').forEach(function(element) {
         trackEvent('click', 'advertising', 'advertise_here_click', this.href);
     });
 });
+
+
