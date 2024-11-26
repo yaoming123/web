@@ -61,3 +61,35 @@ function trackDynamicWhatsAppClick(button) {
     window.dataLayer.push(datosEvento);
 
 }
+
+// Función para rastrear eventos
+function trackEvent(event, category, action, label) {
+    window.dataLayer.push({
+        event: event,
+        category: category,
+        action: action,
+        label: label,
+        timestamp: new Date().toISOString()
+    });
+}
+
+// Rastrear clics en "Haz Click Para Llamar"
+document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
+    element.addEventListener('click', function() {
+        trackEvent('click', 'contact', 'phone_click', this.href);
+    });
+});
+
+// Rastrear clics en elementos del menú
+document.querySelectorAll('nav a').forEach(function(element) {
+    element.addEventListener('click', function() {
+        trackEvent('click', 'navigation', 'menu_click', this.textContent.trim());
+    });
+});
+
+// Rastrear clic en "Publicite Aquí"
+document.querySelectorAll('a.back-button').forEach(function(element) {
+    element.addEventListener('click', function() {
+        trackEvent('click', 'advertising', 'advertise_here_click', this.href);
+    });
+});
