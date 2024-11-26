@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('whatsapp-form');
-    
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita el envío estándar del formulario
+    const whatsappButton = document.getElementById('whatsapp-button');
+    const messengerButton = document.getElementById('messenger-button');
 
-        // Captura los datos del formulario
+    const getFormData = () => {
         const section = document.getElementById('section').value;
         const name = document.getElementById('name').value;
         const cellphone = document.getElementById('cellphone').value;
@@ -14,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const payment = document.getElementById('payment').value || 'No especificado';
         const details = document.getElementById('details').value || 'No especificado';
 
-
-        // Formatea el mensaje
-        const whatsappMessage = `
+        return `
             Hola, me interesa publicar en cerrajero.net.ar:
             
             - Link de Sección: ${section}
@@ -28,13 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
             - Medios de Pago: ${payment}
             - Detalles Adicionales: ${details}
         `;
+    };
 
-        // Configura el enlace de WhatsApp
-        const whatsappNumber = "5491122413762"; // Reemplazar con el número de WhatsApp del administrador
-        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-        // Abre el enlace
+    whatsappButton.addEventListener('click', function () {
+        const message = getFormData();
+        const whatsappNumber = "5491122413762"; // Número de WhatsApp del administrador
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappLink, '_blank');
     });
-});
 
+    messengerButton.addEventListener('click', function () {
+        const message = getFormData();
+        const messengerLink = `https://m.me/cerrajero.net.ar?text=${encodeURIComponent(message)}`;
+        window.open(messengerLink, '_blank');
+    });
+});
