@@ -89,77 +89,32 @@
 
                     <form id="whatsapp-form">
                         <label for="section" style="font-size: 2rem;">Link de Sección:</label><br>
-                        <input type="text" id="section" name="section"
-                            placeholder="Ejemplo: https://cerrajero.net.ar/seccion" required
-                            style="width: 80%; height: 2em;">
+                        <input type="text" id="section" name="section" placeholder="Ejemplo: https://cerrajero.net.ar/seccion" required style="width: 80%; height: 2em;">
                         <br>
 
-                        <label for="name" style="
-    font-size: 2rem;
-">Nombre del Negocio:</label><br>
-                        <input type="text" id="name" name="name" placeholder="Nombre de fantasía o razón social"
-                            required="" style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="name" style="font-size: 2rem;">Nombre del Negocio:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Nombre de fantasía o razón social" required="" style="width: 80%; height: 2rem;"><br>
 
-                        <label for="cellphone" style="
-    font-size: 2rem;
-">Número de Celular (WhatsApp):</label><br>
-                        <input type="text" id="cellphone" name="cellphone" placeholder="Ejemplo: +54 911 1234 5678"
-                            required="" style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="cellphone" style="font-size: 2rem;">Número de Celular (WhatsApp):</label><br>
+                        <input type="text" id="cellphone" name="cellphone" placeholder="Ejemplo: +54 911 1234 5678" required="" style="width: 80%; height: 2rem;"><br>
 
-                        <label for="phone" style="
-    font-size: 2rem;
-">Número de Teléfono Fijo:</label><br>
-                        <input type="text" id="phone" name="phone" placeholder="Opcional" style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="phone" style="font-size: 2rem;">Número de Teléfono Fijo:</label><br>
+                        <input type="text" id="phone" name="phone" placeholder="Opcional" style="width: 80%; height: 2rem;"><br>
 
-                        <label for="address" style="
-    font-size: 2rem;
-">Dirección:</label><br>
-                        <input type="text" id="address" name="address" placeholder="Opcional" style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="address" style="font-size: 2rem;">Dirección:</label><br>
+                        <input type="text" id="address" name="address" placeholder="Opcional" style="width: 80%; height: 2rem;"><br>
 
-                        <label for="mapLink" style="
-    font-size: 2rem;
-">Link de Google Maps:</label><br>
-                        <input type="text" id="mapLink" name="mapLink" placeholder="Opcional" style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="mapLink" style="font-size: 2rem;">Link de Google Maps:</label><br>
+                        <input type="text" id="mapLink" name="mapLink" placeholder="Opcional" style="width: 80%; height: 2rem;"><br>
 
-                        <label for="payment" style="
-    font-size: 2rem;
-">Medios de Pago que aceptas:</label><br>
-                        <input type="text" id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia"
-                            style="
-    width: 80%;
-    height: 2rem;
-"><br>
+                        <label for="payment" style="font-size: 2rem;">Medios de Pago que aceptas:</label><br>
+                        <input type="text" id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia" style="width: 80%; height: 2rem;"><br>
+                        <label for="payment" style="font-size: 2rem;">Detalles adicionales:</label><br>
+                        <input type="text" id="details" name="details" placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser agregado? Por favor, cuéntanos cualquier otro detalle adicional." style="width: 80%; height: 2rem;"><br>
 
-                        <label for="payment" style="
-    font-size: 2rem;
-">Detalles adicionales:</label><br>
-                        <input type="text" id="details" name="details"
-                            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser agregado? Por favor, cuéntanos cualquier otro detalle adicional."
-                            style="
-    width: 80%;
-    height: 2rem;
-"><br>
-
-                        <!-- <button type="submit" style="margin-top: 2em; width: 80%; height: 4rem;">Enviar por WhatsApp</button>
-                        <button type="submit" style="margin-top: 2em; width: 80%; height: 4rem;">Enviar por Messenger</button> -->
-                        <button id="whatsapp-button" type="button" style="margin-top: 2em; width: 80%; height: 4rem;">Enviar por WhatsApp</button>
-                        <button id="messenger-button" type="button" style="margin-top: 2em; width: 80%; height: 4rem;">Enviar por Messenger</button>
-                        
+                        <button id="whatsapp-button" type="button" style="margin-top: 2em; width: 80%; height: 4rem;" onclick="dataLayer.push({event: 'click_whatsapp', form_submitted: true});">Enviar por WhatsApp</button>
+                        <button id="messenger-button" type="button" style="margin-top: 2em; width: 80%; height: 4rem;" onclick="dataLayer.push({event: 'click_messenger', form_submitted: true});">Enviar por Messenger</button>
+                            
                     </form>
 
                 </section>
