@@ -87,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     whatsappButton.addEventListener('click', function () {
         const message = generateMessage();
         if (message) {
-            const cellphone = document.getElementById('cellphone').value;
-            const whatsappLink = `https://wa.me/${cellphone}?text=${encodeURIComponent(message)}`;
+            const whatsappLink = `https://wa.me/+5491122413762?text=${encodeURIComponent(message)}`;
             trackClick(whatsappButton, 'WhatsApp');
             window.open(whatsappLink, '_blank');
         }
