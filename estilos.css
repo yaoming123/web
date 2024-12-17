@@ -79,7 +79,7 @@ nav li {
     margin: 0 5px;
 }
 
-a{
+a {
     color: white;
 }
 
@@ -215,6 +215,7 @@ main {
     background-color: white;
     color: black;
 }
+
 /* h1 al h6 */
 #servicios h1,
 h3 {
@@ -290,8 +291,8 @@ h4 {
 /* #contacto {
     /* padding-top: 3em;
     padding-bottom: 3em; */
-    /* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%); */
-    /* background-color: #1a73e8; 
+/* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%); */
+/* background-color: #1a73e8; 
 } */
 
 #contacto h1 {
@@ -364,7 +365,7 @@ footer a {
 }
 
 .box_logo p {
-    font-size: x-large;
+    font-size: larger;
     /* color: black; */
 }
 
@@ -574,7 +575,7 @@ a.ciudades_links:active {
     margin-bottom: -10px;
 }
 
-.separador_box_footer{
+.separador_box_footer {
     float: left;
     margin-top: auto;
     margin-bottom: auto;
@@ -597,6 +598,7 @@ a.ciudades_links:active {
         cursor: pointer;
         padding: 1rem;
         background-color: #528fd8;
+        text-decoration: underline;
     }
 
     nav.active ul {
@@ -631,4 +633,60 @@ a.ciudades_links:active {
         font-size: 14px;
         padding: 8px 16px;
     }
+}
+
+
+table {
+    align-items: center;
+    font-size: 1.25rem;
+    justify-self: center;
+}
+
+#tableSearch {
+    border: 0.2em solid #5a5a5a;
+    position: fixed;
+    bottom: 1rem;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    width: 95%;
+}
+
+@media (max-width: 768px) {
+    table {
+        display: contents;
+    }
+
+    thead {
+        display: flex;
+        flex-direction: column;
+    }
+
+    tbody {
+        display: contents;
+    }
+
+    tr {
+        display: grid;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        border: solid;
+    }
+
+    td {
+        font-size: 1rem;
+        width: min-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.select-url-btn{
+    font-size: 1rem;
 }

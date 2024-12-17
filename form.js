@@ -22,17 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Generar el mensaje
         return `
-            Hola, me interesa publicar en cerrajero.net.ar:
-
-            - Link de Sección: ${section}
-            - Nombre del Negocio: ${name}
-            - Número de Celular: ${cellphone}
-            - Número de Teléfono Fijo: ${phone}
-            - Dirección: ${address}
-            - Link de Google Maps: ${mapLink}
-            - Medios de Pago: ${payment}
-            - Detalles Adicionales: ${details}
-        `;
+        Hola, he leído y aceptado los términos y condiciones. Me interesa publicitar en cerrajero.net.ar:
+        
+        - Enlace de la sección: ${section}
+        - Nombre del negocio: ${name}
+        - Número de celular: ${cellphone}
+        - Número de teléfono fijo: ${phone}
+        - Dirección: ${address}
+        - Enlace de Google Maps: ${mapLink}
+        - Medios de pago: ${payment}
+        - Detalles adicionales: ${details}.
+    `;
+    
     }
 
     // Función para rastrear clics en WhatsApp
