@@ -92,18 +92,21 @@ function trackEvent(event, category, action, label) {
 }
 
 // Rastrear clics en "Haz Click Para Llamar"
-document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
-    element.addEventListener('click', function() {
-        // Envía datos al dataLayer para que GTM los capture
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'phone_click',
-            'eventCategory': 'contact',
-            'eventAction': 'phone_click',
-            'eventLabel': this.href
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita la acción predeterminada de abrir el enlace inmediatamente
+            gtag('event', 'phone_click', {
+                'event_category': 'contact',
+                'event_label': this.href
+            });
+            setTimeout(function() {
+                window.location.href = element.href; // Redirige al enlace después de un retraso
+            }, 300); // Ajusta el tiempo según sea necesario
         });
     });
 });
+
 
 // Rastrear clics en elementos del menú
 document.querySelectorAll('nav a').forEach(function(element) {
