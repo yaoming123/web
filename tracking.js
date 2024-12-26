@@ -94,7 +94,14 @@ function trackEvent(event, category, action, label) {
 // Rastrear clics en "Haz Click Para Llamar"
 document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
     element.addEventListener('click', function() {
-        trackEvent('click', 'contact', 'phone_click', this.href);
+        // Envía datos al dataLayer para que GTM los capture
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'phone_click',
+            'eventCategory': 'contact',
+            'eventAction': 'phone_click',
+            'eventLabel': this.href
+        });
     });
 });
 
