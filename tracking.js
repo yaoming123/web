@@ -97,6 +97,9 @@ document.addEventListener("DOMContentLoaded", function() {
         element.addEventListener('click', function(event) {
             event.preventDefault();
 
+            // Capturar el número de teléfono desde el href
+            const numeroTelefono = this.href.replace('tel:', ''); // Quitar "tel:"
+
             // Capturar parámetros adicionales
             const dispositivo = /Mobi|Android/i.test(navigator.userAgent) ? 'Móvil' : 'Escritorio';
             const horaLocal = new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
@@ -119,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 'event': 'phone_click',
                 'event_category': 'contact',
                 'event_label': this.href,
+                'numero_telefono': numeroTelefono, // Nuevo parámetro
                 'dispositivo': dispositivo,
                 'hora_local': horaLocal,
                 'idioma': idioma,
@@ -135,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
 
 
 
