@@ -95,14 +95,14 @@ function trackEvent(event, category, action, label) {
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
         element.addEventListener('click', function(event) {
-            event.preventDefault(); // Evita la acción predeterminada de abrir el enlace inmediatamente
+            event.preventDefault();
             gtag('event', 'phone_click', {
                 'event_category': 'contact',
                 'event_label': this.href
             });
             setTimeout(function() {
-                window.location.href = element.href; // Redirige al enlace después de un retraso
-            }, 300); // Ajusta el tiempo según sea necesario
+                window.location.href = element.href; 
+            }, 300);
         });
     });
 });
