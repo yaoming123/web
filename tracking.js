@@ -96,16 +96,47 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
         element.addEventListener('click', function(event) {
             event.preventDefault();
-            gtag('event', 'phone_click', {
+
+            // Capturar parámetros adicionales
+            const dispositivo = /Mobi|Android/i.test(navigator.userAgent) ? 'Móvil' : 'Escritorio';
+            const horaLocal = new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
+            const idioma = navigator.language || navigator.userLanguage || 'Desconocido';
+            const scrollDepth = document.body.scrollHeight > 0
+                ? Math.round((window.scrollY / document.body.scrollHeight) * 100) + '%'
+                : '0%';
+            const tiempoEnPagina = performance?.timing?.navigationStart
+                ? Math.floor((Date.now() - performance.timing.navigationStart) / 1000)
+                : 0;
+            const tipoUsuario = localStorage.getItem('visitado') ? 'Recurrente' : 'Nuevo';
+            if (tipoUsuario === 'Nuevo') {
+                localStorage.setItem('visitado', 'true');
+            }
+            const conexion = navigator.connection ? navigator.connection.effectiveType : 'Desconocida';
+
+            // Enviar evento al dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'phone_click',
                 'event_category': 'contact',
-                'event_label': this.href
+                'event_label': this.href,
+                'dispositivo': dispositivo,
+                'hora_local': horaLocal,
+                'idioma': idioma,
+                'scroll_depth': scrollDepth,
+                'tiempo_en_pagina': tiempoEnPagina,
+                'tipo_usuario': tipoUsuario,
+                'conexion': conexion
             });
+
+            // Redirigir al enlace después de 300 ms
             setTimeout(function() {
-                window.location.href = element.href; 
+                window.location.href = element.href;
             }, 300);
         });
     });
 });
+
+
 
 
 // Rastrear clics en elementos del menú
