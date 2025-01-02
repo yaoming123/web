@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página no encontrada.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>404 - Página No Encontrada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="estilos.css">
+    <script src="tracking.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE4WWQXVMY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GE4WWQXVMY');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-552P4L5P');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+
+<body>
+    <a class="button-flotante" href="#footer">Pie de Página</a>
+
+
+    <div class="box_logo">
+        <img src="camioneta.png" class="logo animation_back_in_rigth" alt="logotipo">
+        <!-- El icono de este sitio web ha sido creado por nawicon, Perfil: https://www.flaticon.es/autores/nawicon -->
+        <p>www.cerrajero.net.ar/404.html</p>
+        <p>Lo sentimos, no podemos encontrar la página que estás buscando.</p>
+        <!-- <a href="https://www.flaticon.es/iconos-gratis/nieve" title="nieve iconos">Nieve iconos creados por Freepik - Flaticon</a> -->
+    </div>
+
+    <nav>
+        <ul style="font-variant: all-petite-caps;"> <!-- exp -->
+            <li>
+                <a href="./index.html">Volver al inicio</a>
+            </li>
+            <li>
+                <a href="publicidad.html">Publicite Aquí</a>
+            </li>
+            <li>
+                <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <header style="font-variant: all-petite-caps;">
+        <div class="contenedor">
+            <div id="contenido-principal">
+                <h1><strong>Error 404 - Página No Encontrada</strong></h1>
+                <p>Estamos trabajando para solucionar el inconveniente lo mas pronto posible, mientras tanto...</p>
+                <a href="./index.html" class="button button1"
+                    style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;"
+                    aria-label="Volver al inicio">
+                    Vuelva al inicio
+                </a>
+                <a class="button button1"
+                    style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;"
+                    aria-label="Volver a la página anterior" onclick="goBack()">Volver a la página anterior</a>
+
+                <a href="https://www.facebook.com/cerrajero.net.ar" class="button button1"
+                    style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;"
+                    aria-label="Síganos en Facebook">
+                    Síganos en Facebook y si puede cuentenos del error
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <footer id="footer">
+        <!-- Pie de página de tu sitio web aquí -->
+        <div class="contenedor">
+            <div class="box_footer">
+                <div class="separador_box_footer">
+                    <img src="camioneta.png" class="logo animation_back_in_rigth" alt="logotipo">
+                    <a href="https://www.cerrajero.net.ar">cerrajero.net.ar</a>
+                </div>
+                <div class="separador_box_footer">
+
+                    <i class="fa fa-facebook"
+                        style="width: 2em;height: 2em;background-color: #3b5998; padding: 1em;"></i>
+                    <a href="https://www.facebook.com/cerrajero.net.ar">Facebook</a>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+<!-- Script de Menú Interactivo -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('nav');
+        nav.addEventListener('click', function () {
+            nav.classList.toggle('active');
+        });
+    });
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-552P4L5P" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+    function goBack() {
+        if (document.referrer) {
+            window.history.back();
+        } else {
+            window.location.href = './index.html'; // Redirige al inicio si no hay página anterior
+        }
+    }
+</script>
+
+</html>
