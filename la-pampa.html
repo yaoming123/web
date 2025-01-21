@@ -26,6 +26,11 @@
 
     <link rel="canonical" href="https://www.cerrajero.net.ar/la-pampa.html">
 
+    <!-- Test para busquedas en dispositivos moviles -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <meta property="og:title" content="Cerrajero Profesional a Domicilio en La Pampa | 24/7">
     <meta property="og:description"
         content="Servicios de cerrajería las 24 horas en La Pampa: expertos en aperturas y cerraduras.">
@@ -1174,6 +1179,24 @@
         actualizarDisponibilidad();
     });
 
+</script>
+
+<!-- Select dos para busquedas en moviles -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Detectar si el dispositivo es táctil
+        const esDispositivoTactil =
+            "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+        if (esDispositivoTactil) {
+            // Inicializar Select2 si es un dispositivo táctil
+            $("#localidades").select2({
+                placeholder: "Buscar localidad",
+                allowClear: true,
+                width: "100%" // Ajustar el ancho para móviles
+            });
+        }
+    });
 </script>
 
 
