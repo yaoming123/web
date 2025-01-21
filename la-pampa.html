@@ -302,7 +302,7 @@
     color: darkgreen;
     font-size: 2em;
     ">Verde</a> indica que si hay un cerrajero disponible en esa seccion</p>
-                <input type="text" id="search" placeholder="Buscar localidad..." />
+                <!-- <input type="text" id="search" placeholder="Buscar localidad..." /> -->
 
                 <select id="localidades" class="button button2" style="width:100%;">
                     <option value="">Selecciona una localidad</option>
@@ -1079,7 +1079,7 @@
 
 
 <!-- Busqueda de barrios o localidades y redireccion -->
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.getElementById("search");
         const selectLocalidades = document.getElementById("localidades");
@@ -1179,25 +1179,79 @@
         actualizarDisponibilidad();
     });
 
-</script>
+</script> -->
 
 <!-- Select dos para busquedas en moviles -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Detectar si el dispositivo es táctil
-        const esDispositivoTactil =
-            "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    // Inicializar Select2 con estilos dinámicos
+    $("#localidades").select2({
+        placeholder: "Buscar localidad",
+        allowClear: true,
+        width: "100%",
+        templateResult: function (data) {
+            if (!data.id) {
+                return data.text;
+            }
 
-        if (esDispositivoTactil) {
-            // Inicializar Select2 si es un dispositivo táctil
-            $("#localidades").select2({
-                placeholder: "Buscar localidad",
-                allowClear: true,
-                width: "100%" // Ajustar el ancho para móviles
-            });
+            // Obtener el color del estilo original
+            const color = document.querySelector(`option[value="${data.id}"]`).style.color;
+            const $result = $(`<span style="color: ${color};">${data.text}</span>`);
+            return $result;
+        },
+        templateSelection: function (data) {
+            // Mantener los colores también en la selección
+            if (!data.id) {
+                return data.text;
+            }
+
+            const color = document.querySelector(`option[value="${data.id}"]`).style.color;
+            return $(`<span style="color: ${color};">${data.text}</span>`);
         }
     });
+
+    // Redirigir al enlace seleccionado
+    $("#localidades").on("select2:select", function (e) {
+        const selectedValue = e.params.data.id; // ID seleccionado
+        if (selectedValue) {
+            const targetSection = document.getElementById(selectedValue);
+            if (targetSection) {
+                const enlace = targetSection.querySelector("a.button");
+                if (enlace) {
+                    window.location.href = enlace.href; // Redirigir al enlace
+                } else {
+                    alert("El enlace para la sección seleccionada no está disponible.");
+                }
+            } else {
+                alert("La sección seleccionada no está disponible.");
+            }
+        }
+    });
+});
+
 </script>
+<!-- 
+<style>
+    /* Personalización de Select2 */
+    .select2-container .select2-selection--single {
+        background-color: transparent !important;
+        color: inherit !important;
+        border: 1px solid #ccc;
+        /* Estilo de borde */
+        height: 40px;
+        /* Ajustar la altura si es necesario */
+    }
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        color: inherit !important;
+    }
+
+    .select2-container--default .select2-results>.select2-results__options {
+        background-color: white;
+        /* Fondo blanco */
+    }
+</style> -->
+
 
 
 </html>
