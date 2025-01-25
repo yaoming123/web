@@ -14,7 +14,7 @@
         <link rel="icon" type="image/x-icon" href=favicon.ico>
         <title>Cerrajería de Emergencia en La Rioja | Disponible las 24 horas</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-hash" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
         <link rel="stylesheet" href="estilos.css">
@@ -23,7 +23,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
+
         <link rel="canonical" href="https://www.cerrajero.net.ar/la-rioja.html">
+
+        <script src="busqueda.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
         <meta property="og:title" content="Cerrajería de Emergencia en La Rioja | Disponible las 24 horas">
         <meta property="og:description" content="Atención de urgencia en cerrajería La Rioja: aperturas y cambios las 24 horas.">
@@ -72,23 +78,22 @@
 
     <!-- BODY -->
     <body>
-        <a class="button-flotante" href="#footer">Pie de Página</a>
+        <a class="button-flotante" href="#footer" aria-label="Ir a la sección del pie de pagina" title="Ir a la sección del pie de pagina">Pie de Página</a>
 
          
 
         <p style="font-size: 1.5em;text-align: center;color:white;">🔴 No hay un cerrajero disponible en esta sección.
             <!-- Si no hay nadie en un barrio o localidad cercana -->
-            <a href="publicidad.html" class="back-button">📣 Publicite Aquí</a>
+            <a href="publicidad.html" class="back-button" aria-label="Ir a la sección de publicidad" title="Ir a la sección de publicidad">📣 Publicite Aquí</a>
         </p>              
         
         <div class="box_logo">
-            <img src="camioneta.png" class="animation_back_in_rigth" alt="logotipo">
+            <img src="camioneta.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy">
             <p>https://www.cerrajero.net.ar/la-rioja.html</p>
             <p>Anuncia tus servicios de cerrajería en este espacio durante 15 días por: ARS $1075.37<br> desde: 2025-01-16 hasta: 2025-01-30</p>
         </div>
         
     
-
         
     <nav>
         <ul style="font-variant: all-petite-caps;"> 
@@ -135,8 +140,8 @@
         <h3>Contacto</h3>
         <h4>Visítenos o llámenos para agendar una consulta y explorar cómo podemos ser de ayuda.</h4>
         <br>
-        <a class="button button1 my-element" href="tel:+541111111111">📞 ¡HAZ CLICK PARA LLAMAR! AL +541111111111</a>
-        <a class="button button1 my-element" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=Hola,%20vengo%20desde%20el%20sitio%20web:%20https://www.cerrajero.net.ar/la-rioja.html%20Tengo%20una%20consulta" onclick="trackDynamicWhatsAppClick(this)"><i class="fa fa-whatsapp" style="font-size:16px;color:green;"></i> ¡Haz click para ENVIAR WHATSAPP!</a>
+        <a class="button button1 my-element" href="tel:+541111111111" aria-label="Llamar por teléfono" title="Llamar por teléfono">📞 ¡HAZ CLICK PARA LLAMAR! AL +541111111111</a>
+        <a class="button button1 my-element" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=Hola,%20vengo%20desde%20el%20sitio%20web:%20https://www.cerrajero.net.ar/la-rioja.html%20Tengo%20una%20consulta" onclick="trackDynamicWhatsAppClick(this)" aria-label="Enviar un whatsapp" title="Enviar un whatsapp"><i class="fa fa-whatsapp" style="font-size:16px;color:green;"></i> ¡Haz click para ENVIAR WHATSAPP!</a>
 
         <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25596424.265591845!2d-63.598995699999996!3d-38.451550000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1699647692265!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <!-- Fin seccion Contacto -->
@@ -174,9 +179,9 @@
     <h4>Realizamos aperturas profesionales de autos, hogares, cajas fuertes y puertas blindadas.</h4>
     <p>Un grupo de cerrajeros altamente cualificados con años de experiencia en el sector.</p>
     <div class="servicio">
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20de%20un%20automotor.%20¿Podrian%20darme%20informacion%20del%20servicio?" data-servicio="Consultar por apertura de automotores" onclick="trackDynamicWhatsAppClick(this)">Consultar por apertura de automotores</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20en%20un%20domicilio.%20¿Podrían%20darme%20información%20del%20servicio?" data-servicio="Consultar por aperturas en domicilios" onclick="trackDynamicWhatsAppClick(this)">Consultar por aperturas en domicilios</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20en%20una%20Caja%20Fuerte.%20¿Podrían%20darme%20información%20del%20servicio?" data-servicio="Consultar por aperturas de cajas fuartes" onclick="trackDynamicWhatsAppClick(this)">Consultar por aperturas de cajas fuartes</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20de%20un%20automotor.%20¿Podrian%20darme%20informacion%20del%20servicio?" data-servicio="Consultar por apertura de automotores" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por apertura de automotores</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20en%20un%20domicilio.%20¿Podrían%20darme%20información%20del%20servicio?" data-servicio="Consultar por aperturas en domicilios" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por aperturas en domicilios</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20apertura%20en%20una%20Caja%20Fuerte.%20¿Podrían%20darme%20información%20del%20servicio?" data-servicio="Consultar por aperturas de cajas fuartes" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por aperturas de cajas fuartes</a>
 </div>
 </div>
 <!-- Fin sección del listado de servicios -->
@@ -187,9 +192,9 @@
     <h4>Reparamos cerraduras averiadas en puertas y portones.</h4>
     <p>Nos especializamos en cerraduras y accesorios de seguridad de las marcas más prestigiosas, comprometidos con asegurar la durabilidad y salvaguarda de tus bienes.</p>
     <div class="servicio">
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20instalación%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por una instalacion de cerradura" onclick="trackDynamicWhatsAppClick(this)">Consultar por una instalacion de cerradura</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20reparación%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por reparación de cerradura" onclick="trackDynamicWhatsAppClick(this)">Consultar por reparación de cerradura</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20el%20cambio%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por un cambio de cerradura" onclick="trackDynamicWhatsAppClick(this)">Consultar por un cambio de cerradura</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20instalación%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por una instalacion de cerradura" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por una instalacion de cerradura</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20la%20reparación%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por reparación de cerradura" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por reparación de cerradura</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20el%20cambio%20de%20una%20cerradura.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por un cambio de cerradura" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por un cambio de cerradura</a>
 </div>
 </div>
 <!-- Fin sección del listado de servicios -->
@@ -200,7 +205,7 @@
     <h4>Busca cotización: Modificación de combinación.</h4>
     <p></p>
     <div class="servicio">
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20el%20cambio%20de%20una%20combinacion.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por un cambio de combinación" onclick="trackDynamicWhatsAppClick(this)">Consultar por un cambio de combinación</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20el%20cambio%20de%20una%20combinacion.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por un cambio de combinación" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por un cambio de combinación</a>
 </div>
 </div>
 <!-- Fin sección del listado de servicios -->
@@ -211,9 +216,9 @@
     <h4>Variedades de Servicios: Reparación, Reemplazo y Duplicado de Llaves</h4>
     <p></p>
     <div class="servicio">
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20arreglo%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por arreglos de llaves" onclick="trackDynamicWhatsAppClick(this)">Consultar por arreglos de llaves</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20reemplazo%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por reemplazo de llaves" onclick="trackDynamicWhatsAppClick(this)">Consultar por reemplazo de llaves</a>
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20duplicado%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por duplicado de llaves" onclick="trackDynamicWhatsAppClick(this)">Consultar por duplicado de llaves</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20arreglo%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por arreglos de llaves" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por arreglos de llaves</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20reemplazo%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por reemplazo de llaves" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por reemplazo de llaves</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20que%20realicen%20un%20duplicado%20de%20llaves.%20¿Podrían%20darme%20información%20del%20servicio%3F" data-servicio="Consultar por duplicado de llaves" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por duplicado de llaves</a>
 </div>
 </div>
 <!-- Fin sección del listado de servicios -->
@@ -224,7 +229,7 @@
     <h4>Codificamos tus llaves con precisión y rapidez.</h4>
     <p></p>
     <div class="servicio">
-        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20informacion%20sobre%20el%20servicio%20de%20llaves%20codificadas.%20¿Podrian%20darme%20informacion%20del%20servicio%3F" data-servicio="Consultar por llaves codificadas" onclick="trackDynamicWhatsAppClick(this)">Consultar por llaves codificadas</a>
+        <a class="button button1" href="https://api.whatsapp.com/send?phone=+541111111111&amp;text=¡Hola!%20Vengo%20desde:%20https://www.cerrajero.net.ar/la-rioja.html%20%7C%20Necesito%20informacion%20sobre%20el%20servicio%20de%20llaves%20codificadas.%20¿Podrian%20darme%20informacion%20del%20servicio%3F" data-servicio="Consultar por llaves codificadas" onclick="trackDynamicWhatsAppClick(this)" aria-label="Consultar sobre el servicio por whatsapp" title="Consultar sobre el servicio por whatsapp">Consultar por llaves codificadas</a>
 </div>
 </div>
 <!-- Fin sección del listado de servicios -->
@@ -774,7 +779,7 @@
         <div class="contenedor">
             <div class="box_footer">
                 <div class="separador_box_footer">
-                    <img src="camioneta.png" alt="logotipo">
+                    <img src="camioneta.png" alt="logotipo" loading="lazy">
                     <a href="https://www.cerrajero.net.ar">cerrajero.net.ar</a>
                 </div>
                 <div class="separador_box_footer">
