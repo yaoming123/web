@@ -690,3 +690,25 @@ table {
 .select-url-btn{
     font-size: 1rem;
 }
+
+/* Ajustar el estilo del placeholder */
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: black !important; /* Color negro para el texto del placeholder */
+    font-size: 1rem; /* Tamaño ajustable, puedes mantenerlo en rem */
+}
+
+/* Ajustar el ancho y altura del campo */
+.select2-container--default .select2-selection--single {
+    height: 2rem; /* Altura del campo */
+    line-height: 3rem; /* Alinear el texto verticalmente */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    border: 1px solid #000; /* Borde negro */
+    width: 100%; /* Ajustar al contenedor, opcional */
+}
+
+/* Mantener texto seleccionado en negro */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: black !important; /* Texto negro para las opciones seleccionadas */
+    font-size: 1rem; /* Tamaño del texto */
+    line-height: 2rem; /* Centrado vertical */
+}
