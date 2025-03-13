@@ -3,38 +3,59 @@ document.addEventListener('DOMContentLoaded', function () {
     const whatsappButton = document.getElementById('whatsapp-button');
     const messengerButton = document.getElementById('messenger-button');
 
-    // Función para generar el mensaje dinámico
     function generateMessage() {
-        const section = document.getElementById('section').value;
-        const name = document.getElementById('name').value;
-        const cellphone = document.getElementById('cellphone').value;
-        const phone = document.getElementById('phone').value || 'No especificado';
-        const address = document.getElementById('address').value || 'No especificada';
-        const mapLink = document.getElementById('mapLink').value || 'No especificado';
-        const payment = document.getElementById('payment').value || 'No especificados';
-        const details = document.getElementById('details').value || 'Sin detalles adicionales';
-
+        let section, name, cellphone, phone, address, mapLink, payment, details, mensaje;
+    
+        if (document.getElementById('formulario-clientes') !== null) { 
+            // Datos para clientes
+            section = document.getElementById('section').value;
+            details = document.getElementById('details').value || 'Sin detalles adicionales';
+    
+            // Mensaje para clientes
+            mensaje = `
+            Hola, vengo desde: ${section} y quiero consultar sobre:
+            Detalles: ${details}.
+            `;
+        } 
+        else if (document.getElementById('formulario-publicidad') !== null) {
+            // Datos para publicidad
+            section = document.getElementById('section').value;
+            name = document.getElementById('name').value;
+            cellphone = document.getElementById('cellphone').value;
+            phone = document.getElementById('phone').value || 'No especificado';
+            address = document.getElementById('address').value || 'No especificada';
+            mapLink = document.getElementById('mapLink').value || 'No especificado';
+            payment = document.getElementById('payment').value || 'No especificados';
+            details = document.getElementById('details').value || 'Sin detalles adicionales';
+    
+            // Mensaje para publicidad
+            mensaje = `
+            Hola, he leído y aceptado los términos y condiciones. Me interesa publicitar en cerrajero.net.ar:
+            
+            - Enlace de la sección: ${section}
+            - Nombre del negocio: ${name}
+            - Número de celular: ${cellphone}
+            - Número de teléfono fijo: ${phone}
+            - Dirección: ${address}
+            - Enlace de Google Maps: ${mapLink}
+            - Medios de pago: ${payment}
+            - Detalles adicionales: ${details}.
+            `;
+        } else {
+            alert('No se ha detectado un formulario válido.');
+            return null;
+        }
+    
         // Validar que los campos requeridos estén llenos
         if (!section || !name || !cellphone) {
             alert('Por favor completa todos los campos requeridos (Sección, Nombre del Negocio y Celular).');
-            return null; // Salir si faltan datos requeridos
+            return null;
         }
-
-        // Generar el mensaje
-        return `
-        Hola, he leído y aceptado los términos y condiciones. Me interesa publicitar en cerrajero.net.ar:
-        
-        - Enlace de la sección: ${section}
-        - Nombre del negocio: ${name}
-        - Número de celular: ${cellphone}
-        - Número de teléfono fijo: ${phone}
-        - Dirección: ${address}
-        - Enlace de Google Maps: ${mapLink}
-        - Medios de pago: ${payment}
-        - Detalles adicionales: ${details}.
-    `;
     
+        return mensaje; // Devuelve el mensaje según el formulario
     }
+    
+    
 
     // Función para rastrear clics en WhatsApp
     function trackClick(button, contacto) {
@@ -85,83 +106,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Evento para WhatsApp
-    whatsappButton.addEventListener('click', function () {
-        const message = generateMessage();
-        if (message) {
-            const whatsappLink = `https://wa.me/+5491122413762?text=${encodeURIComponent(message)}`;
-            trackClick(whatsappButton, 'WhatsApp');
-            window.open(whatsappLink, '_blank');
-        }
-    });
-
-    // Evento para Messenger
-    messengerButton.addEventListener('click', function () {
-        const message = generateMessage();
-        if (message) {
-            const messengerLink = `https://www.messenger.com/t/cerrajero.net.ar?text=${encodeURIComponent(message)}`;
-            trackClick(messengerButton, 'Messenger');
-            window.open(messengerLink, '_blank');
-        }
-    });
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', function () {
+            const message = generateMessage();
+            if (message) {
+                const whatsappLink = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(message)}`;
+                trackClick(whatsappButton, 'WhatsApp');
+                window.open(whatsappLink, '_blank');
+            }
+        });
+    }
+    if (messengerButton) {
+        // Evento para Messenger
+        messengerButton.addEventListener('click', function () {
+            const message = generateMessage();
+            if (message) {
+                const messengerLink = `https://www.messenger.com/t/cerrajero.net.ar?text=${encodeURIComponent(message)}`;
+                trackClick(messengerButton, 'Messenger');
+                window.open(messengerLink, '_blank');
+            }
+        });
+    }
 });
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Capturar los botones
-//     const whatsappButton = document.getElementById('whatsapp-button');
-//     const messengerButton = document.getElementById('messenger-button');
-
-//     // Función para generar el mensaje dinámico
-//     function generateMessage() {
-//         const section = document.getElementById('section').value;
-//         const name = document.getElementById('name').value;
-//         const cellphone = document.getElementById('cellphone').value;
-//         const phone = document.getElementById('phone').value || 'No especificado';
-//         const address = document.getElementById('address').value || 'No especificada';
-//         const mapLink = document.getElementById('mapLink').value || 'No especificado';
-//         const payment = document.getElementById('payment').value || 'No especificados';
-//         const details = document.getElementById('details').value || 'Sin detalles adicionales';
-
-//         // Validar que los campos requeridos estén llenos
-//         if (!section || !name || !cellphone) {
-//             alert('Por favor completa todos los campos requeridos (Sección, Nombre del Negocio y Celular).');
-//             return null; // Salir si faltan datos requeridos
-//         }
-
-//         // Generar el mensaje
-//         return `
-//             Hola, me interesa publicar en cerrajero.net.ar:
-
-//             - Link de Sección: ${section}
-//             - Nombre del Negocio: ${name}
-//             - Número de Celular: ${cellphone}
-//             - Número de Teléfono Fijo: ${phone}
-//             - Dirección: ${address}
-//             - Link de Google Maps: ${mapLink}
-//             - Medios de Pago: ${payment}
-//             - Detalles Adicionales: ${details}
-//         `;
-//     }
-
-//     // Evento para WhatsApp
-//     whatsappButton.addEventListener('click', function () {
-//         const message = generateMessage();
-//         if (message) {
-//             const cellphone = document.getElementById('cellphone').value;
-//             const whatsappLink = `https://wa.me/${cellphone}?text=${encodeURIComponent(message)}`;
-//             window.open(whatsappLink, '_blank'); // Abrir enlace de WhatsApp
-//             dataLayer.push({ event: 'click_whatsapp', form_submitted: true, message: message }); // Registrar en dataLayer
-//         }
-//     });
-
-//     // Evento para Messenger
-//     messengerButton.addEventListener('click', function () {
-//         const message = generateMessage();
-//         if (message) {
-//             const messengerLink = `https://www.messenger.com/t/cerrajero.net.ar?text=${encodeURIComponent(message)}`;
-//             window.open(messengerLink, '_blank'); // Abrir enlace de Messenger
-//             dataLayer.push({ event: 'click_messenger', form_submitted: true, message: message }); // Registrar en dataLayer
-//         }
-//     });
-// });

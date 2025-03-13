@@ -1,13 +1,23 @@
+/* # Son los de plomero.net.ar */
+
 :root {
-    --rojo: #eee;
-    --fondo: #222
+    --rojo: #DC3545;
+    --verde-intenso:#28A745;
+    --azul:#007BFF;
+    --fondo: #222;
+    --gris-claro: #F8F9FA;
+    --gris-oscuro:#343A40;
+    --texto:#343A40;
 }
 
 .scroll-section {
-    margin-top: -4rem;
-    /* Ajusta según sea necesario para que el título sea visible */
-    padding-top: 4rem;
+    /* margin-top: -4rem; */
+    /* Ajusta segÃšn sea necesario para que el tÃ­tulo sea visible */
+    /* padding-top: 4rem; */
     /* Asegura que el contenido no quede oculto por el margen superior negativo */
+
+    margin-top: -6rem; /* Ajustar según sea necesario */
+    padding-top: 7rem; /* Asegura que el título sea visible */
 }
 
 .my-element {
@@ -52,15 +62,15 @@ html {
 }
 
 body {
-    background-color: #528fd8;
+    background-color: var(--gris-claro);
     text-transform: uppercase;
     font-size: 16px;
-    color: white;
+    color: var(--texto);
 }
 
 /* NAV */
 nav {
-    background-color: #528fd8;
+    background-color: var(--gris-claro);
     position: sticky;
     top: 0;
     text-align: center;
@@ -80,11 +90,10 @@ nav li {
 }
 
 a {
-    color: white;
+    color: var(--texto);
 }
 
 nav ul li a {
-    /* color: black; */
     display: inline-block;
     padding: 10px;
     text-decoration: none;
@@ -93,7 +102,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #666;
+    color: var(--verde-intenso);
 
 
 }
@@ -109,7 +118,6 @@ nav ul li a::before {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    /* background-color: #333; */
     vertical-align: middle;
 }
 
@@ -120,7 +128,7 @@ nav ul li a.active::before {
 /* FIN NAV */
 
 .contenedor {
-    background-color: #0573ce;
+    background-color: var(--gris-claro);
     width: 95%;
     margin: auto;
 }
@@ -128,40 +136,28 @@ nav ul li a.active::before {
 header {
     text-align: center;
     font-variant: all-petite-caps;
-    /* background-color: #5099f1; */
 
 }
 
 #contenido-principal {
-    /* padding-top: 40px;
-    padding-bottom: 40px; */
     padding-top: 1em;
     padding-bottom: 1em;
     margin-top: 1em;
     margin-bottom: 4em;
-    /* background: linear-gradient(rgb(51 51 51) 15%, #1a73e8 100%); */
-    /* background-position: center, center; */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
     min-height: 20.345em;
 }
 
 
 header h1 {
     font-size: 4rem;
-    /* color: #FFF; */
 }
 
 header h2 {
     font-size: 3rem;
-    /* color: #fbfbfbc9; */
-    /* color: #fa8231; */
-
 }
 
 header p {
     font-size: 2rem;
-    /* color: #ffffffe3; */
     column-count: 1;
 }
 
@@ -178,13 +174,9 @@ main {
 
 #servicios {
     margin-top: auto;
-    /* padding-top: 5em;
-    padding-bottom: 5em; */
-    /* background-color: #a56a43; */
 }
 
 #servicios-listado {
-    /* background-color: #333; */
     top: 0;
     text-align: center;
     z-index: 1;
@@ -206,14 +198,13 @@ main {
     display: inline-block;
     padding: 10px;
     text-decoration: none;
-    /* color: #ffffffbd; */
     transition: color 0.3s ease-in-out;
     font-size: 0.9em;
 }
 
 #servicios-listado li a:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--verde-intenso);
+    color: var(--gris-claro);
 }
 
 /* h1 al h6 */
@@ -221,7 +212,7 @@ main {
 h3 {
     margin-top: auto;
     font-size: 4rem;
-    color: white;
+    color: #343A40;
     padding: initial;
     margin-bottom: 1em;
 }
@@ -229,22 +220,22 @@ h3 {
 #servicios h2,
 h4 {
     font-size: 3rem;
-    color: white;
+    color: #343A40;
 }
 
 #servicios p {
     font-size: 1.5rem;
-    color: white;
+    color: var(--texto);
 }
 
 #servicios .button1 {
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--gris-oscuro);
+    color: var(--gris-claro);
 }
 
 #servicios .button1:hover {
-    background-color: #528fd8;
-    color: white;
+    background-color: var(--verde-intenso);
+    color: var(--gris-claro);
 }
 
 .servicio {
@@ -288,12 +279,6 @@ h4 {
 
 }
 
-/* #contacto {
-    /* padding-top: 3em;
-    padding-bottom: 3em; */
-/* background: linear-gradient(rgb(51, 51, 51, 0.5) 0%, rgb(189, 230, 78, 0.3) 100%); */
-/* background-color: #1a73e8; 
-} */
 
 #contacto h1 {
     font-size: 4rem;
@@ -303,8 +288,8 @@ h4 {
 #contacto,
 #opciones h2 {
     font-size: 3rem;
-    /* color: white; */
 }
+
 
 #contato p {
     font-size: 1.5rem;
@@ -335,6 +320,7 @@ h4 {
 
 
 footer {
+    color: var(--gris-claro);
     text-align: center;
     text-decoration: none;
     position: static;
@@ -361,7 +347,7 @@ footer a {
     text-align: center;
     padding: 0;
     margin: 0;
-    background-color: #0573ce;
+    background-color: var(--gris-claro);
 }
 
 .box_logo p {
@@ -380,33 +366,35 @@ footer a {
     padding-right: 1em;
     float: left;
     transition: 1s;
+    
 }
 
 .box_footer:hover {
-    /* color: white; */
-    background-color: #0573ce;
+    padding: 10px 20px;
+    border-radius: 0.4em;
+    background-color: var(--azul);
     transition-timing-function: linear;
 }
 
 .box_footer a:hover {
     text-decoration: none;
-    color: white;
+    color: var(--gris-claro);
 }
 
 /* unvisited link */
 a.ciudades_links:link {
-    color: #FFF;
+    color: var(--gris-claro);
 }
 
 /* visited link */
 a.ciudades_links:visited {
-    color: #FFF;
+    color: var(--gris-claro);
 }
 
 /* mouse over link */
 a.ciudades_links:hover {
-    background-color: #528fd8;
-    color: #FFF;
+    background-color: var(--azul);
+    color: var(--gris-claro);
 }
 
 /* selected link */
@@ -429,7 +417,7 @@ a.ciudades_links:hover {
 }
 
 a.ciudades_links:active {
-    color: #FFF;
+    color: var(--gris-claro);
 }
 
 /* Media querys */
@@ -451,7 +439,7 @@ a.ciudades_links:active {
     #servicios h1,
     #contacto h1 {
         font-size: 7rem;
-        color: white;
+        color: var(--texto);
     }
 
     #servicios {
@@ -461,7 +449,7 @@ a.ciudades_links:active {
     }
 
     #servicios p {
-        color: #FFF;
+        color: var(--texto);
     }
 
     #contacto {
@@ -471,7 +459,7 @@ a.ciudades_links:active {
 }
 
 
-/* Estilos para el botón "Subir" */
+/* Estilos para el botÃģn "Subir" */
 .scroll-to-top {
     display: none;
     /* Inicialmente oculto */
@@ -480,7 +468,7 @@ a.ciudades_links:active {
     right: 20px;
     /* background-color: #007bff; */
     /* Color de fondo */
-    color: #fff;
+    color: var(--gris-claro);
     /* Color del texto */
     border-radius: 50%;
     /* Hacerlo circular */
@@ -488,18 +476,18 @@ a.ciudades_links:active {
     text-align: center;
     cursor: pointer;
     z-index: 1000;
-    /* Asegura que esté encima de otros elementos */
+    /* Asegura que estÃĐ encima de otros elementos */
 }
 
-/* Estilos al pasar el mouse por encima del botón */
+/* Estilos al pasar el mouse por encima del botÃģn */
 .scroll-to-top:hover {
     background-color: #d6694b;
     /* Cambia el color de fondo al pasar el mouse por encima */
 }
 
-.button {
+/* .button {
     border: none;
-    /* color: white; */
+    /* color: white;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -509,22 +497,37 @@ a.ciudades_links:active {
     transition-duration: 0.4s;
     cursor: pointer;
     font-variant: normal;
+} */
+
+.button {
+    border: none;
+    /* color: white; */
+    /* padding: 0.6rem 1rem; */
+    padding: 1rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1rem 1rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-variant: normal;
 }
 
 .button1 {
     border-radius: 0.4em;
-    color: black;
-    background-color: white;
+    color: var(--gris-claro);
+    background-color: var(--gris-oscuro);
 }
 
 .button2 {
-    background-color: white;
-    color: black;
+    color: var(--gris-claro);
+    background-color: var(--gris-oscuro);
 }
 
 .button1:hover {
-    color: white;
-    background-color: #528fd8;
+    color: var(--gris-claro);
+    background-color: var(--verde-intenso);
 }
 
 
@@ -560,12 +563,12 @@ a.ciudades_links:active {
 
 /* Boton de ir al pie de la pagina */
 .button-flotante {
-    border: 0.2em solid #5a5a5a;
+    border: 0.2em solid var(--azul);
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #838383;
-    color: #fff;
+    background-color: var(--azul);
+    color: var(--gris-claro);
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -584,7 +587,7 @@ a.ciudades_links:active {
 }
 
 
-/* Mejora en Media Queries para Móviles */
+/* Mejora en Media Queries para MÃģviles */
 @media screen and (max-width: 480px) {
     nav ul {
         display: none;
@@ -597,7 +600,8 @@ a.ciudades_links:active {
         text-align: center;
         cursor: pointer;
         padding: 1rem;
-        background-color: #528fd8;
+        background-color: var(--azul);
+        color: var(--gris-claro);
         text-decoration: underline;
     }
 
@@ -691,24 +695,10 @@ table {
     font-size: 1rem;
 }
 
-/* Ajustar el estilo del placeholder */
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: black !important; /* Color negro para el texto del placeholder */
-    font-size: 1rem; /* Tamaño ajustable, puedes mantenerlo en rem */
-}
-
-/* Ajustar el ancho y altura del campo */
-.select2-container--default .select2-selection--single {
-    height: 2rem; /* Altura del campo */
-    line-height: 3rem; /* Alinear el texto verticalmente */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    border: 1px solid #000; /* Borde negro */
-    width: 100%; /* Ajustar al contenedor, opcional */
-}
-
-/* Mantener texto seleccionado en negro */
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: black !important; /* Texto negro para las opciones seleccionadas */
-    font-size: 1rem; /* Tamaño del texto */
-    line-height: 2rem; /* Centrado vertical */
+#opciones{
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    min-height: 20rem;
+    background-color: var(--verde-intenso);
+    color: var(--gris-claro);
 }

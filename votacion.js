@@ -1,4 +1,6 @@
-
+if (!window.dataLayer) {
+    window.dataLayer = [];
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const visitedKey = 'votacion_mostrada'; // Clave genérica para controlar la aparición

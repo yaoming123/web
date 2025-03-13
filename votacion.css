@@ -1,58 +1,20 @@
-/* #rating-section {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+:root {
+    --rojo: #DC3545;
+    --verde-intenso:#28A745;
+    --azul:#007BFF;
+    --fondo: #222;
+    --gris-claro: #F8F9FA;
+    --gris-oscuro:#343A40;
+    --texto:#343A40;
 }
-
-#rating-section p {
-    margin: 0 0 10px;
-    font-size: 14px;
-    color: #333;
-}
-
-#rating-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-#rating-section .star {
-    font-size: 2rem;
-    cursor: pointer;
-    color: grey;
-    transition: transform 0.3s, color 0.3s;
-}
-
-#rating-section .star:hover,
-#rating-section .star.selected {
-    color: gold;
-    transform: scale(1.2);
-}
-
-#rating-section button {
-    display: inline-block;
-    margin-top: 10px;
-} */
-
-
 
 #rating-section {
     position: fixed;
     bottom: 9px;
     right: 20px;
     width: 300px;
-    background: #0573ce;
-    border: 0.1rem solid #eee;
+    background: var(--gris-claro);
+    border: 0.1rem solid var(--gris-claro);
     /* padding: 20px; */
     border-radius: 1rem;
     z-index: 1000;
@@ -92,8 +54,9 @@
     display: inline-block;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: var(--rojo);
-    color: black;
+    background-color: var(--azul);
+    color: var(--gris-claro);
+    font-family: "Bebas Neue";
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 1rem;
