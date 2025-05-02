@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (message) {
                 const whatsappLink = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(message)}`;
                 trackClick(whatsappButton, 'WhatsApp');
-                window.open(whatsappLink, '_blank');
+                window.open(whatsappLink, '_blank', 'noopener,noreferrer');
             }
         });
     }
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (message) {
                 const messengerLink = `https://www.messenger.com/t/cerrajero.net.ar?text=${encodeURIComponent(message)}`;
                 trackClick(messengerButton, 'Messenger');
-                window.open(messengerLink, '_blank');
+                window.open(messengerLink, '_blank', 'noopener,noreferrer');
             }
         });
     }
