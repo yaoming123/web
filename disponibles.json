@@ -1,5 +1,13 @@
 [
   {
+    "provincia": "córdoba",
+    "localidad": "villa-allende",
+    "barrio": null,
+    "lat": -31.30111362149986,
+    "lon": -64.27312960520747,
+    "url": "/córdoba/villa-allende.html?utm_source=geolocalizacion&utm_campaign=buscador"
+  },
+  {
     "provincia": "santa-fe",
     "localidad": "rafaela",
     "barrio": null,
