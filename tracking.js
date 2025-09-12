@@ -150,14 +150,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Rastrear clics en elementos del menú de navegación
-document.querySelectorAll('nav.a').forEach(function(element) {
+document.body.querySelectorAll('nav a').forEach(function(element) {
     element.addEventListener('click', function() {
-        trackEvent('click', 'navigation', 'menu_click', this.textContent.trim());
+        trackEvent('click', 'navegacion', 'menu_click', this.textContent.trim());
     });
 });
 
 // Rastrear clics en el botón "Publicite Aquí"
-document.querySelectorAll('a.button.button1').forEach(function(element) {
+document.body.querySelectorAll('a.button.button1').forEach(function(element) {
     element.addEventListener('click', function() {
         trackEvent('click', 'anunciantes', 'click_anunciar_aqui', this.href);
     });
