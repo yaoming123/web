@@ -126,8 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const conexion = navigator.connection ? navigator.connection.effectiveType : 'Desconocida';
 
-            // Enviar evento al dataLayer
-            
+            // Enviar evento al dataLayer         
             window.dataLayer.push({
                 'event': 'phone_click',
                 'event_category': 'contact',
@@ -151,16 +150,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Rastrear clics en elementos del menú de navegación
-document.querySelectorAll('nav a').forEach(function(element) {
+document.querySelectorAll('nav.a').forEach(function(element) {
     element.addEventListener('click', function() {
         trackEvent('click', 'navigation', 'menu_click', this.textContent.trim());
     });
 });
 
 // Rastrear clics en el botón "Publicite Aquí"
-document.querySelectorAll('a.back-button').forEach(function(element) {
+document.querySelectorAll('a.button.button1').forEach(function(element) {
     element.addEventListener('click', function() {
-        trackEvent('click', 'advertising', 'advertise_here_click', this.href);
+        trackEvent('click', 'anunciantes', 'click_anunciar_aqui', this.href);
     });
 });
 
