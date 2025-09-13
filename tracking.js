@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Rastrear clics en elementos del menú de navegación
 document.body.querySelectorAll('nav a').forEach(function(element) {
     element.addEventListener('click', function() {
-        trackEvent('click', 'navegacion', 'menu_click', this.textContent.trim());
+        trackEvent('click', 'navegacion', 'click_menu', this.textContent.trim());
     });
 });
 
