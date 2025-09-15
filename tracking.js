@@ -112,17 +112,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Activar phone tracking
     setupPhoneTracking();
 
-    // Menú navegación
-    document.querySelectorAll('nav a').forEach(el => {
-        el.addEventListener('click', function () {
-            trackEvent(this, 'click_menu', 'navegacion', 'click', this.textContent.trim());
-        });
-    });
+    // // Menú navegación
+    // document.querySelectorAll('nav a').forEach(el => {
+    //     el.addEventListener('click', function () {
+    //         trackEvent(this, 'click_menu', 'navegacion', 'click', this.textContent.trim());
+    //     });
+    // });
 
     // Botón "Publicite Aquí"
-    document.querySelectorAll('a.button.button1').forEach(el => {
-        el.addEventListener('click', function () {
-            trackEvent(this, 'click_anunciar_aqui', 'anunciantes', 'click', this.href);
-        });
-    });
+    // document.querySelectorAll('a.button.button1').forEach(el => {
+    //     el.addEventListener('click', function () {
+    //         trackEvent(this, 'click_anunciar_aqui', 'anunciantes', 'click', this.href);
+    //     });
+    // });
 });
