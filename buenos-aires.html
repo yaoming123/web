@@ -3252,10 +3252,10 @@ style="width:80%;">
 
         <p>Al enviar este formulario, confirmas que has leído y aceptas los <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.</p>
         <button id="whatsapp-button" style="margin-top: 2em; width: 80%; height: 4rem; font-family: Bebas Neue"
-            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_whatsapp', 'formulario anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">Enviar por
+            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">Enviar por
             WhatsApp</button>
         <button id="messenger-button" style="margin-top: 2em; width: 80%; height: 4rem; font-family: Bebas Neue"
-            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_messenger', 'formulario anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">Enviar por
+            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">Enviar por
             Messenger</button>
     </form>
 </div>
@@ -3286,22 +3286,26 @@ style="width:80%;">
 
     </div>
 </footer>
-    <!-- Modal -->
-    <div id="modal-aviso" style="display: none;" class="modal-overlay">
-        <div class="modal-contenido">
-            <p id="modal-texto"></p>
-            <div class="modal-botones">
-                <button id="modal-cancelar" class="button button1">Cancelar</button>
-                <button id="modal-continuar" class="button button1">Continuar</button>
-                <a href="#encontrar_proveedor" class="button button1">Buscar otro proveedor en el sitio</a>
-            </div>
-            <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en otras secciones del sitio web, confirmas que has leído y aceptas los 
-        <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
+<!-- Modal -->
+<div id="modal-aviso" style="display: none;" class="modal-overlay">
+    <div class="modal-contenido">
+        <p id="modal-texto"></p>
+        <div class="modal-botones">
+            <button id="modal-cancelar" class="button button1" onclick="trackEvent(this, 'click_cancelar', 'Cancelar', 'click', 'Salir del modal demo')">Cancelar</button>
+            <button id="modal-continuar" class="button button1" onclick="trackEvent(this, 'click_whatsapp', 'Enviar mensaje', 'click', 'Enviar mensaje por whatsapp a serviciosweb.net.ar desde modal demo')">Continuar</button>
+            <a href="#encontrar_proveedor" class="button button1"
+                onclick="trackEvent(this, 'click_buscar_proveedor_geolocalizacion_modal_demo', 'buscar proveedor geolocalización modal demo', 'click', 'buscar proveedor de servicios desde modal demo')">Buscar otro proveedor en el
+                sitio</a>
         </div>
+        <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en otras
+            secciones del sitio web, confirmas que has leído y aceptas los
+            <a href="                    terminos-y-condiciones.html
+">
+                Términos y Condiciones
+            </a>.
+        </p>
     </div>
+</div>
 </body>
 
 <script>
