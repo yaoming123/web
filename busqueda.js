@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return $(`<span style="color: ${color};">${data.text}</span>`);
         }
     });
+    
     $("#barrios").select2({
         placeholder: "Buscar barrios",
         allowClear: true,

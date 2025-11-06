@@ -54,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
         return mensaje; // Devuelve el mensaje según el formulario
     }
-    
-    
 
     // Función para rastrear clics en WhatsApp
     function trackClick(button, contacto) {
@@ -116,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    // Evento para Messenger|
     if (messengerButton) {
         // Evento para Messenger
         messengerButton.addEventListener('click', function () {

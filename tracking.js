@@ -84,7 +84,7 @@ function setupPhoneTracking() {
 
             const numeroTelefono = this.href.replace('tel:', '');
 
-            const data = getCommonTrackingData(this, "phone_click", "contact", "click_tel", "Botón Teléfono");
+            const data = getCommonTrackingData(this, "phone_click", "contacto", "click_tel", "Botón Teléfono");
             data.numero_telefono = numeroTelefono;
 
             window.dataLayer.push(data);
@@ -112,17 +112,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Activar phone tracking
     setupPhoneTracking();
 
-    // // Menú navegación
-    // document.querySelectorAll('nav a').forEach(el => {
-    //     el.addEventListener('click', function () {
-    //         trackEvent(this, 'click_menu', 'navegacion', 'click', this.textContent.trim());
-    //     });
-    // });
-
-    // Botón "Publicite Aquí"
-    // document.querySelectorAll('a.button.button1').forEach(el => {
-    //     el.addEventListener('click', function () {
-    //         trackEvent(this, 'click_anunciar_aqui', 'anunciantes', 'click', this.href);
-    //     });
-    // });
 });
