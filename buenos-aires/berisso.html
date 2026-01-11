@@ -1096,6 +1096,8 @@ style="width:80%;">
 
 
 
+
+
 <script>
   function compartirSeccion() {
     const urlBase = window.location.href;
@@ -1163,8 +1165,9 @@ style="width:80%;">
       const userLon = posicion.coords.longitude;
       const umbral = parseFloat(document.getElementById("umbral-km").value) || 50;
 
-      //       const res = await fetch("../disponibles.json", { signal });
-
+      
+      
+      const res = await fetch("../disponibles.json", { signal });
 
       const data = await res.json();
 

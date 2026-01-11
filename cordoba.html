@@ -93,6 +93,208 @@
 </head>
 
 <body>
+
+
+
+
+
+
+<script>
+  function compartirSeccion() {
+    const urlBase = window.location.href;
+    const urlTag = `${urlBase}?referido=cerrajero_amigo`;
+
+
+    // Compartir vía navegador
+    if (navigator.share) {
+      navigator.share({
+        title: 'Servicios de cerrajería',
+        text: 'Mirá esta sección, quizás te interese anunciarte como cerrajero.',
+        url: urlTag
+      }).catch(console.error);
+    } else {
+      alert("Copiá este link y compartilo: " + urlTag);
+    }
+  }
+
+  function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+
+    // Cierre con tecla Escape
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        cerrarModal();
+      }
+    });
+
+    // Cierre si se hace clic fuera del contenido del modal
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        cerrarModal();
+      }
+    });
+  }
+
+  let estaBuscando = false;
+  let abortController = null;
+
+  async function buscarPorUbicacion() {
+    if (estaBuscando) {
+      console.warn("Búsqueda ya en curso. Cancelando la anterior...");
+      if (abortController) abortController.abort();
+    }
+
+    estaBuscando = true;
+    abortController = new AbortController();
+    const signal = abortController.signal;
+
+    const loader = document.getElementById("loader");
+    const progress = document.getElementById("progress-bar");
+
+    loader.style.display = "block";
+    progress.style.display = "block";
+
+    try {
+      if (!navigator.geolocation) {
+        throw new Error("Tu navegador no permite geolocalización.");
+      }
+
+      const posicion = await obtenerUbicacionConFallback();
+
+      const userLat = posicion.coords.latitude;
+      const userLon = posicion.coords.longitude;
+      const umbral = parseFloat(document.getElementById("umbral-km").value) || 50;
+
+      
+      
+      const res = await fetch("disponibles.json", { signal });
+
+      const data = await res.json();
+
+      data.forEach(item => {
+        item.dist = haversine(userLat, userLon, item.lat, item.lon);
+      });
+
+      const resultados = data
+        .filter(item => item.dist <= umbral)
+        .sort((a, b) => a.dist - b.dist);
+
+      if (resultados.length === 0) {
+        const cont = document.getElementById("modal-contenido");
+        const modal = document.getElementById("modal");
+        modal.style.display = "block";
+        cont.innerHTML = `
+        <!-- <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 1.2rem;">Cantidad de cerrajeros registrados: 2 de 4223 secciones<br>*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p> -->
+        <h2 style="color: red;">⚠️ No hay proveedor de servicios disponibles en tu zona aún.</h2>
+
+        <p style="font-size: 1.2rem;">¿Ofrecés servicios de cerrajería en esta zona?</p>
+
+        <a href="#formulario-publicidad" class="button button1" onclick="trackEvent(this, 'click_anunciar_aqui', 'buscar proveedor geolocalización', 'click', 'Botón Anunciar Aquí')">📣 ¡Anunciate aquí!</a>
+        <a onclick="compartirSeccion();" class="button button1">🗣️ Compartir a un cerrajero conocido</a>
+        <p style="font-size: 1.2rem;">O probá con una distancia máxima más alta.</p>
+
+        <button onclick="cerrarModal(); trackEvent(this, 'click_cerrar_modal_buscador_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'boton cerrar modal buscador geolocalización')" class="button button1">❌ Cerrar</button>
+
+        <p style="font-size: 1.25em; text-align: right; padding: 1em;">
+          Al usar el buscador confirmás que leíste y aceptás 
+          <a href="terminos-y-condiciones.html">
+            Términos y Condiciones
+          </a>.
+        </p>
+        `;
+      } else {
+        mostrarModalMultiples(resultados);
+      }
+
+    } catch (error) {
+      if (error.name === "AbortError") {
+        console.log("Búsqueda anterior cancelada.");
+      } else {
+        console.error("Error en búsqueda por ubicación:", error);
+        alert(error.message);
+      }
+    } finally {
+      loader.style.display = "none";
+      progress.style.display = "none";
+      estaBuscando = false;
+    }
+  }
+
+  // Fallback automático de geolocalización
+  function obtenerUbicacion(opciones) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
+    });
+  }
+
+  async function obtenerUbicacionConFallback() {
+    try {
+      console.log("📍 Intentando con alta precisión...");
+      return await obtenerUbicacion({
+        enableHighAccuracy: true,
+        timeout: 8000,
+        maximumAge: 0
+      });
+    } catch (error) {
+      if (error.code === 2 || error.code === 3) {
+        console.warn("⚠️ Alta precisión falló. Probando con baja precisión...");
+        return await obtenerUbicacion({
+          enableHighAccuracy: false,
+          timeout: 7000,
+          maximumAge: 0
+        });
+      } else if (error.code === 1) {
+        throw new Error("📍 El permiso de geolocalización fue denegado.");
+      } else {
+        throw new Error("❌ No se pudo obtener tu ubicación.");
+      }
+    }
+  }
+
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const toRad = x => x * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function mostrarModalMultiples(zonas) {
+    const modal = document.getElementById("modal");
+    const cont = document.getElementById("modal-contenido");
+
+    function formatoZona(zona) {
+      return [zona.provincia, zona.localidad, zona.barrio]
+        .filter(x => x && x.trim() !== "")
+        .join(", ");
+    }
+
+    cont.innerHTML = `
+      <h2>Servicios disponibles cerca de ti:</h2>
+      <ul style="list-style: none; padding-left: 0; max-height: 70vh; overflow-y: auto;">
+        ${zonas.map(z => `
+          <li style="margin-bottom: 1em; font-size: 1.5rem; border-bottom: dotted; margin-top: 1rem;">
+            <strong>Zona:</strong> ${formatoZona(z)}<br>
+            <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
+            <a href="${z.url}" target="_blank" class="button button1">🔗 Ir a la sección</a>
+          </li>
+        `).join("")}
+      </ul>
+      <button onclick="cerrarModal()" class="button button1">❌ Cerrar</button>
+      <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador y contactar a un proveedor de servicios confirmás que has
+    leído y aceptas <a href="                    terminos-y-condiciones.html
+">
+      Términos y Condiciones
+    </a>.</p>
+    `;
+
+    modal.style.display = "block";
+  }
+</script>
     <a class="button-flotante" href="#footer" aria-label="Ir a la sección del pie de pagina"
         title="Ir a la sección del pie de pagina">⬇️ Pie de Página</a>
 
@@ -3096,205 +3298,7 @@ style="width:80%;">
     });
 
 </script>
-
-
-
-
-<script>
-  function compartirSeccion() {
-    const urlBase = window.location.href;
-    const urlTag = `${urlBase}?referido=cerrajero_amigo`;
-
-
-    // Compartir vía navegador
-    if (navigator.share) {
-      navigator.share({
-        title: 'Servicios de cerrajería',
-        text: 'Mirá esta sección, quizás te interese anunciarte como cerrajero.',
-        url: urlTag
-      }).catch(console.error);
-    } else {
-      alert("Copiá este link y compartilo: " + urlTag);
-    }
-  }
-
-  function cerrarModal() {
-    document.getElementById("modal").style.display = "none";
-
-    // Cierre con tecla Escape
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        cerrarModal();
-      }
-    });
-
-    // Cierre si se hace clic fuera del contenido del modal
-    window.addEventListener("click", function (event) {
-      const modal = document.getElementById("modal");
-      if (event.target === modal) {
-        cerrarModal();
-      }
-    });
-  }
-
-  let estaBuscando = false;
-  let abortController = null;
-
-  async function buscarPorUbicacion() {
-    if (estaBuscando) {
-      console.warn("Búsqueda ya en curso. Cancelando la anterior...");
-      if (abortController) abortController.abort();
-    }
-
-    estaBuscando = true;
-    abortController = new AbortController();
-    const signal = abortController.signal;
-
-    const loader = document.getElementById("loader");
-    const progress = document.getElementById("progress-bar");
-
-    loader.style.display = "block";
-    progress.style.display = "block";
-
-    try {
-      if (!navigator.geolocation) {
-        throw new Error("Tu navegador no permite geolocalización.");
-      }
-
-      const posicion = await obtenerUbicacionConFallback();
-
-      const userLat = posicion.coords.latitude;
-      const userLon = posicion.coords.longitude;
-      const umbral = parseFloat(document.getElementById("umbral-km").value) || 50;
-
-      //       const res = await fetch("disponibles.json", { signal });
-
-
-      const data = await res.json();
-
-      data.forEach(item => {
-        item.dist = haversine(userLat, userLon, item.lat, item.lon);
-      });
-
-      const resultados = data
-        .filter(item => item.dist <= umbral)
-        .sort((a, b) => a.dist - b.dist);
-
-      if (resultados.length === 0) {
-        const cont = document.getElementById("modal-contenido");
-        const modal = document.getElementById("modal");
-        modal.style.display = "block";
-        cont.innerHTML = `
-        <!-- <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 1.2rem;">Cantidad de cerrajeros registrados: 2 de 4223 secciones<br>*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p> -->
-        <h2 style="color: red;">⚠️ No hay proveedor de servicios disponibles en tu zona aún.</h2>
-
-        <p style="font-size: 1.2rem;">¿Ofrecés servicios de cerrajería en esta zona?</p>
-
-        <a href="#formulario-publicidad" class="button button1" onclick="trackEvent(this, 'click_anunciar_aqui', 'buscar proveedor geolocalización', 'click', 'Botón Anunciar Aquí')">📣 ¡Anunciate aquí!</a>
-        <a onclick="compartirSeccion();" class="button button1">🗣️ Compartir a un cerrajero conocido</a>
-        <p style="font-size: 1.2rem;">O probá con una distancia máxima más alta.</p>
-
-        <button onclick="cerrarModal(); trackEvent(this, 'click_cerrar_modal_buscador_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'boton cerrar modal buscador geolocalización')" class="button button1">❌ Cerrar</button>
-
-        <p style="font-size: 1.25em; text-align: right; padding: 1em;">
-          Al usar el buscador confirmás que leíste y aceptás 
-          <a href="terminos-y-condiciones.html">
-            Términos y Condiciones
-          </a>.
-        </p>
-        `;
-      } else {
-        mostrarModalMultiples(resultados);
-      }
-
-    } catch (error) {
-      if (error.name === "AbortError") {
-        console.log("Búsqueda anterior cancelada.");
-      } else {
-        console.error("Error en búsqueda por ubicación:", error);
-        alert(error.message);
-      }
-    } finally {
-      loader.style.display = "none";
-      progress.style.display = "none";
-      estaBuscando = false;
-    }
-  }
-
-  // Fallback automático de geolocalización
-  function obtenerUbicacion(opciones) {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
-    });
-  }
-
-  async function obtenerUbicacionConFallback() {
-    try {
-      console.log("📍 Intentando con alta precisión...");
-      return await obtenerUbicacion({
-        enableHighAccuracy: true,
-        timeout: 8000,
-        maximumAge: 0
-      });
-    } catch (error) {
-      if (error.code === 2 || error.code === 3) {
-        console.warn("⚠️ Alta precisión falló. Probando con baja precisión...");
-        return await obtenerUbicacion({
-          enableHighAccuracy: false,
-          timeout: 7000,
-          maximumAge: 0
-        });
-      } else if (error.code === 1) {
-        throw new Error("📍 El permiso de geolocalización fue denegado.");
-      } else {
-        throw new Error("❌ No se pudo obtener tu ubicación.");
-      }
-    }
-  }
-
-  function haversine(lat1, lon1, lat2, lon2) {
-    const R = 6371;
-    const toRad = x => x * Math.PI / 180;
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-    const a = Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-      Math.sin(dLon / 2) ** 2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  }
-
-  function mostrarModalMultiples(zonas) {
-    const modal = document.getElementById("modal");
-    const cont = document.getElementById("modal-contenido");
-
-    function formatoZona(zona) {
-      return [zona.provincia, zona.localidad, zona.barrio]
-        .filter(x => x && x.trim() !== "")
-        .join(", ");
-    }
-
-    cont.innerHTML = `
-      <h2>Servicios disponibles cerca de ti:</h2>
-      <ul style="list-style: none; padding-left: 0; max-height: 70vh; overflow-y: auto;">
-        ${zonas.map(z => `
-          <li style="margin-bottom: 1em; font-size: 1.5rem; border-bottom: dotted; margin-top: 1rem;">
-            <strong>Zona:</strong> ${formatoZona(z)}<br>
-            <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
-            <a href="${z.url}" target="_blank" class="button button1">🔗 Ir a la sección</a>
-          </li>
-        `).join("")}
-      </ul>
-      <button onclick="cerrarModal()" class="button button1">❌ Cerrar</button>
-      <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador y contactar a un proveedor de servicios confirmás que has
-    leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-      Términos y Condiciones
-    </a>.</p>
-    `;
-
-    modal.style.display = "block";
-  }
-</script><section id="stats-widget" data-price="10000" aria-live="polite">
+<section id="stats-widget" data-price="10000" aria-live="polite">
   <div class="stats-card">
     <header class="stats-head">
       <strong>📊 Estadísticas de este espacio (últimos 30 días)</strong>
