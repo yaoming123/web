@@ -1,5 +1,13 @@
 [
   {
+    "provincia": "buenos-aires",
+    "localidad": "general-rodriguez",
+    "barrio": null,
+    "lat": -34.595718639867926,
+    "lon": -58.93032406876103,
+    "url": "/buenos-aires/general-rodriguez.html?utm_source=geolocalizacion&utm_campaign=buscador"
+  },
+  {
     "provincia": "cordoba",
     "localidad": "villa-allende",
     "barrio": null,

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html lang="es" style="--estado: var(--rojo);">
+
 
 <head>
     <meta charset="UTF-8">
@@ -185,7 +187,6 @@
         const modal = document.getElementById("modal");
         modal.style.display = "block";
         cont.innerHTML = `
-        <!-- <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 1.2rem;">Cantidad de cerrajeros registrados: 2 de 4223 secciones<br>*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p> -->
         <h2 style="color: red;">⚠️ No hay proveedor de servicios disponibles en tu zona aún.</h2>
 
         <p style="font-size: 1.2rem;">¿Ofrecés servicios de cerrajería en esta zona?</p>
@@ -295,8 +296,9 @@
     modal.style.display = "block";
   }
 </script>
-    <a class="button-flotante" href="#footer" aria-label="Ir a la sección del pie de pagina"
-        title="Ir a la sección del pie de pagina">⬇️ Pie de Página</a>
+
+<a class="button-flotante" href="#footer" aria-label="Ir a la sección del pie de pagina"
+    title="Ir a la sección del pie de pagina">⬇️ Pie de Página</a>
 
 
 
@@ -337,7 +339,10 @@
         <li><a href="#stats-widget" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Estadísticas')">📊 Estadísticas</a></li>
     </ul>
     
-    <ul style="background-color: var(--verde-intenso);">
+
+    
+    <ul style="background-color: var(--rojo);">
+
         <li>
             <a href="#" style="color: var(--gris-claro);" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Top')">⬆️ Top</a>
         </li>
@@ -958,7 +963,11 @@
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
 
-            <div id="opciones">
+
+            <div id="opciones" style="background-color: var(--rojo);">
+
+            
+
                 <div class="scroll-section" id="encontrar_proveedor">
 <section id="busqueda-por-ubicacion" class="contenedor"
   style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
@@ -1660,7 +1669,7 @@ style="width:80%;">
 <div id="modal-aviso" style="display: none;" class="modal-overlay">
     <div class="modal-contenido">
         <!-- Texto de prueba -->
-        <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">Cantidad de cerrajeros registrados: 2 de 4223 secciones</p>
+        <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">Cantidad de cerrajeros registrados: 4 de 4223 secciones</p>
         <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p>
         <!-- fin texto de prueba -->
          
