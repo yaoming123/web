@@ -105,7 +105,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--estado, --azul);
+    color: var(--estado, var(--azul));
 
 
 }
@@ -584,7 +584,7 @@ a.ciudades_links:active {
 .button1:hover {
     color: var(--gris-claro);
     /* background-color: var(--verde-intenso); */
-    background-color: var(--estado);
+    background-color: var(--estado, var(--azul))
 
 }
 
