@@ -842,6 +842,13 @@ table {
     margin-bottom: 0.3rem; /* separación entre label e input */
 }
 
-#whatsapp-form input {
+input {
     margin-bottom: 1rem; /* separación debajo del input */
+    width: 80%;
+    height: 3.2rem;
+    padding: 0 0.6rem;
+    color: var(--texto);
+    border: 0.2rem solid var(--azul);
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
 }

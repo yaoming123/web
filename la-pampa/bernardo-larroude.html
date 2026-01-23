@@ -850,31 +850,30 @@
 
 
         <label for="section" >Sección</label>
-        <input id="section" name="section" value="https://www.cerrajero.net.ar/la-pampa/bernardo-larroude.html" readonly
-            style="width: 80%; height: 2rem; background-color: #f0f0f0; color: #333;">
+        <input id="section" name="section" value="https://www.cerrajero.net.ar/la-pampa/bernardo-larroude.html" readonly >
 
         <label for="name">Nombre del Negocio:</label>
         <input id="name" name="name" placeholder="Nombre de usted si es particular, de fantasía o razón social"
-            required="" style="width: 80%; height: 2rem;" type="text">
+            required=""  type="text">
         <label for="cellphone" >Número de Celular (WhatsApp):</label>
         <input id="cellphone" name="cellphone" placeholder="Ejemplo: +5491122413762" required=""
-            style="width: 80%; height: 2rem;" type="text">
+             type="text">
         <label for="phone" >Número de Teléfono Fijo:</label>
-        <input id="phone" name="phone" placeholder="Opcional" style="width: 80%; height: 2rem;"
+        <input id="phone" name="phone" placeholder="Opcional" 
             type="text">
         <label for="address" >Dirección:</label>
         <input id="address" name="address" placeholder="Opcional"
-            style="width: 80%; height: 2rem;" type="text">
+             type="text">
         <label for="mapLink" >Link de Google Maps:</label>
         <input id="mapLink" name="mapLink" placeholder="Opcional"
-            style="width: 80%; height: 2rem;" type="text">
+             type="text">
         <label for="payment" >Medios de Pago que aceptas:</label>
         <input id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia"
-            style="width: 80%; height: 2rem;" type="text">
+             type="text">
         <label for="details" >Detalles adicionales:</label>
         <input id="details" name="details"
             placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, cuéntanos cualquier otro detalle adicional."
-            style="width: 80%; height: 2rem;" type="text">
+             type="text">
 
         <p>Al enviar este formulario, confirmas que has leído y aceptas los <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.</p>
         <button id="whatsapp-button" style="margin-top: 2em; width: 80%; height: 4rem;"
@@ -914,37 +913,32 @@
 
 <div id="modal-aviso" style="display: none;" class="modal-overlay">
     <div class="modal-contenido">
-        <!-- Texto de prueba -->
         <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">Cantidad de cerrajeros registrados: 4 de 4223 secciones</p>
         <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p>
-        <!-- fin texto de prueba -->
          
         <p id="modal-texto"></p>
         <div class="modal-botones">
             <button id="modal-cancelar" class="button button1"
                 onclick="trackEvent(this, 'click_cancelar', 'Cancelar', 'click', 'Salir del modal demo')">❌ Cancelar</button>
             <button id="modal-continuar" class="button button1"
-                onclick="trackEvent(this, 'click_whatsapp', 'Enviar mensaje', 'click', 'Enviar mensaje por whatsapp a serviciosweb.net.ar desde modal demo')">Continuar</button>
+                onclick="trackEvent(this, 'click_whatsapp', 'Enviar mensaje', 'click', 'Enviar mensaje por whatsapp a serviciosweb.net.ar desde modal demo')">✅ Continuar</button>
             <a href="#encontrar_proveedor" class="button button1"
                 onclick="trackEvent(this, 'click_buscar_proveedor_geolocalizacion_modal_demo', 'buscar proveedor geolocalización modal demo', 'click', 'buscar proveedor de servicios desde modal demo')">🔍 Buscar otro proveedor en el sitio</a>
         </div>
-        <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en otras
+        <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en esta y otras
             secciones del sitio web, confirmas que has leído y aceptas los
             <a href="                    ../terminos-y-condiciones.html
-">
-                Términos y Condiciones
-            </a>.
+">Términos y Condiciones</a>.
         </p>
     </div>
 </div>
+
 </body>
 
 <script>
-    // Número de WhatsApp del negocio
     var numeroWhatsApp = "+5491122413762";
     var numeroWhatsAppAnunciante = "None";
 
-    // URLs de Facebook Messenger
     var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
 </script>
 
@@ -955,8 +949,7 @@
             nav.classList.toggle('active');
         });
     });
-</script>
-<script>
+</script><script>
     const modal = document.getElementById("modal-aviso");
     const modalTexto = document.getElementById("modal-texto");
     const modalCancelar = document.getElementById("modal-cancelar");
@@ -983,6 +976,7 @@
         }
     });
 
+
     // Botón de llamar
     const botonLlamar = document.querySelector('a[href^="tel:"]');
     if (botonLlamar) {
@@ -993,7 +987,7 @@
     }
 
     // Botón principal de WhatsApp (contacto)
-    const botonWhatsApp = document.querySelector('a[href*="wa.me"][title*="WhatsApp"]');
+    const botonWhatsApp = document.querySelector('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]');
     if (botonWhatsApp) {
         botonWhatsApp.addEventListener("click", function (e) {
             e.preventDefault();
@@ -1009,6 +1003,8 @@
             mostrarModal("⚠️ No hay un  cerrajero  en este espacio publicitario.\nLos servicios son una demo. Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo (No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).", this.href);
         });
     });
+
+
 
     // Cerrar modal al hacer clic en el enlace Buscar proveedor
     const enlaceBuscarProveedor = document.querySelector('a[href="#encontrar_proveedor"]');
@@ -1044,7 +1040,6 @@
     });
 
 </script>
-
 
 
 

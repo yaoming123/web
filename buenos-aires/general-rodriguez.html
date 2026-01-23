@@ -606,7 +606,9 @@
             href="https://wa.me/+5491126394107?text=%C2%A1Hola%21%20Vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20tengo%20una%20consulta%20sobre%20tus%20servicios."
             onclick="trackDynamicWhatsAppClick(this)"
             target="_blank"
-            rel="noopener noreferrer nofollow">
+            rel="noopener noreferrer nofollow"
+            aria-label="Enviar un WhatsApp"
+            title="Enviar un WhatsApp">
             <i class="fa fa-whatsapp"></i> ¡Haz click para enviar WhatsApp!
         </a>
 
@@ -1088,14 +1090,32 @@ style="width:80%;">
     </div>
 </footer>
 
+ <div id="modal-aviso" style="display: none;" class="modal-overlay">
+
+    <div class="modal-contenido">
+         
+        <p id="modal-texto"></p>
+        <div class="modal-botones">
+            <button id="modal-cancelar" class="button button1"
+                onclick="trackEvent(this, 'click_cancelar', 'Cancelar', 'click', 'Salir del modal demo')">❌ Cancelar</button>
+            <button id="modal-continuar" class="button button1"
+                onclick="trackEvent(this, 'click_whatsapp', 'Enviar mensaje', 'click', 'Enviar mensaje por whatsapp a serviciosweb.net.ar desde modal demo')">✅ Continuar</button>
+            <!-- <a href="#encontrar_proveedor" class="button button1"
+                onclick="trackEvent(this, 'click_buscar_proveedor_geolocalizacion_modal_demo', 'buscar proveedor geolocalización modal demo', 'click', 'buscar proveedor de servicios desde modal demo')">🔍 Buscar otro proveedor en el sitio</a> -->
+        </div>
+        <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en esta y otras
+            secciones del sitio web, confirmas que has leído y aceptas los
+            <a href="                    ../terminos-y-condiciones.html
+">Términos y Condiciones</a>.
+        </p>
+    </div>
+</div>
 </body>
 
 <script>
-    // Número de WhatsApp del negocio
     var numeroWhatsApp = "+5491122413762";
     var numeroWhatsAppAnunciante = "+5491126394107";
 
-    // URLs de Facebook Messenger
     var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
 </script>
 
@@ -1106,8 +1126,98 @@ style="width:80%;">
             nav.classList.toggle('active');
         });
     });
-</script>
+</script><script>
+    const modal = document.getElementById("modal-aviso");
+    const modalTexto = document.getElementById("modal-texto");
+    const modalCancelar = document.getElementById("modal-cancelar");
+    const modalContinuar = document.getElementById("modal-continuar");
 
+    let destinoActual = null;
+
+    function mostrarModal(mensaje, url) {
+        modalTexto.textContent = mensaje;
+        modal.style.display = "flex";
+        destinoActual = url;
+    }
+
+    modalCancelar.addEventListener("click", () => {
+        modal.style.display = "none";
+        destinoActual = null;
+    });
+
+    modalContinuar.addEventListener("click", () => {
+        if (destinoActual) {
+            window.open(destinoActual, "_blank");
+            modal.style.display = "none";
+            destinoActual = null;
+        }
+    });
+
+    texto = "⚠️ Estas por contactarte con un  cerrajero  registrado en este espacio publicitario. Recuerda cerrajero.net.ar no ofrece servicios de cerrajeria, ofrecemos publicidad";
+
+    // Botón de llamar
+    const botonLlamar = document.querySelector('a[href^="tel:"]');
+    if (botonLlamar) {
+        botonLlamar.addEventListener("click", function (e) {
+            e.preventDefault();
+            mostrarModal(texto, this.href);
+        });
+    }
+
+    // Botón principal de WhatsApp (contacto)
+    const botonWhatsApp = document.querySelector('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]');
+    if (botonWhatsApp) {
+        botonWhatsApp.addEventListener("click", function (e) {
+            e.preventDefault();
+            mostrarModal(texto, this.href);
+        });
+    }
+
+    // Botones de servicios (todos los que están en div.servicio)
+    const botonesServicios = document.querySelectorAll("div.servicio a.button1");
+    botonesServicios.forEach(boton => {
+        boton.addEventListener("click", function (e) {
+            e.preventDefault();
+            mostrarModal(texto, this.href);
+        });
+    });
+
+
+
+    // Cerrar modal al hacer clic en el enlace Buscar proveedor
+    const enlaceBuscarProveedor = document.querySelector('a[href="#encontrar_proveedor"]');
+    if (enlaceBuscarProveedor) {
+        enlaceBuscarProveedor.addEventListener("click", () => {
+            modal.style.display = "none";
+            destinoActual = null;
+        });
+    }
+
+    // Cerrar modal si cambia el hash a #encontrar_proveedor
+    window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#encontrar_proveedor') {
+            modal.style.display = "none";
+            destinoActual = null;
+        }
+    });
+
+    // Cerrar el modal si se hace clic fuera del contenido
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            destinoActual = null;
+        }
+    });
+
+    // Cerrar el modal con la tecla Escape
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.style.display === "flex") {
+            modal.style.display = "none";
+            destinoActual = null;
+        }
+    });
+
+</script>
 
 
 
