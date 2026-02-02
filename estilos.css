@@ -850,5 +850,8 @@ input {
     color: var(--texto);
     border: 0.2rem solid var(--azul);
     border-radius: 0.6rem;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
 }

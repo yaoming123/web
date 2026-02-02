@@ -16,6 +16,14 @@
     "url": "/cordoba/villa-allende.html?utm_source=geolocalizacion&utm_campaign=buscador"
   },
   {
+    "provincia": "chubut",
+    "localidad": "puerto-madryn",
+    "barrio": null,
+    "lat": -42.784683963879466,
+    "lon": -65.07052271033828,
+    "url": "/chubut/puerto-madryn.html?utm_source=geolocalizacion&utm_campaign=buscador"
+  },
+  {
     "provincia": "santa-fe",
     "localidad": "rafaela",
     "barrio": null,
