@@ -585,11 +585,13 @@
         </a>
 
             <a class="button button1" href="https://www.instagram.com/llave_sur"
+            onclick="trackEvent(this, 'clic_instagram', 'clic abrir instagram')"
                 target="_blank" rel="noopener noreferrer nofollow">
                 <i class="fa fa-instagram"></i> Síguenos en instagram
             </a>
 
             <a class="button button1" href="https://www.facebook.com/profile.php?id=61585753791358"
+            onclick="trackEvent(this, 'clic_facebook', 'clic abrir facebook')"
                 target="_blank" rel="noopener noreferrer nofollow">
                 <i class="fa fa-facebook"></i> Síguenos en facebook
             </a>
@@ -996,7 +998,10 @@
             nav.classList.toggle('active');
         });
     });
-</script><script>
+</script>
+ 
+
+<script>
     const modal = document.getElementById("modal-aviso");
     const modalTexto = document.getElementById("modal-texto");
     const modalCancelar = document.getElementById("modal-cancelar");
@@ -1023,7 +1028,7 @@
         }
     });
 
-    texto = "⚠️ Estas por contactarte con un  cerrajero  registrado en este espacio publicitario. Recuerda cerrajero.net.ar no ofrece servicios de cerrajeria, ofrecemos publicidad";
+    texto = "⚠️ Estas por contactarte con un cerrajero registrado en este espacio publicitario. Recuerda cerrajero.net.ar no ofrece servicios de cerrajería, ofrecemos publicidad";
 
     // Botón de llamar
     const botonLlamar = document.querySelector('a[href^="tel:"]');
