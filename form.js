@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
             phone = document.getElementById('phone').value || 'No especificado';
             address = document.getElementById('address').value || 'No especificada';
             mapLink = document.getElementById('mapLink').value || 'No especificado';
+            instagramLink = document.getElementById('instagramLink').value || 'No especificado';
+            facebookLink = document.getElementById('facebookLink').value || 'No especificado';
             payment = document.getElementById('payment').value || 'No especificados';
             details = document.getElementById('details').value || 'Sin detalles adicionales';
     
@@ -38,17 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
             - Número de teléfono fijo: ${phone}
             - Dirección: ${address}
             - Enlace de Google Maps: ${mapLink}
+            - Enlace de Instagram: ${instagramLink}
+            - Enlace de Facebook: ${facebookLink}
             - Medios de pago: ${payment}
             - Detalles adicionales: ${details}.
             `;
         } else {
-            alert('No se ha detectado un formulario válido.');
+            // alert('No se ha detectado un formulario válido.');
+            mostrarModalAdvertenciaformulario('No se ha detectado un formulario válido.')
             return null;
         }
     
         // Validar que los campos requeridos estén llenos
         if (!section || !name || !cellphone) {
-            alert('Por favor completa todos los campos requeridos (Sección, Nombre del Negocio y Celular).');
+            // alert('Por favor completa todos los campos requeridos (Sección, Nombre del Negocio y Celular).');
+            mostrarModalAdvertenciaformulario('Por favor completa todos los campos requeridos (Sección, Nombre del Negocio y Celular).');
+            
             return null;
         }
     

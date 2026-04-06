@@ -176,6 +176,7 @@
 
             </div>
 
+
 <section id="galeria-contenedor" class="scroll-section">
   <div class="galeria-grid">
 
@@ -183,26 +184,25 @@
       <div class="slide">
         <img
           src="../imagenes/foto111.png"
-          alt="Foto de ejemplo" onclick="abrirModal(this)" loading="lazy" tabindex="0"
-          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModal(this);}">
+          alt="Foto de ejemplo" onclick="abrirModalGaleria(this)" loading="lazy" tabindex="0"
+          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModalGaleria(this);}">
       </div>
 
       <div class="slide">
         <img
           src="../imagenes/foto222.png"
-          alt="Foto de ejemplo" onclick="abrirModal(this)" loading="lazy" tabindex="0"
-          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModal(this);}">
+          alt="Foto de ejemplo" onclick="abrirModalGaleria(this)" loading="lazy" tabindex="0"
+          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModalGaleria(this);}">
       </div>
 
       <div class="slide">
         <img
           src="../imagenes/foto333.png"
-          alt="Foto de ejemplo" onclick="abrirModal(this)" loading="lazy" tabindex="0"
-          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModal(this);}">
+          alt="Foto de ejemplo" onclick="abrirModalGaleria(this)" loading="lazy" tabindex="0"
+          onkeypress="if(event.key==='Enter'||event.key===' '){abrirModalGaleria(this);}">
       </div>
 
     </div>
-
 
     <button class="prev" aria-label="Anterior">&#10094;</button>
     <button class="next" aria-label="Siguiente">&#10095;</button>
@@ -218,166 +218,7 @@
 </div>
 
 
-<style>
-  .galeria-grid {
-    position: relative;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: .5rem;
-  }
-
-  .galeria-carrusel {
-    display: flex;
-    transition: transform .5s ease-in-out;
-  }
-
-  .galeria-carrusel .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .galeria-carrusel img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid var(--gris-oscuro);
-    border-radius: .5rem;
-    transition: transform .3s ease, border-color .3s ease;
-  }
-
-  .galeria-carrusel img:hover {
-    transform: scale(1.02);
-    border-color: var(--verde-intenso);
-  }
-
-  .prev,
-  .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, .5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 2rem;
-    z-index: 10;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, .8);
-  }
-
-  /* Modal */
-  .modal-foto {
-    display: none;
-    opacity: 0;
-    transition: opacity .3s ease;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background-color: rgba(0, 0, 0, .8);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .modal-foto.visible {
-    display: flex;
-    opacity: 1;
-  }
-
-  .modal-imagen {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #000;
-  }
-
-  .modal-caption {
-    color: var(--gris-claro);
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1.25rem;
-  }
-
-  .cerrar {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 3rem;
-    color: var(--gris-claro);
-    cursor: pointer;
-    user-select: none;
-  }
-
-  /* Flechas dentro del modal */
-  .modal-prev,
-  .modal-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--gris-claro);
-    border: none;
-    padding: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-
-  .modal-prev {
-    left: 20px;
-  }
-
-  .modal-next {
-    right: 20px;
-  }
-
-  .modal-prev:hover,
-  .modal-next:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  /* Escritorio → grid */
-  @media screen and (min-width:825px) {
-    .galeria-carrusel {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      transform: none !important;
-    }
-
-    .galeria-carrusel .slide {
-      min-width: auto;
-    }
-
-    .prev,
-    .next {
-      display: none;
-    }
-
-    .galeria-carrusel img {
-      height: 420px;
-    }
-  }
-</style>
-
-
 <script>
-  // Carrusel
   let index = 0;
   const carrusel = document.querySelector(".galeria-carrusel");
   const slides = Array.from(document.querySelectorAll(".galeria-carrusel .slide"));
@@ -389,10 +230,16 @@
     carrusel.style.transform = `translateX(${-index * 100}%)`;
   }
 
-  document.querySelector(".next").addEventListener("click", () => { index++; mostrarSlide(index); });
-  document.querySelector(".prev").addEventListener("click", () => { index--; mostrarSlide(index); });
+  document.querySelector(".next").addEventListener("click", () => { 
+    index++; 
+    mostrarSlide(index); 
+  });
+  
+  document.querySelector(".prev").addEventListener("click", () => { 
+    index--; 
+    mostrarSlide(index); 
+  });
 
-  // Swipe móvil
   let startX = 0;
   carrusel.addEventListener("touchstart", e => startX = e.touches[0].clientX, { passive: true });
   carrusel.addEventListener("touchend", e => {
@@ -401,13 +248,13 @@
     if (endX - startX > 50) { index--; mostrarSlide(index); }
   });
 
-  // Modal
   const modalFoto = document.getElementById("modalFoto");
   const modalImg = document.getElementById("imgAmpliada");
   const caption = document.getElementById("caption");
   let modalIndex = 0;
 
-  window.abrirModal = function (imgEl) {
+  window.abrirModalGaleria = function (imgEl) {
+    if (!imgEl) return;
     modalIndex = imgs.indexOf(imgEl);
     modalImg.src = imgEl.src;
     modalImg.alt = imgEl.alt || "";
@@ -427,17 +274,16 @@
     modalImg.src = nueva.src;
     modalImg.alt = nueva.alt || "";
     caption.textContent = nueva.alt || "";
-    index = modalIndex; mostrarSlide(index);
+    index = modalIndex; 
+    mostrarSlide(index);
   }
 
-  // Cerrar clic afuera o X
   modalFoto.addEventListener("click", e => {
     if (e.target.id === "modalFoto" || e.target.classList.contains("cerrar")) {
       cerrarModalFoto();
     }
   });
 
-  // Teclado
   document.addEventListener("keydown", e => {
     if (!modalFoto.classList.contains("visible")) return;
     if (e.key === "Escape") cerrarModalFoto();
@@ -462,7 +308,7 @@
                 <a class="button button1" href="tel:null"
         aria-label="Llamar por teléfono (No disponible)"
         title="Llamar por teléfono (No disponible)">
-        <i class="fa fa-phone"></i> ¡Haz click para llamar! (No disponible)
+        <i class="fa fa-phone"></i> ¡Haz clic para llamar! (No disponible)
     </a>
 
     <a class="button button1"
@@ -472,7 +318,7 @@
         rel="noopener noreferrer nofollow"
         aria-label="Enviar un WhatsApp"
         title="Enviar un WhatsApp">
-        <i class="fa fa-whatsapp"></i> ¡Haz click para enviar WhatsApp! (No disponible)
+        <i class="fa fa-whatsapp"></i> ¡Haz clic para enviar WhatsApp! (No disponible)
     </a>
 
 
@@ -547,7 +393,7 @@
             <p>Servicio de cerrajería urgente 24/7 para apertura de autos, camionetas, camiones y todo tipo de vehículos, sin daños. Atención inmediata en toda la zona.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Apertura de automotores"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -566,7 +412,7 @@
             <p>Especialistas en apertura de puertas de hogares, departamentos, comercios, rejas, portones y más. Servicio rápido, seguro y sin roturas.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Apertura en domicilios"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -585,7 +431,7 @@
             <p>Abrimos cajas fuertes de todas las marcas y modelos sin romper, con técnicas profesionales de cerrajería de alta seguridad.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Apertura de cajas fuertes"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -604,7 +450,7 @@
             <p>Asistencia profesional para aperturas judiciales autorizadas. Trabajamos junto a oficiales de justicia respetando todos los protocolos legales.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Apertura judiciales"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -623,7 +469,7 @@
             <p>Instalación profesional de cerraduras de alta seguridad, electrónicas, multipunto y tradicionales para hogares, oficinas y negocios.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Instalación de cerraduras"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -642,7 +488,7 @@
             <p>Reparamos todo tipo de cerraduras, bombines y mecanismos dañados, extendiendo la vida útil y recuperando la seguridad de sus accesos.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Reparación de cerraduras"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -661,7 +507,7 @@
             <p>Cambio de cerraduras tradicionales, de alta seguridad, electrónicas y especiales. Servicio rápido para domicilios, comercios y vehículos.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Cambio de cerraduras"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -680,7 +526,7 @@
             <p>Cambio de combinaciones y reprogramación de cerraduras electrónicas, cajas fuertes y sistemas de acceso seguro, con máxima confidencialidad.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Cambio de combinaciones"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -699,7 +545,7 @@
             <p>Copiado y programación de llaves codificadas para autos, motos y sistemas de alta seguridad. Trabajamos con todas las marcas y modelos.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Llaves codificadas"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -718,7 +564,7 @@
             <p>Cerrajero de urgencias disponible 24 horas, los 365 días. Aperturas, cambios de cerraduras y soluciones rápidas en situaciones críticas.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Servicios de urgencias"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -737,7 +583,7 @@
             <p>Realizamos copias de llaves tradicionales, codificadas y de alta seguridad con máxima precisión y calidad garantizada.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Copias de llaves"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -756,7 +602,7 @@
             <p>Instalamos y reparamos sistemas de automatización para portones corredizos, levadizos y batientes. Soluciones seguras y duraderas.</p>
             <div class="servicio">
                     <a class="button button1"
-    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20auspicia%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
+    href="https://wa.me/+5491122413762?text=Hola%2C%20bienvenido/a%21%F0%9F%91%8B%20Seguro%20vienes%20de%20https%3A//www.cerrajero.net.ar/neuquen/el-cholar.html%20%F0%9F%94%A7%F0%9F%A7%B0%E2%9A%A1%0APronto%20habr%C3%A1%20un%20cerrajero%20disponible%20aqu%C3%AD.%0ASi%20conoces%20a%20alguien%20en%20el%20rubro%2C%20recomi%C3%A9ndales%20este%20sitio.%0A%C2%A1Estamos%20buscando%20nuevos%20anunciantes%21%20%C2%A1Gracias%21%20%F0%9F%99%8C%F0%9F%93%A2%0A%0A%2AServicios%20Web%3A%2A%0AEncuentra%20un%20profesional%20o%20an%C3%BAnciate%20en%20nuestros%20otros%20sitios%3A%0A-%20plomero.net.ar%0A-%20electricista.net.ar%0A%0ASi%20tienes%20alguna%20sugerencia%20o%20comentario%2C%20%C2%A1ser%C3%A1%20muy%20bienvenido%21%20%F0%9F%98%8A"
     data-servicio="Consultar por Automatización de portones"
     onclick="trackDynamicWhatsAppClick(this)"
     aria-label="Consultar sobre el servicio por whatsapp"
@@ -782,61 +628,29 @@
             
                 <div class="scroll-section" id="encontrar_proveedor">
 <section id="busqueda-por-ubicacion" class="contenedor"
-  style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-  <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-  <p>Escribe una distancia maxima para mostrar resultados y si hay proveedores aparecerán del mas cercano al mas lejano
-  </p>
-  <label>
-    Distancia máxima (km):
-    <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-  </label>
-  <br><br>
-  <button onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')" class="button button1">🔍 Buscar
-    proveedor de servicios</button>
-  <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que has
-    leído y aceptas <a href="                    ../terminos-y-condiciones.html
+    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
+    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
+
+    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
+
+    <label>
+        Distancia máxima (km):
+        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
+    </label>
+
+    <br><br>
+    <button
+        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
+        class="button button1">🔍 Buscar
+        proveedor de servicios</button>
+        
+    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
+        has
+        leído y aceptas <a href="                    ../terminos-y-condiciones.html
 ">
-      Términos y Condiciones
-    </a>.</p>
+            Términos y Condiciones
+        </a>.</p>
 
-  <div id="modal"
-    style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.7); z-index: 9999; padding: 0.5em;">
-    <div id="modal-contenido"
-      style="background: #fff; max-width: 600px; margin: 5% auto; padding: 2em; border-radius: 8px;"></div>
-  </div>
-  <div id="loader" style="display: none; text-align: center; font-size: 1.2rem; padding: 1em;">
-    🔍 Buscando zonas cercanas...
-  </div>
-  <div id="progress-bar" style="
-  width: 100%;
-  height: 4px;
-  background-color: #eee;
-  overflow: hidden;
-  display: none;
-">
-    <div style="
-    height: 100%;
-    width: 40%;
-    background-color: var(--rojo, red);
-    animation: progressMove 2s infinite;
-  "></div>
-  </div>
-
-  <style>
-    @keyframes progressMove {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      50% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-  </style>
 </section>                </div>
             </div>
 
@@ -844,42 +658,54 @@
 
 <div class="scroll-section" id="formulario-publicidad">
     <h3>Formulario para publicitar aquí</h3>
-    <p>Este espacio publicitario se encuentra sin un proveedor de servicios. ¿Ofrecés de servicios de cerrajería? <br> ¡Este espacio esta disponible, publicita aquí!</p>
+    <p>Este espacio publicitario se encuentra sin un proveedor de servicios. ¿Ofrecés servicios de cerrajería?
+        <br> ¡Este espacio está disponible, anunciate aquí!</p>
     <form id="whatsapp-form">
 
-
-        <label for="section" >Sección</label>
-        <input id="section" name="section" value="https://www.cerrajero.net.ar/neuquen/el-cholar.html" readonly >
+        <input id="section" name="section" value="https://www.cerrajero.net.ar/neuquen/el-cholar.html" readonly style="visibility: hidden;">
 
         <label for="name">Nombre del Negocio:</label>
         <input id="name" name="name" placeholder="Nombre de usted si es particular, de fantasía o razón social"
-            required=""  type="text">
-        <label for="cellphone" >Número de Celular (WhatsApp):</label>
-        <input id="cellphone" name="cellphone" placeholder="Ejemplo: +5491122413762" required=""
-             type="text">
-        <label for="phone" >Número de Teléfono Fijo:</label>
-        <input id="phone" name="phone" placeholder="Opcional" 
-            type="text">
-        <label for="address" >Dirección:</label>
-        <input id="address" name="address" placeholder="Opcional"
-             type="text">
-        <label for="mapLink" >Link de Google Maps:</label>
-        <input id="mapLink" name="mapLink" placeholder="Opcional"
-             type="text">
-        <label for="payment" >Medios de Pago que aceptas:</label>
-        <input id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia"
-             type="text">
-        <label for="details" >Detalles adicionales:</label>
-        <input id="details" name="details"
-            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, cuéntanos cualquier otro detalle adicional."
-             type="text">
+            required="" type="text">
+            
+        <label for="cellphone">Número de Celular (WhatsApp):</label>
+        <input id="cellphone" name="cellphone" placeholder="Ejemplo: +5491122413762" required="" type="text">
 
-        <p>Al enviar este formulario, confirmas que has leído y aceptas los <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.</p>
-        <button id="whatsapp-button" style="margin-top: 2em; width: 80%; height: 4rem;"
-            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">Enviar por
+        <label for="phone">Número de Teléfono Fijo:</label>
+        <input id="phone" name="phone" placeholder="Opcional" type="text">
+
+        <label for="address">Dirección:</label>
+        <input id="address" name="address" placeholder="Opcional" type="text">
+
+        <label for="mapLink">Link de Google Maps:</label>
+        <input id="mapLink" name="mapLink" placeholder="Opcional" type="text">
+
+        <label for="instagramLink">Link de Instagram:</label>
+        <input id="instagramLink" name="instagramLink" placeholder="Opcional" type="text">
+
+        <label for="facebookLink">Link de Facebook:</label>
+        <input id="facebookLink" name="facebookLink" placeholder="Opcional" type="text">
+
+        <label for="payment">Medios de Pago que aceptás:</label>
+        <input id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia" type="text">
+
+        <label for="details">Detalles adicionales:</label>
+        <input id="details" name="details"
+            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, contanos cualquier otro detalle adicional."
+            type="text">
+
+        <p>Al enviar este formulario, confirmás que leíste y aceptás<a
+                href="../terminos-y-condiciones.html">Términos
+                y Condiciones</a>.</p>
+        <button id="whatsapp-button" style="margin-top: 2em; width: 80%; height: 4rem;" type="button"
+            class="button button1"
+            onclick="trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">Enviar
+            por
             WhatsApp</button>
-        <button id="messenger-button" style="margin-top: 2em; width: 80%; height: 4rem;"
-            type="button" class="button button1" onclick="trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">Enviar por
+        <button id="messenger-button" style="margin-top: 2em; width: 80%; height: 4rem;" type="button"
+            class="button button1"
+            onclick="trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">Enviar
+            por
             Messenger</button>
     </form>
 </div>
@@ -910,151 +736,307 @@
     </div>
 </footer>
 
-<div id="modal-aviso" style="display: none;" class="modal-overlay">
-    <div class="modal-contenido">
-        <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">Cantidad de cerrajeros registrados: 1 de 4223 secciones</p>
-        <p style="color: var(--texto);text-decoration: underline;text-align: left;font-size: 0.75rem;">*Las secciones incluyen provincias, ciudades, localidades y barrios del sitio.*</p>
-         
-        <p id="modal-texto"></p>
-        <div class="modal-botones">
-            <button id="modal-cancelar" class="button button1"
-                onclick="trackEvent(this, 'click_cancelar', 'Cancelar', 'click', 'Salir del modal demo')">❌ Cancelar</button>
-            <button id="modal-continuar" class="button button1"
-                onclick="trackEvent(this, 'click_whatsapp', 'Enviar mensaje', 'click', 'Enviar mensaje por whatsapp a serviciosweb.net.ar desde modal demo')">✅ Continuar</button>
-            <a href="#encontrar_proveedor" class="button button1"
-                onclick="trackEvent(this, 'click_buscar_proveedor_geolocalizacion_modal_demo', 'buscar proveedor geolocalización modal demo', 'click', 'buscar proveedor de servicios desde modal demo')">🔍 Buscar otro proveedor en el sitio</a>
-        </div>
-        <p style="margin-bottom: 1em;">Al llamar, mandar un mensaje o buscar un proveedor de servicios en esta y otras
-            secciones del sitio web, confirmas que has leído y aceptas los
-            <a href="                    ../terminos-y-condiciones.html
-">Términos y Condiciones</a>.
-        </p>
-    </div>
+
+
+
+<script>
+  // Copiar datos del proveedor
+  function copiarDatosProveedor() {
+    const nombre = document.getElementById('modal-nombre')?.textContent || 'No disponible';
+    const telefono = document.getElementById('modal-telefono')?.textContent || 'No disponible';
+    const ubicacion = document.getElementById('modal-ubicacion')?.textContent || 'No disponible';
+    const pagado = document.getElementById('modal-pagado')?.textContent || 'No disponible';
+
+    const datos = `Nombre: ${nombre}
+    Teléfono: ${telefono}
+    Ubicación: ${ubicacion}
+    Pagado por: ${pagado}
+    Fuente: cerrajero.net.ar`;
+
+    navigator.clipboard.writeText(datos).then(() => {
+      alert('✅ Datos copiados al portapapeles');
+    }).catch(() => {
+      alert('No se pudo copiar. Intenta nuevamente.');
+    });
+  }
+
+  // Descargar modal como imagen
+  function descargarModalImagen() {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    script.onload = function () {
+      const modalContent = document.getElementById('modal-content');
+      html2canvas(modalContent, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        allowTaint: true,
+        useCORS: true
+      }).then(canvas => {
+        const link = document.createElement('a');
+        const nombre = document.getElementById('modal-nombre')?.textContent || 'proveedor';
+        const fecha = new Date().toLocaleDateString('es-AR');
+        link.href = canvas.toDataURL('image/png');
+        link.download = `${nombre}_${fecha}.png`;
+        link.click();
+      }).catch(error => {
+        console.error('Error al descargar:', error);
+        alert('No se pudo descargar la imagen. Intenta nuevamente.');
+      });
+    };
+    document.head.appendChild(script);
+  }
+
+</script>
+<div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-contenido">
+    <img src="../logo.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy" style="width: 15rem; height: 15rem;">
+    
+    <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+    <div id="modal-content"></div>
+  </div>
 </div>
 
-</body>
-
-<script>
-    var numeroWhatsApp = "+5491122413762";
-    var numeroWhatsAppAnunciante = "None";
-
-    var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const nav = document.querySelector('nav');
-        nav.addEventListener('click', function () {
-            nav.classList.toggle('active');
-        });
-    });
-</script><script>
-    const modal = document.getElementById("modal-aviso");
-    const modalTexto = document.getElementById("modal-texto");
-    const modalCancelar = document.getElementById("modal-cancelar");
-    const modalContinuar = document.getElementById("modal-continuar");
-
-    let destinoActual = null;
-
-    function mostrarModal(mensaje, url) {
-        modalTexto.textContent = mensaje;
-        modal.style.display = "flex";
-        destinoActual = url;
-    }
-
-    modalCancelar.addEventListener("click", () => {
-        modal.style.display = "none";
-        destinoActual = null;
-    });
-
-    modalContinuar.addEventListener("click", () => {
-        if (destinoActual) {
-            window.open(destinoActual, "_blank");
-            modal.style.display = "none";
-            destinoActual = null;
-        }
-    });
-
-
-    // Botón de llamar
-    const botonLlamar = document.querySelector('a[href^="tel:"]');
-    if (botonLlamar) {
-        botonLlamar.addEventListener("click", function (e) {
-            e.preventDefault();
-            mostrarModal("⚠️ No hay un  cerrajero  en este espacio publicitario. Este botón es informativo.", null);
-        });
-    }
-
-    // Botón principal de WhatsApp (contacto)
-    const botonWhatsApp = document.querySelector('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]');
-    if (botonWhatsApp) {
-        botonWhatsApp.addEventListener("click", function (e) {
-            e.preventDefault();
-            mostrarModal("⚠️ No hay un  cerrajero  en este espacio publicitario. Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo (No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).", this.href);
-        });
-    }
-
-    // Botones de servicios (todos los que están en div.servicio)
-    const botonesServicios = document.querySelectorAll("div.servicio a.button1");
-    botonesServicios.forEach(boton => {
-        boton.addEventListener("click", function (e) {
-            e.preventDefault();
-            mostrarModal("⚠️ No hay un  cerrajero  en este espacio publicitario.\nLos servicios son una demo. Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo (No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).", this.href);
-        });
-    });
-
-
-
-    // Cerrar modal al hacer clic en el enlace Buscar proveedor
-    const enlaceBuscarProveedor = document.querySelector('a[href="#encontrar_proveedor"]');
-    if (enlaceBuscarProveedor) {
-        enlaceBuscarProveedor.addEventListener("click", () => {
-            modal.style.display = "none";
-            destinoActual = null;
-        });
-    }
-
-    // Cerrar modal si cambia el hash a #encontrar_proveedor
-    window.addEventListener('hashchange', () => {
-        if (window.location.hash === '#encontrar_proveedor') {
-            modal.style.display = "none";
-            destinoActual = null;
-        }
-    });
-
-    // Cerrar el modal si se hace clic fuera del contenido
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            destinoActual = null;
-        }
-    });
-
-    // Cerrar el modal con la tecla Escape
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && modal.style.display === "flex") {
-            modal.style.display = "none";
-            destinoActual = null;
-        }
-    });
-
-</script>
-
-
-
 
 
 <script>
+
+  const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modal-content");
+  const closeBtn = document.getElementById("modal-close-btn");
+  let abortController = null;
+
+  // Cerrar modal
+  function cerrarModal() {
+    modal.classList.remove("active");
+    abortController = null;
+  }
+
+  function abrirModal(html) {
+    modalContent.innerHTML = html;
+    modal.classList.add("active");
+  }
+
+  closeBtn.addEventListener("click", cerrarModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) cerrarModal();
+  });
+
+  
+  function mostrarModalAdvertencia(mensaje, url = null) {
+    let html = `
+      <h1 id="modal-title">⚠️ Aviso Importante</h1>
+      <p>${mensaje}</p>
+      <div style="margin-top: 1.5rem;">
+    `;
+
+    if (url) {
+      html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
+    }
+    
+    html += `
+        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+      </div>
+      <div class="modal-legal">
+        Al contactar, confirmas que aceptas 
+        <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+  
+  function mostrarModalAdvertenciaDemo(titulo, mensaje, url = null) {
+      let html = `       
+        <h1 id="modal-title">${titulo}</h1>
+        <p>${mensaje}</p>
+
+        <div class="disclosure-section" style="margin-top: 1.5rem; border: 1px solid #dadce0; border-radius: 8px;">
+          
+          <button class="disclosure-header expanded"
+            onclick="if(this.nextElementSibling){this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('expanded');}"
+            style="padding: 16px; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 14px; font-weight: 500; color: #202124;">
+            <span>ℹ️ Acerca del anunciante</span>
+            <span style="transition: transform 0.3s; display: inline-block;">▼</span>
+          </button>
+          
+          <div class="disclosure-content expanded" style="max-height: 1000px; overflow: hidden; background: white;">
+            <div style="padding: 16px; border-top: 1px solid #dadce0;">
+
+              <div style="display: grid; gap: 12px;">
+
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Nombre del negocio</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-nombre">None</span>
+                </div>
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Teléfono</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-telefono">None</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Sección</span>
+                  
+                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-ubicacion";">
+                  neuquén, el cholar
+                  </span>
+              
+                  </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Pagado por</span>
+                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-pagado">None</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Anunciando desde</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-pagado">None</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>        
+
+        <div style="margin-top: 1.5rem;">
+      `;
+
+      if (url) {
+        html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
+      }
+      
+      html += `
+          <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+        </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+          <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
+          <span style="color: #202124; font-size: 13px;" id="modal-pagado">
+            <p id="reloj">18/03/2026, 09:26:39</p>
+          </span>
+        </div>
+
+        <a onclick="copiarDatosProveedor()" href="#" style="font-size: 1rem; float: inline-start;">📋 Copiar al portapapeles esta información</a><br>
+        <a onclick="descargarModalImagen()" href="#" style="font-size: 1rem; float: inline-start;">⬇️ Descargar imagen de esta información</a><br>
+        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante
+
+        </a>
+        <div class="modal-legal">
+          Al contactar, confirmas que aceptas 
+          <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+        </div>
+      `;
+
+      abrirModal(html);
+    }
+  
+
+  
+  function mostrarModalAdvertenciaformulario(mensaje, url = null) {
+    let html = `
+      <h1 id="modal-title">⚠️ Aviso Importante</h1>
+      <p>${mensaje}</p>
+      <div style="margin-top: 1.5rem;">
+    `;
+    
+    html += `
+        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+      </div>
+      <div class="modal-legal">
+        Al enviar el formulario, confirmas que has leído y aceptas 
+        <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalSinResultados() {
+    const html = `
+      <h1 id="modal-title">📍 Búsqueda por Geolocalización</h1>
+      <h2>⚠️ No hay proveedor disponible en tu zona aún</h2>
+      <p>¿Ofrecés servicios de cerrajería en esta zona?</p>
+      
+      <div style="margin: 1.5rem 0;">
+        <a href="#formulario-publicidad" class="button">📣 ¡Anunciate aquí!</a>
+        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
+      </div>
+
+      <p>O probá con una distancia máxima más alta.</p>
+      
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+
+      <div class="modal-legal">
+        Al usar el buscador, confirmas que aceptas 
+        <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalResultados(zonas) {
+    const formatoZona = (zona) => {
+      return [zona.provincia, zona.localidad, zona.barrio]
+        .filter(x => x && x.trim() !== "")
+        .join(", ");
+    };
+
+    let html = `
+      <h1 id="modal-title">📍 Proveedores Cercanos</h1>
+      <p>Se encontraron <strong>${zonas.length}</strong> resultado(s):</p>
+      <ul>
+    `;
+
+    zonas.forEach(z => {
+      html += `
+        <li>
+          <strong>Zona:</strong> ${formatoZona(z)}<br>
+          <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
+          <a href="${z.url}" target="_blank" class="button">🔗 Ver sección</a>
+        </li>
+      `;
+    });
+
+    html += `
+      </ul>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalError(mensaje) {
+    const html = `
+      <h1 id="modal-title">📍 Error en la Búsqueda</h1>
+      <p><strong>${mensaje}</strong></p>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar e Intentar de Nuevo</button>
+    `;
+    abrirModal(html);
+  }
+
+  
   function compartirSeccion() {
     const urlBase = window.location.href;
     const urlTag = `${urlBase}?referido=cerrajero_amigo`;
 
-
-    // Compartir vía navegador
     if (navigator.share) {
       navigator.share({
-        title: 'Servicios de cerrajería',
-        text: 'Mirá esta sección, quizás te interese anunciarte como cerrajero.',
+        title: `Servicios de cerrajería`,
+        text: `Mirá esta sección, quizás te interese anunciarte como cerrajero.`,
         url: urlTag
       }).catch(console.error);
     } else {
@@ -1062,110 +1044,6 @@
     }
   }
 
-  function cerrarModal() {
-    document.getElementById("modal").style.display = "none";
-
-    // Cierre con tecla Escape
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        cerrarModal();
-      }
-    });
-
-    // Cierre si se hace clic fuera del contenido del modal
-    window.addEventListener("click", function (event) {
-      const modal = document.getElementById("modal");
-      if (event.target === modal) {
-        cerrarModal();
-      }
-    });
-  }
-
-  let estaBuscando = false;
-  let abortController = null;
-
-  async function buscarPorUbicacion() {
-    if (estaBuscando) {
-      console.warn("Búsqueda ya en curso. Cancelando la anterior...");
-      if (abortController) abortController.abort();
-    }
-
-    estaBuscando = true;
-    abortController = new AbortController();
-    const signal = abortController.signal;
-
-    const loader = document.getElementById("loader");
-    const progress = document.getElementById("progress-bar");
-
-    loader.style.display = "block";
-    progress.style.display = "block";
-
-    try {
-      if (!navigator.geolocation) {
-        throw new Error("Tu navegador no permite geolocalización.");
-      }
-
-      const posicion = await obtenerUbicacionConFallback();
-
-      const userLat = posicion.coords.latitude;
-      const userLon = posicion.coords.longitude;
-      const umbral = parseFloat(document.getElementById("umbral-km").value) || 50;
-
-      
-      
-      const res = await fetch("../disponibles.json", { signal });
-
-      const data = await res.json();
-
-      data.forEach(item => {
-        item.dist = haversine(userLat, userLon, item.lat, item.lon);
-      });
-
-      const resultados = data
-        .filter(item => item.dist <= umbral)
-        .sort((a, b) => a.dist - b.dist);
-
-      if (resultados.length === 0) {
-        const cont = document.getElementById("modal-contenido");
-        const modal = document.getElementById("modal");
-        modal.style.display = "block";
-        cont.innerHTML = `
-        <h2 style="color: red;">⚠️ No hay proveedor de servicios disponibles en tu zona aún.</h2>
-
-        <p style="font-size: 1.2rem;">¿Ofrecés servicios de cerrajería en esta zona?</p>
-
-        <a href="#formulario-publicidad" class="button button1" onclick="trackEvent(this, 'click_anunciar_aqui', 'buscar proveedor geolocalización', 'click', 'Botón Anunciar Aquí')">📣 ¡Anunciate aquí!</a>
-        <a onclick="compartirSeccion();" class="button button1">🗣️ Compartir a un cerrajero conocido</a>
-        <p style="font-size: 1.2rem;">O probá con una distancia máxima más alta.</p>
-
-        <button onclick="cerrarModal(); trackEvent(this, 'click_cerrar_modal_buscador_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'boton cerrar modal buscador geolocalización')" class="button button1">❌ Cerrar</button>
-
-        <p style="font-size: 1.25em; text-align: right; padding: 1em;">
-          Al usar el buscador confirmás que leíste y aceptás 
-          <a href="../terminos-y-condiciones.html">
-            Términos y Condiciones
-          </a>.
-        </p>
-        `;
-      } else {
-        mostrarModalMultiples(resultados);
-      }
-
-    } catch (error) {
-      if (error.name === "AbortError") {
-        console.log("Búsqueda anterior cancelada.");
-      } else {
-        console.error("Error en búsqueda por ubicación:", error);
-        alert(error.message);
-      }
-    } finally {
-      loader.style.display = "none";
-      progress.style.display = "none";
-      estaBuscando = false;
-    }
-  }
-
-  // Fallback automático de geolocalización
   function obtenerUbicacion(opciones) {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
@@ -1174,7 +1052,6 @@
 
   async function obtenerUbicacionConFallback() {
     try {
-      console.log("📍 Intentando con alta precisión...");
       return await obtenerUbicacion({
         enableHighAccuracy: true,
         timeout: 8000,
@@ -1182,14 +1059,13 @@
       });
     } catch (error) {
       if (error.code === 2 || error.code === 3) {
-        console.warn("⚠️ Alta precisión falló. Probando con baja precisión...");
         return await obtenerUbicacion({
           enableHighAccuracy: false,
           timeout: 7000,
           maximumAge: 0
         });
       } else if (error.code === 1) {
-        throw new Error("📍 El permiso de geolocalización fue denegado.");
+        throw new Error("El permiso de geolocalización fue denegado.");
       } else {
         throw new Error("❌ No se pudo obtener tu ubicación.");
       }
@@ -1207,37 +1083,112 @@
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
-  function mostrarModalMultiples(zonas) {
-    const modal = document.getElementById("modal");
-    const cont = document.getElementById("modal-contenido");
+  async function buscarPorUbicacion() {
+    if (abortController) abortController.abort();
+    abortController = new AbortController();
 
-    function formatoZona(zona) {
-      return [zona.provincia, zona.localidad, zona.barrio]
-        .filter(x => x && x.trim() !== "")
-        .join(", ");
+    try {
+      if (!navigator.geolocation) {
+        throw new Error("Tu navegador no permite geolocalización.");
+      }
+
+      abrirModal(`
+        <div id="loader">
+          <div class="spinner"></div>
+          <p>Buscando proveedores cercanos...</p>
+        </div>
+        <div id="progress-bar"></div>
+      `);
+
+      const posicion = await obtenerUbicacionConFallback();
+      const userLat = posicion.coords.latitude;
+      const userLon = posicion.coords.longitude;
+      const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+
+      const res = await fetch("../disponibles.json", { signal: abortController.signal });
+      const data = await res.json();
+
+      data.forEach(item => {
+        item.dist = haversine(userLat, userLon, item.lat, item.lon);
+      });
+
+      const resultados = data
+        .filter(item => item.dist <= umbral)
+        .sort((a, b) => a.dist - b.dist);
+
+      if (resultados.length === 0) {
+        mostrarModalSinResultados();
+      } else {
+        mostrarModalResultados(resultados);
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        mostrarModalError(error.message);
+      }
+    }
+  }
+
+ 
+  
+  document.addEventListener("click", function(e) {
+    
+      if (e.target.matches('a[href^="tel:"]')) {
+      e.preventDefault();
+      mostrarModalAdvertencia(
+        `⚠️ No hay un cerrajero en este espacio publicitario. Este boton es una demostración. <br><b>cerrajero.net.ar no ofrece servicios de cerrajería, solo publicidad.</b>`,
+        e.target.href
+      );
     }
 
-    cont.innerHTML = `
-      <h2>Servicios disponibles cerca de ti:</h2>
-      <ul style="list-style: none; padding-left: 0; max-height: 70vh; overflow-y: auto;">
-        ${zonas.map(z => `
-          <li style="margin-bottom: 1em; font-size: 1.5rem; border-bottom: dotted; margin-top: 1rem;">
-            <strong>Zona:</strong> ${formatoZona(z)}<br>
-            <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
-            <a href="${z.url}" target="_blank" class="button button1">🔗 Ir a la sección</a>
-          </li>
-        `).join("")}
-      </ul>
-      <button onclick="cerrarModal()" class="button button1">❌ Cerrar</button>
-      <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador y contactar a un proveedor de servicios confirmás que has
-    leído y aceptas <a href="                    ../terminos-y-condiciones.html
-">
-      Términos y Condiciones
-    </a>.</p>
-    `;
+      if (e.target.matches('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>(No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).</b>`,
+          e.target.href
+        );
+      }
 
-    modal.style.display = "block";
-  }
+      if (e.target.matches('div.servicio a.button1')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>(No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).</b>`,
+          e.target.href
+        );
+      }
+
+      if (e.target.matches('#contacto a[href*="instagram.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo, <br><b>estás por visitar el Instagram de serviciosweb.net.ar</b>`,
+          e.target.href
+        );
+      }
+
+      if (e.target.matches('#contacto a[href*="facebook.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo. <br><b>Estás por visitar el facebook de serviciosweb.net.ar</b>`,
+          e.target.href
+        );
+      }
+    });
+
+</script></body>
+
+<script>
+    var numeroWhatsApp = "+5491122413762";
+    var numeroWhatsAppAnunciante = "None";
+
+    var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('nav');
+        nav.addEventListener('click', function () {
+            nav.classList.toggle('active');
+        });
+    });
 </script><section id="stats-widget" data-price="10000" aria-live="polite">
   <div class="stats-card">
     <header class="stats-head">
@@ -1257,8 +1208,7 @@
       <div class="stat">
         <div class="stat-label">Tasa de clic (CTR)</div>
         <div class="stat-value">
- -
-        </div>
+-</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a Teléfono</div>
@@ -1273,29 +1223,6 @@
   </div>
 </section>
 
-<style>
-/* WIDGET ESTADÍSTICAS */
-#stats-widget { margin: 5rem auto; max-width: 780px;}
-#stats-widget .stats-card{
-  border:0.063rem solid var(--gris-oscuro, #ccc);
-  border-radius:.75rem; padding:1rem; background:#fff;
-  box-shadow: 0 0.125rem 0.75rem rgba(0,0,0,.06);
-}
-#stats-widget .stats-head{ display:flex; justify-content:space-between; gap:.5rem; margin-bottom:.75rem; }
-#stats-widget .stats-head strong{ font-size:1.05rem }
-#stats-widget .stats-path{ opacity:.7; font-size:.9rem; line-break: anywhere; }
-#stats-widget .stats-grid{
-  display:grid; grid-template-columns: repeat(4, minmax(0,1fr));
-  gap:.75rem; margin:.75rem 0;
-}
-#stats-widget .stat{ background:#f8f9fa; border-radius:.5rem; padding:.75rem; text-align:center; }
-#stats-widget .stat-label{ font-size:.85rem; opacity:.8; margin-bottom:.35rem }
-#stats-widget .stat-value{ font-size:1.35rem; font-weight:700 }
-#stats-widget .stats-foot{ font-size:.9rem; opacity:.9; display:flex; gap:.5rem; align-items:center; color:var(--texto)}
-#stats-widget .badge{ display:inline-block; padding:.15rem .5rem; border-radius:62.438rem; font-size:.75rem;}
-#stats-widget .badge-green{ background:#e6f4ea; }
-#stats-widget .badge-gray{ background:#eef1f4; }
-</style>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-552P4L5P" height="0"
         width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -1,0 +1,158 @@
+<!-- <body>
+  <script>
+    function actualizarHora() {
+      const ahora = new Date();
+
+      // Opciones para formatear la hora específicamente para Argentina
+      const opciones = {
+        timeZone: 'America/Argentina/Buenos_Aires',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false // Cambia a true si prefieres formato AM/PM
+      };
+
+      // Crear la cadena de texto con la hora argentina
+      const horaArgentina = ahora.toLocaleString('es-AR', opciones);
+
+      // Insertar la hora en el HTML
+      document.getElementById('reloj-argentina').textContent = horaArgentina;
+    }
+
+    // Ejecutar la función cada 1 segundo (1000 milisegundos)
+    setInterval(actualizarHora, 1000);
+
+    // Llamada inicial para que no espere el primer segundo
+    actualizarHora();
+  </script>
+  
+
+
+
+  <div id="modal" class="modal-overlay active" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <script>
+      // Copiar datos del proveedor
+      function copiarDatosProveedor() {
+        const nombre = document.getElementById('modal-nombre')?.textContent || 'No disponible';
+        const telefono = document.getElementById('modal-telefono')?.textContent || 'No disponible';
+        const ubicacion = document.getElementById('modal-ubicacion')?.textContent || 'No disponible';
+        const pagado = document.getElementById('modal-pagado')?.textContent || 'No disponible';
+
+        const datos = `Nombre: ${nombre}
+        Teléfono: ${telefono}
+        Ubicación: ${ubicacion}
+        Pagado por: ${pagado}
+
+          Fuente: cerrajero.net.ar`;
+
+        navigator.clipboard.writeText(datos).then(() => {
+          alert('✅ Datos copiados al portapapeles');
+        }).catch(() => {
+          alert('No se pudo copiar. Intenta nuevamente.');
+        });
+      }
+
+      // Descargar modal como imagen
+      function descargarModalImagen() {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+        script.onload = function () {
+          const modalContent = document.getElementById('modal-content');
+          html2canvas(modalContent, {
+            backgroundColor: '#ffffff',
+            scale: 2,
+            allowTaint: true,
+            useCORS: true
+          }).then(canvas => {
+            const link = document.createElement('a');
+            const nombre = document.getElementById('modal-nombre')?.textContent || 'proveedor';
+            const fecha = new Date().toLocaleDateString('es-AR');
+            link.href = canvas.toDataURL('image/png');
+            link.download = `${nombre}_${fecha}.png`;
+            link.click();
+          }).catch(error => {
+            console.error('Error al descargar:', error);
+            alert('No se pudo descargar la imagen. Intenta nuevamente.');
+          });
+        };
+        document.head.appendChild(script);
+      }
+    </script>
+
+    <div class="modal-contenido">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">×</button>
+      <div id="modal-content"> -->
+        <h1 id="modal-title">⚠️ Aviso Importante</h1>
+        <p>Estás por contactar a un proveedor de servicios que publicita en esta seccion de cerrajero.net.ar</p>
+
+        <div class="disclosure-section" style="margin-top: 1.5rem; border: 1px solid #dadce0; border-radius: 8px;">
+          <button class="disclosure-header expanded"
+            onclick="if(this.nextElementSibling){this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('expanded');}"
+            style="padding: 16px; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 14px; font-weight: 500; color: #202124;">
+            <span>ℹ️ Acerca del anunciante</span>
+            <span style="transition: transform 0.3s; display: inline-block;">▼</span>
+          </button>
+          <div class="disclosure-content expanded" style="max-height: 1000px; overflow: hidden; background: white;">
+            <div style="padding: 16px; border-top: 1px solid #dadce0;">
+
+              <div style="display: grid; gap: 12px;">
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Nombre</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-nombre">Llavesur</span>
+                </div>
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Teléfono</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-telefono">+549 280 505 1988</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Sección</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-ubicacion">Puerto Madryn, Chubut</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Pagado por</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-pagado">Rick Sanchez</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Anunciando desde</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-pagado">01/01/2026</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button class="button"
+            onclick="window.open('https://wa.me/+5492805051988?text=%C2%A1Hola%21%20Vengo%20desde%20https%3A//www.cerrajero.net.ar/chubut/puerto-madryn.html%20y%20tengo%20una%20consulta%20sobre%20tus%20servicios.', '_blank'); cerrarModal();">✅
+            Continuar</button>
+          <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+        </div>
+
+        # reloj
+        <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+          <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
+          <span style="color: #202124; font-size: 13px;" id="modal-pagado">
+            <p id="reloj">18/03/2026, 09:26:39</p>
+          </span>
+        </div>
+
+        <a onclick="copiarDatosProveedor()" href="#" style="font-size: 1rem; float: inline-start;">📋 Copiar al portapapeles esta información</a><br>
+        <a onclick="descargarModalImagen()" href="#" style="font-size: 1rem; float: inline-start;">⬇️ Descargar imagen de esta información</a><br>
+        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante
+
+        </a>
+        <div class="modal-legal">
+          Al contactar, confirmas que aceptas
+          <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
+        <!-- </div>
+      </div>
+    </div> -->
