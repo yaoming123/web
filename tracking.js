@@ -1,24 +1,26 @@
-  function mostrarHora() {
-    const opciones = { 
-      timeZone: 'America/Argentina/Buenos_Aires',
-      day: '2-digit',    // Día (01-31)
-      month: '2-digit',  // Mes (01-12)
-      year: 'numeric',   // Año (2026)
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit',
-      hour12: false      // Formato 24hs (pon true si prefieres AM/PM)
-    };
+function mostrarHora() {
+  const opciones = { 
+    timeZone: 'America/Argentina/Buenos_Aires',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit',
+    hour12: false
+  };
 
-    const horaLocal = new Date().toLocaleString('es-AR', opciones);
-
-    document.getElementById('reloj').textContent = horaLocal;
+  const horaLocal = new Date().toLocaleString('es-AR', opciones);
+  const relojElement = document.getElementById('reloj');
+  if (relojElement) {
+    relojElement.textContent = horaLocal;
   }
+}
 
-  setInterval(mostrarHora, 1000);
-  mostrarHora();
+setInterval(mostrarHora, 1000);
+mostrarHora();
 
-// Inicializar data layer
+// Inicializar data layer - IMPORTANTE: esto debe estar antes de GTM
 window.dataLayer = window.dataLayer || [];
 
 // ========== FUNCIÓN BASE DE TRACKING ==========
@@ -88,39 +90,68 @@ function trackDynamicWhatsAppClick(button) {
     data.clics_totales = window.numClicsWhatsApp;
 
     window.dataLayer.push(data);
+    
+    // Debug en consola
+    console.log('WhatsApp tracking enviado:', data);
 }
 
 // Genérico
 function trackEvent(element, eventName = 'click_evento', category = 'General', action = null, label = null) {
     const data = getCommonTrackingData(element, eventName, category, action, label);
     window.dataLayer.push(data);
+    console.log('Evento genérico enviado:', data);
 }
 
-// Tel: (Click para llamar)
+// Tel: (Click para llamar) - VERSIÓN CORREGIDA
 function setupPhoneTracking() {
     document.querySelectorAll('a[href^="tel:"]').forEach(function (element) {
         element.addEventListener('click', function (event) {
-            event.preventDefault();
-
+            // NO prevenir el comportamiento por defecto inmediatamente
             const numeroTelefono = this.href.replace('tel:', '');
+            const enlace = this.href;
 
-            const data = getCommonTrackingData(this, "phone_click", "contacto", "click_tel", "Botón Teléfono");
+            const data = getCommonTrackingData(
+                this, 
+                "phone_click", 
+                "Contacto", 
+                "Click Teléfono", 
+                "Botón Teléfono"
+            );
             data.numero_telefono = numeroTelefono;
 
+            // Enviar a dataLayer
             window.dataLayer.push(data);
+            
+            // Debug en consola
+            console.log('Phone click tracking enviado:', data);
 
-            setTimeout(() => {
-                window.location.href = element.href;
-            }, 300);
+            // Si el navegador soporta sendBeacon (más confiable)
+            if (navigator.sendBeacon && typeof gtag !== 'undefined') {
+                // Permitir que el enlace funcione normalmente
+                return true;
+            } else {
+                // Solo prevenir si necesitamos el timeout
+                event.preventDefault();
+                
+                // Esperar un poco más tiempo para asegurar que se envíe
+                setTimeout(() => {
+                    window.location.href = enlace;
+                }, 500);
+            }
         });
     });
+    
+    console.log('Phone tracking configurado para', document.querySelectorAll('a[href^="tel:"]').length, 'enlaces');
 }
 
 // ========== EVENTOS AL CARGAR ==========
 
-// Modificar enlaces de publicidad con "from"
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('Tracking.js cargado - DOMContentLoaded');
+    
     const currentURL = window.location.href;
+    
+    // Modificar enlaces de publicidad con "from"
     document.querySelectorAll('a[href*="publicidad.html"]').forEach(link => {
         const url = new URL(link.href, currentURL);
         if (!url.searchParams.has('from')) {
@@ -131,6 +162,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Activar phone tracking
     setupPhoneTracking();
-
 });
 
+// Verificar que GTM esté cargado
+window.addEventListener('load', function() {
+    if (typeof dataLayer !== 'undefined') {
+        console.log('DataLayer disponible:', window.dataLayer.length, 'eventos');
+    } else {
+        console.error('DataLayer NO está disponible - verificar instalación de GTM');
+    }
+});
