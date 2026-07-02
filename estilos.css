@@ -3,7 +3,8 @@
 :root {
     --rojo: #DC3545;
     --verde-intenso: #28A745;
-    --verde: #28a745;
+    --verde: #28A745;
+    /* alias de --verde-intenso, unificar en el futuro */
     --azul: #007BFF;
     --fondo: #222;
     --gris-claro: #F8F9FA;
@@ -15,14 +16,6 @@
 }
 
 .scroll-section {
-    /* margin-top: -4rem; */
-    /* Ajusta segÃšn sea necesario para que el tÃ­tulo sea visible */
-    /* padding-top: 4rem; */
-    /* Asegura que el contenido no quede oculto por el margen superior negativo */
-
-    /*margin-top: -6rem;  Ajustar según sea necesario */
-    /*padding-top: 7rem; Asegura que el título sea visible */
-
     scroll-margin-top: 5rem;
 }
 
@@ -69,7 +62,6 @@ html {
 
 body {
     background-color: var(--gris-claro);
-    /* text-transform: uppercase; */
     font-size: 16px;
     color: var(--texto);
 }
@@ -81,7 +73,6 @@ nav {
     top: 0;
     text-align: center;
     z-index: 1;
-    /* font-size: 3rem; */
 }
 
 nav ul {
@@ -92,7 +83,6 @@ nav ul {
 
 nav li {
     display: inline-block;
-    /* margin: 0 5px; */
 }
 
 a {
@@ -142,7 +132,6 @@ nav ul li a.active::before {
 
 header {
     text-align: center;
-    /* font-variant: all-petite-caps; */
 }
 
 #contenido-principal {
@@ -153,10 +142,6 @@ header {
     min-height: 20.345em;
 }
 
-
-/* header h1 {
-    font-size: 4rem;
-} */
 
 header h2 {
     font-size: 3rem;
@@ -174,7 +159,6 @@ header p {
 main {
     height: auto;
     text-align: center;
-    /* font-variant: all-petite-caps; */
 }
 
 #servicios {
@@ -182,15 +166,9 @@ main {
 }
 
 #servicios-listado {
-    /* top: 0;
     text-align: center;
     z-index: 1;
-    font-size: 3rem;
-    margin-bottom: 2rem; */
-    /* top: 0; */
-    /* text-align: center; */
     z-index: 0;
-    /* font-size: 3rem; */
     margin-bottom: 2rem;
 }
 
@@ -207,10 +185,8 @@ main {
 
 #servicios-listado li a {
     display: inline-block;
-    /* padding: 10px; */
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-    /* font-size: 0.9em; */
 }
 
 #servicios-listado li a:hover {
@@ -221,7 +197,6 @@ main {
 
 .terminos-y-condiciones-section ul {
     width: 100%;
-    /* background-color: aqua; */
     list-style: none;
     padding-left: 1.5em;
     margin-bottom: 2em;
@@ -240,13 +215,10 @@ main {
     color: var(--texto);
     text-align: left;
     text-transform: none;
-    /* Para no forzar MAYÚSCULAS si no querés */
-    /* background-color: yellow; */
 }
 
 .terminos-y-condiciones-section li::before {
     content: "*";
-    /* Alternativas: "•", "➤", "→" */
     position: absolute;
     left: 0;
     top: 0;
@@ -261,7 +233,6 @@ main {
 #servicios h1,
 #servicios h3 {
     margin-top: auto;
-    /* font-size: 4rem; */
     color: #343A40;
     padding: initial;
     margin-bottom: 1em;
@@ -269,15 +240,13 @@ main {
 
 h3 {
     margin-top: auto;
-    /* font-size: 3rem; */
     color: #343A40;
     padding: initial;
     margin-bottom: 1em;
 }
 
 #servicios h2,
-servicios h4 {
-    /* font-size: 3rem; */
+#servicios h4 {
     color: #343A40;
 }
 
@@ -291,7 +260,6 @@ servicios h4 {
 }
 
 #servicios .button1:hover {
-    /* background-color: var(--verde-intenso); */
     background-color: var(--estado);
     color: var(--gris-claro);
 }
@@ -309,10 +277,8 @@ servicios h4 {
 
 .servicio h1 {
     font-size: 4rem;
-    /* color: darkorange; */
 }
 
-/* .servicios h1 al h6 */
 
 .servicio p {
     font-size: 1.5rem;
@@ -323,17 +289,13 @@ servicios h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     width: 200px;
-    /* height: 200px; */
     margin: 10px;
     padding: 20px;
     border: 2px solid #000;
     border-radius: 10px;
-    /* aspect-ratio: 1 / 1;  */
     font-size: 1.5em;
     text-decoration: none;
-    /* color: #fff; */
     background-color: #333333e8;
 }
 
@@ -343,27 +305,15 @@ servicios h4 {
 
 #contacto h1 {
     font-size: 4rem;
-    /* color: white; */
 }
 
-/* #contacto,
-#opciones h2 {
-    font-size: 3rem; 
-} */
-
-
-/* #contacto p {
-    font-size: 1.5rem; 
-} */
 
 #contacto a.boton {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     width: 100%;
-    /* height: 200px; */
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 20px;
@@ -371,17 +321,14 @@ servicios h4 {
 
     border: 2px solid #000;
     border-radius: 10px;
-    /* aspect-ratio: 1 / 1;  */
     font-size: 1.5em;
     text-decoration: none;
-    /* color: #fff; */
     background-color: #333333e8;
 
 }
 
 #galeria-contenedor {
     margin-top: 2.5rem;
-    /* ~40px si tu raíz está en 16px */
 }
 
 footer {
@@ -399,7 +346,6 @@ footer img {
     height: 2em;
     text-decoration: none;
     margin-top: auto;
-    /* margin-bottom: -7px; */
 }
 
 footer a {
@@ -470,8 +416,6 @@ a.ciudades_links:hover {
         width: 80%;
         margin-bottom: 10px;
         border-radius: 5px;
-        /* ser:ser1; */
-        /* height: 20px; */
         box-sizing: content-box;
     }
 
@@ -493,7 +437,6 @@ a.ciudades_links:active {
         display: block;
         margin-bottom: 10px;
         border-radius: 5px;
-        /* aspect-ratio: 1 / 1; */
     }
 
 }
@@ -547,7 +490,6 @@ a.ciudades_links:active {
     /* Asegura que estÃĐ encima de otros elementos */
 }
 
-/* Estilos al pasar el mouse por encima del botÃģn */
 .scroll-to-top:hover {
     background-color: #d6694b;
     /* Cambia el color de fondo al pasar el mouse por encima */
@@ -555,7 +497,6 @@ a.ciudades_links:active {
 
 .button {
     border: none;
-    /* padding: 0.06rem 0.48rem; */
     padding: 1rem 0.48rem;
     text-align: center;
     text-decoration: none;
@@ -594,7 +535,6 @@ a.ciudades_links:active {
 
 .button1:hover {
     color: var(--gris-claro);
-    /* background-color: var(--verde-intenso); */
     background-color: var(--estado, var(--azul))
 }
 
@@ -638,9 +578,7 @@ a.ciudades_links:active {
     background-color: var(--azul);
     color: var(--gris-claro);
     padding: 10px 20px;
-    /* font-size: 16px; */
     cursor: pointer;
-    /* border-radius: 5px; */
     border-radius: 0.4em;
     text-decoration: none;
     margin-bottom: -10px;
@@ -790,55 +728,31 @@ table {
 .service-box {
     background: white;
     border-radius: 0.625rem;
-    /* 10px → 0.625rem */
     padding: 1.25rem;
-    /* 20px → 1.25rem */
     width: 18.75rem;
-    /* 300px → 18.75rem */
     text-align: center;
     box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
-    /* 4px 10px → 0.25rem 0.625rem */
     align-content: flex-end;
 }
 
 #formulario-publicidad {
-    /* font-size: 3rem; */
     color: var(--fondo)
 }
 
 #whatsapp-form {
     display: grid;
     justify-items: center;
-    /* justify-content: center; */
 }
-
-
-
-
-/* .modal-overlay {
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-
-
 
 .modal-contenido {
     background: var(--modal-bg);
-    color: var#343A40(--texto);
+    color: var(--texto);
     padding: 2rem;
     border-radius: 0.5rem;
     max-width: 90%;
     max-height: 90%;
     text-align: center;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     overflow-y: auto;
     position: relative;
 }
@@ -1141,16 +1055,6 @@ input {
     display: flex;
 }
 
-/* .modal-contenido {
-background: var(--modal-bg);
-border-radius: 8px;
-padding: 2rem;
-max-width: 90%;
-max-height: 90vh;
-overflow-y: auto;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-position: relative;
-} */
 
 .modal-close-btn {
     position: absolute;
@@ -1252,7 +1156,6 @@ position: relative;
 }
 
 #loader {
-    display: none;
     text-align: center;
     padding: 2rem;
 }
@@ -1311,12 +1214,15 @@ position: relative;
 
 /* Animación para botones principales */
 @keyframes pulse {
-    0%, 100% { 
-        transform: scale(1); 
+
+    0%,
+    100% {
+        transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
     }
-    50% { 
-        transform: scale(1.05); 
+
+    50% {
+        transform: scale(1.05);
         box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
     }
 }
@@ -1326,6 +1232,504 @@ a[style*="background: #FFD700"]:hover,
 a[style*="background:#FFD700"]:hover {
     background: #FFC700 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
     transition: all 0.3s ease;
+}
+
+
+#formulario-publicidad {
+    background: var(--gris-claro);
+    color: var(--texto);
+    padding: 2.5em 1.5em 3em;
+}
+
+#formulario-publicidad .form-badge {
+    display: inline-block;
+    background: var(--rojo);
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3em 0.8em;
+    border-radius: 0.3em;
+    margin-bottom: 1em;
+}
+
+#formulario-publicidad>h3 {
+    color: var(--rojo);
+    margin-bottom: 0.4em;
+}
+
+#formulario-publicidad>p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+#whatsapp-form {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+}
+
+#whatsapp-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1em;
+    width: 100%;
+}
+
+#whatsapp-form .form-group label {
+    font-size: 0.78em;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--texto);
+    margin-bottom: 0.4em;
+    text-align: start;
+}
+
+#whatsapp-form .form-group input[type="text"],
+#whatsapp-form .form-group input[type="tel"],
+#whatsapp-form .form-group input[type="url"],
+#whatsapp-form .form-group input[type="email"],
+#whatsapp-form .form-group textarea {
+    width: 100%;
+    padding: 0.7em 0.9em;
+    font-size: 1em;
+    font-family: monospace;
+    font-weight: normal;
+    border: 0.15em solid var(--azul);
+    border-radius: 0.4em;
+    background: #fff;
+    color: var(--texto);
+    text-align: left;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    height: auto;
+}
+
+#whatsapp-form .form-group input[type="file"] {
+    width: 100%;
+    padding: 0.5em 0;
+    font-size: 0.9em;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+#whatsapp-form .form-group input:focus,
+#whatsapp-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--estado, var(--rojo));
+}
+
+#whatsapp-form .form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+#whatsapp-form .field-hint {
+    font-size: 0.78em;
+    color: #888;
+    margin-top: 0.35em;
+    line-height: 1.4;
+}
+
+#whatsapp-form .form-section-title {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin: 1.6em 0 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #ddd;
+    justify-self: flex-start;
+    width: 100%;
+}
+
+#whatsapp-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+    width: 100%;
+}
+
+/* Chips */
+#whatsapp-form .chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.2em;
+}
+
+#whatsapp-form .chip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    background: #f4f4f4;
+    border: 0.12em solid #ccc;
+    border-radius: 0.4em;
+    padding: 0.45em 0.8em;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+}
+
+#whatsapp-form .chip-item:has(input:checked) {
+    border-color: var(--azul);
+    background: #e8f0fe;
+}
+
+#whatsapp-form .chip-item input[type="checkbox"],
+#whatsapp-form .chip-item input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+#whatsapp-form .chip-item span {
+    font-size: 0.9em;
+    color: var(--texto);
+}
+
+/* Bloques condicionales persona/empresa */
+#persona-fisica-fields,
+#empresa-fields {
+    display: none;
+    margin-top: 1em;
+    padding: 1em;
+    background: #f4f8ff;
+    border: 0.12em solid var(--azul);
+    border-radius: 0.4em;
+}
+
+#persona-fisica-fields.visible,
+#empresa-fields.visible {
+    display: block;
+}
+
+#persona-fisica-fields .form-group,
+#empresa-fields .form-group {
+    margin-bottom: 0.8em;
+}
+
+#persona-fisica-fields .form-group:last-child,
+#empresa-fields .form-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Campo condicional "Otros" medios de pago */
+#otros-pago-field {
+    display: none;
+    flex-direction: column;
+    margin-top: 0.8em;
+}
+
+#otros-pago-field.visible {
+    display: flex;
+}
+
+#otros-pago-field label {
+    font-size: 0.78em;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--texto);
+    margin-bottom: 0.4em;
+}
+
+/* Campos condicionales redes sociales */
+.social-field {
+    display: none;
+    flex-direction: column;
+    margin-top: 0.8em;
+}
+
+.social-field.visible {
+    display: flex;
+}
+
+.social-field label {
+    font-size: 0.78em;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--texto);
+    margin-bottom: 0.4em;
+}
+
+/* Términos */
+#whatsapp-form .form-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    margin: 1.4em 0 0;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 0.12em solid #ddd;
+    border-radius: 0.4em;
+}
+
+#whatsapp-form .form-terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 2px 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+#whatsapp-form .form-terms label {
+    font-size: 0.85em;
+    color: #555;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+}
+
+#whatsapp-form .form-terms a {
+    color: var(--azul);
+    text-decoration: none;
+}
+
+#whatsapp-form .form-terms a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+#whatsapp-form .form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+    margin-top: 1.4em;
+}
+
+#whatsapp-form .form-actions .button {
+    height: 3.4rem;
+    font-size: 0.95em;
+    width: 100%;
+    margin: 0;
+}
+
+/* Contador caracteres */
+.char-counter {
+    font-size: 0.75em;
+    color: #888;
+    text-align: right;
+    margin-top: 0.3em;
+}
+
+.char-counter.near-limit {
+    color: #e07000;
+}
+
+.char-counter.at-limit {
+    color: var(--rojo);
+    font-weight: bold;
+}
+
+@media (max-width: 520px) {
+
+    #whatsapp-form .form-row,
+    #whatsapp-form .form-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+#availability-general {
+    margin-bottom: 1.2em;
+}
+
+/* Grilla de horarios */
+.schedule-grid {
+    width: 100%;
+}
+
+.schedule-header {
+    display: grid;
+    grid-template-columns: 130px 1fr auto auto;
+    gap: 0.4em 0.6em;
+    align-items: center;
+    padding: 0 0 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-header span {
+    font-size: 0.72em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--texto);
+}
+
+.schedule-header .col-horario {
+    text-align: center;
+}
+
+.schedule-header .col-allday {
+    text-align: center;
+    min-width: 52px;
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 130px 1fr auto auto;
+    gap: 0.4em 0.6em;
+    align-items: center;
+    padding: 0.5em 0;
+    border-top: 1px solid #ebebeb;
+}
+
+/* Columna día */
+.day-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.day-toggle input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    accent-color: var(--azul);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.day-name {
+    font-weight: bold;
+    font-size: 0.95em;
+    color: var(--texto);
+}
+
+.schedule-row.inactive .day-name {
+    color: #aaa;
+}
+
+/* Columna horario: apertura – cierre en línea */
+.time-range {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.time-select {
+    padding: 0.4em 0.5em;
+    font-size: 0.9em;
+    font-family: monospace;
+    border: 0.12em solid var(--azul);
+    border-radius: 0.35em;
+    background: #fff;
+    color: var(--texto);
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.time-select:disabled {
+    background: #f0f0f0;
+    border-color: #ddd;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+.time-sep {
+    font-size: 0.85em;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.schedule-row.inactive .time-select {
+    background: #f5f5f5;
+    border-color: #e0e0e0;
+}
+
+/* Columna 24hs */
+.allday-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+    cursor: pointer;
+    user-select: none;
+    min-width: 52px;
+}
+
+.allday-label input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    accent-color: var(--rojo);
+    cursor: pointer;
+}
+
+.allday-label span {
+    font-size: 0.72em;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.schedule-row.inactive .allday-label span {
+    color: #aaa;
+}
+
+/* Campo oculto */
+#hours {
+    display: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+    .schedule-header {
+        display: none;
+    }
+
+    .schedule-row {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        row-gap: 0.5em;
+        padding: 0.65em 0;
+    }
+
+    /* Fila 1: nombre del día (col 1) y 24hs (col 2) */
+    .schedule-row .day-toggle {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .schedule-row .allday-label {
+        grid-column: 2;
+        grid-row: 1;
+        flex-direction: row;
+        gap: 0.4em;
+    }
+
+    /* Fila 2: selectores de hora, span completo */
+    .schedule-row .time-range {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
 }

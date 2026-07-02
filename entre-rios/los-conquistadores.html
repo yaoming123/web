@@ -73,24 +73,23 @@
   }
 }
 </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE4WWQXVMY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', "G-GE4WWQXVMY");
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GE4WWQXVMY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GE4WWQXVMY');
+</script>
 
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-552P4L5P');</script>
-
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-552P4L5P');</script>
 
     <link rel="stylesheet" href="../votacion.css">
     <script defer src="../votacion.js"></script>
@@ -656,59 +655,874 @@
 
 
 
-<div class="scroll-section" id="formulario-publicidad">
-    <h3>Formulario para publicitar aquí</h3>
-    <p>Este espacio publicitario se encuentra sin un proveedor de servicios. ¿Ofrecés servicios de cerrajería?
-        <br> ¡Este espacio está disponible, anunciate aquí!</p>
-    <form id="whatsapp-form">
+            <div class="scroll-section" id="formulario-publicidad">
 
-        <input id="section" name="section" value="https://www.cerrajero.net.ar/entre-rios/los-conquistadores.html" readonly style="visibility: hidden;">
 
-        <label for="name">Nombre del Negocio:</label>
-        <input id="name" name="name" placeholder="Nombre de usted si es particular, de fantasía o razón social"
-            required="" type="text">
-            
-        <label for="cellphone">Número de Celular (WhatsApp):</label>
-        <input id="cellphone" name="cellphone" placeholder="Ejemplo: +5491122413762" required="" type="text">
+                <span class="form-badge">📣 Espacio disponible</span>
+                <h3>Formulario para publicitar aquí</h3>
+                <p>Este espacio publicitario se encuentra sin un proveedor de servicios.<br>
+                    ¿Ofrecés servicios de cerrajería? <strong>¡Este espacio está disponible, anunciate aquí!</strong>
+                </p>
 
-        <label for="phone">Número de Teléfono Fijo:</label>
-        <input id="phone" name="phone" placeholder="Opcional" type="text">
+                <form id="whatsapp-form" novalidate>
 
-        <label for="address">Dirección:</label>
-        <input id="address" name="address" placeholder="Opcional" type="text">
+                    <input id="section" name="section" value="https://www.cerrajero.net.ar/entre-rios/los-conquistadores.html" readonly
+                        style="display:none;">
 
-        <label for="mapLink">Link de Google Maps:</label>
-        <input id="mapLink" name="mapLink" placeholder="Opcional" type="text">
+                    <!-- ══ DATOS DEL NEGOCIO ══ -->
+                    <p class="form-section-title">Datos del negocio</p>
 
-        <label for="instagramLink">Link de Instagram:</label>
-        <input id="instagramLink" name="instagramLink" placeholder="Opcional" type="text">
+                    <div class="form-group">
+                        <label for="name">Nombre del Negocio <span style="color:var(--rojo)">*</span></label>
+                        <input id="name" name="name" type="text"
+                            placeholder="Nombre particular, de fantasía o razón social" required>
+                    </div>
 
-        <label for="facebookLink">Link de Facebook:</label>
-        <input id="facebookLink" name="facebookLink" placeholder="Opcional" type="text">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cellphone">Celular (WhatsApp) <span style="color:var(--rojo)">*</span></label>
+                            <input id="cellphone" name="cellphone" type="tel" placeholder="Ejemplo: +5491122413762"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono Fijo</label>
+                            <input id="phone" name="phone" type="tel" placeholder="Opcional">
+                        </div>
+                    </div>
 
-        <label for="payment">Medios de Pago que aceptás:</label>
-        <input id="payment" name="payment" placeholder="Ejemplo: Efectivo, Transferencia" type="text">
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <input id="address" name="address" type="text" placeholder="Opcional">
+                    </div>
 
-        <label for="details">Detalles adicionales:</label>
-        <input id="details" name="details"
-            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, contanos cualquier otro detalle adicional."
-            type="text">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Opcional">
+                    </div>
 
-        <p>Al enviar este formulario, confirmás que leíste y aceptás<a
-                href="../terminos-y-condiciones.html">Términos
-                y Condiciones</a>.</p>
-        <button id="whatsapp-button" style="margin-top: 2em; width: 80%; height: 4rem;" type="button"
-            class="button button1"
-            onclick="trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">Enviar
-            por
-            WhatsApp</button>
-        <button id="messenger-button" style="margin-top: 2em; width: 80%; height: 4rem;" type="button"
-            class="button button1"
-            onclick="trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">Enviar
-            por
-            Messenger</button>
-    </form>
-</div>
+                    <!-- ══ TIPO DE PERSONA ══ -->
+                    <p class="form-section-title">¿Qué tipo de persona sos?</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="radio" name="persona_tipo" value="Física" id="tipo-fisica">
+                                <span>Persona Física</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="radio" name="persona_tipo" value="Empresa" id="tipo-empresa">
+                                <span>Empresa</span>
+                            </label>
+                        </div>
+                        <input type="text" id="persona_tipo_valor" name="persona_tipo_valor" style="display:none;"
+                            readonly>
+
+                        <div id="persona-fisica-fields">
+                            <div class="form-group">
+                                <label for="pf-nombre">Nombre y Apellido <span
+                                        style="color:var(--rojo)">*</span></label>
+                                <input id="pf-nombre" name="pf_nombre" type="text"
+                                    placeholder="Nombre completo del titular">
+                            </div>
+                            <div class="form-group">
+                                <label for="pf-cuil">CUIL <span style="color:var(--rojo)">*</span></label>
+                                <input id="pf-cuil" name="pf_cuil" type="text" placeholder="Ejemplo: 20-12345678-9">
+                                <span class="field-hint">Debe coincidir con el CUIL de quien realice la
+                                    transferencia.</span>
+                            </div>
+                        </div>
+
+                        <div id="empresa-fields">
+                            <div class="form-group">
+                                <label for="emp-cuit">CUIT de la Empresa <span
+                                        style="color:var(--rojo)">*</span></label>
+                                <input id="emp-cuit" name="emp_cuit" type="text" placeholder="Ejemplo: 30-12345678-9">
+                                <span class="field-hint">Debe coincidir con el CUIT de la empresa que realice la
+                                    transferencia.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ══ SITIO WEB, REDES SOCIALES Y UBICACIÓN ══ -->
+                    <p class="form-section-title">Redes sociales sitio web y ubicación</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="GoogleMaps" id="social-maps-cb">
+                                <span>Google Maps</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Instagram" id="social-instagram-cb">
+                                <span>Instagram</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Facebook" id="social-facebook-cb">
+                                <span>Facebook</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="SitioWeb" id="social-website-cb">
+                                <span>Sitio web</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="TikTok" id="social-tiktok-cb">
+                                <span>TikTok</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="YouTube" id="social-youtube-cb">
+                                <span>YouTube</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Otros" id="social-otros-cb">
+                                <span>Otras redes</span>
+                            </label>
+                        </div>
+
+                        <!-- Campos condicionales para cada red social -->
+                        <div id="social-maps-field" class="social-field">
+                            <label for="mapLink">Link de Google Maps</label>
+                            <input id="mapLink" name="mapLink" type="url" placeholder="https://maps.google.com/...">
+                        </div>
+
+                        <div id="social-instagram-field" class="social-field">
+                            <label for="instagramLink">Instagram</label>
+                            <input id="instagramLink" name="instagramLink" type="url"
+                                placeholder="https://instagram.com/tunegocio">
+                        </div>
+
+                        <div id="social-facebook-field" class="social-field">
+                            <label for="facebookLink">Facebook</label>
+                            <input id="facebookLink" name="facebookLink" type="url"
+                                placeholder="https://facebook.com/tunegocio">
+                        </div>
+
+                        <div id="social-website-field" class="social-field">
+                            <label for="websiteLink">Sitio web</label>
+                            <input id="websiteLink" name="websiteLink" type="url" placeholder="https://www.ejemplo.com">
+                        </div>
+
+                        <div id="social-tiktok-field" class="social-field">
+                            <label for="tiktokLink">TikTok</label>
+                            <input id="tiktokLink" name="tiktokLink" type="url"
+                                placeholder="https://tiktok.com/@tunegocio">
+                        </div>
+
+                        <div id="social-youtube-field" class="social-field">
+                            <label for="youtubeLink">YouTube</label>
+                            <input id="youtubeLink" name="youtubeLink" type="url"
+                                placeholder="https://youtube.com/@tunegocio">
+                        </div>
+
+                        <div id="social-otros-field" class="social-field">
+                            <label for="otherLinks">Otras redes o enlaces</label>
+                            <input id="otherLinks" name="otherLinks" type="text"
+                                placeholder="Ejemplo: LinkedIn, Telegram, otra página, etc.">
+                        </div>
+                    </div>
+
+                    <!-- ══ MEDIOS DE PAGO ══ -->
+                    <p class="form-section-title">Medios de pago que aceptás</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Efectivo">
+                                <span>Efectivo</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Transferencia">
+                                <span>Transferencia</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Débito">
+                                <span>Débito</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Crédito">
+                                <span>Crédito</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="MercadoPago">
+                                <span>MercadoPago</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Ualá">
+                                <span>Ualá</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Cheque">
+                                <span>Cheque</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Otros" id="payment-otros-cb">
+                                <span>Otros</span>
+                            </label>
+                        </div>
+
+                        <div id="otros-pago-field">
+                            <label for="payment-otros-text">Especificá los otros medios de pago</label>
+                            <input id="payment-otros-text" name="payment_otros" type="text"
+                                placeholder="Ejemplo: Rapipago, Pago Fácil, criptomonedas...">
+                        </div>
+
+                        <input type="text" id="payment" name="payment" style="display:none;" readonly>
+                    </div>
+
+                    <!-- ══ DISPONIBILIDAD Y HORARIOS ══ -->
+                    <p class="form-section-title">Disponibilidad y horarios</p>
+
+                    <!-- Chips generales -->
+                    <div class="form-group" id="availability-general">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Urgencias">
+                                <span>Urgencias</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Feriados">
+                                <span>Feriados</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Solo turnos">
+                                <span>Solo turnos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Grilla de días -->
+                    <div class="form-group">
+                        <div class="schedule-grid" id="schedule-grid">
+
+                            <div class="schedule-header">
+                                <span>Día</span>
+                                <span class="col-horario">Horario</span>
+                                <span></span>
+                                <span class="col-allday">24 hs</span>
+                            </div>
+
+                            <!-- Lunes -->
+                            <div class="schedule-row" data-day="Lunes">
+                                <label class="day-toggle">
+                                    <input type="checkbox" class="day-active" checked>
+                                    <span class="day-name">Lunes</span>
+                                </label>
+                                <div class="time-range">
+                                    <select class="time-select time-open" aria-label="Apertura Lunes"></select>
+                                    <span class="time-sep">–</span>
+                                    <select class="time-select time-close" aria-label="Cierre Lunes"></select>
+                                </div>
+                                <span></span>
+                                <label class="allday-label">
+                                    <input type="checkbox" class="day-allday">
+                                    <span>24hs</span>
+                                </label>
+                            </div>
+
+                            <!-- Martes -->
+                            <div class="schedule-row" data-day="Martes">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Martes</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Martes"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Martes"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Miércoles -->
+                            <div class="schedule-row" data-day="Miércoles">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Miércoles</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Miércoles"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Miércoles"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Jueves -->
+                            <div class="schedule-row" data-day="Jueves">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Jueves</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Jueves"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Jueves"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Viernes -->
+                            <div class="schedule-row" data-day="Viernes">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Viernes</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Viernes"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Viernes"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Sábado -->
+                            <div class="schedule-row inactive" data-day="Sábado">
+                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
+                                        class="day-name">Sábado</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Sábado" disabled></select><span
+                                        class="time-sep">–</span><select class="time-select time-close"
+                                        aria-label="Cierre Sábado" disabled></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox" class="day-allday"
+                                        disabled><span>24hs</span></label>
+                            </div>
+
+                            <!-- Domingo -->
+                            <div class="schedule-row inactive" data-day="Domingo">
+                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
+                                        class="day-name">Domingo</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Domingo" disabled></select><span
+                                        class="time-sep">–</span><select class="time-select time-close"
+                                        aria-label="Cierre Domingo" disabled></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox" class="day-allday"
+                                        disabled><span>24hs</span></label>
+                            </div>
+
+                        </div>
+
+                        <input type="text" id="hours" name="hours" readonly>
+                    </div>
+
+                    <script>
+                        (function () {
+                            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+                            function buildTimeOptions(selectEl, defaultVal) {
+                                for (var h = 0; h < 24; h++) {
+                                    ['00', '30'].forEach(function (m) {
+                                        var val = pad(h) + ':' + m;
+                                        var opt = document.createElement('option');
+                                        opt.value = val;
+                                        opt.textContent = val;
+                                        if (val === defaultVal) opt.selected = true;
+                                        selectEl.appendChild(opt);
+                                    });
+                                }
+                            }
+
+                            /* Poblar selects */
+                            document.querySelectorAll('.schedule-row').forEach(function (row) {
+                                buildTimeOptions(row.querySelector('.time-open'), '08:00');
+                                buildTimeOptions(row.querySelector('.time-close'), '18:00');
+                            });
+
+                            /* Checkbox día: activa/desactiva fila */
+                            document.querySelectorAll('.day-active').forEach(function (cb) {
+                                cb.addEventListener('change', function () {
+                                    var row = this.closest('.schedule-row');
+                                    var open = row.querySelector('.time-open');
+                                    var close = row.querySelector('.time-close');
+                                    var allday = row.querySelector('.day-allday');
+                                    var on = this.checked;
+
+                                    row.classList.toggle('inactive', !on);
+                                    open.disabled = !on;
+                                    close.disabled = !on;
+                                    allday.disabled = !on;
+                                    if (!on) allday.checked = false;
+                                    syncHours();
+                                });
+                            });
+
+                            /* Checkbox 24hs: bloquea horarios de esa fila */
+                            document.querySelectorAll('.day-allday').forEach(function (cb) {
+                                cb.addEventListener('change', function () {
+                                    var row = this.closest('.schedule-row');
+                                    var open = row.querySelector('.time-open');
+                                    var close = row.querySelector('.time-close');
+                                    open.disabled = this.checked;
+                                    close.disabled = this.checked;
+                                    syncHours();
+                                });
+                            });
+
+                            /* Cambio de selector */
+                            document.querySelectorAll('.time-open, .time-close').forEach(function (s) {
+                                s.addEventListener('change', syncHours);
+                            });
+
+                            /* Consolida en #hours */
+                            function syncHours() {
+                                var parts = [];
+                                document.querySelectorAll('.schedule-row').forEach(function (row) {
+                                    if (!row.querySelector('.day-active').checked) return;
+                                    var day = row.dataset.day;
+                                    var allday = row.querySelector('.day-allday').checked;
+                                    if (allday) {
+                                        parts.push(day + ': 24hs');
+                                    } else {
+                                        var o = row.querySelector('.time-open').value;
+                                        var c = row.querySelector('.time-close').value;
+                                        parts.push(day + ': ' + o + ' a ' + c);
+                                    }
+                                });
+                                document.getElementById('hours').value = parts.join(' | ');
+                            }
+
+                            syncHours();
+                        })();
+                    </script>
+
+                    <!-- ══ MÉTODO DE CONTACTO PREFERIDO ══ -->
+                    <p class="form-section-title">Método de contacto preferido</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="WhatsApp">
+                                <span>WhatsApp</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Sms">
+                                <span>Sms</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Llamadas">
+                                <span>Llamadas</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Email">
+                                <span>Email</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Messenger">
+                                <span>Messenger</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ══ LOGO Y FOTOS ══ -->
+                    <p class="form-section-title">Logo y fotos del servicio</p>
+
+                    <div class="form-group">
+                        <label for="logoFile">Logo del negocio</label>
+                        <input id="logoFile" name="logoFile" type="file"
+                            accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml">
+                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP, SVG.</span>
+
+                        <!-- Vista previa del logo -->
+                        <div id="logo-preview" style="margin-top: 10px;"></div>
+                        <div id="logo-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servicePhotos">Fotos del servicio (máximo 3)</label>
+                        <input id="servicePhotos" name="servicePhotos" type="file"
+                            accept="image/jpeg,image/jpg,image/png,image/webp" multiple>
+                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP. Máximo 3 archivos.</span>
+
+                        <!-- Vista previa de fotos -->
+                        <div id="photos-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                        </div>
+                        <div id="photos-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
+                    </div>
+
+                    <!-- Campos ocultos para guardar las URLs de Cloudinary -->
+                    <input type="hidden" id="logo-url" name="logo_url">
+                    <input type="hidden" id="photos-urls" name="photos_urls">
+
+                    <style>
+                        /* ── Cards de vista previa ── */
+                        .img-preview-card {
+                            position: relative;
+                            display: inline-flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 6px;
+                            background: #f8f9fa;
+                            border: 2px solid #dee2e6;
+                            border-radius: 10px;
+                            padding: 8px;
+                            transition: border-color 0.2s;
+                        }
+                        .img-preview-card:hover { border-color: #007BFF; }
+                        .preview-img {
+                            width: 140px;
+                            height: 140px;
+                            object-fit: cover;
+                            border-radius: 6px;
+                            display: block;
+                        }
+                        .img-preview-badge {
+                            position: absolute;
+                            top: -8px; left: 8px;
+                            background: #007BFF;
+                            color: #fff;
+                            font-size: 11px;
+                            font-weight: 600;
+                            padding: 2px 7px;
+                            border-radius: 20px;
+                        }
+                        .img-preview-actions {
+                            display: flex;
+                            gap: 6px;
+                            width: 100%;
+                        }
+                        .btn-img-action {
+                            flex: 1;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px 6px;
+                            border: none;
+                            border-radius: 6px;
+                            font-size: 12px;
+                            font-weight: 600;
+                            cursor: pointer;
+                            transition: opacity 0.15s;
+                            white-space: nowrap;
+                        }
+                        .btn-img-action:hover { opacity: 0.82; }
+                        .btn-edit   { background: #007BFF; color: #fff; }
+                        .btn-delete { background: #DC3545; color: #fff; }
+                        .upload-progress { color: #0066cc; }
+                        .upload-success  { color: #28a745; }
+                        .upload-error    { color: #dc3545; }
+                    </style>
+
+                    <script>
+                        // ═══════════════════════════════════════════════════════════
+                        // CLOUDINARY CONFIG
+                        // ═══════════════════════════════════════════════════════════
+                        const CLOUDINARY_CLOUD_NAME    = 'dq6yod1pc';
+                        const CLOUDINARY_UPLOAD_PRESET = 'upload_publico';
+
+                        // ═══════════════════════════════════════════════════════════
+                        // ESTADO — urls ya subidas a Cloudinary
+                        // logoCloudinaryUrl   : string | null
+                        // photoCloudinaryUrls : string[]
+                        // ═══════════════════════════════════════════════════════════
+                        let logoCloudinaryUrl   = null;
+                        let photoCloudinaryUrls = [];
+
+                        // ── Helper: subir a Cloudinary (raw) ────────────────────
+                        async function uploadToCloudinary(file) {
+                            const fd = new FormData();
+                            fd.append('file', file);
+                            fd.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+                            const res = await fetch(
+                                `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+                                { method: 'POST', body: fd }
+                            );
+                            if (!res.ok) throw new Error('Error al subir imagen');
+                            return res.json(); // incluye .etag, .secure_url, .public_id
+                        }
+
+                        // ── Helper: FileReader como Promise ──────────────────────
+                        function toDataURL(file) {
+                            return new Promise(resolve => {
+                                const r = new FileReader();
+                                r.onload = e => resolve(e.target.result);
+                                r.readAsDataURL(file);
+                            });
+                        }
+
+                        // ── Helper: hash SHA-256 del archivo ─────────────────────
+                        async function hashFile(file) {
+                            const buf  = await file.arrayBuffer();
+                            const hash = await crypto.subtle.digest('SHA-256', buf);
+                            return Array.from(new Uint8Array(hash))
+                                .map(b => b.toString(16).padStart(2, '0')).join('');
+                        }
+
+                        // ── Caché: hash → { url, etag } en localStorage ──────────
+                        function getCachedImage(hash) {
+                            try {
+                                return JSON.parse(localStorage.getItem('imgCache') || '{}')[hash] || null;
+                            } catch { return null; }
+                        }
+                        function setCachedImage(hash, url, etag) {
+                            try {
+                                const c = JSON.parse(localStorage.getItem('imgCache') || '{}');
+                                c[hash] = { url, etag };
+                                localStorage.setItem('imgCache', JSON.stringify(c));
+                            } catch {}
+                        }
+
+                        // ── Subir con deduplicación ───────────────────────────────
+                        // Si el mismo archivo ya fue subido antes → reutiliza la URL
+                        async function uploadWithCache(file, statusDiv) {
+                            const hash   = await hashFile(file);
+                            const cached = getCachedImage(hash);
+
+                            if (cached) {
+                                statusDiv.innerHTML = '<span class="upload-success">ℹ️ Imagen ya cargada anteriormente — reutilizando</span>';
+                                return cached.url;
+                            }
+
+                            const result = await uploadToCloudinary(file);
+                            setCachedImage(hash, result.secure_url, result.etag);
+                            return result.secure_url;
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // RENDER LOGO
+                        // ═══════════════════════════════════════════════════════════
+                        function renderLogo(src) {
+                            document.getElementById('logo-preview').innerHTML = `
+                                <div class="img-preview-card">
+                                    <img src="${src}" class="preview-img" alt="Logo">
+                                    <div class="img-preview-actions">
+                                        <label class="btn-img-action btn-edit">
+                                            ✏️ Cambiar
+                                            <input type="file"
+                                                accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml"
+                                                style="display:none"
+                                                onchange="handleLogoReplace(this)">
+                                        </label>
+                                        <button type="button" class="btn-img-action btn-delete"
+                                                onclick="removeLogo()">🗑️ Eliminar</button>
+                                    </div>
+                                </div>`;
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // RENDER FOTOS
+                        // ═══════════════════════════════════════════════════════════
+                        function renderPhotos(srcs) {
+                            document.getElementById('photos-preview').innerHTML = srcs.map((src, i) => `
+                                <div class="img-preview-card">
+                                    <img src="${src}" class="preview-img" alt="Foto ${i+1}">
+                                    <div class="img-preview-badge">Foto ${i+1}</div>
+                                    <div class="img-preview-actions">
+                                        <label class="btn-img-action btn-edit">
+                                            ✏️ Cambiar
+                                            <input type="file"
+                                                accept="image/jpeg,image/jpg,image/png,image/webp"
+                                                style="display:none"
+                                                onchange="handlePhotoReplace(this,${i})">
+                                        </label>
+                                        <button type="button" class="btn-img-action btn-delete"
+                                                onclick="removePhoto(${i})">🗑️ Eliminar</button>
+                                    </div>
+                                </div>`).join('');
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // LOGO — seleccionar
+                        // ═══════════════════════════════════════════════════════════
+                        document.getElementById('logoFile').addEventListener('change', async function (e) {
+                            const file = e.target.files[0];
+                            if (!file) return;
+
+                            const statusDiv    = document.getElementById('logo-upload-status');
+                            const logoUrlInput = document.getElementById('logo-url');
+
+                            if (file.size > 5 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
+                                return;
+                            }
+
+                            // Vista previa inmediata
+                            const src = await toDataURL(file);
+                            renderLogo(src);
+                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
+
+                            try {
+                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
+                                logoUrlInput.value = logoCloudinaryUrl;
+                                // uploadWithCache ya setea el status; si fue subida nueva lo sobreescribimos
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo subido correctamente</span>';
+                                }
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
+                                logoCloudinaryUrl  = null;
+                                logoUrlInput.value = '';
+                            }
+                        });
+
+                        // LOGO — cambiar (desde botón ✏️)
+                        async function handleLogoReplace(input) {
+                            const file = input.files[0];
+                            if (!file) return;
+
+                            const statusDiv    = document.getElementById('logo-upload-status');
+                            const logoUrlInput = document.getElementById('logo-url');
+
+                            if (file.size > 5 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
+                                return;
+                            }
+
+                            const src = await toDataURL(file);
+                            renderLogo(src);
+                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
+
+                            try {
+                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
+                                logoUrlInput.value = logoCloudinaryUrl;
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo actualizado correctamente</span>';
+                                }
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
+                            }
+                        }
+
+                        // LOGO — eliminar
+                        function removeLogo() {
+                            logoCloudinaryUrl  = null;
+                            document.getElementById('logo-url').value        = '';
+                            document.getElementById('logoFile').value        = '';
+                            document.getElementById('logo-preview').innerHTML = '';
+                            document.getElementById('logo-upload-status').innerHTML = '';
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // FOTOS — seleccionar
+                        // ═══════════════════════════════════════════════════════════
+                        // Buffer de dataURLs para re-renderizar sin perder las anteriores
+                        let photoSrcs = [];
+
+                        document.getElementById('servicePhotos').addEventListener('change', async function (e) {
+                            const files     = Array.from(e.target.files);
+                            const statusDiv = document.getElementById('photos-upload-status');
+                            const photosInput = document.getElementById('photos-urls');
+
+                            if (photoSrcs.length + files.length > 3) {
+                                statusDiv.innerHTML = `<span class="upload-error">❌ Máximo 3 fotos. Ya tenés ${photoSrcs.length} cargada(s).</span>`;
+                                return;
+                            }
+
+                            const totalSize = files.reduce((s, f) => s + f.size, 0);
+                            if (totalSize > 10 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El tamaño total no puede superar 10MB</span>';
+                                return;
+                            }
+
+                            // Previews inmediatas
+                            for (const file of files) {
+                                photoSrcs.push(await toDataURL(file));
+                            }
+                            renderPhotos(photoSrcs);
+                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Subiendo ${files.length} foto(s)...</span>`;
+
+                            try {
+                                for (let i = 0; i < files.length; i++) {
+                                    statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${photoCloudinaryUrls.length + 1} de ${photoSrcs.length}...</span>`;
+                                    const url = await uploadWithCache(files[i], statusDiv);
+                                    photoCloudinaryUrls.push(url);
+                                }
+                                photosInput.value   = photoCloudinaryUrls.join(',');
+                                statusDiv.innerHTML = `<span class="upload-success">✅ ${photoSrcs.length} foto(s) listas</span>`;
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir las fotos</span>';
+                            }
+                        });
+
+                        // FOTOS — cambiar una (desde botón ✏️)
+                        async function handlePhotoReplace(input, index) {
+                            const file = input.files[0];
+                            if (!file) return;
+
+                            const statusDiv = document.getElementById('photos-upload-status');
+                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${index + 1}...</span>`;
+
+                            const src = await toDataURL(file);
+                            photoSrcs[index] = src;
+                            renderPhotos(photoSrcs);
+
+                            try {
+                                const url = await uploadWithCache(file, statusDiv);
+                                photoCloudinaryUrls[index] = url;
+                                document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = `<span class="upload-success">✅ Foto ${index + 1} actualizada correctamente</span>`;
+                                }
+                            } catch {
+                                statusDiv.innerHTML = `<span class="upload-error">❌ Error al actualizar la foto ${index + 1}</span>`;
+                            }
+                        }
+
+                        // FOTOS — eliminar una
+                        function removePhoto(index) {
+                            photoSrcs.splice(index, 1);
+                            photoCloudinaryUrls.splice(index, 1);
+                            document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
+                            if (photoSrcs.length === 0) {
+                                document.getElementById('servicePhotos').value = '';
+                                document.getElementById('photos-upload-status').innerHTML = '';
+                            } else {
+                                document.getElementById('photos-upload-status').innerHTML =
+                                    `<span class="upload-success">✅ ${photoSrcs.length} foto(s) cargadas</span>`;
+                            }
+                            renderPhotos(photoSrcs);
+                        }
+                    </script>
+                    <!-- ══ INFORMACIÓN ADICIONAL ══ -->
+                    <p class="form-section-title">Información adicional</p>
+
+                    <div class="form-group">
+                        <label for="details">Detalles adicionales</label>
+                        <textarea id="details" name="details"
+                            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, contanos cualquier otro detalle adicional."></textarea>
+                    </div>
+
+                    <!-- ══ TÉRMINOS Y ENVÍO ══ -->
+                    <div class="form-terms">
+                        <input type="checkbox" id="terminos-form" name="terminos" required>
+                        <label for="terminos-form">
+                            Al enviar este formulario, confirmás que leíste y aceptás los
+                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="clear-form-button" type="button" class="button button-secondary"
+                            onclick="clearFormData()">
+                            🗑️ Limpiar formulario
+                        </button>
+                        <button id="whatsapp-button" type="button" class="button button1"
+                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">
+                            <i class="fa fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                        <button id="messenger-button" type="button" class="button button1"
+                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">
+                            <i class="fa fa-commenting"></i> Enviar por Messenger
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </main>
 
@@ -1139,7 +1953,7 @@
       if (e.target.matches('a[href^="tel:"]')) {
       e.preventDefault();
       mostrarModalAdvertencia(
-        `⚠️ No hay un cerrajero en este espacio publicitario. Este boton es una demostración. <br><b>cerrajero.net.ar no ofrece servicios de cerrajería, solo publicidad.</b>`,
+        `⚠️ No hay un cerrajero en este espacio publicitario. Este boton es una demostración. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
         e.target.href
       );
     }
@@ -1147,7 +1961,7 @@
       if (e.target.matches('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]')) {
         e.preventDefault();
         mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>(No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).</b>`,
+          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
           e.target.href
         );
       }
@@ -1155,7 +1969,7 @@
       if (e.target.matches('div.servicio a.button1')) {
         e.preventDefault();
         mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>(No respondemos consultas relacionadas con servicios solo ofrecemos publicidad).</b>`,
+          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
           e.target.href
         );
       }
