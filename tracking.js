@@ -1,22 +1,40 @@
-  function mostrarHora() {
-    const opciones = { 
-      timeZone: 'America/Argentina/Buenos_Aires',
-      day: '2-digit',    // Día (01-31)
-      month: '2-digit',  // Mes (01-12)
-      year: 'numeric',   // Año (2026)
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit',
-      hour12: false      // Formato 24hs (pon true si prefieres AM/PM)
+//   function mostrarHora() {
+//     const opciones = { 
+//       timeZone: 'America/Argentina/Buenos_Aires',
+//       day: '2-digit',    // Día (01-31)
+//       month: '2-digit',  // Mes (01-12)
+//       year: 'numeric',   // Año (2026)
+//       hour: '2-digit', 
+//       minute: '2-digit', 
+//       second: '2-digit',
+//       hour12: false      // Formato 24hs (pon true si prefieres AM/PM)
+//     };
+
+//     const horaLocal = new Date().toLocaleString('es-AR', opciones);
+
+//     document.getElementById('reloj').textContent = horaLocal;
+//   }
+
+//   setInterval(mostrarHora, 1000);
+//   mostrarHora();
+
+function mostrarHora() {
+    const reloj = document.getElementById("reloj");
+    if (!reloj) return;
+
+    const opciones = {
+        timeZone: "America/Argentina/Buenos_Aires",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
     };
 
-    const horaLocal = new Date().toLocaleString('es-AR', opciones);
-
-    document.getElementById('reloj').textContent = horaLocal;
-  }
-
-  setInterval(mostrarHora, 1000);
-  mostrarHora();
+    reloj.textContent = new Date().toLocaleString("es-AR", opciones);
+}
 
 // Inicializar data layer
 window.dataLayer = window.dataLayer || [];

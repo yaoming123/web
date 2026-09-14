@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "provincia": "buenos-aires",
+    "localidad": "general-rodriguez",
+    "barrio": null,
+    "lat": -34.60194599739632,
+    "lon": -58.94442270831351,
+    "url": "/buenos-aires/general-rodriguez.html?utm_source=geolocalizacion&utm_campaign=buscador"
+  }
+]

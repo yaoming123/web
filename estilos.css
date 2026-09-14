@@ -43,7 +43,6 @@
 
 }
 
-
 .responsive-iframe {
     width: 100%;
     padding-top: 1em;
@@ -68,6 +67,7 @@ body {
 
 /* NAV */
 nav {
+    font-size: 1.6rem;
     background-color: var(--gris-claro);
     position: sticky;
     top: 0;
@@ -538,6 +538,63 @@ a.ciudades_links:active {
     background-color: var(--estado, var(--azul))
 }
 
+.hero-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+}
+.provincias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 180px));
+    justify-content: center;
+    gap: 12px;
+}
+
+.provincia-card {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail);
+    background-blend-mode: soft-light;
+    background-position: center;
+    background-attachment: fixed;
+    
+    width: auto !important;
+    text-decoration: none !important;
+    margin: 0;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+/* En mobile, el grid pasa a fila con scroll horizontal (misma estética de cuadrados) */
+@media screen and (max-width: 640px) {
+    /* .provincias-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+    } */
+
+    /* .provincia-card {
+        flex: 0 0 118px;
+        scroll-snap-align: start;
+    } */
+
+    /* Alternativa: si preferís que en mobile quede en columna larga (como antes)
+       en vez de deslizar, comentá el bloque de arriba y descomentá este:*/
+    .provincias-grid { display: flex; flex-direction: column; }
+    .provincia-card { aspect-ratio: auto; width: 100% !important; }
+    
+}
 
 /* Seccion marcas */
 .marcas {

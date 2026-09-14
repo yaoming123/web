@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,362 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de corrientes, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="corrientes/bella-vista.html" style="color: darkred;">
-    ✘ | bella vista
-</option>
-
-<option value="corrientes/beron-de-astrada.html" style="color: darkred;">
-    ✘ | berón de astrada
-</option>
-
-<option value="corrientes/yahape.html" style="color: darkred;">
-    ✘ | yahapé
-</option>
-
-<option value="corrientes/corrientes.html" style="color: darkred;">
-    ✘ | corrientes
-</option>
-
-<option value="corrientes/laguna-brava.html" style="color: darkred;">
-    ✘ | laguna brava
-</option>
-
-<option value="corrientes/riachuelo.html" style="color: darkred;">
-    ✘ | riachuelo
-</option>
-
-<option value="corrientes/san-cayetano.html" style="color: darkred;">
-    ✘ | san cayetano
-</option>
-
-<option value="corrientes/concepcion.html" style="color: darkred;">
-    ✘ | concepción
-</option>
-
-<option value="corrientes/santa-rosa.html" style="color: darkred;">
-    ✘ | santa rosa
-</option>
-
-<option value="corrientes/tabay.html" style="color: darkred;">
-    ✘ | tabay
-</option>
-
-<option value="corrientes/tatacua.html" style="color: darkred;">
-    ✘ | tatacua
-</option>
-
-<option value="corrientes/cazadores-correntinos.html" style="color: darkred;">
-    ✘ | cazadores correntinos
-</option>
-
-<option value="corrientes/curuzu-cuatia.html" style="color: darkred;">
-    ✘ | curuzú cuatiá
-</option>
-
-<option value="corrientes/perugorria.html" style="color: darkred;">
-    ✘ | perugorría
-</option>
-
-<option value="corrientes/el-sombrero.html" style="color: darkred;">
-    ✘ | el sombrero
-</option>
-
-<option value="corrientes/empedrado.html" style="color: darkred;">
-    ✘ | empedrado
-</option>
-
-<option value="corrientes/esquina.html" style="color: darkred;">
-    ✘ | esquina
-</option>
-
-<option value="corrientes/pueblo-libertador.html" style="color: darkred;">
-    ✘ | pueblo libertador
-</option>
-
-<option value="corrientes/alvear.html" style="color: darkred;">
-    ✘ | alvear
-</option>
-
-<option value="corrientes/estacion-torrent.html" style="color: darkred;">
-    ✘ | estación torrent
-</option>
-
-<option value="corrientes/ita-ibate.html" style="color: darkred;">
-    ✘ | itá ibaté
-</option>
-
-<option value="corrientes/lomas-de-vallejos.html" style="color: darkred;">
-    ✘ | lomas de vallejos
-</option>
-
-<option value="corrientes/nuestra-senora-del-rosario-de-caa-cati.html" style="color: darkred;">
-    ✘ | nuestra señora del rosario de caá catí
-</option>
-
-<option value="corrientes/palmar-grande.html" style="color: darkred;">
-    ✘ | palmar grande
-</option>
-
-<option value="corrientes/carolina.html" style="color: darkred;">
-    ✘ | carolina
-</option>
-
-<option value="corrientes/goya.html" style="color: darkred;">
-    ✘ | goya
-</option>
-
-<option value="corrientes/itati.html" style="color: darkred;">
-    ✘ | itatí
-</option>
-
-<option value="corrientes/ramada-paso.html" style="color: darkred;">
-    ✘ | ramada paso
-</option>
-
-<option value="corrientes/colonia-liebig-s.html" style="color: darkred;">
-    ✘ | colonia liebig's
-</option>
-
-<option value="corrientes/ituzaingo.html" style="color: darkred;">
-    ✘ | ituzaingó
-</option>
-
-<option value="corrientes/san-antonio.html" style="color: darkred;">
-    ✘ | san antonio
-</option>
-
-<option value="corrientes/san-carlos.html" style="color: darkred;">
-    ✘ | san carlos
-</option>
-
-<option value="corrientes/villa-olivari.html" style="color: darkred;">
-    ✘ | villa olivari
-</option>
-
-<option value="corrientes/cruz-de-los-milagros.html" style="color: darkred;">
-    ✘ | cruz de los milagros
-</option>
-
-<option value="corrientes/gobernador-juan-e-martinez.html" style="color: darkred;">
-    ✘ | gobernador juan e. martínez
-</option>
-
-<option value="corrientes/lavalle.html" style="color: darkred;">
-    ✘ | lavalle
-</option>
-
-<option value="corrientes/santa-lucia.html" style="color: darkred;">
-    ✘ | santa lucía
-</option>
-
-<option value="corrientes/villa-cordoba.html" style="color: darkred;">
-    ✘ | villa córdoba
-</option>
-
-<option value="corrientes/yatayti-calle.html" style="color: darkred;">
-    ✘ | yatayti calle
-</option>
-
-<option value="corrientes/mburucuya.html" style="color: darkred;">
-    ✘ | mburucuyá
-</option>
-
-<option value="corrientes/felipe-yofre.html" style="color: darkred;">
-    ✘ | felipe yofré
-</option>
-
-<option value="corrientes/mariano-i-loza.html" style="color: darkred;">
-    ✘ | mariano i. loza
-</option>
-
-<option value="corrientes/mercedes.html" style="color: darkred;">
-    ✘ | mercedes
-</option>
-
-<option value="corrientes/colonia-libertad.html" style="color: darkred;">
-    ✘ | colonia libertad
-</option>
-
-<option value="corrientes/estacion-libertad.html" style="color: darkred;">
-    ✘ | estación libertad
-</option>
-
-<option value="corrientes/juan-pujol.html" style="color: darkred;">
-    ✘ | juan pujol
-</option>
-
-<option value="corrientes/mocoreta.html" style="color: darkred;">
-    ✘ | mocoretá
-</option>
-
-<option value="corrientes/monte-caseros.html" style="color: darkred;">
-    ✘ | monte caseros
-</option>
-
-<option value="corrientes/parada-acuna.html" style="color: darkred;">
-    ✘ | parada acuña
-</option>
-
-<option value="corrientes/parada-labougle.html" style="color: darkred;">
-    ✘ | parada labougle
-</option>
-
-<option value="corrientes/bonpland.html" style="color: darkred;">
-    ✘ | bonpland
-</option>
-
-<option value="corrientes/parada-pucheta.html" style="color: darkred;">
-    ✘ | parada pucheta
-</option>
-
-<option value="corrientes/paso-de-los-libres.html" style="color: darkred;">
-    ✘ | paso de los libres
-</option>
-
-<option value="corrientes/tapebicua.html" style="color: darkred;">
-    ✘ | tapebicuá
-</option>
-
-<option value="corrientes/saladas.html" style="color: darkred;">
-    ✘ | saladas
-</option>
-
-<option value="corrientes/san-lorenzo.html" style="color: darkred;">
-    ✘ | san lorenzo
-</option>
-
-<option value="corrientes/ingenio-primer-correntino.html" style="color: darkred;">
-    ✘ | ingenio primer correntino
-</option>
-
-<option value="corrientes/paso-de-la-patria.html" style="color: darkred;">
-    ✘ | paso de la patria
-</option>
-
-<option value="corrientes/san-cosme.html" style="color: darkred;">
-    ✘ | san cosme
-</option>
-
-<option value="corrientes/santa-ana.html" style="color: darkred;">
-    ✘ | santa ana
-</option>
-
-<option value="corrientes/san-luis-del-palmar.html" style="color: darkred;">
-    ✘ | san luis del palmar
-</option>
-
-<option value="corrientes/colonia-carlos-pellegrini.html" style="color: darkred;">
-    ✘ | colonia carlos pellegrini
-</option>
-
-<option value="corrientes/guaviravi.html" style="color: darkred;">
-    ✘ | guaviraví
-</option>
-
-<option value="corrientes/la-cruz.html" style="color: darkred;">
-    ✘ | la cruz
-</option>
-
-<option value="corrientes/yapeyu.html" style="color: darkred;">
-    ✘ | yapeyú
-</option>
-
-<option value="corrientes/loreto.html" style="color: darkred;">
-    ✘ | loreto
-</option>
-
-<option value="corrientes/san-miguel.html" style="color: darkred;">
-    ✘ | san miguel
-</option>
-
-<option value="corrientes/chavarria.html" style="color: darkred;">
-    ✘ | chavarría
-</option>
-
-<option value="corrientes/colonia-pando.html" style="color: darkred;">
-    ✘ | colonia pando
-</option>
-
-<option value="corrientes/9-de-julio.html" style="color: darkred;">
-    ✘ | 9 de julio
-</option>
-
-<option value="corrientes/pedro-r-fernandez.html" style="color: darkred;">
-    ✘ | pedro r. fernández
-</option>
-
-<option value="corrientes/san-roque.html" style="color: darkred;">
-    ✘ | san roque
-</option>
-
-<option value="corrientes/jose-rafael-gomez.html" style="color: darkred;">
-    ✘ | josé rafael gómez
-</option>
-
-<option value="corrientes/garruchos.html" style="color: darkred;">
-    ✘ | garruchos
-</option>
-
-<option value="corrientes/gobernador-igr-valentin-virasoro.html" style="color: darkred;">
-    ✘ | gobernador igr. valentín virasoro
-</option>
-
-<option value="corrientes/santo-tome.html" style="color: darkred;">
-    ✘ | santo tomé
-</option>
-
-<option value="corrientes/sauce.html" style="color: darkred;">
-    ✘ | sauce
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -1796,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -1869,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -1935,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -1971,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2054,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2222,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2307,6 +1958,348 @@
         );
       }
     });
+
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="corrientes/bella-vista.html" style="color: darkred;">
+    ✘ | bella vista
+</option>
+
+<option value="corrientes/beron-de-astrada.html" style="color: darkred;">
+    ✘ | berón de astrada
+</option>
+
+<option value="corrientes/yahape.html" style="color: darkred;">
+    ✘ | yahapé
+</option>
+
+<option value="corrientes/corrientes.html" style="color: darkred;">
+    ✘ | corrientes
+</option>
+
+<option value="corrientes/laguna-brava.html" style="color: darkred;">
+    ✘ | laguna brava
+</option>
+
+<option value="corrientes/riachuelo.html" style="color: darkred;">
+    ✘ | riachuelo
+</option>
+
+<option value="corrientes/san-cayetano.html" style="color: darkred;">
+    ✘ | san cayetano
+</option>
+
+<option value="corrientes/concepcion.html" style="color: darkred;">
+    ✘ | concepción
+</option>
+
+<option value="corrientes/santa-rosa.html" style="color: darkred;">
+    ✘ | santa rosa
+</option>
+
+<option value="corrientes/tabay.html" style="color: darkred;">
+    ✘ | tabay
+</option>
+
+<option value="corrientes/tatacua.html" style="color: darkred;">
+    ✘ | tatacua
+</option>
+
+<option value="corrientes/cazadores-correntinos.html" style="color: darkred;">
+    ✘ | cazadores correntinos
+</option>
+
+<option value="corrientes/curuzu-cuatia.html" style="color: darkred;">
+    ✘ | curuzú cuatiá
+</option>
+
+<option value="corrientes/perugorria.html" style="color: darkred;">
+    ✘ | perugorría
+</option>
+
+<option value="corrientes/el-sombrero.html" style="color: darkred;">
+    ✘ | el sombrero
+</option>
+
+<option value="corrientes/empedrado.html" style="color: darkred;">
+    ✘ | empedrado
+</option>
+
+<option value="corrientes/esquina.html" style="color: darkred;">
+    ✘ | esquina
+</option>
+
+<option value="corrientes/pueblo-libertador.html" style="color: darkred;">
+    ✘ | pueblo libertador
+</option>
+
+<option value="corrientes/alvear.html" style="color: darkred;">
+    ✘ | alvear
+</option>
+
+<option value="corrientes/estacion-torrent.html" style="color: darkred;">
+    ✘ | estación torrent
+</option>
+
+<option value="corrientes/ita-ibate.html" style="color: darkred;">
+    ✘ | itá ibaté
+</option>
+
+<option value="corrientes/lomas-de-vallejos.html" style="color: darkred;">
+    ✘ | lomas de vallejos
+</option>
+
+<option value="corrientes/nuestra-senora-del-rosario-de-caa-cati.html" style="color: darkred;">
+    ✘ | nuestra señora del rosario de caá catí
+</option>
+
+<option value="corrientes/palmar-grande.html" style="color: darkred;">
+    ✘ | palmar grande
+</option>
+
+<option value="corrientes/carolina.html" style="color: darkred;">
+    ✘ | carolina
+</option>
+
+<option value="corrientes/goya.html" style="color: darkred;">
+    ✘ | goya
+</option>
+
+<option value="corrientes/itati.html" style="color: darkred;">
+    ✘ | itatí
+</option>
+
+<option value="corrientes/ramada-paso.html" style="color: darkred;">
+    ✘ | ramada paso
+</option>
+
+<option value="corrientes/colonia-liebig-s.html" style="color: darkred;">
+    ✘ | colonia liebig's
+</option>
+
+<option value="corrientes/ituzaingo.html" style="color: darkred;">
+    ✘ | ituzaingó
+</option>
+
+<option value="corrientes/san-antonio.html" style="color: darkred;">
+    ✘ | san antonio
+</option>
+
+<option value="corrientes/san-carlos.html" style="color: darkred;">
+    ✘ | san carlos
+</option>
+
+<option value="corrientes/villa-olivari.html" style="color: darkred;">
+    ✘ | villa olivari
+</option>
+
+<option value="corrientes/cruz-de-los-milagros.html" style="color: darkred;">
+    ✘ | cruz de los milagros
+</option>
+
+<option value="corrientes/gobernador-juan-e-martinez.html" style="color: darkred;">
+    ✘ | gobernador juan e. martínez
+</option>
+
+<option value="corrientes/lavalle.html" style="color: darkred;">
+    ✘ | lavalle
+</option>
+
+<option value="corrientes/santa-lucia.html" style="color: darkred;">
+    ✘ | santa lucía
+</option>
+
+<option value="corrientes/villa-cordoba.html" style="color: darkred;">
+    ✘ | villa córdoba
+</option>
+
+<option value="corrientes/yatayti-calle.html" style="color: darkred;">
+    ✘ | yatayti calle
+</option>
+
+<option value="corrientes/mburucuya.html" style="color: darkred;">
+    ✘ | mburucuyá
+</option>
+
+<option value="corrientes/felipe-yofre.html" style="color: darkred;">
+    ✘ | felipe yofré
+</option>
+
+<option value="corrientes/mariano-i-loza.html" style="color: darkred;">
+    ✘ | mariano i. loza
+</option>
+
+<option value="corrientes/mercedes.html" style="color: darkred;">
+    ✘ | mercedes
+</option>
+
+<option value="corrientes/colonia-libertad.html" style="color: darkred;">
+    ✘ | colonia libertad
+</option>
+
+<option value="corrientes/estacion-libertad.html" style="color: darkred;">
+    ✘ | estación libertad
+</option>
+
+<option value="corrientes/juan-pujol.html" style="color: darkred;">
+    ✘ | juan pujol
+</option>
+
+<option value="corrientes/mocoreta.html" style="color: darkred;">
+    ✘ | mocoretá
+</option>
+
+<option value="corrientes/monte-caseros.html" style="color: darkred;">
+    ✘ | monte caseros
+</option>
+
+<option value="corrientes/parada-acuna.html" style="color: darkred;">
+    ✘ | parada acuña
+</option>
+
+<option value="corrientes/parada-labougle.html" style="color: darkred;">
+    ✘ | parada labougle
+</option>
+
+<option value="corrientes/bonpland.html" style="color: darkred;">
+    ✘ | bonpland
+</option>
+
+<option value="corrientes/parada-pucheta.html" style="color: darkred;">
+    ✘ | parada pucheta
+</option>
+
+<option value="corrientes/paso-de-los-libres.html" style="color: darkred;">
+    ✘ | paso de los libres
+</option>
+
+<option value="corrientes/tapebicua.html" style="color: darkred;">
+    ✘ | tapebicuá
+</option>
+
+<option value="corrientes/saladas.html" style="color: darkred;">
+    ✘ | saladas
+</option>
+
+<option value="corrientes/san-lorenzo.html" style="color: darkred;">
+    ✘ | san lorenzo
+</option>
+
+<option value="corrientes/ingenio-primer-correntino.html" style="color: darkred;">
+    ✘ | ingenio primer correntino
+</option>
+
+<option value="corrientes/paso-de-la-patria.html" style="color: darkred;">
+    ✘ | paso de la patria
+</option>
+
+<option value="corrientes/san-cosme.html" style="color: darkred;">
+    ✘ | san cosme
+</option>
+
+<option value="corrientes/santa-ana.html" style="color: darkred;">
+    ✘ | santa ana
+</option>
+
+<option value="corrientes/san-luis-del-palmar.html" style="color: darkred;">
+    ✘ | san luis del palmar
+</option>
+
+<option value="corrientes/colonia-carlos-pellegrini.html" style="color: darkred;">
+    ✘ | colonia carlos pellegrini
+</option>
+
+<option value="corrientes/guaviravi.html" style="color: darkred;">
+    ✘ | guaviraví
+</option>
+
+<option value="corrientes/la-cruz.html" style="color: darkred;">
+    ✘ | la cruz
+</option>
+
+<option value="corrientes/yapeyu.html" style="color: darkred;">
+    ✘ | yapeyú
+</option>
+
+<option value="corrientes/loreto.html" style="color: darkred;">
+    ✘ | loreto
+</option>
+
+<option value="corrientes/san-miguel.html" style="color: darkred;">
+    ✘ | san miguel
+</option>
+
+<option value="corrientes/chavarria.html" style="color: darkred;">
+    ✘ | chavarría
+</option>
+
+<option value="corrientes/colonia-pando.html" style="color: darkred;">
+    ✘ | colonia pando
+</option>
+
+<option value="corrientes/9-de-julio.html" style="color: darkred;">
+    ✘ | 9 de julio
+</option>
+
+<option value="corrientes/pedro-r-fernandez.html" style="color: darkred;">
+    ✘ | pedro r. fernández
+</option>
+
+<option value="corrientes/san-roque.html" style="color: darkred;">
+    ✘ | san roque
+</option>
+
+<option value="corrientes/jose-rafael-gomez.html" style="color: darkred;">
+    ✘ | josé rafael gómez
+</option>
+
+<option value="corrientes/garruchos.html" style="color: darkred;">
+    ✘ | garruchos
+</option>
+
+<option value="corrientes/gobernador-igr-valentin-virasoro.html" style="color: darkred;">
+    ✘ | gobernador igr. valentín virasoro
+</option>
+
+<option value="corrientes/santo-tome.html" style="color: darkred;">
+    ✘ | santo tomé
+</option>
+
+<option value="corrientes/sauce.html" style="color: darkred;">
+    ✘ | sauce
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
 
 </script></body>
 

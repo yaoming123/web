@@ -53,7 +53,7 @@
             j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-552P4L5P');</script>
-    
+
 </head>
 
 
@@ -88,8 +88,17 @@
     <header>
         <div class="contenedor">
             <div id="contenido-principal">
+                <div class="hero-actions">
+
+                    <button class="button button1 hero-btn" onclick="mostrarModalBuscarProveedor()">Buscar proveedor
+                        cerca</button>
+                    <a class="button button1 hero-btn" href="buenos-aires.html#formulario-publicidad">📢 Anunciar en el
+                        sitio</a>
+                    <a class="button button1 hero-btn" href="#provincias">🗺️ Ver provincias</a>
+                </div>
                 <h1>¿Busca un cerrajero en Argentina?</h1>
-                <p>La cerrajería, un oficio con historia en argentina, donde los cerrajeros perpetúan la tradición de la
+                <p>La cerrajería, un oficio con historia en argentina, donde los cerrajeros perpetúan la
+tradición de la
 seguridad y urgencias.
 En la actualidad, la cerrajería en argentina sigue siendo fundamental, integrando técnicas
 tradicionales con las últimas innovaciones. Empresas y profesionales locales ofrecen un amplio
@@ -99,65 +108,33 @@ Nuestro directorio destaca a los cerrajeros argentinos, expertos altamente capac
 garantizan la máxima calidad en sus servicios.<br>Encuentre a alguien que ofrezca servicios de
 cerrajería a domicilio</p>
                 <p class="scroll-section" id="provincias">Encuentre un cerrajero en la provincia de:<br><br>
-                    <a href="buenos-aires.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Buenos
-                        Aires</a><br>
-                    <a href="catamarca.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Catamarca</a><br>
-                    <a href="chaco.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Chaco</a><br>
-                    <a href="chubut.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Chubut</a><br>
-                    <a href="cordoba.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Córdoba</a><br>
-                    <a href="corrientes.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Corrientes</a><br>
-                    <a href="entre-rios.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Entre
-                        Ríos</a><br>
-                    <a href="formosa.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Formosa</a><br>
-                    <a href="jujuy.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Jujuy</a><br>
-                    <a href="la-pampa.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">La
-                        Pampa</a><br>
-                    <a href="la-rioja.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">La
-                        Rioja</a><br>
-                    <a href="mendoza.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Mendoza</a><br>
-                    <a href="misiones.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Misiones</a><br>
-                    <a href="neuquen.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Neuquén</a><br>
-                    <a href="rio-negro.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Río
-                        Negro</a><br>
-                    <a href="salta.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Salta</a><br>
-                    <a href="san-juan.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">San
-                        Juan</a><br>
-                    <a href="san-luis.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">San
-                        Luis</a><br>
-                    <a href="santa-cruz.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Santa
-                        Cruz</a><br>
-                    <a href="santa-fe.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Santa
-                        Fe</a><br>
-                    <a href="santiago-del-estero.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Santiago del
-                        Estero</a><br>
-                    <a href="tierra-del-fuego-antartida-e-islas-del-atlantico-sur.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Tierra del
-                        Fuego</a><br>
-                    <a href="tucuman.html" class="button button1"
-                        style="text-wrap: nowrap;font-weight: normal;text-decoration: none; width: 50%;">Tucumán</a><br>
 
-
+                <div class="provincias-grid">
+                    <a href="buenos-aires.html" class="button button1 provincia-card">Buenos Aires</a>
+                    <a href="catamarca.html" class="button button1 provincia-card">Catamarca</a>
+                    <a href="chaco.html" class="button button1 provincia-card">Chaco</a>
+                    <a href="chubut.html" class="button button1 provincia-card">Chubut</a>
+                    <a href="cordoba.html" class="button button1 provincia-card">Córdoba</a>
+                    <a href="corrientes.html" class="button button1 provincia-card">Corrientes</a>
+                    <a href="entre-rios.html" class="button button1 provincia-card">Entre Ríos</a>
+                    <a href="formosa.html" class="button button1 provincia-card">Formosa</a>
+                    <a href="jujuy.html" class="button button1 provincia-card">Jujuy</a>
+                    <a href="la-pampa.html" class="button button1 provincia-card">La Pampa</a>
+                    <a href="la-rioja.html" class="button button1 provincia-card">La Rioja</a>
+                    <a href="mendoza.html" class="button button1 provincia-card">Mendoza</a>
+                    <a href="misiones.html" class="button button1 provincia-card">Misiones</a>
+                    <a href="neuquen.html" class="button button1 provincia-card">Neuquén</a>
+                    <a href="rio-negro.html" class="button button1 provincia-card">Río Negro</a>
+                    <a href="salta.html" class="button button1 provincia-card">Salta</a>
+                    <a href="san-juan.html" class="button button1 provincia-card">San Juan</a>
+                    <a href="san-luis.html" class="button button1 provincia-card">San Luis</a>
+                    <a href="santa-cruz.html" class="button button1 provincia-card">Santa Cruz</a>
+                    <a href="santa-fe.html" class="button button1 provincia-card">Santa Fe</a>
+                    <a href="santiago-del-estero.html" class="button button1 provincia-card">Santiago del Estero</a>
+                    <a href="tierra-del-fuego-antartida-e-islas-del-atlantico-sur.html"
+                        class="button button1 provincia-card">Tierra del Fuego</a>
+                    <a href="tucuman.html" class="button button1 provincia-card">Tucumán</a>
+                </div>
             </div>
         </div>
     </header>
@@ -195,6 +172,239 @@ cerrajería a domicilio</p>
             nav.classList.toggle('active');
         });
     });
+</script>
+
+<div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-contenido">
+    <img src="logo.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy"
+      style="width: 15rem; height: 15rem;">
+
+    <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+<script>
+
+  const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modal-content");
+  const closeBtn = document.getElementById("modal-close-btn");
+  let abortController = null;
+  let ultimoUmbralKm = 50;
+
+  // Cerrar modal
+  function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
+    modal.classList.remove("active");
+    abortController = null;
+  }
+
+  function abrirModal(html) {
+    modalContent.innerHTML = html;
+    modal.classList.add("active");
+  }
+
+  closeBtn.addEventListener("click", cerrarModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) cerrarModal();
+  });
+
+
+  function mostrarModalSinResultados() {
+    const html = `
+      <h1 id="modal-title">📍 Encontrar cerrajero</h1>
+      <h2>⚠️ No hay proveedor disponible en el radio de ${ultimoUmbralKm} KM</h2>
+
+      <p>¿Ofrecés servicios de cerrajería en esta zona?</p>
+      
+      <div style="margin: 1.5rem 0;">
+        <a href="#formulario-publicidad" class="button" onclick="cerrarModal();">📣 ¡Anunciate aquí!</a>
+        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
+      </div>
+
+      <p>O probá con una distancia máxima más alta.</p>
+      
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+
+      <div class="modal-legal">
+        Al usar el buscador, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+    abrirModal(html);
+  }
+
+  function mostrarModalResultados(zonas) {
+    const formatoZona = (zona) => {
+      return [zona.provincia, zona.localidad, zona.barrio]
+        .filter(x => x && x.trim() !== "")
+        .join(", ");
+    };
+
+    let html = `
+      <h1 id="modal-title">📍 Proveedores Cercanos</h1>
+      <p>Se encontraron <strong>${zonas.length}</strong> resultado(s):</p>
+      <ul>
+    `;
+
+    zonas.forEach(z => {
+      html += `
+        <li>
+          <strong>Zona:</strong> ${formatoZona(z)}<br>
+          <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
+          <a href="${z.url}" target="_blank" class="button">🔗 Ver sección</a>
+        </li>
+      `;
+    });
+
+    html += `
+      </ul>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+
+  function mostrarModalError(mensaje) {
+    const html = `
+      <h1 id="modal-title">📍 Error en la Búsqueda</h1>
+      <p><strong>${mensaje}</strong></p>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar e Intentar de Nuevo</button>
+    `;
+    abrirModal(html);
+  }
+
+  function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+  }
+
+  function compartirSeccion() {
+    const urlBase = window.location.href;
+    const urlTag = `${urlBase}?referido=cerrajero_amigo`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: `Servicios de cerrajería`,
+        text: `Mirá esta sección, quizás te interese anunciarte como cerrajero.`,
+        url: urlTag
+      }).catch(console.error);
+    } else {
+      alert("Copiá este link y compartilo: " + urlTag);
+    }
+  }
+
+  function obtenerUbicacion(opciones) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
+    });
+  }
+
+  async function obtenerUbicacionConFallback() {
+    try {
+      return await obtenerUbicacion({
+        enableHighAccuracy: true,
+        timeout: 8000,
+        maximumAge: 0
+      });
+    } catch (error) {
+      if (error.code === 2 || error.code === 3) {
+        return await obtenerUbicacion({
+          enableHighAccuracy: false,
+          timeout: 7000,
+          maximumAge: 0
+        });
+      } else if (error.code === 1) {
+        throw new Error("El permiso de geolocalización fue denegado.");
+      } else {
+        throw new Error("❌ No se pudo obtener tu ubicación.");
+      }
+    }
+  }
+
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const toRad = x => x * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  async function buscarPorUbicacion() {
+    if (abortController) abortController.abort();
+    abortController = new AbortController();
+
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
+    try {
+      if (!navigator.geolocation) {
+        throw new Error("Tu navegador no permite geolocalización.");
+      }
+
+      abrirModal(`
+        <div id="loader">
+          <div class="spinner"></div>
+          <p>Buscando proveedores cercanos...</p>
+        </div>
+        <div id="progress-bar"></div>
+      `);
+
+      const posicion = await obtenerUbicacionConFallback();
+      const userLat = posicion.coords.latitude;
+      const userLon = posicion.coords.longitude;
+
+      const res = await fetch("disponibles.json", { signal: abortController.signal });
+      const data = await res.json();
+
+      data.forEach(item => {
+        item.dist = haversine(userLat, userLon, item.lat, item.lon);
+      });
+
+      const resultados = data
+        .filter(item => item.dist <= umbral)
+        .sort((a, b) => a.dist - b.dist);
+
+
+      if (resultados.length === 0) {
+        mostrarModalSinResultados();
+      } else {
+        mostrarModalResultados(resultados);
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        mostrarModalError(error.message);
+      }
+    }
+  }
+
+
 </script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-552P4L5P" height="0"

@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,366 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de san juan, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="san-juan/el-rincon.html" style="color: darkred;">
-    ✘ | el rincón
-</option>
-
-<option value="san-juan/villa-general-san-martin-campo-afuera.html" style="color: darkred;">
-    ✘ | villa general san martín - campo afuera
-</option>
-
-<option value="san-juan/las-tapias.html" style="color: darkred;">
-    ✘ | las tapias
-</option>
-
-<option value="san-juan/villa-el-salvador-villa-sefair.html" style="color: darkred;">
-    ✘ | villa el salvador - villa sefair
-</option>
-
-<option value="san-juan/barreal-villa-pituil.html" style="color: darkred;">
-    ✘ | barreal - villa pituil
-</option>
-
-<option value="san-juan/calingasta.html" style="color: darkred;">
-    ✘ | calingasta
-</option>
-
-<option value="san-juan/tamberias.html" style="color: darkred;">
-    ✘ | tamberías
-</option>
-
-<option value="san-juan/san-juan.html" style="color: darkred;">
-    ✘ | san juan
-</option>
-
-<option value="san-juan/bermejo.html" style="color: darkred;">
-    ✘ | bermejo
-</option>
-
-<option value="san-juan/barrio-justo-p-castro-iv.html" style="color: darkred;">
-    ✘ | barrio justo p. castro iv
-</option>
-
-<option value="san-juan/caucete.html" style="color: darkred;">
-    ✘ | caucete
-</option>
-
-<option value="san-juan/las-talas-los-medanos.html" style="color: darkred;">
-    ✘ | las talas - los médanos
-</option>
-
-<option value="san-juan/marayes.html" style="color: darkred;">
-    ✘ | marayes
-</option>
-
-<option value="san-juan/pie-de-palo.html" style="color: darkred;">
-    ✘ | pie de palo
-</option>
-
-<option value="san-juan/vallecito.html" style="color: darkred;">
-    ✘ | vallecito
-</option>
-
-<option value="san-juan/villa-independencia.html" style="color: darkred;">
-    ✘ | villa independencia
-</option>
-
-<option value="san-juan/chimbas.html" style="color: darkred;">
-    ✘ | chimbas
-</option>
-
-<option value="san-juan/angualasto.html" style="color: darkred;">
-    ✘ | angualasto
-</option>
-
-<option value="san-juan/bella-vista.html" style="color: darkred;">
-    ✘ | bella vista
-</option>
-
-<option value="san-juan/iglesia.html" style="color: darkred;">
-    ✘ | iglesia
-</option>
-
-<option value="san-juan/las-flores.html" style="color: darkred;">
-    ✘ | las flores
-</option>
-
-<option value="san-juan/pismanta.html" style="color: darkred;">
-    ✘ | pismanta
-</option>
-
-<option value="san-juan/rodeo.html" style="color: darkred;">
-    ✘ | rodeo
-</option>
-
-<option value="san-juan/tudcum.html" style="color: darkred;">
-    ✘ | tudcum
-</option>
-
-<option value="san-juan/el-medano.html" style="color: darkred;">
-    ✘ | el médano
-</option>
-
-<option value="san-juan/gran-china.html" style="color: darkred;">
-    ✘ | gran china
-</option>
-
-<option value="san-juan/huaco.html" style="color: darkred;">
-    ✘ | huaco
-</option>
-
-<option value="san-juan/mogna.html" style="color: darkred;">
-    ✘ | mogna
-</option>
-
-<option value="san-juan/niquivil.html" style="color: darkred;">
-    ✘ | niquivil
-</option>
-
-<option value="san-juan/pampa-vieja.html" style="color: darkred;">
-    ✘ | pampa vieja
-</option>
-
-<option value="san-juan/san-isidro.html" style="color: darkred;">
-    ✘ | san isidro
-</option>
-
-<option value="san-juan/san-jose-de-jachal.html" style="color: darkred;">
-    ✘ | san josé de jáchal
-</option>
-
-<option value="san-juan/villa-malvinas-argentinas.html" style="color: darkred;">
-    ✘ | villa malvinas argentinas
-</option>
-
-<option value="san-juan/villa-mercedes.html" style="color: darkred;">
-    ✘ | villa mercedes
-</option>
-
-<option value="san-juan/colonia-fiorito.html" style="color: darkred;">
-    ✘ | colonia fiorito
-</option>
-
-<option value="san-juan/las-chacritas.html" style="color: darkred;">
-    ✘ | las chacritas
-</option>
-
-<option value="san-juan/9-de-julio.html" style="color: darkred;">
-    ✘ | 9 de julio
-</option>
-
-<option value="san-juan/barrio-municipal.html" style="color: darkred;">
-    ✘ | barrio municipal
-</option>
-
-<option value="san-juan/barrio-ruta-40.html" style="color: darkred;">
-    ✘ | barrio ruta 40
-</option>
-
-<option value="san-juan/carpinteria.html" style="color: darkred;">
-    ✘ | carpintería
-</option>
-
-<option value="san-juan/las-piedritas.html" style="color: darkred;">
-    ✘ | las piedritas
-</option>
-
-<option value="san-juan/quinto-cuartel.html" style="color: darkred;">
-    ✘ | quinto cuartel
-</option>
-
-<option value="san-juan/villa-aberastain-la-rinconada.html" style="color: darkred;">
-    ✘ | villa aberastain - la rinconada
-</option>
-
-<option value="san-juan/villa-barboza-villa-nacusi.html" style="color: darkred;">
-    ✘ | villa barboza - villa nacusi
-</option>
-
-<option value="san-juan/villa-centenario.html" style="color: darkred;">
-    ✘ | villa centenario
-</option>
-
-<option value="san-juan/rawson.html" style="color: darkred;">
-    ✘ | rawson
-</option>
-
-<option value="san-juan/villa-bolanos-medano-de-oro.html" style="color: darkred;">
-    ✘ | villa bolaños (médano de oro)
-</option>
-
-<option value="san-juan/rivadavia.html" style="color: darkred;">
-    ✘ | rivadavia
-</option>
-
-<option value="san-juan/barrio-sadop-bella-vista.html" style="color: darkred;">
-    ✘ | barrio sadop - bella vista
-</option>
-
-<option value="san-juan/dos-acequias.html" style="color: darkred;">
-    ✘ | dos acequias
-</option>
-
-<option value="san-juan/villa-del-salvador.html" style="color: darkred;">
-    ✘ | villa del salvador
-</option>
-
-<option value="san-juan/villa-dominguito.html" style="color: darkred;">
-    ✘ | villa dominguito
-</option>
-
-<option value="san-juan/villa-don-bosco.html" style="color: darkred;">
-    ✘ | villa don bosco
-</option>
-
-<option value="san-juan/villa-san-martin.html" style="color: darkred;">
-    ✘ | villa san martín
-</option>
-
-<option value="san-juan/santa-lucia.html" style="color: darkred;">
-    ✘ | santa lucía
-</option>
-
-<option value="san-juan/canada-honda.html" style="color: darkred;">
-    ✘ | cañada honda
-</option>
-
-<option value="san-juan/cienaguita.html" style="color: darkred;">
-    ✘ | cienaguita
-</option>
-
-<option value="san-juan/colonia-fiscal.html" style="color: darkred;">
-    ✘ | colonia fiscal
-</option>
-
-<option value="san-juan/divisadero.html" style="color: darkred;">
-    ✘ | divisadero
-</option>
-
-<option value="san-juan/guanacache.html" style="color: darkred;">
-    ✘ | guanacache
-</option>
-
-<option value="san-juan/las-lagunas.html" style="color: darkred;">
-    ✘ | las lagunas
-</option>
-
-<option value="san-juan/los-berros.html" style="color: darkred;">
-    ✘ | los berros
-</option>
-
-<option value="san-juan/pedernal.html" style="color: darkred;">
-    ✘ | pedernal
-</option>
-
-<option value="san-juan/punta-del-medano.html" style="color: darkred;">
-    ✘ | punta del médano
-</option>
-
-<option value="san-juan/villa-media-agua.html" style="color: darkred;">
-    ✘ | villa media agua
-</option>
-
-<option value="san-juan/villa-ibanez.html" style="color: darkred;">
-    ✘ | villa ibáñez
-</option>
-
-<option value="san-juan/astica.html" style="color: darkred;">
-    ✘ | astica
-</option>
-
-<option value="san-juan/balde-del-rosario.html" style="color: darkred;">
-    ✘ | balde del rosario
-</option>
-
-<option value="san-juan/chucuma.html" style="color: darkred;">
-    ✘ | chucuma
-</option>
-
-<option value="san-juan/los-baldecitos.html" style="color: darkred;">
-    ✘ | los baldecitos
-</option>
-
-<option value="san-juan/usno.html" style="color: darkred;">
-    ✘ | usno
-</option>
-
-<option value="san-juan/villa-san-agustin.html" style="color: darkred;">
-    ✘ | villa san agustín
-</option>
-
-<option value="san-juan/el-encon.html" style="color: darkred;">
-    ✘ | el encón
-</option>
-
-<option value="san-juan/tupeli.html" style="color: darkred;">
-    ✘ | tupelí
-</option>
-
-<option value="san-juan/villa-borjas-la-chimbera.html" style="color: darkred;">
-    ✘ | villa borjas - la chimbera
-</option>
-
-<option value="san-juan/villa-el-tango.html" style="color: darkred;">
-    ✘ | villa el tango
-</option>
-
-<option value="san-juan/villa-santa-rosa.html" style="color: darkred;">
-    ✘ | villa santa rosa
-</option>
-
-<option value="san-juan/villa-basilio-nievas.html" style="color: darkred;">
-    ✘ | villa basilio nievas
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -1800,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -1873,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -1939,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -1975,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2058,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2226,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2312,6 +1959,352 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="san-juan/el-rincon.html" style="color: darkred;">
+    ✘ | el rincón
+</option>
+
+<option value="san-juan/villa-general-san-martin-campo-afuera.html" style="color: darkred;">
+    ✘ | villa general san martín - campo afuera
+</option>
+
+<option value="san-juan/las-tapias.html" style="color: darkred;">
+    ✘ | las tapias
+</option>
+
+<option value="san-juan/villa-el-salvador-villa-sefair.html" style="color: darkred;">
+    ✘ | villa el salvador - villa sefair
+</option>
+
+<option value="san-juan/barreal-villa-pituil.html" style="color: darkred;">
+    ✘ | barreal - villa pituil
+</option>
+
+<option value="san-juan/calingasta.html" style="color: darkred;">
+    ✘ | calingasta
+</option>
+
+<option value="san-juan/tamberias.html" style="color: darkred;">
+    ✘ | tamberías
+</option>
+
+<option value="san-juan/san-juan.html" style="color: darkred;">
+    ✘ | san juan
+</option>
+
+<option value="san-juan/bermejo.html" style="color: darkred;">
+    ✘ | bermejo
+</option>
+
+<option value="san-juan/barrio-justo-p-castro-iv.html" style="color: darkred;">
+    ✘ | barrio justo p. castro iv
+</option>
+
+<option value="san-juan/caucete.html" style="color: darkred;">
+    ✘ | caucete
+</option>
+
+<option value="san-juan/las-talas-los-medanos.html" style="color: darkred;">
+    ✘ | las talas - los médanos
+</option>
+
+<option value="san-juan/marayes.html" style="color: darkred;">
+    ✘ | marayes
+</option>
+
+<option value="san-juan/pie-de-palo.html" style="color: darkred;">
+    ✘ | pie de palo
+</option>
+
+<option value="san-juan/vallecito.html" style="color: darkred;">
+    ✘ | vallecito
+</option>
+
+<option value="san-juan/villa-independencia.html" style="color: darkred;">
+    ✘ | villa independencia
+</option>
+
+<option value="san-juan/chimbas.html" style="color: darkred;">
+    ✘ | chimbas
+</option>
+
+<option value="san-juan/angualasto.html" style="color: darkred;">
+    ✘ | angualasto
+</option>
+
+<option value="san-juan/bella-vista.html" style="color: darkred;">
+    ✘ | bella vista
+</option>
+
+<option value="san-juan/iglesia.html" style="color: darkred;">
+    ✘ | iglesia
+</option>
+
+<option value="san-juan/las-flores.html" style="color: darkred;">
+    ✘ | las flores
+</option>
+
+<option value="san-juan/pismanta.html" style="color: darkred;">
+    ✘ | pismanta
+</option>
+
+<option value="san-juan/rodeo.html" style="color: darkred;">
+    ✘ | rodeo
+</option>
+
+<option value="san-juan/tudcum.html" style="color: darkred;">
+    ✘ | tudcum
+</option>
+
+<option value="san-juan/el-medano.html" style="color: darkred;">
+    ✘ | el médano
+</option>
+
+<option value="san-juan/gran-china.html" style="color: darkred;">
+    ✘ | gran china
+</option>
+
+<option value="san-juan/huaco.html" style="color: darkred;">
+    ✘ | huaco
+</option>
+
+<option value="san-juan/mogna.html" style="color: darkred;">
+    ✘ | mogna
+</option>
+
+<option value="san-juan/niquivil.html" style="color: darkred;">
+    ✘ | niquivil
+</option>
+
+<option value="san-juan/pampa-vieja.html" style="color: darkred;">
+    ✘ | pampa vieja
+</option>
+
+<option value="san-juan/san-isidro.html" style="color: darkred;">
+    ✘ | san isidro
+</option>
+
+<option value="san-juan/san-jose-de-jachal.html" style="color: darkred;">
+    ✘ | san josé de jáchal
+</option>
+
+<option value="san-juan/villa-malvinas-argentinas.html" style="color: darkred;">
+    ✘ | villa malvinas argentinas
+</option>
+
+<option value="san-juan/villa-mercedes.html" style="color: darkred;">
+    ✘ | villa mercedes
+</option>
+
+<option value="san-juan/colonia-fiorito.html" style="color: darkred;">
+    ✘ | colonia fiorito
+</option>
+
+<option value="san-juan/las-chacritas.html" style="color: darkred;">
+    ✘ | las chacritas
+</option>
+
+<option value="san-juan/9-de-julio.html" style="color: darkred;">
+    ✘ | 9 de julio
+</option>
+
+<option value="san-juan/barrio-municipal.html" style="color: darkred;">
+    ✘ | barrio municipal
+</option>
+
+<option value="san-juan/barrio-ruta-40.html" style="color: darkred;">
+    ✘ | barrio ruta 40
+</option>
+
+<option value="san-juan/carpinteria.html" style="color: darkred;">
+    ✘ | carpintería
+</option>
+
+<option value="san-juan/las-piedritas.html" style="color: darkred;">
+    ✘ | las piedritas
+</option>
+
+<option value="san-juan/quinto-cuartel.html" style="color: darkred;">
+    ✘ | quinto cuartel
+</option>
+
+<option value="san-juan/villa-aberastain-la-rinconada.html" style="color: darkred;">
+    ✘ | villa aberastain - la rinconada
+</option>
+
+<option value="san-juan/villa-barboza-villa-nacusi.html" style="color: darkred;">
+    ✘ | villa barboza - villa nacusi
+</option>
+
+<option value="san-juan/villa-centenario.html" style="color: darkred;">
+    ✘ | villa centenario
+</option>
+
+<option value="san-juan/rawson.html" style="color: darkred;">
+    ✘ | rawson
+</option>
+
+<option value="san-juan/villa-bolanos-medano-de-oro.html" style="color: darkred;">
+    ✘ | villa bolaños (médano de oro)
+</option>
+
+<option value="san-juan/rivadavia.html" style="color: darkred;">
+    ✘ | rivadavia
+</option>
+
+<option value="san-juan/barrio-sadop-bella-vista.html" style="color: darkred;">
+    ✘ | barrio sadop - bella vista
+</option>
+
+<option value="san-juan/dos-acequias.html" style="color: darkred;">
+    ✘ | dos acequias
+</option>
+
+<option value="san-juan/villa-del-salvador.html" style="color: darkred;">
+    ✘ | villa del salvador
+</option>
+
+<option value="san-juan/villa-dominguito.html" style="color: darkred;">
+    ✘ | villa dominguito
+</option>
+
+<option value="san-juan/villa-don-bosco.html" style="color: darkred;">
+    ✘ | villa don bosco
+</option>
+
+<option value="san-juan/villa-san-martin.html" style="color: darkred;">
+    ✘ | villa san martín
+</option>
+
+<option value="san-juan/santa-lucia.html" style="color: darkred;">
+    ✘ | santa lucía
+</option>
+
+<option value="san-juan/canada-honda.html" style="color: darkred;">
+    ✘ | cañada honda
+</option>
+
+<option value="san-juan/cienaguita.html" style="color: darkred;">
+    ✘ | cienaguita
+</option>
+
+<option value="san-juan/colonia-fiscal.html" style="color: darkred;">
+    ✘ | colonia fiscal
+</option>
+
+<option value="san-juan/divisadero.html" style="color: darkred;">
+    ✘ | divisadero
+</option>
+
+<option value="san-juan/guanacache.html" style="color: darkred;">
+    ✘ | guanacache
+</option>
+
+<option value="san-juan/las-lagunas.html" style="color: darkred;">
+    ✘ | las lagunas
+</option>
+
+<option value="san-juan/los-berros.html" style="color: darkred;">
+    ✘ | los berros
+</option>
+
+<option value="san-juan/pedernal.html" style="color: darkred;">
+    ✘ | pedernal
+</option>
+
+<option value="san-juan/punta-del-medano.html" style="color: darkred;">
+    ✘ | punta del médano
+</option>
+
+<option value="san-juan/villa-media-agua.html" style="color: darkred;">
+    ✘ | villa media agua
+</option>
+
+<option value="san-juan/villa-ibanez.html" style="color: darkred;">
+    ✘ | villa ibáñez
+</option>
+
+<option value="san-juan/astica.html" style="color: darkred;">
+    ✘ | astica
+</option>
+
+<option value="san-juan/balde-del-rosario.html" style="color: darkred;">
+    ✘ | balde del rosario
+</option>
+
+<option value="san-juan/chucuma.html" style="color: darkred;">
+    ✘ | chucuma
+</option>
+
+<option value="san-juan/los-baldecitos.html" style="color: darkred;">
+    ✘ | los baldecitos
+</option>
+
+<option value="san-juan/usno.html" style="color: darkred;">
+    ✘ | usno
+</option>
+
+<option value="san-juan/villa-san-agustin.html" style="color: darkred;">
+    ✘ | villa san agustín
+</option>
+
+<option value="san-juan/el-encon.html" style="color: darkred;">
+    ✘ | el encón
+</option>
+
+<option value="san-juan/tupeli.html" style="color: darkred;">
+    ✘ | tupelí
+</option>
+
+<option value="san-juan/villa-borjas-la-chimbera.html" style="color: darkred;">
+    ✘ | villa borjas - la chimbera
+</option>
+
+<option value="san-juan/villa-el-tango.html" style="color: darkred;">
+    ✘ | villa el tango
+</option>
+
+<option value="san-juan/villa-santa-rosa.html" style="color: darkred;">
+    ✘ | villa santa rosa
+</option>
+
+<option value="san-juan/villa-basilio-nievas.html" style="color: darkred;">
+    ✘ | villa basilio nievas
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2337,7 +2330,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">2</div>
+        <div class="stat-value">3</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

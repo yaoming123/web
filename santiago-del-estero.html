@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,686 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de santiago del estero, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="santiago-del-estero/argentina.html" style="color: darkred;">
-    ✘ | argentina
-</option>
-
-<option value="santiago-del-estero/casares.html" style="color: darkred;">
-    ✘ | casares
-</option>
-
-<option value="santiago-del-estero/malbran.html" style="color: darkred;">
-    ✘ | malbrán
-</option>
-
-<option value="santiago-del-estero/villa-general-mitre.html" style="color: darkred;">
-    ✘ | villa general mitre
-</option>
-
-<option value="santiago-del-estero/campo-gallo.html" style="color: darkred;">
-    ✘ | campo gallo
-</option>
-
-<option value="santiago-del-estero/coronel-manuel-l-rico.html" style="color: darkred;">
-    ✘ | coronel manuel l. rico
-</option>
-
-<option value="santiago-del-estero/donadeu.html" style="color: darkred;">
-    ✘ | donadeu
-</option>
-
-<option value="santiago-del-estero/sachayoj.html" style="color: darkred;">
-    ✘ | sachayoj
-</option>
-
-<option value="santiago-del-estero/santos-lugares.html" style="color: darkred;">
-    ✘ | santos lugares
-</option>
-
-<option value="santiago-del-estero/estacion-atamisqui.html" style="color: darkred;">
-    ✘ | estación atamisqui
-</option>
-
-<option value="santiago-del-estero/medellin.html" style="color: darkred;">
-    ✘ | medellín
-</option>
-
-<option value="santiago-del-estero/villa-atamisqui.html" style="color: darkred;">
-    ✘ | villa atamisqui
-</option>
-
-<option value="santiago-del-estero/colonia-dora.html" style="color: darkred;">
-    ✘ | colonia dora
-</option>
-
-<option value="santiago-del-estero/herrera.html" style="color: darkred;">
-    ✘ | herrera
-</option>
-
-<option value="santiago-del-estero/icano.html" style="color: darkred;">
-    ✘ | icaño
-</option>
-
-<option value="santiago-del-estero/lugones.html" style="color: darkred;">
-    ✘ | lugones
-</option>
-
-<option value="santiago-del-estero/real-sayana.html" style="color: darkred;">
-    ✘ | real sayana
-</option>
-
-<option value="santiago-del-estero/villa-mailin.html" style="color: darkred;">
-    ✘ | villa mailín
-</option>
-
-<option value="santiago-del-estero/abra-grande.html" style="color: darkred;">
-    ✘ | abra grande
-</option>
-
-<option value="santiago-del-estero/antaje.html" style="color: darkred;">
-    ✘ | antajé
-</option>
-
-<option value="santiago-del-estero/ardiles.html" style="color: darkred;">
-    ✘ | ardiles
-</option>
-
-<option value="santiago-del-estero/canada-escobar.html" style="color: darkred;">
-    ✘ | cañada escobar
-</option>
-
-<option value="santiago-del-estero/chaupi-pozo.html" style="color: darkred;">
-    ✘ | chaupi pozo
-</option>
-
-<option value="santiago-del-estero/clodomira.html" style="color: darkred;">
-    ✘ | clodomira
-</option>
-
-<option value="santiago-del-estero/huyamampa.html" style="color: darkred;">
-    ✘ | huyamampa
-</option>
-
-<option value="santiago-del-estero/la-aurora.html" style="color: darkred;">
-    ✘ | la aurora
-</option>
-
-<option value="santiago-del-estero/la-banda.html" style="color: darkred;">
-    ✘ | la banda
-</option>
-
-<option value="santiago-del-estero/la-darsena.html" style="color: darkred;">
-    ✘ | la dársena
-</option>
-
-<option value="santiago-del-estero/los-quiroga.html" style="color: darkred;">
-    ✘ | los quiroga
-</option>
-
-<option value="santiago-del-estero/los-soria.html" style="color: darkred;">
-    ✘ | los soria
-</option>
-
-<option value="santiago-del-estero/simbolar.html" style="color: darkred;">
-    ✘ | simbolar
-</option>
-
-<option value="santiago-del-estero/tramo-16.html" style="color: darkred;">
-    ✘ | tramo 16
-</option>
-
-<option value="santiago-del-estero/tramo-20.html" style="color: darkred;">
-    ✘ | tramo 20
-</option>
-
-<option value="santiago-del-estero/bandera.html" style="color: darkred;">
-    ✘ | bandera
-</option>
-
-<option value="santiago-del-estero/cuatro-bocas.html" style="color: darkred;">
-    ✘ | cuatro bocas
-</option>
-
-<option value="santiago-del-estero/fortin-inca.html" style="color: darkred;">
-    ✘ | fortín inca
-</option>
-
-<option value="santiago-del-estero/guardia-escolta.html" style="color: darkred;">
-    ✘ | guardia escolta
-</option>
-
-<option value="santiago-del-estero/el-dean.html" style="color: darkred;">
-    ✘ | el deán
-</option>
-
-<option value="santiago-del-estero/el-mojon.html" style="color: darkred;">
-    ✘ | el mojón
-</option>
-
-<option value="santiago-del-estero/el-zanjon.html" style="color: darkred;">
-    ✘ | el zanjón
-</option>
-
-<option value="santiago-del-estero/los-cardozos.html" style="color: darkred;">
-    ✘ | los cardozos
-</option>
-
-<option value="santiago-del-estero/maco.html" style="color: darkred;">
-    ✘ | maco
-</option>
-
-<option value="santiago-del-estero/maquito.html" style="color: darkred;">
-    ✘ | maquito
-</option>
-
-<option value="santiago-del-estero/morales.html" style="color: darkred;">
-    ✘ | morales
-</option>
-
-<option value="santiago-del-estero/puesto-de-san-antonio.html" style="color: darkred;">
-    ✘ | puesto de san antonio
-</option>
-
-<option value="santiago-del-estero/san-pedro.html" style="color: darkred;">
-    ✘ | san pedro
-</option>
-
-<option value="santiago-del-estero/santa-maria.html" style="color: darkred;">
-    ✘ | santa maría
-</option>
-
-<option value="santiago-del-estero/santiago-del-estero.html" style="color: darkred;">
-    ✘ | santiago del estero
-</option>
-
-<option value="santiago-del-estero/vuelta-de-la-barranca.html" style="color: darkred;">
-    ✘ | vuelta de la barranca
-</option>
-
-<option value="santiago-del-estero/yanda.html" style="color: darkred;">
-    ✘ | yanda
-</option>
-
-<option value="santiago-del-estero/el-cabure.html" style="color: darkred;">
-    ✘ | el caburé
-</option>
-
-<option value="santiago-del-estero/la-firmeza.html" style="color: darkred;">
-    ✘ | la firmeza
-</option>
-
-<option value="santiago-del-estero/los-pirpintos.html" style="color: darkred;">
-    ✘ | los pirpintos
-</option>
-
-<option value="santiago-del-estero/los-tigres.html" style="color: darkred;">
-    ✘ | los tigres
-</option>
-
-<option value="santiago-del-estero/monte-quemado.html" style="color: darkred;">
-    ✘ | monte quemado
-</option>
-
-<option value="santiago-del-estero/nueva-esperanza.html" style="color: darkred;">
-    ✘ | nueva esperanza
-</option>
-
-<option value="santiago-del-estero/pampa-de-los-guanacos.html" style="color: darkred;">
-    ✘ | pampa de los guanacos
-</option>
-
-<option value="santiago-del-estero/san-jose-del-boqueron.html" style="color: darkred;">
-    ✘ | san josé del boquerón
-</option>
-
-<option value="santiago-del-estero/urutau.html" style="color: darkred;">
-    ✘ | urutaú
-</option>
-
-<option value="santiago-del-estero/ancajan.html" style="color: darkred;">
-    ✘ | ancaján
-</option>
-
-<option value="santiago-del-estero/choya.html" style="color: darkred;">
-    ✘ | choya
-</option>
-
-<option value="santiago-del-estero/estacion-la-punta.html" style="color: darkred;">
-    ✘ | estación la punta
-</option>
-
-<option value="santiago-del-estero/frias.html" style="color: darkred;">
-    ✘ | frías
-</option>
-
-<option value="santiago-del-estero/laprida.html" style="color: darkred;">
-    ✘ | laprida
-</option>
-
-<option value="santiago-del-estero/tapso.html" style="color: darkred;">
-    ✘ | tapso
-</option>
-
-<option value="santiago-del-estero/villa-la-punta.html" style="color: darkred;">
-    ✘ | villa la punta
-</option>
-
-<option value="santiago-del-estero/bandera-bajada.html" style="color: darkred;">
-    ✘ | bandera bajada
-</option>
-
-<option value="santiago-del-estero/caspi-corral.html" style="color: darkred;">
-    ✘ | caspi corral
-</option>
-
-<option value="santiago-del-estero/colonia-san-juan.html" style="color: darkred;">
-    ✘ | colonia san juan
-</option>
-
-<option value="santiago-del-estero/el-crucero.html" style="color: darkred;">
-    ✘ | el crucero
-</option>
-
-<option value="santiago-del-estero/kilometro-30.html" style="color: darkred;">
-    ✘ | kilómetro 30
-</option>
-
-<option value="santiago-del-estero/la-canada.html" style="color: darkred;">
-    ✘ | la cañada
-</option>
-
-<option value="santiago-del-estero/la-invernada.html" style="color: darkred;">
-    ✘ | la invernada
-</option>
-
-<option value="santiago-del-estero/minerva.html" style="color: darkred;">
-    ✘ | minerva
-</option>
-
-<option value="santiago-del-estero/vaca-huanuna.html" style="color: darkred;">
-    ✘ | vaca huañuna
-</option>
-
-<option value="santiago-del-estero/villa-figueroa.html" style="color: darkred;">
-    ✘ | villa figueroa
-</option>
-
-<option value="santiago-del-estero/anatuya.html" style="color: darkred;">
-    ✘ | añatuya
-</option>
-
-<option value="santiago-del-estero/averias.html" style="color: darkred;">
-    ✘ | averías
-</option>
-
-<option value="santiago-del-estero/estacion-tacanitas.html" style="color: darkred;">
-    ✘ | estación tacañitas
-</option>
-
-<option value="santiago-del-estero/la-nena.html" style="color: darkred;">
-    ✘ | la nena
-</option>
-
-<option value="santiago-del-estero/los-juries.html" style="color: darkred;">
-    ✘ | los juríes
-</option>
-
-<option value="santiago-del-estero/tomas-young.html" style="color: darkred;">
-    ✘ | tomás young
-</option>
-
-<option value="santiago-del-estero/lavalle.html" style="color: darkred;">
-    ✘ | lavalle
-</option>
-
-<option value="santiago-del-estero/el-arenal.html" style="color: darkred;">
-    ✘ | el arenal
-</option>
-
-<option value="santiago-del-estero/el-bobadal.html" style="color: darkred;">
-    ✘ | el bobadal
-</option>
-
-<option value="santiago-del-estero/el-charco.html" style="color: darkred;">
-    ✘ | el charco
-</option>
-
-<option value="santiago-del-estero/el-rincon.html" style="color: darkred;">
-    ✘ | el rincón
-</option>
-
-<option value="santiago-del-estero/gramilla.html" style="color: darkred;">
-    ✘ | gramilla
-</option>
-
-<option value="santiago-del-estero/lilo-viejo.html" style="color: darkred;">
-    ✘ | lilo viejo
-</option>
-
-<option value="santiago-del-estero/isca-yacu.html" style="color: darkred;">
-    ✘ | isca yacu
-</option>
-
-<option value="santiago-del-estero/isca-yacu-semaul.html" style="color: darkred;">
-    ✘ | isca yacu semaul
-</option>
-
-<option value="santiago-del-estero/pozo-hondo.html" style="color: darkred;">
-    ✘ | pozo hondo
-</option>
-
-<option value="santiago-del-estero/el-colorado.html" style="color: darkred;">
-    ✘ | el colorado
-</option>
-
-<option value="santiago-del-estero/el-cuadrado.html" style="color: darkred;">
-    ✘ | el cuadrado
-</option>
-
-<option value="santiago-del-estero/matara.html" style="color: darkred;">
-    ✘ | matará
-</option>
-
-<option value="santiago-del-estero/suncho-corral.html" style="color: darkred;">
-    ✘ | suncho corral
-</option>
-
-<option value="santiago-del-estero/vilelas.html" style="color: darkred;">
-    ✘ | vilelas
-</option>
-
-<option value="santiago-del-estero/yuchan.html" style="color: darkred;">
-    ✘ | yuchán
-</option>
-
-<option value="santiago-del-estero/villa-san-martin-est-loreto.html" style="color: darkred;">
-    ✘ | villa san martín (est. loreto)
-</option>
-
-<option value="santiago-del-estero/villa-union.html" style="color: darkred;">
-    ✘ | villa unión
-</option>
-
-<option value="santiago-del-estero/aerolito.html" style="color: darkred;">
-    ✘ | aerolito
-</option>
-
-<option value="santiago-del-estero/alhuampa.html" style="color: darkred;">
-    ✘ | alhuampa
-</option>
-
-<option value="santiago-del-estero/hasse.html" style="color: darkred;">
-    ✘ | hasse
-</option>
-
-<option value="santiago-del-estero/hernan-mejia-miraval.html" style="color: darkred;">
-    ✘ | hernán mejía miraval
-</option>
-
-<option value="santiago-del-estero/las-tinajas.html" style="color: darkred;">
-    ✘ | las tinajas
-</option>
-
-<option value="santiago-del-estero/libertad.html" style="color: darkred;">
-    ✘ | libertad
-</option>
-
-<option value="santiago-del-estero/patay.html" style="color: darkred;">
-    ✘ | patay
-</option>
-
-<option value="santiago-del-estero/pueblo-pablo-torelo.html" style="color: darkred;">
-    ✘ | pueblo pablo torelo
-</option>
-
-<option value="santiago-del-estero/quimili.html" style="color: darkred;">
-    ✘ | quimili
-</option>
-
-<option value="santiago-del-estero/roversi.html" style="color: darkred;">
-    ✘ | roversi
-</option>
-
-<option value="santiago-del-estero/tintina.html" style="color: darkred;">
-    ✘ | tintina
-</option>
-
-<option value="santiago-del-estero/weisburd.html" style="color: darkred;">
-    ✘ | weisburd
-</option>
-
-<option value="santiago-del-estero/el-49.html" style="color: darkred;">
-    ✘ | el 49
-</option>
-
-<option value="santiago-del-estero/sol-de-julio.html" style="color: darkred;">
-    ✘ | sol de julio
-</option>
-
-<option value="santiago-del-estero/villa-ojo-de-agua.html" style="color: darkred;">
-    ✘ | villa ojo de agua
-</option>
-
-<option value="santiago-del-estero/las-delicias.html" style="color: darkred;">
-    ✘ | las delicias
-</option>
-
-<option value="santiago-del-estero/pozo-betbeder.html" style="color: darkred;">
-    ✘ | pozo betbeder
-</option>
-
-<option value="santiago-del-estero/rapelli.html" style="color: darkred;">
-    ✘ | rapelli
-</option>
-
-<option value="santiago-del-estero/santo-domingo.html" style="color: darkred;">
-    ✘ | santo domingo
-</option>
-
-<option value="santiago-del-estero/ramirez-de-velazco.html" style="color: darkred;">
-    ✘ | ramírez de velazco
-</option>
-
-<option value="santiago-del-estero/sumampa.html" style="color: darkred;">
-    ✘ | sumampa
-</option>
-
-<option value="santiago-del-estero/sumampa-viejo.html" style="color: darkred;">
-    ✘ | sumampa viejo
-</option>
-
-<option value="santiago-del-estero/chanar-pozo-de-abajo.html" style="color: darkred;">
-    ✘ | chañar pozo de abajo
-</option>
-
-<option value="santiago-del-estero/chauchillas.html" style="color: darkred;">
-    ✘ | chauchillas
-</option>
-
-<option value="santiago-del-estero/colonia-tinco.html" style="color: darkred;">
-    ✘ | colonia tinco
-</option>
-
-<option value="santiago-del-estero/la-nueva-donosa.html" style="color: darkred;">
-    ✘ | la nueva donosa
-</option>
-
-<option value="santiago-del-estero/los-miranda.html" style="color: darkred;">
-    ✘ | los miranda
-</option>
-
-<option value="santiago-del-estero/los-nunez.html" style="color: darkred;">
-    ✘ | los núñez
-</option>
-
-<option value="santiago-del-estero/mansupa.html" style="color: darkred;">
-    ✘ | mansupa
-</option>
-
-<option value="santiago-del-estero/pozuelos.html" style="color: darkred;">
-    ✘ | pozuelos
-</option>
-
-<option value="santiago-del-estero/rodeo-de-valdez.html" style="color: darkred;">
-    ✘ | rodeo de valdez
-</option>
-
-<option value="santiago-del-estero/el-sauzal.html" style="color: darkred;">
-    ✘ | el sauzal
-</option>
-
-<option value="santiago-del-estero/termas-de-rio-hondo.html" style="color: darkred;">
-    ✘ | termas de río hondo
-</option>
-
-<option value="santiago-del-estero/villa-gimenez.html" style="color: darkred;">
-    ✘ | villa giménez
-</option>
-
-<option value="santiago-del-estero/villa-rio-hondo.html" style="color: darkred;">
-    ✘ | villa río hondo
-</option>
-
-<option value="santiago-del-estero/villa-turistica-del-embalse-de-rio-hondo.html" style="color: darkred;">
-    ✘ | villa turística del embalse de rio hondo
-</option>
-
-<option value="santiago-del-estero/vinara.html" style="color: darkred;">
-    ✘ | vinará
-</option>
-
-<option value="santiago-del-estero/colonia-alpina.html" style="color: darkred;">
-    ✘ | colonia alpina
-</option>
-
-<option value="santiago-del-estero/palo-negro.html" style="color: darkred;">
-    ✘ | palo negro
-</option>
-
-<option value="santiago-del-estero/selva.html" style="color: darkred;">
-    ✘ | selva
-</option>
-
-<option value="santiago-del-estero/beltran.html" style="color: darkred;">
-    ✘ | beltrán
-</option>
-
-<option value="santiago-del-estero/colonia-el-simbolar.html" style="color: darkred;">
-    ✘ | colonia el simbolar
-</option>
-
-<option value="santiago-del-estero/fernandez.html" style="color: darkred;">
-    ✘ | fernández
-</option>
-
-<option value="santiago-del-estero/ingeniero-forres.html" style="color: darkred;">
-    ✘ | ingeniero forres
-</option>
-
-<option value="santiago-del-estero/vilmer.html" style="color: darkred;">
-    ✘ | vilmer
-</option>
-
-<option value="santiago-del-estero/chilca-juliana.html" style="color: darkred;">
-    ✘ | chilca juliana
-</option>
-
-<option value="santiago-del-estero/los-telares.html" style="color: darkred;">
-    ✘ | los telares
-</option>
-
-<option value="santiago-del-estero/villa-salavina.html" style="color: darkred;">
-    ✘ | villa salavina
-</option>
-
-<option value="santiago-del-estero/brea-pozo.html" style="color: darkred;">
-    ✘ | brea pozo
-</option>
-
-<option value="santiago-del-estero/estacion-robles.html" style="color: darkred;">
-    ✘ | estación robles
-</option>
-
-<option value="santiago-del-estero/estacion-taboada.html" style="color: darkred;">
-    ✘ | estación taboada
-</option>
-
-<option value="santiago-del-estero/villa-nueva.html" style="color: darkred;">
-    ✘ | villa nueva
-</option>
-
-<option value="santiago-del-estero/garza.html" style="color: darkred;">
-    ✘ | garza
-</option>
-
-<option value="santiago-del-estero/arraga.html" style="color: darkred;">
-    ✘ | árraga
-</option>
-
-<option value="santiago-del-estero/nueva-francia.html" style="color: darkred;">
-    ✘ | nueva francia
-</option>
-
-<option value="santiago-del-estero/simbol.html" style="color: darkred;">
-    ✘ | simbol
-</option>
-
-<option value="santiago-del-estero/sumamao.html" style="color: darkred;">
-    ✘ | sumamao
-</option>
-
-<option value="santiago-del-estero/villa-silipica.html" style="color: darkred;">
-    ✘ | villa silípica
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -2120,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -2193,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -2259,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -2295,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2378,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2546,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2632,6 +1959,672 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="santiago-del-estero/argentina.html" style="color: darkred;">
+    ✘ | argentina
+</option>
+
+<option value="santiago-del-estero/casares.html" style="color: darkred;">
+    ✘ | casares
+</option>
+
+<option value="santiago-del-estero/malbran.html" style="color: darkred;">
+    ✘ | malbrán
+</option>
+
+<option value="santiago-del-estero/villa-general-mitre.html" style="color: darkred;">
+    ✘ | villa general mitre
+</option>
+
+<option value="santiago-del-estero/campo-gallo.html" style="color: darkred;">
+    ✘ | campo gallo
+</option>
+
+<option value="santiago-del-estero/coronel-manuel-l-rico.html" style="color: darkred;">
+    ✘ | coronel manuel l. rico
+</option>
+
+<option value="santiago-del-estero/donadeu.html" style="color: darkred;">
+    ✘ | donadeu
+</option>
+
+<option value="santiago-del-estero/sachayoj.html" style="color: darkred;">
+    ✘ | sachayoj
+</option>
+
+<option value="santiago-del-estero/santos-lugares.html" style="color: darkred;">
+    ✘ | santos lugares
+</option>
+
+<option value="santiago-del-estero/estacion-atamisqui.html" style="color: darkred;">
+    ✘ | estación atamisqui
+</option>
+
+<option value="santiago-del-estero/medellin.html" style="color: darkred;">
+    ✘ | medellín
+</option>
+
+<option value="santiago-del-estero/villa-atamisqui.html" style="color: darkred;">
+    ✘ | villa atamisqui
+</option>
+
+<option value="santiago-del-estero/colonia-dora.html" style="color: darkred;">
+    ✘ | colonia dora
+</option>
+
+<option value="santiago-del-estero/herrera.html" style="color: darkred;">
+    ✘ | herrera
+</option>
+
+<option value="santiago-del-estero/icano.html" style="color: darkred;">
+    ✘ | icaño
+</option>
+
+<option value="santiago-del-estero/lugones.html" style="color: darkred;">
+    ✘ | lugones
+</option>
+
+<option value="santiago-del-estero/real-sayana.html" style="color: darkred;">
+    ✘ | real sayana
+</option>
+
+<option value="santiago-del-estero/villa-mailin.html" style="color: darkred;">
+    ✘ | villa mailín
+</option>
+
+<option value="santiago-del-estero/abra-grande.html" style="color: darkred;">
+    ✘ | abra grande
+</option>
+
+<option value="santiago-del-estero/antaje.html" style="color: darkred;">
+    ✘ | antajé
+</option>
+
+<option value="santiago-del-estero/ardiles.html" style="color: darkred;">
+    ✘ | ardiles
+</option>
+
+<option value="santiago-del-estero/canada-escobar.html" style="color: darkred;">
+    ✘ | cañada escobar
+</option>
+
+<option value="santiago-del-estero/chaupi-pozo.html" style="color: darkred;">
+    ✘ | chaupi pozo
+</option>
+
+<option value="santiago-del-estero/clodomira.html" style="color: darkred;">
+    ✘ | clodomira
+</option>
+
+<option value="santiago-del-estero/huyamampa.html" style="color: darkred;">
+    ✘ | huyamampa
+</option>
+
+<option value="santiago-del-estero/la-aurora.html" style="color: darkred;">
+    ✘ | la aurora
+</option>
+
+<option value="santiago-del-estero/la-banda.html" style="color: darkred;">
+    ✘ | la banda
+</option>
+
+<option value="santiago-del-estero/la-darsena.html" style="color: darkred;">
+    ✘ | la dársena
+</option>
+
+<option value="santiago-del-estero/los-quiroga.html" style="color: darkred;">
+    ✘ | los quiroga
+</option>
+
+<option value="santiago-del-estero/los-soria.html" style="color: darkred;">
+    ✘ | los soria
+</option>
+
+<option value="santiago-del-estero/simbolar.html" style="color: darkred;">
+    ✘ | simbolar
+</option>
+
+<option value="santiago-del-estero/tramo-16.html" style="color: darkred;">
+    ✘ | tramo 16
+</option>
+
+<option value="santiago-del-estero/tramo-20.html" style="color: darkred;">
+    ✘ | tramo 20
+</option>
+
+<option value="santiago-del-estero/bandera.html" style="color: darkred;">
+    ✘ | bandera
+</option>
+
+<option value="santiago-del-estero/cuatro-bocas.html" style="color: darkred;">
+    ✘ | cuatro bocas
+</option>
+
+<option value="santiago-del-estero/fortin-inca.html" style="color: darkred;">
+    ✘ | fortín inca
+</option>
+
+<option value="santiago-del-estero/guardia-escolta.html" style="color: darkred;">
+    ✘ | guardia escolta
+</option>
+
+<option value="santiago-del-estero/el-dean.html" style="color: darkred;">
+    ✘ | el deán
+</option>
+
+<option value="santiago-del-estero/el-mojon.html" style="color: darkred;">
+    ✘ | el mojón
+</option>
+
+<option value="santiago-del-estero/el-zanjon.html" style="color: darkred;">
+    ✘ | el zanjón
+</option>
+
+<option value="santiago-del-estero/los-cardozos.html" style="color: darkred;">
+    ✘ | los cardozos
+</option>
+
+<option value="santiago-del-estero/maco.html" style="color: darkred;">
+    ✘ | maco
+</option>
+
+<option value="santiago-del-estero/maquito.html" style="color: darkred;">
+    ✘ | maquito
+</option>
+
+<option value="santiago-del-estero/morales.html" style="color: darkred;">
+    ✘ | morales
+</option>
+
+<option value="santiago-del-estero/puesto-de-san-antonio.html" style="color: darkred;">
+    ✘ | puesto de san antonio
+</option>
+
+<option value="santiago-del-estero/san-pedro.html" style="color: darkred;">
+    ✘ | san pedro
+</option>
+
+<option value="santiago-del-estero/santa-maria.html" style="color: darkred;">
+    ✘ | santa maría
+</option>
+
+<option value="santiago-del-estero/santiago-del-estero.html" style="color: darkred;">
+    ✘ | santiago del estero
+</option>
+
+<option value="santiago-del-estero/vuelta-de-la-barranca.html" style="color: darkred;">
+    ✘ | vuelta de la barranca
+</option>
+
+<option value="santiago-del-estero/yanda.html" style="color: darkred;">
+    ✘ | yanda
+</option>
+
+<option value="santiago-del-estero/el-cabure.html" style="color: darkred;">
+    ✘ | el caburé
+</option>
+
+<option value="santiago-del-estero/la-firmeza.html" style="color: darkred;">
+    ✘ | la firmeza
+</option>
+
+<option value="santiago-del-estero/los-pirpintos.html" style="color: darkred;">
+    ✘ | los pirpintos
+</option>
+
+<option value="santiago-del-estero/los-tigres.html" style="color: darkred;">
+    ✘ | los tigres
+</option>
+
+<option value="santiago-del-estero/monte-quemado.html" style="color: darkred;">
+    ✘ | monte quemado
+</option>
+
+<option value="santiago-del-estero/nueva-esperanza.html" style="color: darkred;">
+    ✘ | nueva esperanza
+</option>
+
+<option value="santiago-del-estero/pampa-de-los-guanacos.html" style="color: darkred;">
+    ✘ | pampa de los guanacos
+</option>
+
+<option value="santiago-del-estero/san-jose-del-boqueron.html" style="color: darkred;">
+    ✘ | san josé del boquerón
+</option>
+
+<option value="santiago-del-estero/urutau.html" style="color: darkred;">
+    ✘ | urutaú
+</option>
+
+<option value="santiago-del-estero/ancajan.html" style="color: darkred;">
+    ✘ | ancaján
+</option>
+
+<option value="santiago-del-estero/choya.html" style="color: darkred;">
+    ✘ | choya
+</option>
+
+<option value="santiago-del-estero/estacion-la-punta.html" style="color: darkred;">
+    ✘ | estación la punta
+</option>
+
+<option value="santiago-del-estero/frias.html" style="color: darkred;">
+    ✘ | frías
+</option>
+
+<option value="santiago-del-estero/laprida.html" style="color: darkred;">
+    ✘ | laprida
+</option>
+
+<option value="santiago-del-estero/tapso.html" style="color: darkred;">
+    ✘ | tapso
+</option>
+
+<option value="santiago-del-estero/villa-la-punta.html" style="color: darkred;">
+    ✘ | villa la punta
+</option>
+
+<option value="santiago-del-estero/bandera-bajada.html" style="color: darkred;">
+    ✘ | bandera bajada
+</option>
+
+<option value="santiago-del-estero/caspi-corral.html" style="color: darkred;">
+    ✘ | caspi corral
+</option>
+
+<option value="santiago-del-estero/colonia-san-juan.html" style="color: darkred;">
+    ✘ | colonia san juan
+</option>
+
+<option value="santiago-del-estero/el-crucero.html" style="color: darkred;">
+    ✘ | el crucero
+</option>
+
+<option value="santiago-del-estero/kilometro-30.html" style="color: darkred;">
+    ✘ | kilómetro 30
+</option>
+
+<option value="santiago-del-estero/la-canada.html" style="color: darkred;">
+    ✘ | la cañada
+</option>
+
+<option value="santiago-del-estero/la-invernada.html" style="color: darkred;">
+    ✘ | la invernada
+</option>
+
+<option value="santiago-del-estero/minerva.html" style="color: darkred;">
+    ✘ | minerva
+</option>
+
+<option value="santiago-del-estero/vaca-huanuna.html" style="color: darkred;">
+    ✘ | vaca huañuna
+</option>
+
+<option value="santiago-del-estero/villa-figueroa.html" style="color: darkred;">
+    ✘ | villa figueroa
+</option>
+
+<option value="santiago-del-estero/anatuya.html" style="color: darkred;">
+    ✘ | añatuya
+</option>
+
+<option value="santiago-del-estero/averias.html" style="color: darkred;">
+    ✘ | averías
+</option>
+
+<option value="santiago-del-estero/estacion-tacanitas.html" style="color: darkred;">
+    ✘ | estación tacañitas
+</option>
+
+<option value="santiago-del-estero/la-nena.html" style="color: darkred;">
+    ✘ | la nena
+</option>
+
+<option value="santiago-del-estero/los-juries.html" style="color: darkred;">
+    ✘ | los juríes
+</option>
+
+<option value="santiago-del-estero/tomas-young.html" style="color: darkred;">
+    ✘ | tomás young
+</option>
+
+<option value="santiago-del-estero/lavalle.html" style="color: darkred;">
+    ✘ | lavalle
+</option>
+
+<option value="santiago-del-estero/el-arenal.html" style="color: darkred;">
+    ✘ | el arenal
+</option>
+
+<option value="santiago-del-estero/el-bobadal.html" style="color: darkred;">
+    ✘ | el bobadal
+</option>
+
+<option value="santiago-del-estero/el-charco.html" style="color: darkred;">
+    ✘ | el charco
+</option>
+
+<option value="santiago-del-estero/el-rincon.html" style="color: darkred;">
+    ✘ | el rincón
+</option>
+
+<option value="santiago-del-estero/gramilla.html" style="color: darkred;">
+    ✘ | gramilla
+</option>
+
+<option value="santiago-del-estero/lilo-viejo.html" style="color: darkred;">
+    ✘ | lilo viejo
+</option>
+
+<option value="santiago-del-estero/isca-yacu.html" style="color: darkred;">
+    ✘ | isca yacu
+</option>
+
+<option value="santiago-del-estero/isca-yacu-semaul.html" style="color: darkred;">
+    ✘ | isca yacu semaul
+</option>
+
+<option value="santiago-del-estero/pozo-hondo.html" style="color: darkred;">
+    ✘ | pozo hondo
+</option>
+
+<option value="santiago-del-estero/el-colorado.html" style="color: darkred;">
+    ✘ | el colorado
+</option>
+
+<option value="santiago-del-estero/el-cuadrado.html" style="color: darkred;">
+    ✘ | el cuadrado
+</option>
+
+<option value="santiago-del-estero/matara.html" style="color: darkred;">
+    ✘ | matará
+</option>
+
+<option value="santiago-del-estero/suncho-corral.html" style="color: darkred;">
+    ✘ | suncho corral
+</option>
+
+<option value="santiago-del-estero/vilelas.html" style="color: darkred;">
+    ✘ | vilelas
+</option>
+
+<option value="santiago-del-estero/yuchan.html" style="color: darkred;">
+    ✘ | yuchán
+</option>
+
+<option value="santiago-del-estero/villa-san-martin-est-loreto.html" style="color: darkred;">
+    ✘ | villa san martín (est. loreto)
+</option>
+
+<option value="santiago-del-estero/villa-union.html" style="color: darkred;">
+    ✘ | villa unión
+</option>
+
+<option value="santiago-del-estero/aerolito.html" style="color: darkred;">
+    ✘ | aerolito
+</option>
+
+<option value="santiago-del-estero/alhuampa.html" style="color: darkred;">
+    ✘ | alhuampa
+</option>
+
+<option value="santiago-del-estero/hasse.html" style="color: darkred;">
+    ✘ | hasse
+</option>
+
+<option value="santiago-del-estero/hernan-mejia-miraval.html" style="color: darkred;">
+    ✘ | hernán mejía miraval
+</option>
+
+<option value="santiago-del-estero/las-tinajas.html" style="color: darkred;">
+    ✘ | las tinajas
+</option>
+
+<option value="santiago-del-estero/libertad.html" style="color: darkred;">
+    ✘ | libertad
+</option>
+
+<option value="santiago-del-estero/patay.html" style="color: darkred;">
+    ✘ | patay
+</option>
+
+<option value="santiago-del-estero/pueblo-pablo-torelo.html" style="color: darkred;">
+    ✘ | pueblo pablo torelo
+</option>
+
+<option value="santiago-del-estero/quimili.html" style="color: darkred;">
+    ✘ | quimili
+</option>
+
+<option value="santiago-del-estero/roversi.html" style="color: darkred;">
+    ✘ | roversi
+</option>
+
+<option value="santiago-del-estero/tintina.html" style="color: darkred;">
+    ✘ | tintina
+</option>
+
+<option value="santiago-del-estero/weisburd.html" style="color: darkred;">
+    ✘ | weisburd
+</option>
+
+<option value="santiago-del-estero/el-49.html" style="color: darkred;">
+    ✘ | el 49
+</option>
+
+<option value="santiago-del-estero/sol-de-julio.html" style="color: darkred;">
+    ✘ | sol de julio
+</option>
+
+<option value="santiago-del-estero/villa-ojo-de-agua.html" style="color: darkred;">
+    ✘ | villa ojo de agua
+</option>
+
+<option value="santiago-del-estero/las-delicias.html" style="color: darkred;">
+    ✘ | las delicias
+</option>
+
+<option value="santiago-del-estero/pozo-betbeder.html" style="color: darkred;">
+    ✘ | pozo betbeder
+</option>
+
+<option value="santiago-del-estero/rapelli.html" style="color: darkred;">
+    ✘ | rapelli
+</option>
+
+<option value="santiago-del-estero/santo-domingo.html" style="color: darkred;">
+    ✘ | santo domingo
+</option>
+
+<option value="santiago-del-estero/ramirez-de-velazco.html" style="color: darkred;">
+    ✘ | ramírez de velazco
+</option>
+
+<option value="santiago-del-estero/sumampa.html" style="color: darkred;">
+    ✘ | sumampa
+</option>
+
+<option value="santiago-del-estero/sumampa-viejo.html" style="color: darkred;">
+    ✘ | sumampa viejo
+</option>
+
+<option value="santiago-del-estero/chanar-pozo-de-abajo.html" style="color: darkred;">
+    ✘ | chañar pozo de abajo
+</option>
+
+<option value="santiago-del-estero/chauchillas.html" style="color: darkred;">
+    ✘ | chauchillas
+</option>
+
+<option value="santiago-del-estero/colonia-tinco.html" style="color: darkred;">
+    ✘ | colonia tinco
+</option>
+
+<option value="santiago-del-estero/la-nueva-donosa.html" style="color: darkred;">
+    ✘ | la nueva donosa
+</option>
+
+<option value="santiago-del-estero/los-miranda.html" style="color: darkred;">
+    ✘ | los miranda
+</option>
+
+<option value="santiago-del-estero/los-nunez.html" style="color: darkred;">
+    ✘ | los núñez
+</option>
+
+<option value="santiago-del-estero/mansupa.html" style="color: darkred;">
+    ✘ | mansupa
+</option>
+
+<option value="santiago-del-estero/pozuelos.html" style="color: darkred;">
+    ✘ | pozuelos
+</option>
+
+<option value="santiago-del-estero/rodeo-de-valdez.html" style="color: darkred;">
+    ✘ | rodeo de valdez
+</option>
+
+<option value="santiago-del-estero/el-sauzal.html" style="color: darkred;">
+    ✘ | el sauzal
+</option>
+
+<option value="santiago-del-estero/termas-de-rio-hondo.html" style="color: darkred;">
+    ✘ | termas de río hondo
+</option>
+
+<option value="santiago-del-estero/villa-gimenez.html" style="color: darkred;">
+    ✘ | villa giménez
+</option>
+
+<option value="santiago-del-estero/villa-rio-hondo.html" style="color: darkred;">
+    ✘ | villa río hondo
+</option>
+
+<option value="santiago-del-estero/villa-turistica-del-embalse-de-rio-hondo.html" style="color: darkred;">
+    ✘ | villa turística del embalse de rio hondo
+</option>
+
+<option value="santiago-del-estero/vinara.html" style="color: darkred;">
+    ✘ | vinará
+</option>
+
+<option value="santiago-del-estero/colonia-alpina.html" style="color: darkred;">
+    ✘ | colonia alpina
+</option>
+
+<option value="santiago-del-estero/palo-negro.html" style="color: darkred;">
+    ✘ | palo negro
+</option>
+
+<option value="santiago-del-estero/selva.html" style="color: darkred;">
+    ✘ | selva
+</option>
+
+<option value="santiago-del-estero/beltran.html" style="color: darkred;">
+    ✘ | beltrán
+</option>
+
+<option value="santiago-del-estero/colonia-el-simbolar.html" style="color: darkred;">
+    ✘ | colonia el simbolar
+</option>
+
+<option value="santiago-del-estero/fernandez.html" style="color: darkred;">
+    ✘ | fernández
+</option>
+
+<option value="santiago-del-estero/ingeniero-forres.html" style="color: darkred;">
+    ✘ | ingeniero forres
+</option>
+
+<option value="santiago-del-estero/vilmer.html" style="color: darkred;">
+    ✘ | vilmer
+</option>
+
+<option value="santiago-del-estero/chilca-juliana.html" style="color: darkred;">
+    ✘ | chilca juliana
+</option>
+
+<option value="santiago-del-estero/los-telares.html" style="color: darkred;">
+    ✘ | los telares
+</option>
+
+<option value="santiago-del-estero/villa-salavina.html" style="color: darkred;">
+    ✘ | villa salavina
+</option>
+
+<option value="santiago-del-estero/brea-pozo.html" style="color: darkred;">
+    ✘ | brea pozo
+</option>
+
+<option value="santiago-del-estero/estacion-robles.html" style="color: darkred;">
+    ✘ | estación robles
+</option>
+
+<option value="santiago-del-estero/estacion-taboada.html" style="color: darkred;">
+    ✘ | estación taboada
+</option>
+
+<option value="santiago-del-estero/villa-nueva.html" style="color: darkred;">
+    ✘ | villa nueva
+</option>
+
+<option value="santiago-del-estero/garza.html" style="color: darkred;">
+    ✘ | garza
+</option>
+
+<option value="santiago-del-estero/arraga.html" style="color: darkred;">
+    ✘ | árraga
+</option>
+
+<option value="santiago-del-estero/nueva-francia.html" style="color: darkred;">
+    ✘ | nueva francia
+</option>
+
+<option value="santiago-del-estero/simbol.html" style="color: darkred;">
+    ✘ | simbol
+</option>
+
+<option value="santiago-del-estero/sumamao.html" style="color: darkred;">
+    ✘ | sumamao
+</option>
+
+<option value="santiago-del-estero/villa-silipica.html" style="color: darkred;">
+    ✘ | villa silípica
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2657,7 +2650,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">11</div>
+        <div class="stat-value">4</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

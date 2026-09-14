@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -615,45 +615,1367 @@
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
 
 
-                <div id="opciones" style="background-color: var(--rojo);">
+
+
+            <div class="scroll-section" id="formulario-publicidad">
+
+
+                <span class="form-badge">📣 Espacio disponible</span>
+                <h3>Formulario para publicitar aquí</h3>
+                <p>Este espacio publicitario se encuentra sin un proveedor de servicios.<br>
+                    ¿Ofrecés servicios de cerrajería? <strong>¡Este espacio está disponible, anunciate aquí!</strong>
+                </p>
+
+                <form id="whatsapp-form" novalidate>
+
+                    <input id="section" name="section" value="https://www.cerrajero.net.ar/santa-fe.html" readonly
+                        style="display:none;">
+
+                    <!-- ══ DATOS DEL NEGOCIO ══ -->
+                    <p class="form-section-title">Datos del negocio</p>
+
+                    <div class="form-group">
+                        <label for="name">Nombre del Negocio <span style="color:var(--rojo)">*</span></label>
+                        <input id="name" name="name" type="text"
+                            placeholder="Nombre particular, de fantasía o razón social" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cellphone">Celular (WhatsApp) <span style="color:var(--rojo)">*</span></label>
+                            <input id="cellphone" name="cellphone" type="tel" placeholder="Ejemplo: +5491122413762"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono Fijo</label>
+                            <input id="phone" name="phone" type="tel" placeholder="Opcional">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <input id="address" name="address" type="text" placeholder="Opcional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Opcional">
+                    </div>
+
+                    <!-- ══ TIPO DE PERSONA ══ -->
+                    <p class="form-section-title">¿Qué tipo de persona sos?</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="radio" name="persona_tipo" value="Física" id="tipo-fisica">
+                                <span>Persona Física</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="radio" name="persona_tipo" value="Empresa" id="tipo-empresa">
+                                <span>Empresa</span>
+                            </label>
+                        </div>
+                        <input type="text" id="persona_tipo_valor" name="persona_tipo_valor" style="display:none;"
+                            readonly>
+
+                        <div id="persona-fisica-fields">
+                            <div class="form-group">
+                                <label for="pf-nombre">Nombre y Apellido <span
+                                        style="color:var(--rojo)">*</span></label>
+                                <input id="pf-nombre" name="pf_nombre" type="text"
+                                    placeholder="Nombre completo del titular">
+                            </div>
+                            <div class="form-group">
+                                <label for="pf-cuil">CUIL <span style="color:var(--rojo)">*</span></label>
+                                <input id="pf-cuil" name="pf_cuil" type="text" placeholder="Ejemplo: 20-12345678-9">
+                                <span class="field-hint">Debe coincidir con el CUIL de quien realice la
+                                    transferencia.</span>
+                            </div>
+                        </div>
+
+                        <div id="empresa-fields">
+                            <div class="form-group">
+                                <label for="emp-cuit">CUIT de la Empresa <span
+                                        style="color:var(--rojo)">*</span></label>
+                                <input id="emp-cuit" name="emp_cuit" type="text" placeholder="Ejemplo: 30-12345678-9">
+                                <span class="field-hint">Debe coincidir con el CUIT de la empresa que realice la
+                                    transferencia.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ══ SITIO WEB, REDES SOCIALES Y UBICACIÓN ══ -->
+                    <p class="form-section-title">Redes sociales sitio web y ubicación</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="GoogleMaps" id="social-maps-cb">
+                                <span>Google Maps</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Instagram" id="social-instagram-cb">
+                                <span>Instagram</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Facebook" id="social-facebook-cb">
+                                <span>Facebook</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="SitioWeb" id="social-website-cb">
+                                <span>Sitio web</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="TikTok" id="social-tiktok-cb">
+                                <span>TikTok</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="YouTube" id="social-youtube-cb">
+                                <span>YouTube</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="social_opts" value="Otros" id="social-otros-cb">
+                                <span>Otras redes</span>
+                            </label>
+                        </div>
+
+                        <!-- Campos condicionales para cada red social -->
+                        <div id="social-maps-field" class="social-field">
+                            <label for="mapLink">Link de Google Maps</label>
+                            <input id="mapLink" name="mapLink" type="url" placeholder="https://maps.google.com/...">
+                        </div>
+
+                        <div id="social-instagram-field" class="social-field">
+                            <label for="instagramLink">Instagram</label>
+                            <input id="instagramLink" name="instagramLink" type="url"
+                                placeholder="https://instagram.com/tunegocio">
+                        </div>
+
+                        <div id="social-facebook-field" class="social-field">
+                            <label for="facebookLink">Facebook</label>
+                            <input id="facebookLink" name="facebookLink" type="url"
+                                placeholder="https://facebook.com/tunegocio">
+                        </div>
+
+                        <div id="social-website-field" class="social-field">
+                            <label for="websiteLink">Sitio web</label>
+                            <input id="websiteLink" name="websiteLink" type="url" placeholder="https://www.ejemplo.com">
+                        </div>
+
+                        <div id="social-tiktok-field" class="social-field">
+                            <label for="tiktokLink">TikTok</label>
+                            <input id="tiktokLink" name="tiktokLink" type="url"
+                                placeholder="https://tiktok.com/@tunegocio">
+                        </div>
+
+                        <div id="social-youtube-field" class="social-field">
+                            <label for="youtubeLink">YouTube</label>
+                            <input id="youtubeLink" name="youtubeLink" type="url"
+                                placeholder="https://youtube.com/@tunegocio">
+                        </div>
+
+                        <div id="social-otros-field" class="social-field">
+                            <label for="otherLinks">Otras redes o enlaces</label>
+                            <input id="otherLinks" name="otherLinks" type="text"
+                                placeholder="Ejemplo: LinkedIn, Telegram, otra página, etc.">
+                        </div>
+                    </div>
+
+                    <!-- ══ MEDIOS DE PAGO ══ -->
+                    <p class="form-section-title">Medios de pago que aceptás</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Efectivo">
+                                <span>Efectivo</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Transferencia">
+                                <span>Transferencia</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Débito">
+                                <span>Débito</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Crédito">
+                                <span>Crédito</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="MercadoPago">
+                                <span>MercadoPago</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Ualá">
+                                <span>Ualá</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Cheque">
+                                <span>Cheque</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="payment_opts" value="Otros" id="payment-otros-cb">
+                                <span>Otros</span>
+                            </label>
+                        </div>
+
+                        <div id="otros-pago-field">
+                            <label for="payment-otros-text">Especificá los otros medios de pago</label>
+                            <input id="payment-otros-text" name="payment_otros" type="text"
+                                placeholder="Ejemplo: Rapipago, Pago Fácil, criptomonedas...">
+                        </div>
+
+                        <input type="text" id="payment" name="payment" style="display:none;" readonly>
+                    </div>
+
+                    <!-- ══ DISPONIBILIDAD Y HORARIOS ══ -->
+                    <p class="form-section-title">Disponibilidad y horarios</p>
+
+                    <!-- Chips generales -->
+                    <div class="form-group" id="availability-general">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Urgencias">
+                                <span>Urgencias</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Feriados">
+                                <span>Feriados</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="availability_opts" value="Solo turnos">
+                                <span>Solo turnos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Grilla de días -->
+                    <div class="form-group">
+                        <div class="schedule-grid" id="schedule-grid">
+
+                            <div class="schedule-header">
+                                <span>Día</span>
+                                <span class="col-horario">Horario</span>
+                                <span></span>
+                                <span class="col-allday">24 hs</span>
+                            </div>
+
+                            <!-- Lunes -->
+                            <div class="schedule-row" data-day="Lunes">
+                                <label class="day-toggle">
+                                    <input type="checkbox" class="day-active" checked>
+                                    <span class="day-name">Lunes</span>
+                                </label>
+                                <div class="time-range">
+                                    <select class="time-select time-open" aria-label="Apertura Lunes"></select>
+                                    <span class="time-sep">–</span>
+                                    <select class="time-select time-close" aria-label="Cierre Lunes"></select>
+                                </div>
+                                <span></span>
+                                <label class="allday-label">
+                                    <input type="checkbox" class="day-allday">
+                                    <span>24hs</span>
+                                </label>
+                            </div>
+
+                            <!-- Martes -->
+                            <div class="schedule-row" data-day="Martes">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Martes</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Martes"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Martes"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Miércoles -->
+                            <div class="schedule-row" data-day="Miércoles">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Miércoles</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Miércoles"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Miércoles"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Jueves -->
+                            <div class="schedule-row" data-day="Jueves">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Jueves</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Jueves"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Jueves"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Viernes -->
+                            <div class="schedule-row" data-day="Viernes">
+                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
+                                        class="day-name">Viernes</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Viernes"></select><span class="time-sep">–</span><select
+                                        class="time-select time-close" aria-label="Cierre Viernes"></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox"
+                                        class="day-allday"><span>24hs</span></label>
+                            </div>
+
+                            <!-- Sábado -->
+                            <div class="schedule-row inactive" data-day="Sábado">
+                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
+                                        class="day-name">Sábado</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Sábado" disabled></select><span
+                                        class="time-sep">–</span><select class="time-select time-close"
+                                        aria-label="Cierre Sábado" disabled></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox" class="day-allday"
+                                        disabled><span>24hs</span></label>
+                            </div>
+
+                            <!-- Domingo -->
+                            <div class="schedule-row inactive" data-day="Domingo">
+                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
+                                        class="day-name">Domingo</span></label>
+                                <div class="time-range"><select class="time-select time-open"
+                                        aria-label="Apertura Domingo" disabled></select><span
+                                        class="time-sep">–</span><select class="time-select time-close"
+                                        aria-label="Cierre Domingo" disabled></select></div>
+                                <span></span>
+                                <label class="allday-label"><input type="checkbox" class="day-allday"
+                                        disabled><span>24hs</span></label>
+                            </div>
+
+                        </div>
+
+                        <input type="text" id="hours" name="hours" readonly>
+                    </div>
+
+                    <script>
+                        (function () {
+                            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+                            function buildTimeOptions(selectEl, defaultVal) {
+                                for (var h = 0; h < 24; h++) {
+                                    ['00', '30'].forEach(function (m) {
+                                        var val = pad(h) + ':' + m;
+                                        var opt = document.createElement('option');
+                                        opt.value = val;
+                                        opt.textContent = val;
+                                        if (val === defaultVal) opt.selected = true;
+                                        selectEl.appendChild(opt);
+                                    });
+                                }
+                            }
+
+                            /* Poblar selects */
+                            document.querySelectorAll('.schedule-row').forEach(function (row) {
+                                buildTimeOptions(row.querySelector('.time-open'), '08:00');
+                                buildTimeOptions(row.querySelector('.time-close'), '18:00');
+                            });
+
+                            /* Checkbox día: activa/desactiva fila */
+                            document.querySelectorAll('.day-active').forEach(function (cb) {
+                                cb.addEventListener('change', function () {
+                                    var row = this.closest('.schedule-row');
+                                    var open = row.querySelector('.time-open');
+                                    var close = row.querySelector('.time-close');
+                                    var allday = row.querySelector('.day-allday');
+                                    var on = this.checked;
+
+                                    row.classList.toggle('inactive', !on);
+                                    open.disabled = !on;
+                                    close.disabled = !on;
+                                    allday.disabled = !on;
+                                    if (!on) allday.checked = false;
+                                    syncHours();
+                                });
+                            });
+
+                            /* Checkbox 24hs: bloquea horarios de esa fila */
+                            document.querySelectorAll('.day-allday').forEach(function (cb) {
+                                cb.addEventListener('change', function () {
+                                    var row = this.closest('.schedule-row');
+                                    var open = row.querySelector('.time-open');
+                                    var close = row.querySelector('.time-close');
+                                    open.disabled = this.checked;
+                                    close.disabled = this.checked;
+                                    syncHours();
+                                });
+                            });
+
+                            /* Cambio de selector */
+                            document.querySelectorAll('.time-open, .time-close').forEach(function (s) {
+                                s.addEventListener('change', syncHours);
+                            });
+
+                            /* Consolida en #hours */
+                            function syncHours() {
+                                var parts = [];
+                                document.querySelectorAll('.schedule-row').forEach(function (row) {
+                                    if (!row.querySelector('.day-active').checked) return;
+                                    var day = row.dataset.day;
+                                    var allday = row.querySelector('.day-allday').checked;
+                                    if (allday) {
+                                        parts.push(day + ': 24hs');
+                                    } else {
+                                        var o = row.querySelector('.time-open').value;
+                                        var c = row.querySelector('.time-close').value;
+                                        parts.push(day + ': ' + o + ' a ' + c);
+                                    }
+                                });
+                                document.getElementById('hours').value = parts.join(' | ');
+                            }
+
+                            syncHours();
+                        })();
+                    </script>
+
+                    <!-- ══ MÉTODO DE CONTACTO PREFERIDO ══ -->
+                    <p class="form-section-title">Método de contacto preferido</p>
+
+                    <div class="form-group">
+                        <div class="chip-grid">
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="WhatsApp">
+                                <span>WhatsApp</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Sms">
+                                <span>Sms</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Llamadas">
+                                <span>Llamadas</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Email">
+                                <span>Email</span>
+                            </label>
+                            <label class="chip-item">
+                                <input type="checkbox" name="contact_method" value="Messenger">
+                                <span>Messenger</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ══ LOGO Y FOTOS ══ -->
+                    <p class="form-section-title">Logo y fotos del servicio</p>
+
+                    <div class="form-group">
+                        <label for="logoFile">Logo del negocio</label>
+                        <input id="logoFile" name="logoFile" type="file"
+                            accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml">
+                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP, SVG.</span>
+
+                        <!-- Vista previa del logo -->
+                        <div id="logo-preview" style="margin-top: 10px;"></div>
+                        <div id="logo-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servicePhotos">Fotos del servicio (máximo 3)</label>
+                        <input id="servicePhotos" name="servicePhotos" type="file"
+                            accept="image/jpeg,image/jpg,image/png,image/webp" multiple>
+                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP. Máximo 3 archivos.</span>
+
+                        <!-- Vista previa de fotos -->
+                        <div id="photos-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                        </div>
+                        <div id="photos-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
+                    </div>
+
+                    <!-- Campos ocultos para guardar las URLs de Cloudinary -->
+                    <input type="hidden" id="logo-url" name="logo_url">
+                    <input type="hidden" id="photos-urls" name="photos_urls">
+
+                    <style>
+                        /* ── Cards de vista previa ── */
+                        .img-preview-card {
+                            position: relative;
+                            display: inline-flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 6px;
+                            background: #f8f9fa;
+                            border: 2px solid #dee2e6;
+                            border-radius: 10px;
+                            padding: 8px;
+                            transition: border-color 0.2s;
+                        }
+                        .img-preview-card:hover { border-color: #007BFF; }
+                        .preview-img {
+                            width: 140px;
+                            height: 140px;
+                            object-fit: cover;
+                            border-radius: 6px;
+                            display: block;
+                        }
+                        .img-preview-badge {
+                            position: absolute;
+                            top: -8px; left: 8px;
+                            background: #007BFF;
+                            color: #fff;
+                            font-size: 11px;
+                            font-weight: 600;
+                            padding: 2px 7px;
+                            border-radius: 20px;
+                        }
+                        .img-preview-actions {
+                            display: flex;
+                            gap: 6px;
+                            width: 100%;
+                        }
+                        .btn-img-action {
+                            flex: 1;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px 6px;
+                            border: none;
+                            border-radius: 6px;
+                            font-size: 12px;
+                            font-weight: 600;
+                            cursor: pointer;
+                            transition: opacity 0.15s;
+                            white-space: nowrap;
+                        }
+                        .btn-img-action:hover { opacity: 0.82; }
+                        .btn-edit   { background: #007BFF; color: #fff; }
+                        .btn-delete { background: #DC3545; color: #fff; }
+                        .upload-progress { color: #0066cc; }
+                        .upload-success  { color: #28a745; }
+                        .upload-error    { color: #dc3545; }
+                    </style>
+
+                    <script>
+                        // ═══════════════════════════════════════════════════════════
+                        // CLOUDINARY CONFIG
+                        // ═══════════════════════════════════════════════════════════
+                        const CLOUDINARY_CLOUD_NAME    = 'dq6yod1pc';
+                        const CLOUDINARY_UPLOAD_PRESET = 'upload_publico';
+
+                        // ═══════════════════════════════════════════════════════════
+                        // ESTADO — urls ya subidas a Cloudinary
+                        // logoCloudinaryUrl   : string | null
+                        // photoCloudinaryUrls : string[]
+                        // ═══════════════════════════════════════════════════════════
+                        let logoCloudinaryUrl   = null;
+                        let photoCloudinaryUrls = [];
+
+                        // ── Helper: subir a Cloudinary (raw) ────────────────────
+                        async function uploadToCloudinary(file) {
+                            const fd = new FormData();
+                            fd.append('file', file);
+                            fd.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+                            const res = await fetch(
+                                `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+                                { method: 'POST', body: fd }
+                            );
+                            if (!res.ok) throw new Error('Error al subir imagen');
+                            return res.json(); // incluye .etag, .secure_url, .public_id
+                        }
+
+                        // ── Helper: FileReader como Promise ──────────────────────
+                        function toDataURL(file) {
+                            return new Promise(resolve => {
+                                const r = new FileReader();
+                                r.onload = e => resolve(e.target.result);
+                                r.readAsDataURL(file);
+                            });
+                        }
+
+                        // ── Helper: hash SHA-256 del archivo ─────────────────────
+                        async function hashFile(file) {
+                            const buf  = await file.arrayBuffer();
+                            const hash = await crypto.subtle.digest('SHA-256', buf);
+                            return Array.from(new Uint8Array(hash))
+                                .map(b => b.toString(16).padStart(2, '0')).join('');
+                        }
+
+                        // ── Caché: hash → { url, etag } en localStorage ──────────
+                        function getCachedImage(hash) {
+                            try {
+                                return JSON.parse(localStorage.getItem('imgCache') || '{}')[hash] || null;
+                            } catch { return null; }
+                        }
+                        function setCachedImage(hash, url, etag) {
+                            try {
+                                const c = JSON.parse(localStorage.getItem('imgCache') || '{}');
+                                c[hash] = { url, etag };
+                                localStorage.setItem('imgCache', JSON.stringify(c));
+                            } catch {}
+                        }
+
+                        // ── Subir con deduplicación ───────────────────────────────
+                        // Si el mismo archivo ya fue subido antes → reutiliza la URL
+                        async function uploadWithCache(file, statusDiv) {
+                            const hash   = await hashFile(file);
+                            const cached = getCachedImage(hash);
+
+                            if (cached) {
+                                statusDiv.innerHTML = '<span class="upload-success">ℹ️ Imagen ya cargada anteriormente — reutilizando</span>';
+                                return cached.url;
+                            }
+
+                            const result = await uploadToCloudinary(file);
+                            setCachedImage(hash, result.secure_url, result.etag);
+                            return result.secure_url;
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // RENDER LOGO
+                        // ═══════════════════════════════════════════════════════════
+                        function renderLogo(src) {
+                            document.getElementById('logo-preview').innerHTML = `
+                                <div class="img-preview-card">
+                                    <img src="${src}" class="preview-img" alt="Logo">
+                                    <div class="img-preview-actions">
+                                        <label class="btn-img-action btn-edit">
+                                            ✏️ Cambiar
+                                            <input type="file"
+                                                accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml"
+                                                style="display:none"
+                                                onchange="handleLogoReplace(this)">
+                                        </label>
+                                        <button type="button" class="btn-img-action btn-delete"
+                                                onclick="removeLogo()">🗑️ Eliminar</button>
+                                    </div>
+                                </div>`;
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // RENDER FOTOS
+                        // ═══════════════════════════════════════════════════════════
+                        function renderPhotos(srcs) {
+                            document.getElementById('photos-preview').innerHTML = srcs.map((src, i) => `
+                                <div class="img-preview-card">
+                                    <img src="${src}" class="preview-img" alt="Foto ${i+1}">
+                                    <div class="img-preview-badge">Foto ${i+1}</div>
+                                    <div class="img-preview-actions">
+                                        <label class="btn-img-action btn-edit">
+                                            ✏️ Cambiar
+                                            <input type="file"
+                                                accept="image/jpeg,image/jpg,image/png,image/webp"
+                                                style="display:none"
+                                                onchange="handlePhotoReplace(this,${i})">
+                                        </label>
+                                        <button type="button" class="btn-img-action btn-delete"
+                                                onclick="removePhoto(${i})">🗑️ Eliminar</button>
+                                    </div>
+                                </div>`).join('');
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // LOGO — seleccionar
+                        // ═══════════════════════════════════════════════════════════
+                        document.getElementById('logoFile').addEventListener('change', async function (e) {
+                            const file = e.target.files[0];
+                            if (!file) return;
+
+                            const statusDiv    = document.getElementById('logo-upload-status');
+                            const logoUrlInput = document.getElementById('logo-url');
+
+                            if (file.size > 5 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
+                                return;
+                            }
+
+                            // Vista previa inmediata
+                            const src = await toDataURL(file);
+                            renderLogo(src);
+                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
+
+                            try {
+                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
+                                logoUrlInput.value = logoCloudinaryUrl;
+                                // uploadWithCache ya setea el status; si fue subida nueva lo sobreescribimos
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo subido correctamente</span>';
+                                }
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
+                                logoCloudinaryUrl  = null;
+                                logoUrlInput.value = '';
+                            }
+                        });
+
+                        // LOGO — cambiar (desde botón ✏️)
+                        async function handleLogoReplace(input) {
+                            const file = input.files[0];
+                            if (!file) return;
+
+                            const statusDiv    = document.getElementById('logo-upload-status');
+                            const logoUrlInput = document.getElementById('logo-url');
+
+                            if (file.size > 5 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
+                                return;
+                            }
+
+                            const src = await toDataURL(file);
+                            renderLogo(src);
+                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
+
+                            try {
+                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
+                                logoUrlInput.value = logoCloudinaryUrl;
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo actualizado correctamente</span>';
+                                }
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
+                            }
+                        }
+
+                        // LOGO — eliminar
+                        function removeLogo() {
+                            logoCloudinaryUrl  = null;
+                            document.getElementById('logo-url').value        = '';
+                            document.getElementById('logoFile').value        = '';
+                            document.getElementById('logo-preview').innerHTML = '';
+                            document.getElementById('logo-upload-status').innerHTML = '';
+                        }
+
+                        // ═══════════════════════════════════════════════════════════
+                        // FOTOS — seleccionar
+                        // ═══════════════════════════════════════════════════════════
+                        // Buffer de dataURLs para re-renderizar sin perder las anteriores
+                        let photoSrcs = [];
+
+                        document.getElementById('servicePhotos').addEventListener('change', async function (e) {
+                            const files     = Array.from(e.target.files);
+                            const statusDiv = document.getElementById('photos-upload-status');
+                            const photosInput = document.getElementById('photos-urls');
+
+                            if (photoSrcs.length + files.length > 3) {
+                                statusDiv.innerHTML = `<span class="upload-error">❌ Máximo 3 fotos. Ya tenés ${photoSrcs.length} cargada(s).</span>`;
+                                return;
+                            }
+
+                            const totalSize = files.reduce((s, f) => s + f.size, 0);
+                            if (totalSize > 10 * 1024 * 1024) {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ El tamaño total no puede superar 10MB</span>';
+                                return;
+                            }
+
+                            // Previews inmediatas
+                            for (const file of files) {
+                                photoSrcs.push(await toDataURL(file));
+                            }
+                            renderPhotos(photoSrcs);
+                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Subiendo ${files.length} foto(s)...</span>`;
+
+                            try {
+                                for (let i = 0; i < files.length; i++) {
+                                    statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${photoCloudinaryUrls.length + 1} de ${photoSrcs.length}...</span>`;
+                                    const url = await uploadWithCache(files[i], statusDiv);
+                                    photoCloudinaryUrls.push(url);
+                                }
+                                photosInput.value   = photoCloudinaryUrls.join(',');
+                                statusDiv.innerHTML = `<span class="upload-success">✅ ${photoSrcs.length} foto(s) listas</span>`;
+                            } catch {
+                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir las fotos</span>';
+                            }
+                        });
+
+                        // FOTOS — cambiar una (desde botón ✏️)
+                        async function handlePhotoReplace(input, index) {
+                            const file = input.files[0];
+                            if (!file) return;
+
+                            const statusDiv = document.getElementById('photos-upload-status');
+                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${index + 1}...</span>`;
+
+                            const src = await toDataURL(file);
+                            photoSrcs[index] = src;
+                            renderPhotos(photoSrcs);
+
+                            try {
+                                const url = await uploadWithCache(file, statusDiv);
+                                photoCloudinaryUrls[index] = url;
+                                document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
+                                if (!statusDiv.innerHTML.includes('reutilizando')) {
+                                    statusDiv.innerHTML = `<span class="upload-success">✅ Foto ${index + 1} actualizada correctamente</span>`;
+                                }
+                            } catch {
+                                statusDiv.innerHTML = `<span class="upload-error">❌ Error al actualizar la foto ${index + 1}</span>`;
+                            }
+                        }
+
+                        // FOTOS — eliminar una
+                        function removePhoto(index) {
+                            photoSrcs.splice(index, 1);
+                            photoCloudinaryUrls.splice(index, 1);
+                            document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
+                            if (photoSrcs.length === 0) {
+                                document.getElementById('servicePhotos').value = '';
+                                document.getElementById('photos-upload-status').innerHTML = '';
+                            } else {
+                                document.getElementById('photos-upload-status').innerHTML =
+                                    `<span class="upload-success">✅ ${photoSrcs.length} foto(s) cargadas</span>`;
+                            }
+                            renderPhotos(photoSrcs);
+                        }
+                    </script>
+                    <!-- ══ INFORMACIÓN ADICIONAL ══ -->
+                    <p class="form-section-title">Información adicional</p>
+
+                    <div class="form-group">
+                        <label for="details">Detalles adicionales</label>
+                        <textarea id="details" name="details"
+                            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, contanos cualquier otro detalle adicional."></textarea>
+                    </div>
+
+                    <!-- ══ TÉRMINOS Y ENVÍO ══ -->
+                    <div class="form-terms">
+                        <input type="checkbox" id="terminos-form" name="terminos" required>
+                        <label for="terminos-form">
+                            Al enviar este formulario, confirmás que leíste y aceptás los
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="clear-form-button" type="button" class="button button-secondary"
+                            onclick="clearFormData()">
+                            🗑️ Limpiar formulario
+                        </button>
+                        <button id="whatsapp-button" type="button" class="button button1"
+                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">
+                            <i class="fa fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                        <button id="messenger-button" type="button" class="button button1"
+                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">
+                            <i class="fa fa-commenting"></i> Enviar por Messenger
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
 
 
 
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
 
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
 
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
 
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
 
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de santa fe, Argentina.
-                        </h2>
 
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
 
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+    </main>
+
+
+<footer id="footer" style="margin-bottom: 3em;">
+    <div class="contenedor">
+        <div class="box_footer">
+            <div class="separador_box_footer">
+                <img src="
+                    logo.png
+" alt="logotipo" loading="lazy">
+                <a href="
+                    index.html
+">https://www.cerrajero.net.ar/</a>
+            </div>
+            <div class="separador_box_footer">
+
+                <i class="fa fa-facebook"
+                    style="width: 2em;height: 2em;background-color: #3b5998; padding: 1em;"></i>
+                <a href="https://www.facebook.com/cerrajero.net.ar">Facebook</a>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<script>
+  // Copiar datos del proveedor
+  function copiarDatosProveedor() {
+    const nombre = document.getElementById('modal-nombre')?.textContent || 'No disponible';
+    const telefono = document.getElementById('modal-telefono')?.textContent || 'No disponible';
+    const ubicacion = document.getElementById('modal-ubicacion')?.textContent || 'No disponible';
+    const pagado = document.getElementById('modal-pagado')?.textContent || 'No disponible';
+
+    const datos = `Nombre: ${nombre}
+    Teléfono: ${telefono}
+    Ubicación: ${ubicacion}
+    Pagado por: ${pagado}
+    Fuente: cerrajero.net.ar`;
+
+    navigator.clipboard.writeText(datos).then(() => {
+      alert('✅ Datos copiados al portapapeles');
+    }).catch(() => {
+      alert('No se pudo copiar. Intenta nuevamente.');
+    });
+  }
+
+  // Descargar modal como imagen
+  function descargarModalImagen() {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    script.onload = function () {
+      const modalContent = document.getElementById('modal-content');
+      html2canvas(modalContent, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        allowTaint: true,
+        useCORS: true
+      }).then(canvas => {
+        const link = document.createElement('a');
+        const nombre = document.getElementById('modal-nombre')?.textContent || 'proveedor';
+        const fecha = new Date().toLocaleDateString('es-AR');
+        link.href = canvas.toDataURL('image/png');
+        link.download = `${nombre}_${fecha}.png`;
+        link.click();
+      }).catch(error => {
+        console.error('Error al descargar:', error);
+        alert('No se pudo descargar la imagen. Intenta nuevamente.');
+      });
+    };
+    document.head.appendChild(script);
+  }
+
+</script>
+<div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-contenido">
+    <img src="logo.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy" style="width: 15rem; height: 15rem;">
+    
+    <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+
+
+<script>
+
+  const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modal-content");
+  const closeBtn = document.getElementById("modal-close-btn");
+  let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
+
+  // Cerrar modal
+  function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
+    modal.classList.remove("active");
+    abortController = null;
+  }
+
+  function abrirModal(html) {
+    modalContent.innerHTML = html;
+    modal.classList.add("active");
+  }
+
+  closeBtn.addEventListener("click", cerrarModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) cerrarModal();
+  });
+
+  
+  function mostrarModalAdvertencia(mensaje, url = null) {
+    let html = `
+      <h1 id="modal-title">⚠️ Aviso Importante</h1>
+      <p>${mensaje}</p>
+      <div style="margin-top: 1.5rem;">
+    `;
+
+    if (url) {
+      html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
+    }
+    
+    html += `
+        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+      </div>
+            <div style="margin: 1.5rem 0;">
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
+        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
+      </div>
+      <div class="modal-legal">
+        Al contactar, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+  
+  function mostrarModalAdvertenciaDemo(titulo, mensaje, url = null) {
+      let html = `       
+        <h1 id="modal-title">${titulo}</h1>
+        <p>${mensaje}</p>
+
+        <div class="disclosure-section" style="margin-top: 1.5rem; border: 1px solid #dadce0; border-radius: 8px;">
+          
+          <button class="disclosure-header expanded"
+            onclick="if(this.nextElementSibling){this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('expanded');}"
+            style="padding: 16px; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 14px; font-weight: 500; color: #202124;">
+            <span>ℹ️ Acerca del anunciante</span>
+            <span style="transition: transform 0.3s; display: inline-block;">▼</span>
+          </button>
+          
+          <div class="disclosure-content expanded" style="max-height: 1000px; overflow: hidden; background: white;">
+            <div style="padding: 16px; border-top: 1px solid #dadce0;">
+
+              <div style="display: grid; gap: 12px;">
+
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Nombre del negocio</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-nombre">None</span>
+                </div>
+
+                <div
+                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Teléfono</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-telefono">None</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Sección</span>
+                  
+                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-ubicacion">
+                  santa fe
+                  </span>
+              
+                  </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Pagado por</span>
+                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-pagado">None</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Anunciando desde</span>
+                  <span style="color: #202124; font-size: 13px;" id="modal-pagado">None</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>        
+
+        <div style="margin-top: 1.5rem;">
+      `;
+
+      if (url) {
+        html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
+      }
+      
+      html += `
+          <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+        </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+          <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
+          <span style="color: #202124; font-size: 13px;" id="modal-pagado">
+            <p id="reloj"></p>
+          </span>
+        </div>
+
+        <a onclick="copiarDatosProveedor()" href="#" style="font-size: 1rem; float: inline-start;">📋 Copiar al portapapeles esta información</a><br>
+        <a onclick="descargarModalImagen()" href="#" style="font-size: 1rem; float: inline-start;">⬇️ Descargar imagen de esta información</a><br>
+        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante
+
+        </a>
+        <div class="modal-legal">
+          Al contactar, confirmas que aceptas 
+          <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+        </div>
+      `;
+
+      abrirModal(html);
+    }
+  
+
+  
+  function mostrarModalAdvertenciaformulario(mensaje, url = null) {
+    let html = `
+      <h1 id="modal-title">⚠️ Aviso Importante</h1>
+      <p>${mensaje}</p>
+      <div style="margin-top: 1.5rem;">
+    `;
+    
+    html += `
+        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
+      </div>
+      <div class="modal-legal">
+        Al enviar el formulario, confirmas que has leído y aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalSinResultados() {
+    const html = `
+      <h1 id="modal-title">📍 Búsqueda por Geolocalización</h1>
+      <h2>⚠️ No hay proveedor disponible en tu zona aún</h2>
+      <p>¿Ofrecés servicios de cerrajería en esta zona?</p>
+      
+      <div style="margin: 1.5rem 0;">
+        <a href="#formulario-publicidad" class="button" onclick="cerrarModal();">📣 ¡Anunciate aquí!</a>
+        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
+      </div>
+
+      <p>O probá con una distancia máxima más alta.</p>
+      
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+
+      <div class="modal-legal">
+        Al usar el buscador, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalResultados(zonas) {
+    const formatoZona = (zona) => {
+      return [zona.provincia, zona.localidad, zona.barrio]
+        .filter(x => x && x.trim() !== "")
+        .join(", ");
+    };
+
+    let html = `
+      <h1 id="modal-title">📍 Proveedores Cercanos</h1>
+      <p>Se encontraron <strong>${zonas.length}</strong> resultado(s):</p>
+      <ul>
+    `;
+
+    zonas.forEach(z => {
+      html += `
+        <li>
+          <strong>Zona:</strong> ${formatoZona(z)}<br>
+          <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
+          <a href="${z.url}" target="_blank" class="button">🔗 Ver sección</a>
+        </li>
+      `;
+    });
+
+    html += `
+      </ul>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+    `;
+
+    abrirModal(html);
+  }
+
+  
+  function mostrarModalError(mensaje) {
+    const html = `
+      <h1 id="modal-title">📍 Error en la Búsqueda</h1>
+      <p><strong>${mensaje}</strong></p>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar e Intentar de Nuevo</button>
+    `;
+    abrirModal(html);
+  }
+
+  
+  function compartirSeccion() {
+    const urlBase = window.location.href;
+    const urlTag = `${urlBase}?referido=cerrajero_amigo`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: `Servicios de cerrajería`,
+        text: `Mirá esta sección, quizás te interese anunciarte como cerrajero.`,
+        url: urlTag
+      }).catch(console.error);
+    } else {
+      alert("Copiá este link y compartilo: " + urlTag);
+    }
+  }
+
+  function obtenerUbicacion(opciones) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
+    });
+  }
+
+  async function obtenerUbicacionConFallback() {
+    try {
+      return await obtenerUbicacion({
+        enableHighAccuracy: true,
+        timeout: 8000,
+        maximumAge: 0
+      });
+    } catch (error) {
+      if (error.code === 2 || error.code === 3) {
+        return await obtenerUbicacion({
+          enableHighAccuracy: false,
+          timeout: 7000,
+          maximumAge: 0
+        });
+      } else if (error.code === 1) {
+        throw new Error("El permiso de geolocalización fue denegado.");
+      } else {
+        throw new Error("❌ No se pudo obtener tu ubicación.");
+      }
+    }
+  }
+
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const toRad = x => x * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  async function buscarPorUbicacion() {
+    if (abortController) abortController.abort();
+    abortController = new AbortController();
+
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
+    try {
+      if (!navigator.geolocation) {
+        throw new Error("Tu navegador no permite geolocalización.");
+      }
+
+      abrirModal(`
+        <div id="loader">
+          <div class="spinner"></div>
+          <p>Buscando proveedores cercanos...</p>
+        </div>
+        <div id="progress-bar"></div>
+      `);
+
+      const posicion = await obtenerUbicacionConFallback();
+      const userLat = posicion.coords.latitude;
+      const userLon = posicion.coords.longitude;
+      const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+
+      const res = await fetch("disponibles.json", { signal: abortController.signal });
+      const data = await res.json();
+
+      data.forEach(item => {
+        item.dist = haversine(userLat, userLon, item.lat, item.lon);
+      });
+
+      const resultados = data
+        .filter(item => item.dist <= umbral)
+        .sort((a, b) => a.dist - b.dist);
+
+      if (resultados.length === 0) {
+        mostrarModalSinResultados();
+      } else {
+        mostrarModalResultados(resultados);
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        mostrarModalError(error.message);
+      }
+    }
+  }
+
+ 
+  
+  document.addEventListener("click", function(e) {
+    
+      if (e.target.matches('a[href^="tel:"]')) {
+      e.preventDefault();
+      mostrarModalAdvertencia(
+        `⚠️ No hay un cerrajero en este espacio publicitario. Este boton es una demostración. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
+        e.target.href
+      );
+    }
+
+      if (e.target.matches('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
+          e.target.href
+        );
+      }
+
+      if (e.target.matches('div.servicio a.button1')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
+          e.target.href
+        );
+      }
+
+      if (e.target.matches('#contacto a[href*="instagram.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo, <br><b>estás por visitar el Instagram de serviciosweb.net.ar</b>`,
+          e.target.href
+        );
+      }
+
+      if (e.target.matches('#contacto a[href*="facebook.com"]')) {
+        e.preventDefault();
+        mostrarModalAdvertencia(
+          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo. <br><b>Estás por visitar el facebook de serviciosweb.net.ar</b>`,
+          e.target.href
+        );
+      }
+    });
+
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
 <option value="">Seleccione una opción</option>
 
 
@@ -2178,1347 +3500,18 @@
 </option>
 
 
+
+</option>
 </select>
-
-                    </div>
-
-
-
-
-            <div class="scroll-section" id="formulario-publicidad">
-
-
-                <span class="form-badge">📣 Espacio disponible</span>
-                <h3>Formulario para publicitar aquí</h3>
-                <p>Este espacio publicitario se encuentra sin un proveedor de servicios.<br>
-                    ¿Ofrecés servicios de cerrajería? <strong>¡Este espacio está disponible, anunciate aquí!</strong>
-                </p>
-
-                <form id="whatsapp-form" novalidate>
-
-                    <input id="section" name="section" value="https://www.cerrajero.net.ar/santa-fe.html" readonly
-                        style="display:none;">
-
-                    <!-- ══ DATOS DEL NEGOCIO ══ -->
-                    <p class="form-section-title">Datos del negocio</p>
-
-                    <div class="form-group">
-                        <label for="name">Nombre del Negocio <span style="color:var(--rojo)">*</span></label>
-                        <input id="name" name="name" type="text"
-                            placeholder="Nombre particular, de fantasía o razón social" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cellphone">Celular (WhatsApp) <span style="color:var(--rojo)">*</span></label>
-                            <input id="cellphone" name="cellphone" type="tel" placeholder="Ejemplo: +5491122413762"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono Fijo</label>
-                            <input id="phone" name="phone" type="tel" placeholder="Opcional">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Dirección</label>
-                        <input id="address" name="address" type="text" placeholder="Opcional">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="Opcional">
-                    </div>
-
-                    <!-- ══ TIPO DE PERSONA ══ -->
-                    <p class="form-section-title">¿Qué tipo de persona sos?</p>
-
-                    <div class="form-group">
-                        <div class="chip-grid">
-                            <label class="chip-item">
-                                <input type="radio" name="persona_tipo" value="Física" id="tipo-fisica">
-                                <span>Persona Física</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="radio" name="persona_tipo" value="Empresa" id="tipo-empresa">
-                                <span>Empresa</span>
-                            </label>
-                        </div>
-                        <input type="text" id="persona_tipo_valor" name="persona_tipo_valor" style="display:none;"
-                            readonly>
-
-                        <div id="persona-fisica-fields">
-                            <div class="form-group">
-                                <label for="pf-nombre">Nombre y Apellido <span
-                                        style="color:var(--rojo)">*</span></label>
-                                <input id="pf-nombre" name="pf_nombre" type="text"
-                                    placeholder="Nombre completo del titular">
-                            </div>
-                            <div class="form-group">
-                                <label for="pf-cuil">CUIL <span style="color:var(--rojo)">*</span></label>
-                                <input id="pf-cuil" name="pf_cuil" type="text" placeholder="Ejemplo: 20-12345678-9">
-                                <span class="field-hint">Debe coincidir con el CUIL de quien realice la
-                                    transferencia.</span>
-                            </div>
-                        </div>
-
-                        <div id="empresa-fields">
-                            <div class="form-group">
-                                <label for="emp-cuit">CUIT de la Empresa <span
-                                        style="color:var(--rojo)">*</span></label>
-                                <input id="emp-cuit" name="emp_cuit" type="text" placeholder="Ejemplo: 30-12345678-9">
-                                <span class="field-hint">Debe coincidir con el CUIT de la empresa que realice la
-                                    transferencia.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ══ SITIO WEB, REDES SOCIALES Y UBICACIÓN ══ -->
-                    <p class="form-section-title">Redes sociales sitio web y ubicación</p>
-
-                    <div class="form-group">
-                        <div class="chip-grid">
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="GoogleMaps" id="social-maps-cb">
-                                <span>Google Maps</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="Instagram" id="social-instagram-cb">
-                                <span>Instagram</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="Facebook" id="social-facebook-cb">
-                                <span>Facebook</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="SitioWeb" id="social-website-cb">
-                                <span>Sitio web</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="TikTok" id="social-tiktok-cb">
-                                <span>TikTok</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="YouTube" id="social-youtube-cb">
-                                <span>YouTube</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="social_opts" value="Otros" id="social-otros-cb">
-                                <span>Otras redes</span>
-                            </label>
-                        </div>
-
-                        <!-- Campos condicionales para cada red social -->
-                        <div id="social-maps-field" class="social-field">
-                            <label for="mapLink">Link de Google Maps</label>
-                            <input id="mapLink" name="mapLink" type="url" placeholder="https://maps.google.com/...">
-                        </div>
-
-                        <div id="social-instagram-field" class="social-field">
-                            <label for="instagramLink">Instagram</label>
-                            <input id="instagramLink" name="instagramLink" type="url"
-                                placeholder="https://instagram.com/tunegocio">
-                        </div>
-
-                        <div id="social-facebook-field" class="social-field">
-                            <label for="facebookLink">Facebook</label>
-                            <input id="facebookLink" name="facebookLink" type="url"
-                                placeholder="https://facebook.com/tunegocio">
-                        </div>
-
-                        <div id="social-website-field" class="social-field">
-                            <label for="websiteLink">Sitio web</label>
-                            <input id="websiteLink" name="websiteLink" type="url" placeholder="https://www.ejemplo.com">
-                        </div>
-
-                        <div id="social-tiktok-field" class="social-field">
-                            <label for="tiktokLink">TikTok</label>
-                            <input id="tiktokLink" name="tiktokLink" type="url"
-                                placeholder="https://tiktok.com/@tunegocio">
-                        </div>
-
-                        <div id="social-youtube-field" class="social-field">
-                            <label for="youtubeLink">YouTube</label>
-                            <input id="youtubeLink" name="youtubeLink" type="url"
-                                placeholder="https://youtube.com/@tunegocio">
-                        </div>
-
-                        <div id="social-otros-field" class="social-field">
-                            <label for="otherLinks">Otras redes o enlaces</label>
-                            <input id="otherLinks" name="otherLinks" type="text"
-                                placeholder="Ejemplo: LinkedIn, Telegram, otra página, etc.">
-                        </div>
-                    </div>
-
-                    <!-- ══ MEDIOS DE PAGO ══ -->
-                    <p class="form-section-title">Medios de pago que aceptás</p>
-
-                    <div class="form-group">
-                        <div class="chip-grid">
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Efectivo">
-                                <span>Efectivo</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Transferencia">
-                                <span>Transferencia</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Débito">
-                                <span>Débito</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Crédito">
-                                <span>Crédito</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="MercadoPago">
-                                <span>MercadoPago</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Ualá">
-                                <span>Ualá</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Cheque">
-                                <span>Cheque</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="payment_opts" value="Otros" id="payment-otros-cb">
-                                <span>Otros</span>
-                            </label>
-                        </div>
-
-                        <div id="otros-pago-field">
-                            <label for="payment-otros-text">Especificá los otros medios de pago</label>
-                            <input id="payment-otros-text" name="payment_otros" type="text"
-                                placeholder="Ejemplo: Rapipago, Pago Fácil, criptomonedas...">
-                        </div>
-
-                        <input type="text" id="payment" name="payment" style="display:none;" readonly>
-                    </div>
-
-                    <!-- ══ DISPONIBILIDAD Y HORARIOS ══ -->
-                    <p class="form-section-title">Disponibilidad y horarios</p>
-
-                    <!-- Chips generales -->
-                    <div class="form-group" id="availability-general">
-                        <div class="chip-grid">
-                            <label class="chip-item">
-                                <input type="checkbox" name="availability_opts" value="Urgencias">
-                                <span>Urgencias</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="availability_opts" value="Feriados">
-                                <span>Feriados</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="availability_opts" value="Solo turnos">
-                                <span>Solo turnos</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Grilla de días -->
-                    <div class="form-group">
-                        <div class="schedule-grid" id="schedule-grid">
-
-                            <div class="schedule-header">
-                                <span>Día</span>
-                                <span class="col-horario">Horario</span>
-                                <span></span>
-                                <span class="col-allday">24 hs</span>
-                            </div>
-
-                            <!-- Lunes -->
-                            <div class="schedule-row" data-day="Lunes">
-                                <label class="day-toggle">
-                                    <input type="checkbox" class="day-active" checked>
-                                    <span class="day-name">Lunes</span>
-                                </label>
-                                <div class="time-range">
-                                    <select class="time-select time-open" aria-label="Apertura Lunes"></select>
-                                    <span class="time-sep">–</span>
-                                    <select class="time-select time-close" aria-label="Cierre Lunes"></select>
-                                </div>
-                                <span></span>
-                                <label class="allday-label">
-                                    <input type="checkbox" class="day-allday">
-                                    <span>24hs</span>
-                                </label>
-                            </div>
-
-                            <!-- Martes -->
-                            <div class="schedule-row" data-day="Martes">
-                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
-                                        class="day-name">Martes</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Martes"></select><span class="time-sep">–</span><select
-                                        class="time-select time-close" aria-label="Cierre Martes"></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox"
-                                        class="day-allday"><span>24hs</span></label>
-                            </div>
-
-                            <!-- Miércoles -->
-                            <div class="schedule-row" data-day="Miércoles">
-                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
-                                        class="day-name">Miércoles</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Miércoles"></select><span class="time-sep">–</span><select
-                                        class="time-select time-close" aria-label="Cierre Miércoles"></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox"
-                                        class="day-allday"><span>24hs</span></label>
-                            </div>
-
-                            <!-- Jueves -->
-                            <div class="schedule-row" data-day="Jueves">
-                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
-                                        class="day-name">Jueves</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Jueves"></select><span class="time-sep">–</span><select
-                                        class="time-select time-close" aria-label="Cierre Jueves"></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox"
-                                        class="day-allday"><span>24hs</span></label>
-                            </div>
-
-                            <!-- Viernes -->
-                            <div class="schedule-row" data-day="Viernes">
-                                <label class="day-toggle"><input type="checkbox" class="day-active" checked><span
-                                        class="day-name">Viernes</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Viernes"></select><span class="time-sep">–</span><select
-                                        class="time-select time-close" aria-label="Cierre Viernes"></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox"
-                                        class="day-allday"><span>24hs</span></label>
-                            </div>
-
-                            <!-- Sábado -->
-                            <div class="schedule-row inactive" data-day="Sábado">
-                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
-                                        class="day-name">Sábado</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Sábado" disabled></select><span
-                                        class="time-sep">–</span><select class="time-select time-close"
-                                        aria-label="Cierre Sábado" disabled></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox" class="day-allday"
-                                        disabled><span>24hs</span></label>
-                            </div>
-
-                            <!-- Domingo -->
-                            <div class="schedule-row inactive" data-day="Domingo">
-                                <label class="day-toggle"><input type="checkbox" class="day-active"><span
-                                        class="day-name">Domingo</span></label>
-                                <div class="time-range"><select class="time-select time-open"
-                                        aria-label="Apertura Domingo" disabled></select><span
-                                        class="time-sep">–</span><select class="time-select time-close"
-                                        aria-label="Cierre Domingo" disabled></select></div>
-                                <span></span>
-                                <label class="allday-label"><input type="checkbox" class="day-allday"
-                                        disabled><span>24hs</span></label>
-                            </div>
-
-                        </div>
-
-                        <input type="text" id="hours" name="hours" readonly>
-                    </div>
-
-                    <script>
-                        (function () {
-                            function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-                            function buildTimeOptions(selectEl, defaultVal) {
-                                for (var h = 0; h < 24; h++) {
-                                    ['00', '30'].forEach(function (m) {
-                                        var val = pad(h) + ':' + m;
-                                        var opt = document.createElement('option');
-                                        opt.value = val;
-                                        opt.textContent = val;
-                                        if (val === defaultVal) opt.selected = true;
-                                        selectEl.appendChild(opt);
-                                    });
-                                }
-                            }
-
-                            /* Poblar selects */
-                            document.querySelectorAll('.schedule-row').forEach(function (row) {
-                                buildTimeOptions(row.querySelector('.time-open'), '08:00');
-                                buildTimeOptions(row.querySelector('.time-close'), '18:00');
-                            });
-
-                            /* Checkbox día: activa/desactiva fila */
-                            document.querySelectorAll('.day-active').forEach(function (cb) {
-                                cb.addEventListener('change', function () {
-                                    var row = this.closest('.schedule-row');
-                                    var open = row.querySelector('.time-open');
-                                    var close = row.querySelector('.time-close');
-                                    var allday = row.querySelector('.day-allday');
-                                    var on = this.checked;
-
-                                    row.classList.toggle('inactive', !on);
-                                    open.disabled = !on;
-                                    close.disabled = !on;
-                                    allday.disabled = !on;
-                                    if (!on) allday.checked = false;
-                                    syncHours();
-                                });
-                            });
-
-                            /* Checkbox 24hs: bloquea horarios de esa fila */
-                            document.querySelectorAll('.day-allday').forEach(function (cb) {
-                                cb.addEventListener('change', function () {
-                                    var row = this.closest('.schedule-row');
-                                    var open = row.querySelector('.time-open');
-                                    var close = row.querySelector('.time-close');
-                                    open.disabled = this.checked;
-                                    close.disabled = this.checked;
-                                    syncHours();
-                                });
-                            });
-
-                            /* Cambio de selector */
-                            document.querySelectorAll('.time-open, .time-close').forEach(function (s) {
-                                s.addEventListener('change', syncHours);
-                            });
-
-                            /* Consolida en #hours */
-                            function syncHours() {
-                                var parts = [];
-                                document.querySelectorAll('.schedule-row').forEach(function (row) {
-                                    if (!row.querySelector('.day-active').checked) return;
-                                    var day = row.dataset.day;
-                                    var allday = row.querySelector('.day-allday').checked;
-                                    if (allday) {
-                                        parts.push(day + ': 24hs');
-                                    } else {
-                                        var o = row.querySelector('.time-open').value;
-                                        var c = row.querySelector('.time-close').value;
-                                        parts.push(day + ': ' + o + ' a ' + c);
-                                    }
-                                });
-                                document.getElementById('hours').value = parts.join(' | ');
-                            }
-
-                            syncHours();
-                        })();
-                    </script>
-
-                    <!-- ══ MÉTODO DE CONTACTO PREFERIDO ══ -->
-                    <p class="form-section-title">Método de contacto preferido</p>
-
-                    <div class="form-group">
-                        <div class="chip-grid">
-                            <label class="chip-item">
-                                <input type="checkbox" name="contact_method" value="WhatsApp">
-                                <span>WhatsApp</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="contact_method" value="Sms">
-                                <span>Sms</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="contact_method" value="Llamadas">
-                                <span>Llamadas</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="contact_method" value="Email">
-                                <span>Email</span>
-                            </label>
-                            <label class="chip-item">
-                                <input type="checkbox" name="contact_method" value="Messenger">
-                                <span>Messenger</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- ══ LOGO Y FOTOS ══ -->
-                    <p class="form-section-title">Logo y fotos del servicio</p>
-
-                    <div class="form-group">
-                        <label for="logoFile">Logo del negocio</label>
-                        <input id="logoFile" name="logoFile" type="file"
-                            accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml">
-                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP, SVG.</span>
-
-                        <!-- Vista previa del logo -->
-                        <div id="logo-preview" style="margin-top: 10px;"></div>
-                        <div id="logo-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="servicePhotos">Fotos del servicio (máximo 3)</label>
-                        <input id="servicePhotos" name="servicePhotos" type="file"
-                            accept="image/jpeg,image/jpg,image/png,image/webp" multiple>
-                        <span class="field-hint">Formatos aceptados: JPG, PNG, WEBP. Máximo 3 archivos.</span>
-
-                        <!-- Vista previa de fotos -->
-                        <div id="photos-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                        </div>
-                        <div id="photos-upload-status" style="margin-top: 5px; font-size: 14px;"></div>
-                    </div>
-
-                    <!-- Campos ocultos para guardar las URLs de Cloudinary -->
-                    <input type="hidden" id="logo-url" name="logo_url">
-                    <input type="hidden" id="photos-urls" name="photos_urls">
-
-                    <style>
-                        /* ── Cards de vista previa ── */
-                        .img-preview-card {
-                            position: relative;
-                            display: inline-flex;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: 6px;
-                            background: #f8f9fa;
-                            border: 2px solid #dee2e6;
-                            border-radius: 10px;
-                            padding: 8px;
-                            transition: border-color 0.2s;
-                        }
-                        .img-preview-card:hover { border-color: #007BFF; }
-                        .preview-img {
-                            width: 140px;
-                            height: 140px;
-                            object-fit: cover;
-                            border-radius: 6px;
-                            display: block;
-                        }
-                        .img-preview-badge {
-                            position: absolute;
-                            top: -8px; left: 8px;
-                            background: #007BFF;
-                            color: #fff;
-                            font-size: 11px;
-                            font-weight: 600;
-                            padding: 2px 7px;
-                            border-radius: 20px;
-                        }
-                        .img-preview-actions {
-                            display: flex;
-                            gap: 6px;
-                            width: 100%;
-                        }
-                        .btn-img-action {
-                            flex: 1;
-                            display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 5px 6px;
-                            border: none;
-                            border-radius: 6px;
-                            font-size: 12px;
-                            font-weight: 600;
-                            cursor: pointer;
-                            transition: opacity 0.15s;
-                            white-space: nowrap;
-                        }
-                        .btn-img-action:hover { opacity: 0.82; }
-                        .btn-edit   { background: #007BFF; color: #fff; }
-                        .btn-delete { background: #DC3545; color: #fff; }
-                        .upload-progress { color: #0066cc; }
-                        .upload-success  { color: #28a745; }
-                        .upload-error    { color: #dc3545; }
-                    </style>
-
-                    <script>
-                        // ═══════════════════════════════════════════════════════════
-                        // CLOUDINARY CONFIG
-                        // ═══════════════════════════════════════════════════════════
-                        const CLOUDINARY_CLOUD_NAME    = 'dq6yod1pc';
-                        const CLOUDINARY_UPLOAD_PRESET = 'upload_publico';
-
-                        // ═══════════════════════════════════════════════════════════
-                        // ESTADO — urls ya subidas a Cloudinary
-                        // logoCloudinaryUrl   : string | null
-                        // photoCloudinaryUrls : string[]
-                        // ═══════════════════════════════════════════════════════════
-                        let logoCloudinaryUrl   = null;
-                        let photoCloudinaryUrls = [];
-
-                        // ── Helper: subir a Cloudinary (raw) ────────────────────
-                        async function uploadToCloudinary(file) {
-                            const fd = new FormData();
-                            fd.append('file', file);
-                            fd.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-                            const res = await fetch(
-                                `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
-                                { method: 'POST', body: fd }
-                            );
-                            if (!res.ok) throw new Error('Error al subir imagen');
-                            return res.json(); // incluye .etag, .secure_url, .public_id
-                        }
-
-                        // ── Helper: FileReader como Promise ──────────────────────
-                        function toDataURL(file) {
-                            return new Promise(resolve => {
-                                const r = new FileReader();
-                                r.onload = e => resolve(e.target.result);
-                                r.readAsDataURL(file);
-                            });
-                        }
-
-                        // ── Helper: hash SHA-256 del archivo ─────────────────────
-                        async function hashFile(file) {
-                            const buf  = await file.arrayBuffer();
-                            const hash = await crypto.subtle.digest('SHA-256', buf);
-                            return Array.from(new Uint8Array(hash))
-                                .map(b => b.toString(16).padStart(2, '0')).join('');
-                        }
-
-                        // ── Caché: hash → { url, etag } en localStorage ──────────
-                        function getCachedImage(hash) {
-                            try {
-                                return JSON.parse(localStorage.getItem('imgCache') || '{}')[hash] || null;
-                            } catch { return null; }
-                        }
-                        function setCachedImage(hash, url, etag) {
-                            try {
-                                const c = JSON.parse(localStorage.getItem('imgCache') || '{}');
-                                c[hash] = { url, etag };
-                                localStorage.setItem('imgCache', JSON.stringify(c));
-                            } catch {}
-                        }
-
-                        // ── Subir con deduplicación ───────────────────────────────
-                        // Si el mismo archivo ya fue subido antes → reutiliza la URL
-                        async function uploadWithCache(file, statusDiv) {
-                            const hash   = await hashFile(file);
-                            const cached = getCachedImage(hash);
-
-                            if (cached) {
-                                statusDiv.innerHTML = '<span class="upload-success">ℹ️ Imagen ya cargada anteriormente — reutilizando</span>';
-                                return cached.url;
-                            }
-
-                            const result = await uploadToCloudinary(file);
-                            setCachedImage(hash, result.secure_url, result.etag);
-                            return result.secure_url;
-                        }
-
-                        // ═══════════════════════════════════════════════════════════
-                        // RENDER LOGO
-                        // ═══════════════════════════════════════════════════════════
-                        function renderLogo(src) {
-                            document.getElementById('logo-preview').innerHTML = `
-                                <div class="img-preview-card">
-                                    <img src="${src}" class="preview-img" alt="Logo">
-                                    <div class="img-preview-actions">
-                                        <label class="btn-img-action btn-edit">
-                                            ✏️ Cambiar
-                                            <input type="file"
-                                                accept="image/jpeg,image/jpg,image/png,image/webp,image/svg+xml"
-                                                style="display:none"
-                                                onchange="handleLogoReplace(this)">
-                                        </label>
-                                        <button type="button" class="btn-img-action btn-delete"
-                                                onclick="removeLogo()">🗑️ Eliminar</button>
-                                    </div>
-                                </div>`;
-                        }
-
-                        // ═══════════════════════════════════════════════════════════
-                        // RENDER FOTOS
-                        // ═══════════════════════════════════════════════════════════
-                        function renderPhotos(srcs) {
-                            document.getElementById('photos-preview').innerHTML = srcs.map((src, i) => `
-                                <div class="img-preview-card">
-                                    <img src="${src}" class="preview-img" alt="Foto ${i+1}">
-                                    <div class="img-preview-badge">Foto ${i+1}</div>
-                                    <div class="img-preview-actions">
-                                        <label class="btn-img-action btn-edit">
-                                            ✏️ Cambiar
-                                            <input type="file"
-                                                accept="image/jpeg,image/jpg,image/png,image/webp"
-                                                style="display:none"
-                                                onchange="handlePhotoReplace(this,${i})">
-                                        </label>
-                                        <button type="button" class="btn-img-action btn-delete"
-                                                onclick="removePhoto(${i})">🗑️ Eliminar</button>
-                                    </div>
-                                </div>`).join('');
-                        }
-
-                        // ═══════════════════════════════════════════════════════════
-                        // LOGO — seleccionar
-                        // ═══════════════════════════════════════════════════════════
-                        document.getElementById('logoFile').addEventListener('change', async function (e) {
-                            const file = e.target.files[0];
-                            if (!file) return;
-
-                            const statusDiv    = document.getElementById('logo-upload-status');
-                            const logoUrlInput = document.getElementById('logo-url');
-
-                            if (file.size > 5 * 1024 * 1024) {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
-                                return;
-                            }
-
-                            // Vista previa inmediata
-                            const src = await toDataURL(file);
-                            renderLogo(src);
-                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
-
-                            try {
-                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
-                                logoUrlInput.value = logoCloudinaryUrl;
-                                // uploadWithCache ya setea el status; si fue subida nueva lo sobreescribimos
-                                if (!statusDiv.innerHTML.includes('reutilizando')) {
-                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo subido correctamente</span>';
-                                }
-                            } catch {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
-                                logoCloudinaryUrl  = null;
-                                logoUrlInput.value = '';
-                            }
-                        });
-
-                        // LOGO — cambiar (desde botón ✏️)
-                        async function handleLogoReplace(input) {
-                            const file = input.files[0];
-                            if (!file) return;
-
-                            const statusDiv    = document.getElementById('logo-upload-status');
-                            const logoUrlInput = document.getElementById('logo-url');
-
-                            if (file.size > 5 * 1024 * 1024) {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ El logo no puede superar 5MB</span>';
-                                return;
-                            }
-
-                            const src = await toDataURL(file);
-                            renderLogo(src);
-                            statusDiv.innerHTML = '<span class="upload-progress">⏳ Verificando imagen...</span>';
-
-                            try {
-                                logoCloudinaryUrl  = await uploadWithCache(file, statusDiv);
-                                logoUrlInput.value = logoCloudinaryUrl;
-                                if (!statusDiv.innerHTML.includes('reutilizando')) {
-                                    statusDiv.innerHTML = '<span class="upload-success">✅ Logo actualizado correctamente</span>';
-                                }
-                            } catch {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir el logo</span>';
-                            }
-                        }
-
-                        // LOGO — eliminar
-                        function removeLogo() {
-                            logoCloudinaryUrl  = null;
-                            document.getElementById('logo-url').value        = '';
-                            document.getElementById('logoFile').value        = '';
-                            document.getElementById('logo-preview').innerHTML = '';
-                            document.getElementById('logo-upload-status').innerHTML = '';
-                        }
-
-                        // ═══════════════════════════════════════════════════════════
-                        // FOTOS — seleccionar
-                        // ═══════════════════════════════════════════════════════════
-                        // Buffer de dataURLs para re-renderizar sin perder las anteriores
-                        let photoSrcs = [];
-
-                        document.getElementById('servicePhotos').addEventListener('change', async function (e) {
-                            const files     = Array.from(e.target.files);
-                            const statusDiv = document.getElementById('photos-upload-status');
-                            const photosInput = document.getElementById('photos-urls');
-
-                            if (photoSrcs.length + files.length > 3) {
-                                statusDiv.innerHTML = `<span class="upload-error">❌ Máximo 3 fotos. Ya tenés ${photoSrcs.length} cargada(s).</span>`;
-                                return;
-                            }
-
-                            const totalSize = files.reduce((s, f) => s + f.size, 0);
-                            if (totalSize > 10 * 1024 * 1024) {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ El tamaño total no puede superar 10MB</span>';
-                                return;
-                            }
-
-                            // Previews inmediatas
-                            for (const file of files) {
-                                photoSrcs.push(await toDataURL(file));
-                            }
-                            renderPhotos(photoSrcs);
-                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Subiendo ${files.length} foto(s)...</span>`;
-
-                            try {
-                                for (let i = 0; i < files.length; i++) {
-                                    statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${photoCloudinaryUrls.length + 1} de ${photoSrcs.length}...</span>`;
-                                    const url = await uploadWithCache(files[i], statusDiv);
-                                    photoCloudinaryUrls.push(url);
-                                }
-                                photosInput.value   = photoCloudinaryUrls.join(',');
-                                statusDiv.innerHTML = `<span class="upload-success">✅ ${photoSrcs.length} foto(s) listas</span>`;
-                            } catch {
-                                statusDiv.innerHTML = '<span class="upload-error">❌ Error al subir las fotos</span>';
-                            }
-                        });
-
-                        // FOTOS — cambiar una (desde botón ✏️)
-                        async function handlePhotoReplace(input, index) {
-                            const file = input.files[0];
-                            if (!file) return;
-
-                            const statusDiv = document.getElementById('photos-upload-status');
-                            statusDiv.innerHTML = `<span class="upload-progress">⏳ Verificando foto ${index + 1}...</span>`;
-
-                            const src = await toDataURL(file);
-                            photoSrcs[index] = src;
-                            renderPhotos(photoSrcs);
-
-                            try {
-                                const url = await uploadWithCache(file, statusDiv);
-                                photoCloudinaryUrls[index] = url;
-                                document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
-                                if (!statusDiv.innerHTML.includes('reutilizando')) {
-                                    statusDiv.innerHTML = `<span class="upload-success">✅ Foto ${index + 1} actualizada correctamente</span>`;
-                                }
-                            } catch {
-                                statusDiv.innerHTML = `<span class="upload-error">❌ Error al actualizar la foto ${index + 1}</span>`;
-                            }
-                        }
-
-                        // FOTOS — eliminar una
-                        function removePhoto(index) {
-                            photoSrcs.splice(index, 1);
-                            photoCloudinaryUrls.splice(index, 1);
-                            document.getElementById('photos-urls').value = photoCloudinaryUrls.join(',');
-                            if (photoSrcs.length === 0) {
-                                document.getElementById('servicePhotos').value = '';
-                                document.getElementById('photos-upload-status').innerHTML = '';
-                            } else {
-                                document.getElementById('photos-upload-status').innerHTML =
-                                    `<span class="upload-success">✅ ${photoSrcs.length} foto(s) cargadas</span>`;
-                            }
-                            renderPhotos(photoSrcs);
-                        }
-                    </script>
-                    <!-- ══ INFORMACIÓN ADICIONAL ══ -->
-                    <p class="form-section-title">Información adicional</p>
-
-                    <div class="form-group">
-                        <label for="details">Detalles adicionales</label>
-                        <textarea id="details" name="details"
-                            placeholder="En la plantilla se incluyen varios servicios. ¿Hay alguno que falte o necesite ser removido? Por favor, contanos cualquier otro detalle adicional."></textarea>
-                    </div>
-
-                    <!-- ══ TÉRMINOS Y ENVÍO ══ -->
-                    <div class="form-terms">
-                        <input type="checkbox" id="terminos-form" name="terminos" required>
-                        <label for="terminos-form">
-                            Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
-                        </label>
-                    </div>
-
-                    <div class="form-actions">
-                        <button id="clear-form-button" type="button" class="button button-secondary"
-                            onclick="clearFormData()">
-                            🗑️ Limpiar formulario
-                        </button>
-                        <button id="whatsapp-button" type="button" class="button button1"
-                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_whatsapp', 'anunciantes', 'click_enviar_formulario_whatsapp', 'botón enviar formulario whatsapp')">
-                            <i class="fa fa-whatsapp"></i> Enviar por WhatsApp
-                        </button>
-                        <button id="messenger-button" type="button" class="button button1"
-                            onclick="syncFormFields(); trackEvent(this, 'click_enviar_formulario_messenger', 'anunciantes', 'click_enviar_formulario_messenger', 'botón enviar formulario messenger')">
-                            <i class="fa fa-commenting"></i> Enviar por Messenger
-                        </button>
-                    </div>
-
-                </form>
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-    </main>
-
-
-<footer id="footer" style="margin-bottom: 3em;">
-    <div class="contenedor">
-        <div class="box_footer">
-            <div class="separador_box_footer">
-                <img src="
-                    logo.png
-" alt="logotipo" loading="lazy">
-                <a href="
-                    index.html
-">https://www.cerrajero.net.ar/</a>
-            </div>
-            <div class="separador_box_footer">
-
-                <i class="fa fa-facebook"
-                    style="width: 2em;height: 2em;background-color: #3b5998; padding: 1em;"></i>
-                <a href="https://www.facebook.com/cerrajero.net.ar">Facebook</a>
-
-            </div>
-        </div>
-
-    </div>
-</footer>
-
-
-
-<script>
-  // Copiar datos del proveedor
-  function copiarDatosProveedor() {
-    const nombre = document.getElementById('modal-nombre')?.textContent || 'No disponible';
-    const telefono = document.getElementById('modal-telefono')?.textContent || 'No disponible';
-    const ubicacion = document.getElementById('modal-ubicacion')?.textContent || 'No disponible';
-    const pagado = document.getElementById('modal-pagado')?.textContent || 'No disponible';
-
-    const datos = `Nombre: ${nombre}
-    Teléfono: ${telefono}
-    Ubicación: ${ubicacion}
-    Pagado por: ${pagado}
-    Fuente: cerrajero.net.ar`;
-
-    navigator.clipboard.writeText(datos).then(() => {
-      alert('✅ Datos copiados al portapapeles');
-    }).catch(() => {
-      alert('No se pudo copiar. Intenta nuevamente.');
-    });
-  }
-
-  // Descargar modal como imagen
-  function descargarModalImagen() {
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-    script.onload = function () {
-      const modalContent = document.getElementById('modal-content');
-      html2canvas(modalContent, {
-        backgroundColor: '#ffffff',
-        scale: 2,
-        allowTaint: true,
-        useCORS: true
-      }).then(canvas => {
-        const link = document.createElement('a');
-        const nombre = document.getElementById('modal-nombre')?.textContent || 'proveedor';
-        const fecha = new Date().toLocaleDateString('es-AR');
-        link.href = canvas.toDataURL('image/png');
-        link.download = `${nombre}_${fecha}.png`;
-        link.click();
-      }).catch(error => {
-        console.error('Error al descargar:', error);
-        alert('No se pudo descargar la imagen. Intenta nuevamente.');
-      });
-    };
-    document.head.appendChild(script);
-  }
-
-</script>
-<div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal-contenido">
-    <img src="logo.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy" style="width: 15rem; height: 15rem;">
-    
-    <button id="modal-close-btn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
-    <div id="modal-content"></div>
-  </div>
-</div>
-
-
-
-<script>
-
-  const modal = document.getElementById("modal");
-  const modalContent = document.getElementById("modal-content");
-  const closeBtn = document.getElementById("modal-close-btn");
-  let abortController = null;
-
-  // Cerrar modal
-  function cerrarModal() {
-    modal.classList.remove("active");
-    abortController = null;
-  }
-
-  function abrirModal(html) {
-    modalContent.innerHTML = html;
-    modal.classList.add("active");
-  }
-
-  closeBtn.addEventListener("click", cerrarModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) cerrarModal();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("active")) cerrarModal();
-  });
-
-  
-  function mostrarModalAdvertencia(mensaje, url = null) {
-    let html = `
-      <h1 id="modal-title">⚠️ Aviso Importante</h1>
-      <p>${mensaje}</p>
-      <div style="margin-top: 1.5rem;">
-    `;
-
-    if (url) {
-      html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
-    }
-    
-    html += `
-        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
-      </div>
-            <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
-        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
-      </div>
-      <div class="modal-legal">
-        Al contactar, confirmas que aceptas 
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
-      </div>
-    `;
-
-    abrirModal(html);
-  }
-  
-  function mostrarModalAdvertenciaDemo(titulo, mensaje, url = null) {
-      let html = `       
-        <h1 id="modal-title">${titulo}</h1>
-        <p>${mensaje}</p>
-
-        <div class="disclosure-section" style="margin-top: 1.5rem; border: 1px solid #dadce0; border-radius: 8px;">
-          
-          <button class="disclosure-header expanded"
-            onclick="if(this.nextElementSibling){this.classList.toggle('expanded'); this.nextElementSibling.classList.toggle('expanded');}"
-            style="padding: 16px; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 14px; font-weight: 500; color: #202124;">
-            <span>ℹ️ Acerca del anunciante</span>
-            <span style="transition: transform 0.3s; display: inline-block;">▼</span>
-          </button>
-          
-          <div class="disclosure-content expanded" style="max-height: 1000px; overflow: hidden; background: white;">
-            <div style="padding: 16px; border-top: 1px solid #dadce0;">
-
-              <div style="display: grid; gap: 12px;">
-
-
-                <div
-                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
-                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Nombre del negocio</span>
-                  <span style="color: #202124; font-size: 13px;" id="modal-nombre">None</span>
-                </div>
-
-                <div
-                  style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
-                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Teléfono</span>
-                  <span style="color: #202124; font-size: 13px;" id="modal-telefono">None</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
-                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Sección</span>
-                  
-                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-ubicacion">
-                  santa fe
-                  </span>
-              
-                  </div>
-
-                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
-                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Pagado por</span>
-                  <span style="color: #202124; font-size: 13px; text-transform: capitalize;" id="modal-pagado">None</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
-                  <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Anunciando desde</span>
-                  <span style="color: #202124; font-size: 13px;" id="modal-pagado">None</span>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>        
-
-        <div style="margin-top: 1.5rem;">
-      `;
-
-      if (url) {
-        html += `<button class="button" onclick="window.open('${url}', '_blank'); cerrarModal();">✅ Continuar</button>`;
-      }
-      
-      html += `
-          <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
-        </div>
-
-                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
-          <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
-          <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
-          </span>
-        </div>
-
-        <a onclick="copiarDatosProveedor()" href="#" style="font-size: 1rem; float: inline-start;">📋 Copiar al portapapeles esta información</a><br>
-        <a onclick="descargarModalImagen()" href="#" style="font-size: 1rem; float: inline-start;">⬇️ Descargar imagen de esta información</a><br>
-        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante
-
-        </a>
-        <div class="modal-legal">
-          Al contactar, confirmas que aceptas 
-          <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
-        </div>
-      `;
-
-      abrirModal(html);
-    }
-  
-
-  
-  function mostrarModalAdvertenciaformulario(mensaje, url = null) {
-    let html = `
-      <h1 id="modal-title">⚠️ Aviso Importante</h1>
-      <p>${mensaje}</p>
-      <div style="margin-top: 1.5rem;">
-    `;
-    
-    html += `
-        <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
-      </div>
-      <div class="modal-legal">
-        Al enviar el formulario, confirmas que has leído y aceptas 
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
-      </div>
-    `;
-
-    abrirModal(html);
-  }
-
-  
-  function mostrarModalSinResultados() {
-    const html = `
-      <h1 id="modal-title">📍 Búsqueda por Geolocalización</h1>
-      <h2>⚠️ No hay proveedor disponible en tu zona aún</h2>
-      <p>¿Ofrecés servicios de cerrajería en esta zona?</p>
-      
-      <div style="margin: 1.5rem 0;">
-        <a href="#formulario-publicidad" class="button" onclick="cerrarModal();">📣 ¡Anunciate aquí!</a>
-        <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
-      </div>
-
-      <p>O probá con una distancia máxima más alta.</p>
-      
-      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
-
-      <div class="modal-legal">
-        Al usar el buscador, confirmas que aceptas 
-        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
-      </div>
-    `;
-    abrirModal(html);
-  }
-
-  
-  function mostrarModalResultados(zonas) {
-    const formatoZona = (zona) => {
-      return [zona.provincia, zona.localidad, zona.barrio]
-        .filter(x => x && x.trim() !== "")
-        .join(", ");
-    };
-
-    let html = `
-      <h1 id="modal-title">📍 Proveedores Cercanos</h1>
-      <p>Se encontraron <strong>${zonas.length}</strong> resultado(s):</p>
-      <ul>
-    `;
-
-    zonas.forEach(z => {
-      html += `
-        <li>
-          <strong>Zona:</strong> ${formatoZona(z)}<br>
-          <strong>Distancia:</strong> ${z.dist.toFixed(2)} km<br>
-          <a href="${z.url}" target="_blank" class="button">🔗 Ver sección</a>
-        </li>
-      `;
-    });
-
-    html += `
-      </ul>
-      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
       <div class="modal-legal">
         Al contactar a un proveedor, confirmas que aceptas 
         <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
       </div>
-    `;
-
+      `;
     abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
   }
-
-  
-  function mostrarModalError(mensaje) {
-    const html = `
-      <h1 id="modal-title">📍 Error en la Búsqueda</h1>
-      <p><strong>${mensaje}</strong></p>
-      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar e Intentar de Nuevo</button>
-    `;
-    abrirModal(html);
-  }
-
-  
-  function compartirSeccion() {
-    const urlBase = window.location.href;
-    const urlTag = `${urlBase}?referido=cerrajero_amigo`;
-
-    if (navigator.share) {
-      navigator.share({
-        title: `Servicios de cerrajería`,
-        text: `Mirá esta sección, quizás te interese anunciarte como cerrajero.`,
-        url: urlTag
-      }).catch(console.error);
-    } else {
-      alert("Copiá este link y compartilo: " + urlTag);
-    }
-  }
-
-  function obtenerUbicacion(opciones) {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject, opciones);
-    });
-  }
-
-  async function obtenerUbicacionConFallback() {
-    try {
-      return await obtenerUbicacion({
-        enableHighAccuracy: true,
-        timeout: 8000,
-        maximumAge: 0
-      });
-    } catch (error) {
-      if (error.code === 2 || error.code === 3) {
-        return await obtenerUbicacion({
-          enableHighAccuracy: false,
-          timeout: 7000,
-          maximumAge: 0
-        });
-      } else if (error.code === 1) {
-        throw new Error("El permiso de geolocalización fue denegado.");
-      } else {
-        throw new Error("❌ No se pudo obtener tu ubicación.");
-      }
-    }
-  }
-
-  function haversine(lat1, lon1, lat2, lon2) {
-    const R = 6371;
-    const toRad = x => x * Math.PI / 180;
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-    const a = Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-      Math.sin(dLon / 2) ** 2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  }
-
-  async function buscarPorUbicacion() {
-    if (abortController) abortController.abort();
-    abortController = new AbortController();
-
-    try {
-      if (!navigator.geolocation) {
-        throw new Error("Tu navegador no permite geolocalización.");
-      }
-
-      abrirModal(`
-        <div id="loader">
-          <div class="spinner"></div>
-          <p>Buscando proveedores cercanos...</p>
-        </div>
-        <div id="progress-bar"></div>
-      `);
-
-      const posicion = await obtenerUbicacionConFallback();
-      const userLat = posicion.coords.latitude;
-      const userLon = posicion.coords.longitude;
-      const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
-
-      const res = await fetch("disponibles.json", { signal: abortController.signal });
-      const data = await res.json();
-
-      data.forEach(item => {
-        item.dist = haversine(userLat, userLon, item.lat, item.lon);
-      });
-
-      const resultados = data
-        .filter(item => item.dist <= umbral)
-        .sort((a, b) => a.dist - b.dist);
-
-      if (resultados.length === 0) {
-        mostrarModalSinResultados();
-      } else {
-        mostrarModalResultados(resultados);
-      }
-    } catch (error) {
-      if (error.name !== "AbortError") {
-        mostrarModalError(error.message);
-      }
-    }
-  }
-
- 
-  
-  document.addEventListener("click", function(e) {
-    
-      if (e.target.matches('a[href^="tel:"]')) {
-      e.preventDefault();
-      mostrarModalAdvertencia(
-        `⚠️ No hay un cerrajero en este espacio publicitario. Este boton es una demostración. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-        e.target.href
-      );
-    }
-
-      if (e.target.matches('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('div.servicio a.button1')) {
-        e.preventDefault();
-        mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. <br>Si continuas serás redirigido al WhatsApp de serviciosweb.net.ar a modo de ejemplo <br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('#contacto a[href*="instagram.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo, <br><b>estás por visitar el Instagram de serviciosweb.net.ar</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('#contacto a[href*="facebook.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertencia(
-          `⚠️ No hay un cerrajero en este espacio publicitario. El boton es una demo. <br><b>Estás por visitar el facebook de serviciosweb.net.ar</b>`,
-          e.target.href
-        );
-      }
-    });
 
 </script></body>
 
@@ -3545,7 +3538,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">6</div>
+        <div class="stat-value">3</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,302 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de formosa, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="formosa/fortin-soledad.html" style="color: darkred;">
-    ✘ | fortín soledad
-</option>
-
-<option value="formosa/guadalcazar.html" style="color: darkred;">
-    ✘ | guadalcazar
-</option>
-
-<option value="formosa/la-rinconada.html" style="color: darkred;">
-    ✘ | la rinconada
-</option>
-
-<option value="formosa/laguna-yema.html" style="color: darkred;">
-    ✘ | laguna yema
-</option>
-
-<option value="formosa/lamadrid.html" style="color: darkred;">
-    ✘ | lamadrid
-</option>
-
-<option value="formosa/los-chiriguanos.html" style="color: darkred;">
-    ✘ | los chiriguanos
-</option>
-
-<option value="formosa/pozo-de-maza.html" style="color: darkred;">
-    ✘ | pozo de maza
-</option>
-
-<option value="formosa/pozo-del-mortero.html" style="color: darkred;">
-    ✘ | pozo del mortero
-</option>
-
-<option value="formosa/vaca-perdida.html" style="color: darkred;">
-    ✘ | vaca perdida
-</option>
-
-<option value="formosa/colonia-pastoril.html" style="color: darkred;">
-    ✘ | colonia pastoril
-</option>
-
-<option value="formosa/formosa.html" style="color: darkred;">
-    ✘ | formosa
-</option>
-
-<option value="formosa/gran-guardia.html" style="color: darkred;">
-    ✘ | gran guardia
-</option>
-
-<option value="formosa/mariano-boedo.html" style="color: darkred;">
-    ✘ | mariano boedo
-</option>
-
-<option value="formosa/mojon-de-fierro.html" style="color: darkred;">
-    ✘ | mojón de fierro
-</option>
-
-<option value="formosa/san-hilario.html" style="color: darkred;">
-    ✘ | san hilario
-</option>
-
-<option value="formosa/villa-del-carmen.html" style="color: darkred;">
-    ✘ | villa del carmen
-</option>
-
-<option value="formosa/banco-payagua.html" style="color: darkred;">
-    ✘ | banco payaguá
-</option>
-
-<option value="formosa/general-lucio-v-mansilla.html" style="color: darkred;">
-    ✘ | general lucio v. mansilla
-</option>
-
-<option value="formosa/herradura.html" style="color: darkred;">
-    ✘ | herradura
-</option>
-
-<option value="formosa/san-francisco-de-laishi.html" style="color: darkred;">
-    ✘ | san francisco de laishi
-</option>
-
-<option value="formosa/tatane.html" style="color: darkred;">
-    ✘ | tatané
-</option>
-
-<option value="formosa/villa-escolar.html" style="color: darkred;">
-    ✘ | villa escolar
-</option>
-
-<option value="formosa/ingeniero-guillermo-n-juarez.html" style="color: darkred;">
-    ✘ | ingeniero guillermo n. juárez
-</option>
-
-<option value="formosa/bartolome-de-las-casas.html" style="color: darkred;">
-    ✘ | bartolomé de las casas
-</option>
-
-<option value="formosa/colonia-sarmiento.html" style="color: darkred;">
-    ✘ | colonia sarmiento
-</option>
-
-<option value="formosa/comandante-fontana.html" style="color: darkred;">
-    ✘ | comandante fontana
-</option>
-
-<option value="formosa/el-recreo.html" style="color: darkred;">
-    ✘ | el recreo
-</option>
-
-<option value="formosa/estanislao-del-campo.html" style="color: darkred;">
-    ✘ | estanislao del campo
-</option>
-
-<option value="formosa/fortin-cabo-1o-lugones.html" style="color: darkred;">
-    ✘ | fortín cabo 1º lugones
-</option>
-
-<option value="formosa/fortin-sargento-1o-leyes.html" style="color: darkred;">
-    ✘ | fortín sargento 1º leyes
-</option>
-
-<option value="formosa/ibarreta.html" style="color: darkred;">
-    ✘ | ibarreta
-</option>
-
-<option value="formosa/juan-g-bazan.html" style="color: darkred;">
-    ✘ | juan g. bazán
-</option>
-
-<option value="formosa/las-lomitas.html" style="color: darkred;">
-    ✘ | las lomitas
-</option>
-
-<option value="formosa/posta-cambio-zalazar.html" style="color: darkred;">
-    ✘ | posta cambio zalazar
-</option>
-
-<option value="formosa/pozo-del-tigre.html" style="color: darkred;">
-    ✘ | pozo del tigre
-</option>
-
-<option value="formosa/san-martin-i.html" style="color: darkred;">
-    ✘ | san martín i
-</option>
-
-<option value="formosa/san-martin-ii.html" style="color: darkred;">
-    ✘ | san martín ii
-</option>
-
-<option value="formosa/subteniente-perin.html" style="color: darkred;">
-    ✘ | subteniente perín
-</option>
-
-<option value="formosa/villa-general-guemes.html" style="color: darkred;">
-    ✘ | villa general güemes
-</option>
-
-<option value="formosa/villa-general-manuel-belgrano.html" style="color: darkred;">
-    ✘ | villa general manuel belgrano
-</option>
-
-<option value="formosa/buena-vista.html" style="color: darkred;">
-    ✘ | buena vista
-</option>
-
-<option value="formosa/el-espinillo.html" style="color: darkred;">
-    ✘ | el espinillo
-</option>
-
-<option value="formosa/laguna-gallo.html" style="color: darkred;">
-    ✘ | laguna gallo
-</option>
-
-<option value="formosa/mision-tacaagle.html" style="color: darkred;">
-    ✘ | misión tacaaglé
-</option>
-
-<option value="formosa/porton-negro.html" style="color: darkred;">
-    ✘ | portón negro
-</option>
-
-<option value="formosa/tres-lagunas.html" style="color: darkred;">
-    ✘ | tres lagunas
-</option>
-
-<option value="formosa/clorinda.html" style="color: darkred;">
-    ✘ | clorinda
-</option>
-
-<option value="formosa/laguna-blanca.html" style="color: darkred;">
-    ✘ | laguna blanca
-</option>
-
-<option value="formosa/laguna-naick-neck.html" style="color: darkred;">
-    ✘ | laguna naick-neck
-</option>
-
-<option value="formosa/palma-sola.html" style="color: darkred;">
-    ✘ | palma sola
-</option>
-
-<option value="formosa/puerto-pilcomayo.html" style="color: darkred;">
-    ✘ | puerto pilcomayo
-</option>
-
-<option value="formosa/riacho-he-he.html" style="color: darkred;">
-    ✘ | riacho he-he
-</option>
-
-<option value="formosa/riacho-negro.html" style="color: darkred;">
-    ✘ | riacho negro
-</option>
-
-<option value="formosa/siete-palmas.html" style="color: darkred;">
-    ✘ | siete palmas
-</option>
-
-<option value="formosa/colonia-campo-villafane.html" style="color: darkred;">
-    ✘ | colonia campo villafañe
-</option>
-
-<option value="formosa/el-colorado.html" style="color: darkred;">
-    ✘ | el colorado
-</option>
-
-<option value="formosa/palo-santo.html" style="color: darkred;">
-    ✘ | palo santo
-</option>
-
-<option value="formosa/pirane.html" style="color: darkred;">
-    ✘ | pirané
-</option>
-
-<option value="formosa/villa-kilometro-213.html" style="color: darkred;">
-    ✘ | villa kilómetro 213
-</option>
-
-<option value="formosa/el-potrillo.html" style="color: darkred;">
-    ✘ | el potrillo
-</option>
-
-<option value="formosa/general-mosconi.html" style="color: darkred;">
-    ✘ | general mosconi
-</option>
-
-<option value="formosa/el-quebracho.html" style="color: darkred;">
-    ✘ | el quebracho
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -1736,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -1809,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -1875,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -1911,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -1994,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2162,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2248,6 +1959,288 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="formosa/fortin-soledad.html" style="color: darkred;">
+    ✘ | fortín soledad
+</option>
+
+<option value="formosa/guadalcazar.html" style="color: darkred;">
+    ✘ | guadalcazar
+</option>
+
+<option value="formosa/la-rinconada.html" style="color: darkred;">
+    ✘ | la rinconada
+</option>
+
+<option value="formosa/laguna-yema.html" style="color: darkred;">
+    ✘ | laguna yema
+</option>
+
+<option value="formosa/lamadrid.html" style="color: darkred;">
+    ✘ | lamadrid
+</option>
+
+<option value="formosa/los-chiriguanos.html" style="color: darkred;">
+    ✘ | los chiriguanos
+</option>
+
+<option value="formosa/pozo-de-maza.html" style="color: darkred;">
+    ✘ | pozo de maza
+</option>
+
+<option value="formosa/pozo-del-mortero.html" style="color: darkred;">
+    ✘ | pozo del mortero
+</option>
+
+<option value="formosa/vaca-perdida.html" style="color: darkred;">
+    ✘ | vaca perdida
+</option>
+
+<option value="formosa/colonia-pastoril.html" style="color: darkred;">
+    ✘ | colonia pastoril
+</option>
+
+<option value="formosa/formosa.html" style="color: darkred;">
+    ✘ | formosa
+</option>
+
+<option value="formosa/gran-guardia.html" style="color: darkred;">
+    ✘ | gran guardia
+</option>
+
+<option value="formosa/mariano-boedo.html" style="color: darkred;">
+    ✘ | mariano boedo
+</option>
+
+<option value="formosa/mojon-de-fierro.html" style="color: darkred;">
+    ✘ | mojón de fierro
+</option>
+
+<option value="formosa/san-hilario.html" style="color: darkred;">
+    ✘ | san hilario
+</option>
+
+<option value="formosa/villa-del-carmen.html" style="color: darkred;">
+    ✘ | villa del carmen
+</option>
+
+<option value="formosa/banco-payagua.html" style="color: darkred;">
+    ✘ | banco payaguá
+</option>
+
+<option value="formosa/general-lucio-v-mansilla.html" style="color: darkred;">
+    ✘ | general lucio v. mansilla
+</option>
+
+<option value="formosa/herradura.html" style="color: darkred;">
+    ✘ | herradura
+</option>
+
+<option value="formosa/san-francisco-de-laishi.html" style="color: darkred;">
+    ✘ | san francisco de laishi
+</option>
+
+<option value="formosa/tatane.html" style="color: darkred;">
+    ✘ | tatané
+</option>
+
+<option value="formosa/villa-escolar.html" style="color: darkred;">
+    ✘ | villa escolar
+</option>
+
+<option value="formosa/ingeniero-guillermo-n-juarez.html" style="color: darkred;">
+    ✘ | ingeniero guillermo n. juárez
+</option>
+
+<option value="formosa/bartolome-de-las-casas.html" style="color: darkred;">
+    ✘ | bartolomé de las casas
+</option>
+
+<option value="formosa/colonia-sarmiento.html" style="color: darkred;">
+    ✘ | colonia sarmiento
+</option>
+
+<option value="formosa/comandante-fontana.html" style="color: darkred;">
+    ✘ | comandante fontana
+</option>
+
+<option value="formosa/el-recreo.html" style="color: darkred;">
+    ✘ | el recreo
+</option>
+
+<option value="formosa/estanislao-del-campo.html" style="color: darkred;">
+    ✘ | estanislao del campo
+</option>
+
+<option value="formosa/fortin-cabo-1o-lugones.html" style="color: darkred;">
+    ✘ | fortín cabo 1º lugones
+</option>
+
+<option value="formosa/fortin-sargento-1o-leyes.html" style="color: darkred;">
+    ✘ | fortín sargento 1º leyes
+</option>
+
+<option value="formosa/ibarreta.html" style="color: darkred;">
+    ✘ | ibarreta
+</option>
+
+<option value="formosa/juan-g-bazan.html" style="color: darkred;">
+    ✘ | juan g. bazán
+</option>
+
+<option value="formosa/las-lomitas.html" style="color: darkred;">
+    ✘ | las lomitas
+</option>
+
+<option value="formosa/posta-cambio-zalazar.html" style="color: darkred;">
+    ✘ | posta cambio zalazar
+</option>
+
+<option value="formosa/pozo-del-tigre.html" style="color: darkred;">
+    ✘ | pozo del tigre
+</option>
+
+<option value="formosa/san-martin-i.html" style="color: darkred;">
+    ✘ | san martín i
+</option>
+
+<option value="formosa/san-martin-ii.html" style="color: darkred;">
+    ✘ | san martín ii
+</option>
+
+<option value="formosa/subteniente-perin.html" style="color: darkred;">
+    ✘ | subteniente perín
+</option>
+
+<option value="formosa/villa-general-guemes.html" style="color: darkred;">
+    ✘ | villa general güemes
+</option>
+
+<option value="formosa/villa-general-manuel-belgrano.html" style="color: darkred;">
+    ✘ | villa general manuel belgrano
+</option>
+
+<option value="formosa/buena-vista.html" style="color: darkred;">
+    ✘ | buena vista
+</option>
+
+<option value="formosa/el-espinillo.html" style="color: darkred;">
+    ✘ | el espinillo
+</option>
+
+<option value="formosa/laguna-gallo.html" style="color: darkred;">
+    ✘ | laguna gallo
+</option>
+
+<option value="formosa/mision-tacaagle.html" style="color: darkred;">
+    ✘ | misión tacaaglé
+</option>
+
+<option value="formosa/porton-negro.html" style="color: darkred;">
+    ✘ | portón negro
+</option>
+
+<option value="formosa/tres-lagunas.html" style="color: darkred;">
+    ✘ | tres lagunas
+</option>
+
+<option value="formosa/clorinda.html" style="color: darkred;">
+    ✘ | clorinda
+</option>
+
+<option value="formosa/laguna-blanca.html" style="color: darkred;">
+    ✘ | laguna blanca
+</option>
+
+<option value="formosa/laguna-naick-neck.html" style="color: darkred;">
+    ✘ | laguna naick-neck
+</option>
+
+<option value="formosa/palma-sola.html" style="color: darkred;">
+    ✘ | palma sola
+</option>
+
+<option value="formosa/puerto-pilcomayo.html" style="color: darkred;">
+    ✘ | puerto pilcomayo
+</option>
+
+<option value="formosa/riacho-he-he.html" style="color: darkred;">
+    ✘ | riacho he-he
+</option>
+
+<option value="formosa/riacho-negro.html" style="color: darkred;">
+    ✘ | riacho negro
+</option>
+
+<option value="formosa/siete-palmas.html" style="color: darkred;">
+    ✘ | siete palmas
+</option>
+
+<option value="formosa/colonia-campo-villafane.html" style="color: darkred;">
+    ✘ | colonia campo villafañe
+</option>
+
+<option value="formosa/el-colorado.html" style="color: darkred;">
+    ✘ | el colorado
+</option>
+
+<option value="formosa/palo-santo.html" style="color: darkred;">
+    ✘ | palo santo
+</option>
+
+<option value="formosa/pirane.html" style="color: darkred;">
+    ✘ | pirané
+</option>
+
+<option value="formosa/villa-kilometro-213.html" style="color: darkred;">
+    ✘ | villa kilómetro 213
+</option>
+
+<option value="formosa/el-potrillo.html" style="color: darkred;">
+    ✘ | el potrillo
+</option>
+
+<option value="formosa/general-mosconi.html" style="color: darkred;">
+    ✘ | general mosconi
+</option>
+
+<option value="formosa/el-quebracho.html" style="color: darkred;">
+    ✘ | el quebracho
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2273,7 +2266,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">9</div>
+        <div class="stat-value">7</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

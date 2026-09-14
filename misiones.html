@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,606 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de misiones, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="misiones/apostoles.html" style="color: darkred;">
-    ✘ | apóstoles
-</option>
-
-<option value="misiones/azara.html" style="color: darkred;">
-    ✘ | azara
-</option>
-
-<option value="misiones/barrio-rural.html" style="color: darkred;">
-    ✘ | barrio rural
-</option>
-
-<option value="misiones/estacion-apostoles.html" style="color: darkred;">
-    ✘ | estación apóstoles
-</option>
-
-<option value="misiones/pindapoy.html" style="color: darkred;">
-    ✘ | pindapoy
-</option>
-
-<option value="misiones/rincon-de-azara.html" style="color: darkred;">
-    ✘ | rincón de azara
-</option>
-
-<option value="misiones/san-jose.html" style="color: darkred;">
-    ✘ | san josé
-</option>
-
-<option value="misiones/tres-capones.html" style="color: darkred;">
-    ✘ | tres capones
-</option>
-
-<option value="misiones/aristobulo-del-valle.html" style="color: darkred;">
-    ✘ | aristóbulo del valle
-</option>
-
-<option value="misiones/campo-grande.html" style="color: darkred;">
-    ✘ | campo grande
-</option>
-
-<option value="misiones/dos-de-mayo.html" style="color: darkred;">
-    ✘ | dos de mayo
-</option>
-
-<option value="misiones/dos-de-mayo-nucleo-iii-bo-bernardino-rivadavia.html" style="color: darkred;">
-    ✘ | dos de mayo nucleo iii (bº bernardino rivadavia)
-</option>
-
-<option value="misiones/kilometro-17.html" style="color: darkred;">
-    ✘ | kilómetro 17
-</option>
-
-<option value="misiones/1o-de-mayo.html" style="color: darkred;">
-    ✘ | 1º de mayo
-</option>
-
-<option value="misiones/pueblo-illia.html" style="color: darkred;">
-    ✘ | pueblo illia
-</option>
-
-<option value="misiones/salto-encantado.html" style="color: darkred;">
-    ✘ | salto encantado
-</option>
-
-<option value="misiones/barrio-del-lago.html" style="color: darkred;">
-    ✘ | barrio del lago
-</option>
-
-<option value="misiones/bonpland.html" style="color: darkred;">
-    ✘ | bonpland
-</option>
-
-<option value="misiones/candelaria.html" style="color: darkred;">
-    ✘ | candelaria
-</option>
-
-<option value="misiones/cerro-cora.html" style="color: darkred;">
-    ✘ | cerro corá
-</option>
-
-<option value="misiones/loreto.html" style="color: darkred;">
-    ✘ | loreto
-</option>
-
-<option value="misiones/martires.html" style="color: darkred;">
-    ✘ | mártires
-</option>
-
-<option value="misiones/profundidad.html" style="color: darkred;">
-    ✘ | profundidad
-</option>
-
-<option value="misiones/puerto-santa-ana.html" style="color: darkred;">
-    ✘ | puerto santa ana
-</option>
-
-<option value="misiones/santa-ana.html" style="color: darkred;">
-    ✘ | santa ana
-</option>
-
-<option value="misiones/barrio-nuevo-garupa.html" style="color: darkred;">
-    ✘ | barrio nuevo garupa
-</option>
-
-<option value="misiones/garupa.html" style="color: darkred;">
-    ✘ | garupá
-</option>
-
-<option value="misiones/nemesio-parma.html" style="color: darkred;">
-    ✘ | nemesio parma
-</option>
-
-<option value="misiones/posadas.html" style="color: darkred;">
-    ✘ | posadas
-</option>
-
-<option value="misiones/barra-concepcion.html" style="color: darkred;">
-    ✘ | barra concepción
-</option>
-
-<option value="misiones/concepcion-de-la-sierra.html" style="color: darkred;">
-    ✘ | concepción de la sierra
-</option>
-
-<option value="misiones/la-corita.html" style="color: darkred;">
-    ✘ | la corita
-</option>
-
-<option value="misiones/santa-maria.html" style="color: darkred;">
-    ✘ | santa maría
-</option>
-
-<option value="misiones/colonia-victoria.html" style="color: darkred;">
-    ✘ | colonia victoria
-</option>
-
-<option value="misiones/eldorado.html" style="color: darkred;">
-    ✘ | eldorado
-</option>
-
-<option value="misiones/maria-magdalena.html" style="color: darkred;">
-    ✘ | maría magdalena
-</option>
-
-<option value="misiones/nueva-delicia.html" style="color: darkred;">
-    ✘ | nueva delicia
-</option>
-
-<option value="misiones/9-de-julio-kilometro-28.html" style="color: darkred;">
-    ✘ | 9 de julio kilómetro 28
-</option>
-
-<option value="misiones/9-de-julio-kilometro-20.html" style="color: darkred;">
-    ✘ | 9 de julio kilómetro 20
-</option>
-
-<option value="misiones/pueblo-nuevo.html" style="color: darkred;">
-    ✘ | pueblo nuevo
-</option>
-
-<option value="misiones/puerto-mado.html" style="color: darkred;">
-    ✘ | puerto mado
-</option>
-
-<option value="misiones/puerto-pinares.html" style="color: darkred;">
-    ✘ | puerto pinares
-</option>
-
-<option value="misiones/santiago-de-liniers.html" style="color: darkred;">
-    ✘ | santiago de liniers
-</option>
-
-<option value="misiones/valle-hermoso.html" style="color: darkred;">
-    ✘ | valle hermoso
-</option>
-
-<option value="misiones/villa-roulet.html" style="color: darkred;">
-    ✘ | villa roulet
-</option>
-
-<option value="misiones/comandante-andresito.html" style="color: darkred;">
-    ✘ | comandante andresito
-</option>
-
-<option value="misiones/bernardo-de-irigoyen.html" style="color: darkred;">
-    ✘ | bernardo de irigoyen
-</option>
-
-<option value="misiones/caburei.html" style="color: darkred;">
-    ✘ | caburei
-</option>
-
-<option value="misiones/dos-hermanas.html" style="color: darkred;">
-    ✘ | dos hermanas
-</option>
-
-<option value="misiones/integracion.html" style="color: darkred;">
-    ✘ | integración
-</option>
-
-<option value="misiones/pinalito-norte.html" style="color: darkred;">
-    ✘ | piñalito norte
-</option>
-
-<option value="misiones/puerto-andresito.html" style="color: darkred;">
-    ✘ | puerto andresito
-</option>
-
-<option value="misiones/puerto-deseado.html" style="color: darkred;">
-    ✘ | puerto deseado
-</option>
-
-<option value="misiones/san-antonio.html" style="color: darkred;">
-    ✘ | san antonio
-</option>
-
-<option value="misiones/el-soberbio.html" style="color: darkred;">
-    ✘ | el soberbio
-</option>
-
-<option value="misiones/fracran.html" style="color: darkred;">
-    ✘ | fracrán
-</option>
-
-<option value="misiones/san-vicente.html" style="color: darkred;">
-    ✘ | san vicente
-</option>
-
-<option value="misiones/puerto-esperanza.html" style="color: darkred;">
-    ✘ | puerto esperanza
-</option>
-
-<option value="misiones/puerto-libertad.html" style="color: darkred;">
-    ✘ | puerto libertad
-</option>
-
-<option value="misiones/puerto-iguazu.html" style="color: darkred;">
-    ✘ | puerto iguazú
-</option>
-
-<option value="misiones/villa-cooperativa.html" style="color: darkred;">
-    ✘ | villa cooperativa
-</option>
-
-<option value="misiones/colonia-wanda.html" style="color: darkred;">
-    ✘ | colonia wanda
-</option>
-
-<option value="misiones/almafuerte.html" style="color: darkred;">
-    ✘ | almafuerte
-</option>
-
-<option value="misiones/arroyo-del-medio.html" style="color: darkred;">
-    ✘ | arroyo del medio
-</option>
-
-<option value="misiones/caa-yari.html" style="color: darkred;">
-    ✘ | caá - yarí
-</option>
-
-<option value="misiones/cerro-azul.html" style="color: darkred;">
-    ✘ | cerro azul
-</option>
-
-<option value="misiones/dos-arroyos.html" style="color: darkred;">
-    ✘ | dos arroyos
-</option>
-
-<option value="misiones/gobernador-lopez.html" style="color: darkred;">
-    ✘ | gobernador lópez
-</option>
-
-<option value="misiones/leandro-n-alem.html" style="color: darkred;">
-    ✘ | leandro n. alem
-</option>
-
-<option value="misiones/olegario-v-andrade.html" style="color: darkred;">
-    ✘ | olegario v. andrade
-</option>
-
-<option value="misiones/villa-libertad.html" style="color: darkred;">
-    ✘ | villa libertad
-</option>
-
-<option value="misiones/capiovi.html" style="color: darkred;">
-    ✘ | capioví
-</option>
-
-<option value="misiones/capiovicino.html" style="color: darkred;">
-    ✘ | capioviciño
-</option>
-
-<option value="misiones/el-alcazar.html" style="color: darkred;">
-    ✘ | el alcázar
-</option>
-
-<option value="misiones/garuhape.html" style="color: darkred;">
-    ✘ | garuhapé
-</option>
-
-<option value="misiones/mbopicua.html" style="color: darkred;">
-    ✘ | mbopicuá
-</option>
-
-<option value="misiones/puerto-leoni.html" style="color: darkred;">
-    ✘ | puerto leoni
-</option>
-
-<option value="misiones/puerto-rico.html" style="color: darkred;">
-    ✘ | puerto rico
-</option>
-
-<option value="misiones/ruiz-de-montoya.html" style="color: darkred;">
-    ✘ | ruiz de montoya
-</option>
-
-<option value="misiones/san-alberto.html" style="color: darkred;">
-    ✘ | san alberto
-</option>
-
-<option value="misiones/san-gotardo.html" style="color: darkred;">
-    ✘ | san gotardo
-</option>
-
-<option value="misiones/san-miguel.html" style="color: darkred;">
-    ✘ | san miguel
-</option>
-
-<option value="misiones/villa-akerman.html" style="color: darkred;">
-    ✘ | villa akerman
-</option>
-
-<option value="misiones/villa-urrutia.html" style="color: darkred;">
-    ✘ | villa urrutia
-</option>
-
-<option value="misiones/barrio-cuatro-bocas.html" style="color: darkred;">
-    ✘ | barrio cuatro bocas
-</option>
-
-<option value="misiones/barrio-guatambu.html" style="color: darkred;">
-    ✘ | barrio guatambu
-</option>
-
-<option value="misiones/bario-ita.html" style="color: darkred;">
-    ✘ | bario ita
-</option>
-
-<option value="misiones/caraguatay.html" style="color: darkred;">
-    ✘ | caraguatay
-</option>
-
-<option value="misiones/laharrague.html" style="color: darkred;">
-    ✘ | laharrague
-</option>
-
-<option value="misiones/montecarlo.html" style="color: darkred;">
-    ✘ | montecarlo
-</option>
-
-<option value="misiones/piray-kilometro-18.html" style="color: darkred;">
-    ✘ | piray kilómetro 18
-</option>
-
-<option value="misiones/puerto-piray.html" style="color: darkred;">
-    ✘ | puerto piray
-</option>
-
-<option value="misiones/taruma.html" style="color: darkred;">
-    ✘ | tarumá
-</option>
-
-<option value="misiones/villa-parodi.html" style="color: darkred;">
-    ✘ | villa parodi
-</option>
-
-<option value="misiones/colonia-alberdi.html" style="color: darkred;">
-    ✘ | colonia alberdi
-</option>
-
-<option value="misiones/barrio-escuela-461.html" style="color: darkred;">
-    ✘ | barrio escuela 461
-</option>
-
-<option value="misiones/barrio-escuela-633.html" style="color: darkred;">
-    ✘ | barrio escuela 633
-</option>
-
-<option value="misiones/campo-ramon.html" style="color: darkred;">
-    ✘ | campo ramón
-</option>
-
-<option value="misiones/campo-viera.html" style="color: darkred;">
-    ✘ | campo viera
-</option>
-
-<option value="misiones/el-salto.html" style="color: darkred;">
-    ✘ | el salto
-</option>
-
-<option value="misiones/general-alvear.html" style="color: darkred;">
-    ✘ | general alvear
-</option>
-
-<option value="misiones/guarani.html" style="color: darkred;">
-    ✘ | guaraní
-</option>
-
-<option value="misiones/los-helechos.html" style="color: darkred;">
-    ✘ | los helechos
-</option>
-
-<option value="misiones/obera.html" style="color: darkred;">
-    ✘ | oberá
-</option>
-
-<option value="misiones/panambi.html" style="color: darkred;">
-    ✘ | panambí
-</option>
-
-<option value="misiones/panambi-kilometro-8.html" style="color: darkred;">
-    ✘ | panambí kilómetro 8
-</option>
-
-<option value="misiones/panambi-kilometro-15.html" style="color: darkred;">
-    ✘ | panambi kilómetro 15
-</option>
-
-<option value="misiones/san-martin.html" style="color: darkred;">
-    ✘ | san martín
-</option>
-
-<option value="misiones/villa-bonita.html" style="color: darkred;">
-    ✘ | villa bonita
-</option>
-
-<option value="misiones/barrio-tungoil.html" style="color: darkred;">
-    ✘ | barrio tungoil
-</option>
-
-<option value="misiones/colonia-polana.html" style="color: darkred;">
-    ✘ | colonia polana
-</option>
-
-<option value="misiones/corpus.html" style="color: darkred;">
-    ✘ | corpus
-</option>
-
-<option value="misiones/domingo-savio.html" style="color: darkred;">
-    ✘ | domingo savio
-</option>
-
-<option value="misiones/general-urquiza.html" style="color: darkred;">
-    ✘ | general urquiza
-</option>
-
-<option value="misiones/gobernador-roca.html" style="color: darkred;">
-    ✘ | gobernador roca
-</option>
-
-<option value="misiones/helvecia.html" style="color: darkred;">
-    ✘ | helvecia
-</option>
-
-<option value="misiones/hipolito-yrigoyen.html" style="color: darkred;">
-    ✘ | hipólito yrigoyen
-</option>
-
-<option value="misiones/jardin-america.html" style="color: darkred;">
-    ✘ | jardín américa
-</option>
-
-<option value="misiones/oasis.html" style="color: darkred;">
-    ✘ | oasis
-</option>
-
-<option value="misiones/roca-chica.html" style="color: darkred;">
-    ✘ | roca chica
-</option>
-
-<option value="misiones/san-ignacio.html" style="color: darkred;">
-    ✘ | san ignacio
-</option>
-
-<option value="misiones/santo-pipo.html" style="color: darkred;">
-    ✘ | santo pipó
-</option>
-
-<option value="misiones/florentino-ameghino.html" style="color: darkred;">
-    ✘ | florentino ameghino
-</option>
-
-<option value="misiones/itacaruare.html" style="color: darkred;">
-    ✘ | itacaruaré
-</option>
-
-<option value="misiones/mojon-grande.html" style="color: darkred;">
-    ✘ | mojón grande
-</option>
-
-<option value="misiones/san-javier.html" style="color: darkred;">
-    ✘ | san javier
-</option>
-
-<option value="misiones/cruce-caballero.html" style="color: darkred;">
-    ✘ | cruce caballero
-</option>
-
-<option value="misiones/paraiso.html" style="color: darkred;">
-    ✘ | paraíso
-</option>
-
-<option value="misiones/pinalito-sur.html" style="color: darkred;">
-    ✘ | piñalito sur
-</option>
-
-<option value="misiones/san-pedro.html" style="color: darkred;">
-    ✘ | san pedro
-</option>
-
-<option value="misiones/tobuna.html" style="color: darkred;">
-    ✘ | tobuna
-</option>
-
-<option value="misiones/alba-posse.html" style="color: darkred;">
-    ✘ | alba posse
-</option>
-
-<option value="misiones/alicia-alta.html" style="color: darkred;">
-    ✘ | alicia alta
-</option>
-
-<option value="misiones/alicia-baja.html" style="color: darkred;">
-    ✘ | alicia baja
-</option>
-
-<option value="misiones/colonia-aurora.html" style="color: darkred;">
-    ✘ | colonia aurora
-</option>
-
-<option value="misiones/san-francisco-de-asis.html" style="color: darkred;">
-    ✘ | san francisco de asís
-</option>
-
-<option value="misiones/santa-rita.html" style="color: darkred;">
-    ✘ | santa rita
-</option>
-
-<option value="misiones/25-de-mayo.html" style="color: darkred;">
-    ✘ | 25 de mayo
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -2040,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -2113,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -2179,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -2215,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2298,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2466,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2551,6 +1958,592 @@
         );
       }
     });
+
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="misiones/apostoles.html" style="color: darkred;">
+    ✘ | apóstoles
+</option>
+
+<option value="misiones/azara.html" style="color: darkred;">
+    ✘ | azara
+</option>
+
+<option value="misiones/barrio-rural.html" style="color: darkred;">
+    ✘ | barrio rural
+</option>
+
+<option value="misiones/estacion-apostoles.html" style="color: darkred;">
+    ✘ | estación apóstoles
+</option>
+
+<option value="misiones/pindapoy.html" style="color: darkred;">
+    ✘ | pindapoy
+</option>
+
+<option value="misiones/rincon-de-azara.html" style="color: darkred;">
+    ✘ | rincón de azara
+</option>
+
+<option value="misiones/san-jose.html" style="color: darkred;">
+    ✘ | san josé
+</option>
+
+<option value="misiones/tres-capones.html" style="color: darkred;">
+    ✘ | tres capones
+</option>
+
+<option value="misiones/aristobulo-del-valle.html" style="color: darkred;">
+    ✘ | aristóbulo del valle
+</option>
+
+<option value="misiones/campo-grande.html" style="color: darkred;">
+    ✘ | campo grande
+</option>
+
+<option value="misiones/dos-de-mayo.html" style="color: darkred;">
+    ✘ | dos de mayo
+</option>
+
+<option value="misiones/dos-de-mayo-nucleo-iii-bo-bernardino-rivadavia.html" style="color: darkred;">
+    ✘ | dos de mayo nucleo iii (bº bernardino rivadavia)
+</option>
+
+<option value="misiones/kilometro-17.html" style="color: darkred;">
+    ✘ | kilómetro 17
+</option>
+
+<option value="misiones/1o-de-mayo.html" style="color: darkred;">
+    ✘ | 1º de mayo
+</option>
+
+<option value="misiones/pueblo-illia.html" style="color: darkred;">
+    ✘ | pueblo illia
+</option>
+
+<option value="misiones/salto-encantado.html" style="color: darkred;">
+    ✘ | salto encantado
+</option>
+
+<option value="misiones/barrio-del-lago.html" style="color: darkred;">
+    ✘ | barrio del lago
+</option>
+
+<option value="misiones/bonpland.html" style="color: darkred;">
+    ✘ | bonpland
+</option>
+
+<option value="misiones/candelaria.html" style="color: darkred;">
+    ✘ | candelaria
+</option>
+
+<option value="misiones/cerro-cora.html" style="color: darkred;">
+    ✘ | cerro corá
+</option>
+
+<option value="misiones/loreto.html" style="color: darkred;">
+    ✘ | loreto
+</option>
+
+<option value="misiones/martires.html" style="color: darkred;">
+    ✘ | mártires
+</option>
+
+<option value="misiones/profundidad.html" style="color: darkred;">
+    ✘ | profundidad
+</option>
+
+<option value="misiones/puerto-santa-ana.html" style="color: darkred;">
+    ✘ | puerto santa ana
+</option>
+
+<option value="misiones/santa-ana.html" style="color: darkred;">
+    ✘ | santa ana
+</option>
+
+<option value="misiones/barrio-nuevo-garupa.html" style="color: darkred;">
+    ✘ | barrio nuevo garupa
+</option>
+
+<option value="misiones/garupa.html" style="color: darkred;">
+    ✘ | garupá
+</option>
+
+<option value="misiones/nemesio-parma.html" style="color: darkred;">
+    ✘ | nemesio parma
+</option>
+
+<option value="misiones/posadas.html" style="color: darkred;">
+    ✘ | posadas
+</option>
+
+<option value="misiones/barra-concepcion.html" style="color: darkred;">
+    ✘ | barra concepción
+</option>
+
+<option value="misiones/concepcion-de-la-sierra.html" style="color: darkred;">
+    ✘ | concepción de la sierra
+</option>
+
+<option value="misiones/la-corita.html" style="color: darkred;">
+    ✘ | la corita
+</option>
+
+<option value="misiones/santa-maria.html" style="color: darkred;">
+    ✘ | santa maría
+</option>
+
+<option value="misiones/colonia-victoria.html" style="color: darkred;">
+    ✘ | colonia victoria
+</option>
+
+<option value="misiones/eldorado.html" style="color: darkred;">
+    ✘ | eldorado
+</option>
+
+<option value="misiones/maria-magdalena.html" style="color: darkred;">
+    ✘ | maría magdalena
+</option>
+
+<option value="misiones/nueva-delicia.html" style="color: darkred;">
+    ✘ | nueva delicia
+</option>
+
+<option value="misiones/9-de-julio-kilometro-28.html" style="color: darkred;">
+    ✘ | 9 de julio kilómetro 28
+</option>
+
+<option value="misiones/9-de-julio-kilometro-20.html" style="color: darkred;">
+    ✘ | 9 de julio kilómetro 20
+</option>
+
+<option value="misiones/pueblo-nuevo.html" style="color: darkred;">
+    ✘ | pueblo nuevo
+</option>
+
+<option value="misiones/puerto-mado.html" style="color: darkred;">
+    ✘ | puerto mado
+</option>
+
+<option value="misiones/puerto-pinares.html" style="color: darkred;">
+    ✘ | puerto pinares
+</option>
+
+<option value="misiones/santiago-de-liniers.html" style="color: darkred;">
+    ✘ | santiago de liniers
+</option>
+
+<option value="misiones/valle-hermoso.html" style="color: darkred;">
+    ✘ | valle hermoso
+</option>
+
+<option value="misiones/villa-roulet.html" style="color: darkred;">
+    ✘ | villa roulet
+</option>
+
+<option value="misiones/comandante-andresito.html" style="color: darkred;">
+    ✘ | comandante andresito
+</option>
+
+<option value="misiones/bernardo-de-irigoyen.html" style="color: darkred;">
+    ✘ | bernardo de irigoyen
+</option>
+
+<option value="misiones/caburei.html" style="color: darkred;">
+    ✘ | caburei
+</option>
+
+<option value="misiones/dos-hermanas.html" style="color: darkred;">
+    ✘ | dos hermanas
+</option>
+
+<option value="misiones/integracion.html" style="color: darkred;">
+    ✘ | integración
+</option>
+
+<option value="misiones/pinalito-norte.html" style="color: darkred;">
+    ✘ | piñalito norte
+</option>
+
+<option value="misiones/puerto-andresito.html" style="color: darkred;">
+    ✘ | puerto andresito
+</option>
+
+<option value="misiones/puerto-deseado.html" style="color: darkred;">
+    ✘ | puerto deseado
+</option>
+
+<option value="misiones/san-antonio.html" style="color: darkred;">
+    ✘ | san antonio
+</option>
+
+<option value="misiones/el-soberbio.html" style="color: darkred;">
+    ✘ | el soberbio
+</option>
+
+<option value="misiones/fracran.html" style="color: darkred;">
+    ✘ | fracrán
+</option>
+
+<option value="misiones/san-vicente.html" style="color: darkred;">
+    ✘ | san vicente
+</option>
+
+<option value="misiones/puerto-esperanza.html" style="color: darkred;">
+    ✘ | puerto esperanza
+</option>
+
+<option value="misiones/puerto-libertad.html" style="color: darkred;">
+    ✘ | puerto libertad
+</option>
+
+<option value="misiones/puerto-iguazu.html" style="color: darkred;">
+    ✘ | puerto iguazú
+</option>
+
+<option value="misiones/villa-cooperativa.html" style="color: darkred;">
+    ✘ | villa cooperativa
+</option>
+
+<option value="misiones/colonia-wanda.html" style="color: darkred;">
+    ✘ | colonia wanda
+</option>
+
+<option value="misiones/almafuerte.html" style="color: darkred;">
+    ✘ | almafuerte
+</option>
+
+<option value="misiones/arroyo-del-medio.html" style="color: darkred;">
+    ✘ | arroyo del medio
+</option>
+
+<option value="misiones/caa-yari.html" style="color: darkred;">
+    ✘ | caá - yarí
+</option>
+
+<option value="misiones/cerro-azul.html" style="color: darkred;">
+    ✘ | cerro azul
+</option>
+
+<option value="misiones/dos-arroyos.html" style="color: darkred;">
+    ✘ | dos arroyos
+</option>
+
+<option value="misiones/gobernador-lopez.html" style="color: darkred;">
+    ✘ | gobernador lópez
+</option>
+
+<option value="misiones/leandro-n-alem.html" style="color: darkred;">
+    ✘ | leandro n. alem
+</option>
+
+<option value="misiones/olegario-v-andrade.html" style="color: darkred;">
+    ✘ | olegario v. andrade
+</option>
+
+<option value="misiones/villa-libertad.html" style="color: darkred;">
+    ✘ | villa libertad
+</option>
+
+<option value="misiones/capiovi.html" style="color: darkred;">
+    ✘ | capioví
+</option>
+
+<option value="misiones/capiovicino.html" style="color: darkred;">
+    ✘ | capioviciño
+</option>
+
+<option value="misiones/el-alcazar.html" style="color: darkred;">
+    ✘ | el alcázar
+</option>
+
+<option value="misiones/garuhape.html" style="color: darkred;">
+    ✘ | garuhapé
+</option>
+
+<option value="misiones/mbopicua.html" style="color: darkred;">
+    ✘ | mbopicuá
+</option>
+
+<option value="misiones/puerto-leoni.html" style="color: darkred;">
+    ✘ | puerto leoni
+</option>
+
+<option value="misiones/puerto-rico.html" style="color: darkred;">
+    ✘ | puerto rico
+</option>
+
+<option value="misiones/ruiz-de-montoya.html" style="color: darkred;">
+    ✘ | ruiz de montoya
+</option>
+
+<option value="misiones/san-alberto.html" style="color: darkred;">
+    ✘ | san alberto
+</option>
+
+<option value="misiones/san-gotardo.html" style="color: darkred;">
+    ✘ | san gotardo
+</option>
+
+<option value="misiones/san-miguel.html" style="color: darkred;">
+    ✘ | san miguel
+</option>
+
+<option value="misiones/villa-akerman.html" style="color: darkred;">
+    ✘ | villa akerman
+</option>
+
+<option value="misiones/villa-urrutia.html" style="color: darkred;">
+    ✘ | villa urrutia
+</option>
+
+<option value="misiones/barrio-cuatro-bocas.html" style="color: darkred;">
+    ✘ | barrio cuatro bocas
+</option>
+
+<option value="misiones/barrio-guatambu.html" style="color: darkred;">
+    ✘ | barrio guatambu
+</option>
+
+<option value="misiones/bario-ita.html" style="color: darkred;">
+    ✘ | bario ita
+</option>
+
+<option value="misiones/caraguatay.html" style="color: darkred;">
+    ✘ | caraguatay
+</option>
+
+<option value="misiones/laharrague.html" style="color: darkred;">
+    ✘ | laharrague
+</option>
+
+<option value="misiones/montecarlo.html" style="color: darkred;">
+    ✘ | montecarlo
+</option>
+
+<option value="misiones/piray-kilometro-18.html" style="color: darkred;">
+    ✘ | piray kilómetro 18
+</option>
+
+<option value="misiones/puerto-piray.html" style="color: darkred;">
+    ✘ | puerto piray
+</option>
+
+<option value="misiones/taruma.html" style="color: darkred;">
+    ✘ | tarumá
+</option>
+
+<option value="misiones/villa-parodi.html" style="color: darkred;">
+    ✘ | villa parodi
+</option>
+
+<option value="misiones/colonia-alberdi.html" style="color: darkred;">
+    ✘ | colonia alberdi
+</option>
+
+<option value="misiones/barrio-escuela-461.html" style="color: darkred;">
+    ✘ | barrio escuela 461
+</option>
+
+<option value="misiones/barrio-escuela-633.html" style="color: darkred;">
+    ✘ | barrio escuela 633
+</option>
+
+<option value="misiones/campo-ramon.html" style="color: darkred;">
+    ✘ | campo ramón
+</option>
+
+<option value="misiones/campo-viera.html" style="color: darkred;">
+    ✘ | campo viera
+</option>
+
+<option value="misiones/el-salto.html" style="color: darkred;">
+    ✘ | el salto
+</option>
+
+<option value="misiones/general-alvear.html" style="color: darkred;">
+    ✘ | general alvear
+</option>
+
+<option value="misiones/guarani.html" style="color: darkred;">
+    ✘ | guaraní
+</option>
+
+<option value="misiones/los-helechos.html" style="color: darkred;">
+    ✘ | los helechos
+</option>
+
+<option value="misiones/obera.html" style="color: darkred;">
+    ✘ | oberá
+</option>
+
+<option value="misiones/panambi.html" style="color: darkred;">
+    ✘ | panambí
+</option>
+
+<option value="misiones/panambi-kilometro-8.html" style="color: darkred;">
+    ✘ | panambí kilómetro 8
+</option>
+
+<option value="misiones/panambi-kilometro-15.html" style="color: darkred;">
+    ✘ | panambi kilómetro 15
+</option>
+
+<option value="misiones/san-martin.html" style="color: darkred;">
+    ✘ | san martín
+</option>
+
+<option value="misiones/villa-bonita.html" style="color: darkred;">
+    ✘ | villa bonita
+</option>
+
+<option value="misiones/barrio-tungoil.html" style="color: darkred;">
+    ✘ | barrio tungoil
+</option>
+
+<option value="misiones/colonia-polana.html" style="color: darkred;">
+    ✘ | colonia polana
+</option>
+
+<option value="misiones/corpus.html" style="color: darkred;">
+    ✘ | corpus
+</option>
+
+<option value="misiones/domingo-savio.html" style="color: darkred;">
+    ✘ | domingo savio
+</option>
+
+<option value="misiones/general-urquiza.html" style="color: darkred;">
+    ✘ | general urquiza
+</option>
+
+<option value="misiones/gobernador-roca.html" style="color: darkred;">
+    ✘ | gobernador roca
+</option>
+
+<option value="misiones/helvecia.html" style="color: darkred;">
+    ✘ | helvecia
+</option>
+
+<option value="misiones/hipolito-yrigoyen.html" style="color: darkred;">
+    ✘ | hipólito yrigoyen
+</option>
+
+<option value="misiones/jardin-america.html" style="color: darkred;">
+    ✘ | jardín américa
+</option>
+
+<option value="misiones/oasis.html" style="color: darkred;">
+    ✘ | oasis
+</option>
+
+<option value="misiones/roca-chica.html" style="color: darkred;">
+    ✘ | roca chica
+</option>
+
+<option value="misiones/san-ignacio.html" style="color: darkred;">
+    ✘ | san ignacio
+</option>
+
+<option value="misiones/santo-pipo.html" style="color: darkred;">
+    ✘ | santo pipó
+</option>
+
+<option value="misiones/florentino-ameghino.html" style="color: darkred;">
+    ✘ | florentino ameghino
+</option>
+
+<option value="misiones/itacaruare.html" style="color: darkred;">
+    ✘ | itacaruaré
+</option>
+
+<option value="misiones/mojon-grande.html" style="color: darkred;">
+    ✘ | mojón grande
+</option>
+
+<option value="misiones/san-javier.html" style="color: darkred;">
+    ✘ | san javier
+</option>
+
+<option value="misiones/cruce-caballero.html" style="color: darkred;">
+    ✘ | cruce caballero
+</option>
+
+<option value="misiones/paraiso.html" style="color: darkred;">
+    ✘ | paraíso
+</option>
+
+<option value="misiones/pinalito-sur.html" style="color: darkred;">
+    ✘ | piñalito sur
+</option>
+
+<option value="misiones/san-pedro.html" style="color: darkred;">
+    ✘ | san pedro
+</option>
+
+<option value="misiones/tobuna.html" style="color: darkred;">
+    ✘ | tobuna
+</option>
+
+<option value="misiones/alba-posse.html" style="color: darkred;">
+    ✘ | alba posse
+</option>
+
+<option value="misiones/alicia-alta.html" style="color: darkred;">
+    ✘ | alicia alta
+</option>
+
+<option value="misiones/alicia-baja.html" style="color: darkred;">
+    ✘ | alicia baja
+</option>
+
+<option value="misiones/colonia-aurora.html" style="color: darkred;">
+    ✘ | colonia aurora
+</option>
+
+<option value="misiones/san-francisco-de-asis.html" style="color: darkred;">
+    ✘ | san francisco de asís
+</option>
+
+<option value="misiones/santa-rita.html" style="color: darkred;">
+    ✘ | santa rita
+</option>
+
+<option value="misiones/25-de-mayo.html" style="color: darkred;">
+    ✘ | 25 de mayo
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
 
 </script></body>
 

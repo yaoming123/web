@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,418 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de chaco, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="chaco/concepcion-del-bermejo.html" style="color: darkred;">
-    ✘ | concepción del bermejo
-</option>
-
-<option value="chaco/los-frentones.html" style="color: darkred;">
-    ✘ | los frentones
-</option>
-
-<option value="chaco/pampa-del-infierno.html" style="color: darkred;">
-    ✘ | pampa del infierno
-</option>
-
-<option value="chaco/rio-muerto.html" style="color: darkred;">
-    ✘ | río muerto
-</option>
-
-<option value="chaco/taco-pozo.html" style="color: darkred;">
-    ✘ | taco pozo
-</option>
-
-<option value="chaco/general-vedia.html" style="color: darkred;">
-    ✘ | general vedia
-</option>
-
-<option value="chaco/isla-del-cerrito.html" style="color: darkred;">
-    ✘ | isla del cerrito
-</option>
-
-<option value="chaco/la-leonesa.html" style="color: darkred;">
-    ✘ | la leonesa
-</option>
-
-<option value="chaco/las-palmas.html" style="color: darkred;">
-    ✘ | las palmas
-</option>
-
-<option value="chaco/puerto-bermejo-nuevo.html" style="color: darkred;">
-    ✘ | puerto bermejo nuevo
-</option>
-
-<option value="chaco/puerto-bermejo-viejo.html" style="color: darkred;">
-    ✘ | puerto bermejo viejo
-</option>
-
-<option value="chaco/puerto-eva-peron.html" style="color: darkred;">
-    ✘ | puerto eva perón
-</option>
-
-<option value="chaco/presidencia-roque-saenz-pena.html" style="color: darkred;">
-    ✘ | presidencia roque sáenz peña
-</option>
-
-<option value="chaco/charata.html" style="color: darkred;">
-    ✘ | charata
-</option>
-
-<option value="chaco/gancedo.html" style="color: darkred;">
-    ✘ | gancedo
-</option>
-
-<option value="chaco/general-capdevila.html" style="color: darkred;">
-    ✘ | general capdevila
-</option>
-
-<option value="chaco/general-pinedo.html" style="color: darkred;">
-    ✘ | general pinedo
-</option>
-
-<option value="chaco/meson-de-fierro.html" style="color: darkred;">
-    ✘ | mesón de fierro
-</option>
-
-<option value="chaco/pampa-landriel.html" style="color: darkred;">
-    ✘ | pampa landriel
-</option>
-
-<option value="chaco/hermoso-campo.html" style="color: darkred;">
-    ✘ | hermoso campo
-</option>
-
-<option value="chaco/itin.html" style="color: darkred;">
-    ✘ | itín
-</option>
-
-<option value="chaco/chorotis.html" style="color: darkred;">
-    ✘ | chorotis
-</option>
-
-<option value="chaco/santa-sylvina.html" style="color: darkred;">
-    ✘ | santa sylvina
-</option>
-
-<option value="chaco/venados-grandes.html" style="color: darkred;">
-    ✘ | venados grandes
-</option>
-
-<option value="chaco/corzuela.html" style="color: darkred;">
-    ✘ | corzuela
-</option>
-
-<option value="chaco/la-escondida.html" style="color: darkred;">
-    ✘ | la escondida
-</option>
-
-<option value="chaco/la-verde.html" style="color: darkred;">
-    ✘ | la verde
-</option>
-
-<option value="chaco/lapachito.html" style="color: darkred;">
-    ✘ | lapachito
-</option>
-
-<option value="chaco/makalle.html" style="color: darkred;">
-    ✘ | makallé
-</option>
-
-<option value="chaco/el-espinillo.html" style="color: darkred;">
-    ✘ | el espinillo
-</option>
-
-<option value="chaco/el-sauzal.html" style="color: darkred;">
-    ✘ | el sauzal
-</option>
-
-<option value="chaco/el-sauzalito.html" style="color: darkred;">
-    ✘ | el sauzalito
-</option>
-
-<option value="chaco/fortin-lavalle.html" style="color: darkred;">
-    ✘ | fortín lavalle
-</option>
-
-<option value="chaco/fuerte-esperanza.html" style="color: darkred;">
-    ✘ | fuerte esperanza
-</option>
-
-<option value="chaco/juan-jose-castelli.html" style="color: darkred;">
-    ✘ | juan josé castelli
-</option>
-
-<option value="chaco/nueva-pompeya.html" style="color: darkred;">
-    ✘ | nueva pompeya
-</option>
-
-<option value="chaco/villa-rio-bermejito.html" style="color: darkred;">
-    ✘ | villa río bermejito
-</option>
-
-<option value="chaco/wichi.html" style="color: darkred;">
-    ✘ | wichi
-</option>
-
-<option value="chaco/zaparinqui.html" style="color: darkred;">
-    ✘ | zaparinqui
-</option>
-
-<option value="chaco/avia-terai.html" style="color: darkred;">
-    ✘ | avia terai
-</option>
-
-<option value="chaco/campo-largo.html" style="color: darkred;">
-    ✘ | campo largo
-</option>
-
-<option value="chaco/fortin-las-chunas.html" style="color: darkred;">
-    ✘ | fortín las chuñas
-</option>
-
-<option value="chaco/napenay.html" style="color: darkred;">
-    ✘ | napenay
-</option>
-
-<option value="chaco/colonia-popular.html" style="color: darkred;">
-    ✘ | colonia popular
-</option>
-
-<option value="chaco/estacion-general-obligado.html" style="color: darkred;">
-    ✘ | estación general obligado
-</option>
-
-<option value="chaco/laguna-blanca.html" style="color: darkred;">
-    ✘ | laguna blanca
-</option>
-
-<option value="chaco/puerto-tirol.html" style="color: darkred;">
-    ✘ | puerto tirol
-</option>
-
-<option value="chaco/ciervo-petiso.html" style="color: darkred;">
-    ✘ | ciervo petiso
-</option>
-
-<option value="chaco/general-jose-de-san-martin.html" style="color: darkred;">
-    ✘ | general josé de san martín
-</option>
-
-<option value="chaco/la-eduvigis.html" style="color: darkred;">
-    ✘ | la eduvigis
-</option>
-
-<option value="chaco/laguna-limpia.html" style="color: darkred;">
-    ✘ | laguna limpia
-</option>
-
-<option value="chaco/pampa-almiron.html" style="color: darkred;">
-    ✘ | pampa almirón
-</option>
-
-<option value="chaco/pampa-del-indio.html" style="color: darkred;">
-    ✘ | pampa del indio
-</option>
-
-<option value="chaco/presidencia-roca.html" style="color: darkred;">
-    ✘ | presidencia roca
-</option>
-
-<option value="chaco/selvas-del-rio-de-oro.html" style="color: darkred;">
-    ✘ | selvas del río de oro
-</option>
-
-<option value="chaco/tres-isletas.html" style="color: darkred;">
-    ✘ | tres isletas
-</option>
-
-<option value="chaco/coronel-du-graty.html" style="color: darkred;">
-    ✘ | coronel du graty
-</option>
-
-<option value="chaco/enrique-urien.html" style="color: darkred;">
-    ✘ | enrique urien
-</option>
-
-<option value="chaco/villa-angela.html" style="color: darkred;">
-    ✘ | villa angela
-</option>
-
-<option value="chaco/las-brenas.html" style="color: darkred;">
-    ✘ | las breñas
-</option>
-
-<option value="chaco/la-clotilde.html" style="color: darkred;">
-    ✘ | la clotilde
-</option>
-
-<option value="chaco/la-tigra.html" style="color: darkred;">
-    ✘ | la tigra
-</option>
-
-<option value="chaco/san-bernardo.html" style="color: darkred;">
-    ✘ | san bernardo
-</option>
-
-<option value="chaco/presidencia-de-la-plaza.html" style="color: darkred;">
-    ✘ | presidencia de la plaza
-</option>
-
-<option value="chaco/barrio-de-los-pescadores.html" style="color: darkred;">
-    ✘ | barrio de los pescadores
-</option>
-
-<option value="chaco/colonia-benitez.html" style="color: darkred;">
-    ✘ | colonia benítez
-</option>
-
-<option value="chaco/margarita-belen.html" style="color: darkred;">
-    ✘ | margarita belén
-</option>
-
-<option value="chaco/quitilipi.html" style="color: darkred;">
-    ✘ | quitilipi
-</option>
-
-<option value="chaco/villa-el-palmar.html" style="color: darkred;">
-    ✘ | villa el palmar
-</option>
-
-<option value="chaco/barranqueras.html" style="color: darkred;">
-    ✘ | barranqueras
-</option>
-
-<option value="chaco/basail.html" style="color: darkred;">
-    ✘ | basail
-</option>
-
-<option value="chaco/colonia-baranda.html" style="color: darkred;">
-    ✘ | colonia baranda
-</option>
-
-<option value="chaco/fontana.html" style="color: darkred;">
-    ✘ | fontana
-</option>
-
-<option value="chaco/puerto-vilelas.html" style="color: darkred;">
-    ✘ | puerto vilelas
-</option>
-
-<option value="chaco/resistencia.html" style="color: darkred;">
-    ✘ | resistencia
-</option>
-
-<option value="chaco/samuhu.html" style="color: darkred;">
-    ✘ | samuhú
-</option>
-
-<option value="chaco/villa-berthet.html" style="color: darkred;">
-    ✘ | villa berthet
-</option>
-
-<option value="chaco/capitan-solari.html" style="color: darkred;">
-    ✘ | capitán solari
-</option>
-
-<option value="chaco/colonia-elisa.html" style="color: darkred;">
-    ✘ | colonia elisa
-</option>
-
-<option value="chaco/colonias-unidas.html" style="color: darkred;">
-    ✘ | colonias unidas
-</option>
-
-<option value="chaco/ingeniero-barbet.html" style="color: darkred;">
-    ✘ | ingeniero barbet
-</option>
-
-<option value="chaco/las-garcitas.html" style="color: darkred;">
-    ✘ | las garcitas
-</option>
-
-<option value="chaco/charadai.html" style="color: darkred;">
-    ✘ | charadai
-</option>
-
-<option value="chaco/cote-lai.html" style="color: darkred;">
-    ✘ | cote lai
-</option>
-
-<option value="chaco/haumonia.html" style="color: darkred;">
-    ✘ | haumonia
-</option>
-
-<option value="chaco/horquilla.html" style="color: darkred;">
-    ✘ | horquilla
-</option>
-
-<option value="chaco/la-sabana.html" style="color: darkred;">
-    ✘ | la sabana
-</option>
-
-<option value="chaco/colonia-aborigen.html" style="color: darkred;">
-    ✘ | colonia aborigen
-</option>
-
-<option value="chaco/machagai.html" style="color: darkred;">
-    ✘ | machagai
-</option>
-
-<option value="chaco/napalpi.html" style="color: darkred;">
-    ✘ | napalpí
-</option>
-
-<option value="chaco/miraflores.html" style="color: darkred;">
-    ✘ | miraflores
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -1852,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -1925,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -1991,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -2027,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2110,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2278,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2364,6 +1959,404 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="chaco/concepcion-del-bermejo.html" style="color: darkred;">
+    ✘ | concepción del bermejo
+</option>
+
+<option value="chaco/los-frentones.html" style="color: darkred;">
+    ✘ | los frentones
+</option>
+
+<option value="chaco/pampa-del-infierno.html" style="color: darkred;">
+    ✘ | pampa del infierno
+</option>
+
+<option value="chaco/rio-muerto.html" style="color: darkred;">
+    ✘ | río muerto
+</option>
+
+<option value="chaco/taco-pozo.html" style="color: darkred;">
+    ✘ | taco pozo
+</option>
+
+<option value="chaco/general-vedia.html" style="color: darkred;">
+    ✘ | general vedia
+</option>
+
+<option value="chaco/isla-del-cerrito.html" style="color: darkred;">
+    ✘ | isla del cerrito
+</option>
+
+<option value="chaco/la-leonesa.html" style="color: darkred;">
+    ✘ | la leonesa
+</option>
+
+<option value="chaco/las-palmas.html" style="color: darkred;">
+    ✘ | las palmas
+</option>
+
+<option value="chaco/puerto-bermejo-nuevo.html" style="color: darkred;">
+    ✘ | puerto bermejo nuevo
+</option>
+
+<option value="chaco/puerto-bermejo-viejo.html" style="color: darkred;">
+    ✘ | puerto bermejo viejo
+</option>
+
+<option value="chaco/puerto-eva-peron.html" style="color: darkred;">
+    ✘ | puerto eva perón
+</option>
+
+<option value="chaco/presidencia-roque-saenz-pena.html" style="color: darkred;">
+    ✘ | presidencia roque sáenz peña
+</option>
+
+<option value="chaco/charata.html" style="color: darkred;">
+    ✘ | charata
+</option>
+
+<option value="chaco/gancedo.html" style="color: darkred;">
+    ✘ | gancedo
+</option>
+
+<option value="chaco/general-capdevila.html" style="color: darkred;">
+    ✘ | general capdevila
+</option>
+
+<option value="chaco/general-pinedo.html" style="color: darkred;">
+    ✘ | general pinedo
+</option>
+
+<option value="chaco/meson-de-fierro.html" style="color: darkred;">
+    ✘ | mesón de fierro
+</option>
+
+<option value="chaco/pampa-landriel.html" style="color: darkred;">
+    ✘ | pampa landriel
+</option>
+
+<option value="chaco/hermoso-campo.html" style="color: darkred;">
+    ✘ | hermoso campo
+</option>
+
+<option value="chaco/itin.html" style="color: darkred;">
+    ✘ | itín
+</option>
+
+<option value="chaco/chorotis.html" style="color: darkred;">
+    ✘ | chorotis
+</option>
+
+<option value="chaco/santa-sylvina.html" style="color: darkred;">
+    ✘ | santa sylvina
+</option>
+
+<option value="chaco/venados-grandes.html" style="color: darkred;">
+    ✘ | venados grandes
+</option>
+
+<option value="chaco/corzuela.html" style="color: darkred;">
+    ✘ | corzuela
+</option>
+
+<option value="chaco/la-escondida.html" style="color: darkred;">
+    ✘ | la escondida
+</option>
+
+<option value="chaco/la-verde.html" style="color: darkred;">
+    ✘ | la verde
+</option>
+
+<option value="chaco/lapachito.html" style="color: darkred;">
+    ✘ | lapachito
+</option>
+
+<option value="chaco/makalle.html" style="color: darkred;">
+    ✘ | makallé
+</option>
+
+<option value="chaco/el-espinillo.html" style="color: darkred;">
+    ✘ | el espinillo
+</option>
+
+<option value="chaco/el-sauzal.html" style="color: darkred;">
+    ✘ | el sauzal
+</option>
+
+<option value="chaco/el-sauzalito.html" style="color: darkred;">
+    ✘ | el sauzalito
+</option>
+
+<option value="chaco/fortin-lavalle.html" style="color: darkred;">
+    ✘ | fortín lavalle
+</option>
+
+<option value="chaco/fuerte-esperanza.html" style="color: darkred;">
+    ✘ | fuerte esperanza
+</option>
+
+<option value="chaco/juan-jose-castelli.html" style="color: darkred;">
+    ✘ | juan josé castelli
+</option>
+
+<option value="chaco/nueva-pompeya.html" style="color: darkred;">
+    ✘ | nueva pompeya
+</option>
+
+<option value="chaco/villa-rio-bermejito.html" style="color: darkred;">
+    ✘ | villa río bermejito
+</option>
+
+<option value="chaco/wichi.html" style="color: darkred;">
+    ✘ | wichi
+</option>
+
+<option value="chaco/zaparinqui.html" style="color: darkred;">
+    ✘ | zaparinqui
+</option>
+
+<option value="chaco/avia-terai.html" style="color: darkred;">
+    ✘ | avia terai
+</option>
+
+<option value="chaco/campo-largo.html" style="color: darkred;">
+    ✘ | campo largo
+</option>
+
+<option value="chaco/fortin-las-chunas.html" style="color: darkred;">
+    ✘ | fortín las chuñas
+</option>
+
+<option value="chaco/napenay.html" style="color: darkred;">
+    ✘ | napenay
+</option>
+
+<option value="chaco/colonia-popular.html" style="color: darkred;">
+    ✘ | colonia popular
+</option>
+
+<option value="chaco/estacion-general-obligado.html" style="color: darkred;">
+    ✘ | estación general obligado
+</option>
+
+<option value="chaco/laguna-blanca.html" style="color: darkred;">
+    ✘ | laguna blanca
+</option>
+
+<option value="chaco/puerto-tirol.html" style="color: darkred;">
+    ✘ | puerto tirol
+</option>
+
+<option value="chaco/ciervo-petiso.html" style="color: darkred;">
+    ✘ | ciervo petiso
+</option>
+
+<option value="chaco/general-jose-de-san-martin.html" style="color: darkred;">
+    ✘ | general josé de san martín
+</option>
+
+<option value="chaco/la-eduvigis.html" style="color: darkred;">
+    ✘ | la eduvigis
+</option>
+
+<option value="chaco/laguna-limpia.html" style="color: darkred;">
+    ✘ | laguna limpia
+</option>
+
+<option value="chaco/pampa-almiron.html" style="color: darkred;">
+    ✘ | pampa almirón
+</option>
+
+<option value="chaco/pampa-del-indio.html" style="color: darkred;">
+    ✘ | pampa del indio
+</option>
+
+<option value="chaco/presidencia-roca.html" style="color: darkred;">
+    ✘ | presidencia roca
+</option>
+
+<option value="chaco/selvas-del-rio-de-oro.html" style="color: darkred;">
+    ✘ | selvas del río de oro
+</option>
+
+<option value="chaco/tres-isletas.html" style="color: darkred;">
+    ✘ | tres isletas
+</option>
+
+<option value="chaco/coronel-du-graty.html" style="color: darkred;">
+    ✘ | coronel du graty
+</option>
+
+<option value="chaco/enrique-urien.html" style="color: darkred;">
+    ✘ | enrique urien
+</option>
+
+<option value="chaco/villa-angela.html" style="color: darkred;">
+    ✘ | villa angela
+</option>
+
+<option value="chaco/las-brenas.html" style="color: darkred;">
+    ✘ | las breñas
+</option>
+
+<option value="chaco/la-clotilde.html" style="color: darkred;">
+    ✘ | la clotilde
+</option>
+
+<option value="chaco/la-tigra.html" style="color: darkred;">
+    ✘ | la tigra
+</option>
+
+<option value="chaco/san-bernardo.html" style="color: darkred;">
+    ✘ | san bernardo
+</option>
+
+<option value="chaco/presidencia-de-la-plaza.html" style="color: darkred;">
+    ✘ | presidencia de la plaza
+</option>
+
+<option value="chaco/barrio-de-los-pescadores.html" style="color: darkred;">
+    ✘ | barrio de los pescadores
+</option>
+
+<option value="chaco/colonia-benitez.html" style="color: darkred;">
+    ✘ | colonia benítez
+</option>
+
+<option value="chaco/margarita-belen.html" style="color: darkred;">
+    ✘ | margarita belén
+</option>
+
+<option value="chaco/quitilipi.html" style="color: darkred;">
+    ✘ | quitilipi
+</option>
+
+<option value="chaco/villa-el-palmar.html" style="color: darkred;">
+    ✘ | villa el palmar
+</option>
+
+<option value="chaco/barranqueras.html" style="color: darkred;">
+    ✘ | barranqueras
+</option>
+
+<option value="chaco/basail.html" style="color: darkred;">
+    ✘ | basail
+</option>
+
+<option value="chaco/colonia-baranda.html" style="color: darkred;">
+    ✘ | colonia baranda
+</option>
+
+<option value="chaco/fontana.html" style="color: darkred;">
+    ✘ | fontana
+</option>
+
+<option value="chaco/puerto-vilelas.html" style="color: darkred;">
+    ✘ | puerto vilelas
+</option>
+
+<option value="chaco/resistencia.html" style="color: darkred;">
+    ✘ | resistencia
+</option>
+
+<option value="chaco/samuhu.html" style="color: darkred;">
+    ✘ | samuhú
+</option>
+
+<option value="chaco/villa-berthet.html" style="color: darkred;">
+    ✘ | villa berthet
+</option>
+
+<option value="chaco/capitan-solari.html" style="color: darkred;">
+    ✘ | capitán solari
+</option>
+
+<option value="chaco/colonia-elisa.html" style="color: darkred;">
+    ✘ | colonia elisa
+</option>
+
+<option value="chaco/colonias-unidas.html" style="color: darkred;">
+    ✘ | colonias unidas
+</option>
+
+<option value="chaco/ingeniero-barbet.html" style="color: darkred;">
+    ✘ | ingeniero barbet
+</option>
+
+<option value="chaco/las-garcitas.html" style="color: darkred;">
+    ✘ | las garcitas
+</option>
+
+<option value="chaco/charadai.html" style="color: darkred;">
+    ✘ | charadai
+</option>
+
+<option value="chaco/cote-lai.html" style="color: darkred;">
+    ✘ | cote lai
+</option>
+
+<option value="chaco/haumonia.html" style="color: darkred;">
+    ✘ | haumonia
+</option>
+
+<option value="chaco/horquilla.html" style="color: darkred;">
+    ✘ | horquilla
+</option>
+
+<option value="chaco/la-sabana.html" style="color: darkred;">
+    ✘ | la sabana
+</option>
+
+<option value="chaco/colonia-aborigen.html" style="color: darkred;">
+    ✘ | colonia aborigen
+</option>
+
+<option value="chaco/machagai.html" style="color: darkred;">
+    ✘ | machagai
+</option>
+
+<option value="chaco/napalpi.html" style="color: darkred;">
+    ✘ | napalpí
+</option>
+
+<option value="chaco/miraflores.html" style="color: darkred;">
+    ✘ | miraflores
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2389,7 +2382,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">1</div>
+        <div class="stat-value">0</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

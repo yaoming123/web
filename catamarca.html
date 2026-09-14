@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,630 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de catamarca, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="catamarca/chuchucaruana.html" style="color: darkred;">
-    ✘ | chuchucaruana
-</option>
-
-<option value="catamarca/colpes.html" style="color: darkred;">
-    ✘ | colpes
-</option>
-
-<option value="catamarca/el-bolson.html" style="color: darkred;">
-    ✘ | el bolsón
-</option>
-
-<option value="catamarca/el-rodeo.html" style="color: darkred;">
-    ✘ | el rodeo
-</option>
-
-<option value="catamarca/huaycama.html" style="color: darkred;">
-    ✘ | huaycama
-</option>
-
-<option value="catamarca/la-puerta.html" style="color: darkred;">
-    ✘ | la puerta
-</option>
-
-<option value="catamarca/las-chacritas.html" style="color: darkred;">
-    ✘ | las chacritas
-</option>
-
-<option value="catamarca/las-juntas.html" style="color: darkred;">
-    ✘ | las juntas
-</option>
-
-<option value="catamarca/los-castillos.html" style="color: darkred;">
-    ✘ | los castillos
-</option>
-
-<option value="catamarca/los-talas.html" style="color: darkred;">
-    ✘ | los talas
-</option>
-
-<option value="catamarca/los-varela.html" style="color: darkred;">
-    ✘ | los varela
-</option>
-
-<option value="catamarca/singuil.html" style="color: darkred;">
-    ✘ | singuil
-</option>
-
-<option value="catamarca/ancasti.html" style="color: darkred;">
-    ✘ | ancasti
-</option>
-
-<option value="catamarca/anquincila.html" style="color: darkred;">
-    ✘ | anquincila
-</option>
-
-<option value="catamarca/la-candelaria.html" style="color: darkred;">
-    ✘ | la candelaria
-</option>
-
-<option value="catamarca/la-majada.html" style="color: darkred;">
-    ✘ | la majada
-</option>
-
-<option value="catamarca/amanao.html" style="color: darkred;">
-    ✘ | amanao
-</option>
-
-<option value="catamarca/andalgala.html" style="color: darkred;">
-    ✘ | andalgalá
-</option>
-
-<option value="catamarca/chaquiago.html" style="color: darkred;">
-    ✘ | chaquiago
-</option>
-
-<option value="catamarca/choya.html" style="color: darkred;">
-    ✘ | choya
-</option>
-
-<option value="catamarca/el-alamito.html" style="color: darkred;">
-    ✘ | el alamito
-</option>
-
-<option value="catamarca/el-lindero.html" style="color: darkred;">
-    ✘ | el lindero
-</option>
-
-<option value="catamarca/el-potrero.html" style="color: darkred;">
-    ✘ | el potrero
-</option>
-
-<option value="catamarca/la-aguada.html" style="color: darkred;">
-    ✘ | la aguada
-</option>
-
-<option value="catamarca/antofagasta-de-la-sierra.html" style="color: darkred;">
-    ✘ | antofagasta de la sierra
-</option>
-
-<option value="catamarca/antofalla.html" style="color: darkred;">
-    ✘ | antofalla
-</option>
-
-<option value="catamarca/el-penon.html" style="color: darkred;">
-    ✘ | el peñón
-</option>
-
-<option value="catamarca/los-nacimientos.html" style="color: darkred;">
-    ✘ | los nacimientos
-</option>
-
-<option value="catamarca/barranca-larga.html" style="color: darkred;">
-    ✘ | barranca larga
-</option>
-
-<option value="catamarca/belen.html" style="color: darkred;">
-    ✘ | belén
-</option>
-
-<option value="catamarca/condor-huasi.html" style="color: darkred;">
-    ✘ | cóndor huasi
-</option>
-
-<option value="catamarca/corral-quemado.html" style="color: darkred;">
-    ✘ | corral quemado
-</option>
-
-<option value="catamarca/el-durazno.html" style="color: darkred;">
-    ✘ | el durazno
-</option>
-
-<option value="catamarca/farallon-negro.html" style="color: darkred;">
-    ✘ | farallón negro
-</option>
-
-<option value="catamarca/hualfin.html" style="color: darkred;">
-    ✘ | hualfín
-</option>
-
-<option value="catamarca/jacipunco.html" style="color: darkred;">
-    ✘ | jacipunco
-</option>
-
-<option value="catamarca/la-puntilla.html" style="color: darkred;">
-    ✘ | la puntilla
-</option>
-
-<option value="catamarca/londres.html" style="color: darkred;">
-    ✘ | londres
-</option>
-
-<option value="catamarca/puerta-de-corral-quemado.html" style="color: darkred;">
-    ✘ | puerta de corral quemado
-</option>
-
-<option value="catamarca/puerta-de-san-jose.html" style="color: darkred;">
-    ✘ | puerta de san josé
-</option>
-
-<option value="catamarca/villa-vil.html" style="color: darkred;">
-    ✘ | villa vil
-</option>
-
-<option value="catamarca/adolfo-e-carranza.html" style="color: darkred;">
-    ✘ | adolfo e. carranza
-</option>
-
-<option value="catamarca/balde-de-la-punta.html" style="color: darkred;">
-    ✘ | balde de la punta
-</option>
-
-<option value="catamarca/capayan.html" style="color: darkred;">
-    ✘ | capayán
-</option>
-
-<option value="catamarca/chumbicha.html" style="color: darkred;">
-    ✘ | chumbicha
-</option>
-
-<option value="catamarca/colonia-del-valle.html" style="color: darkred;">
-    ✘ | colonia del valle
-</option>
-
-<option value="catamarca/colonia-nueva-coneta.html" style="color: darkred;">
-    ✘ | colonia nueva coneta
-</option>
-
-<option value="catamarca/concepcion.html" style="color: darkred;">
-    ✘ | concepción
-</option>
-
-<option value="catamarca/coneta.html" style="color: darkred;">
-    ✘ | coneta
-</option>
-
-<option value="catamarca/el-banado.html" style="color: darkred;">
-    ✘ | el bañado
-</option>
-
-<option value="catamarca/huillapima.html" style="color: darkred;">
-    ✘ | huillapima
-</option>
-
-<option value="catamarca/los-angeles.html" style="color: darkred;">
-    ✘ | los angeles
-</option>
-
-<option value="catamarca/miraflores.html" style="color: darkred;">
-    ✘ | miraflores
-</option>
-
-<option value="catamarca/san-martin.html" style="color: darkred;">
-    ✘ | san martín
-</option>
-
-<option value="catamarca/san-pablo.html" style="color: darkred;">
-    ✘ | san pablo
-</option>
-
-<option value="catamarca/san-pedro.html" style="color: darkred;">
-    ✘ | san pedro
-</option>
-
-<option value="catamarca/el-pantanillo.html" style="color: darkred;">
-    ✘ | el pantanillo
-</option>
-
-<option value="catamarca/san-fernando-del-valle-de-catamarca.html" style="color: darkred;">
-    ✘ | san fernando del valle de catamarca
-</option>
-
-<option value="catamarca/el-alto.html" style="color: darkred;">
-    ✘ | el alto
-</option>
-
-<option value="catamarca/guayamba.html" style="color: darkred;">
-    ✘ | guayamba
-</option>
-
-<option value="catamarca/infanzon.html" style="color: darkred;">
-    ✘ | infanzón
-</option>
-
-<option value="catamarca/los-corrales.html" style="color: darkred;">
-    ✘ | los corrales
-</option>
-
-<option value="catamarca/tapso.html" style="color: darkred;">
-    ✘ | tapso
-</option>
-
-<option value="catamarca/vilisman.html" style="color: darkred;">
-    ✘ | vilismán
-</option>
-
-<option value="catamarca/collagasta.html" style="color: darkred;">
-    ✘ | collagasta
-</option>
-
-<option value="catamarca/pomancillo-este.html" style="color: darkred;">
-    ✘ | pomancillo este
-</option>
-
-<option value="catamarca/pomancillo-oeste.html" style="color: darkred;">
-    ✘ | pomancillo oeste
-</option>
-
-<option value="catamarca/san-jose.html" style="color: darkred;">
-    ✘ | san josé
-</option>
-
-<option value="catamarca/villa-las-pirquitas.html" style="color: darkred;">
-    ✘ | villa las pirquitas
-</option>
-
-<option value="catamarca/casa-de-piedra.html" style="color: darkred;">
-    ✘ | casa de piedra
-</option>
-
-<option value="catamarca/el-aybal.html" style="color: darkred;">
-    ✘ | el aybal
-</option>
-
-<option value="catamarca/el-divisadero.html" style="color: darkred;">
-    ✘ | el divisadero
-</option>
-
-<option value="catamarca/el-quimilo.html" style="color: darkred;">
-    ✘ | el quimilo
-</option>
-
-<option value="catamarca/esquiu.html" style="color: darkred;">
-    ✘ | esquiú
-</option>
-
-<option value="catamarca/icano.html" style="color: darkred;">
-    ✘ | icaño
-</option>
-
-<option value="catamarca/la-dorada.html" style="color: darkred;">
-    ✘ | la dorada
-</option>
-
-<option value="catamarca/la-guardia.html" style="color: darkred;">
-    ✘ | la guardia
-</option>
-
-<option value="catamarca/las-esquinas.html" style="color: darkred;">
-    ✘ | las esquinas
-</option>
-
-<option value="catamarca/las-palmitas.html" style="color: darkred;">
-    ✘ | las palmitas
-</option>
-
-<option value="catamarca/quiros.html" style="color: darkred;">
-    ✘ | quirós
-</option>
-
-<option value="catamarca/ramblones.html" style="color: darkred;">
-    ✘ | ramblones
-</option>
-
-<option value="catamarca/recreo.html" style="color: darkred;">
-    ✘ | recreo
-</option>
-
-<option value="catamarca/san-antonio.html" style="color: darkred;">
-    ✘ | san antonio
-</option>
-
-<option value="catamarca/amadores.html" style="color: darkred;">
-    ✘ | amadores
-</option>
-
-<option value="catamarca/el-rosario.html" style="color: darkred;">
-    ✘ | el rosario
-</option>
-
-<option value="catamarca/la-bajada.html" style="color: darkred;">
-    ✘ | la bajada
-</option>
-
-<option value="catamarca/la-higuera.html" style="color: darkred;">
-    ✘ | la higuera
-</option>
-
-<option value="catamarca/la-merced.html" style="color: darkred;">
-    ✘ | la merced
-</option>
-
-<option value="catamarca/la-vina.html" style="color: darkred;">
-    ✘ | la viña
-</option>
-
-<option value="catamarca/las-lajas.html" style="color: darkred;">
-    ✘ | las lajas
-</option>
-
-<option value="catamarca/monte-potrero.html" style="color: darkred;">
-    ✘ | monte potrero
-</option>
-
-<option value="catamarca/palo-labrado.html" style="color: darkred;">
-    ✘ | palo labrado
-</option>
-
-<option value="catamarca/villa-de-balcozna.html" style="color: darkred;">
-    ✘ | villa de balcozna
-</option>
-
-<option value="catamarca/apoyaco.html" style="color: darkred;">
-    ✘ | apoyaco
-</option>
-
-<option value="catamarca/colana.html" style="color: darkred;">
-    ✘ | colana
-</option>
-
-<option value="catamarca/el-pajonal.html" style="color: darkred;">
-    ✘ | el pajonal
-</option>
-
-<option value="catamarca/joyango.html" style="color: darkred;">
-    ✘ | joyango
-</option>
-
-<option value="catamarca/mutquin.html" style="color: darkred;">
-    ✘ | mutquin
-</option>
-
-<option value="catamarca/poman.html" style="color: darkred;">
-    ✘ | pomán
-</option>
-
-<option value="catamarca/rincon.html" style="color: darkred;">
-    ✘ | rincón
-</option>
-
-<option value="catamarca/san-miguel.html" style="color: darkred;">
-    ✘ | san miguel
-</option>
-
-<option value="catamarca/saujil.html" style="color: darkred;">
-    ✘ | saujil
-</option>
-
-<option value="catamarca/sijan.html" style="color: darkred;">
-    ✘ | siján
-</option>
-
-<option value="catamarca/andalhuala.html" style="color: darkred;">
-    ✘ | andalhualá
-</option>
-
-<option value="catamarca/caspichango.html" style="color: darkred;">
-    ✘ | caspichango
-</option>
-
-<option value="catamarca/chanar-punco.html" style="color: darkred;">
-    ✘ | chañar punco
-</option>
-
-<option value="catamarca/el-cajon.html" style="color: darkred;">
-    ✘ | el cajón
-</option>
-
-<option value="catamarca/el-desmonte.html" style="color: darkred;">
-    ✘ | el desmonte
-</option>
-
-<option value="catamarca/el-puesto.html" style="color: darkred;">
-    ✘ | el puesto
-</option>
-
-<option value="catamarca/famatanca.html" style="color: darkred;">
-    ✘ | famatanca
-</option>
-
-<option value="catamarca/fuerte-quemado.html" style="color: darkred;">
-    ✘ | fuerte quemado
-</option>
-
-<option value="catamarca/la-hoyada.html" style="color: darkred;">
-    ✘ | la hoyada
-</option>
-
-<option value="catamarca/la-loma.html" style="color: darkred;">
-    ✘ | la loma
-</option>
-
-<option value="catamarca/las-mojarras.html" style="color: darkred;">
-    ✘ | las mojarras
-</option>
-
-<option value="catamarca/loro-huasi.html" style="color: darkred;">
-    ✘ | loro huasi
-</option>
-
-<option value="catamarca/punta-de-balasto.html" style="color: darkred;">
-    ✘ | punta de balasto
-</option>
-
-<option value="catamarca/santa-maria.html" style="color: darkred;">
-    ✘ | santa maría
-</option>
-
-<option value="catamarca/yapes.html" style="color: darkred;">
-    ✘ | yapes
-</option>
-
-<option value="catamarca/alijilan.html" style="color: darkred;">
-    ✘ | alijilán
-</option>
-
-<option value="catamarca/banado-de-ovanta.html" style="color: darkred;">
-    ✘ | bañado de ovanta
-</option>
-
-<option value="catamarca/las-canas.html" style="color: darkred;">
-    ✘ | las cañas
-</option>
-
-<option value="catamarca/lavalle.html" style="color: darkred;">
-    ✘ | lavalle
-</option>
-
-<option value="catamarca/los-altos.html" style="color: darkred;">
-    ✘ | los altos
-</option>
-
-<option value="catamarca/manantiales.html" style="color: darkred;">
-    ✘ | manantiales
-</option>
-
-<option value="catamarca/anillaco.html" style="color: darkred;">
-    ✘ | anillaco
-</option>
-
-<option value="catamarca/antinaco.html" style="color: darkred;">
-    ✘ | antinaco
-</option>
-
-<option value="catamarca/banda-de-lucero.html" style="color: darkred;">
-    ✘ | banda de lucero
-</option>
-
-<option value="catamarca/cerro-negro.html" style="color: darkred;">
-    ✘ | cerro negro
-</option>
-
-<option value="catamarca/copacabana.html" style="color: darkred;">
-    ✘ | copacabana
-</option>
-
-<option value="catamarca/cordobita.html" style="color: darkred;">
-    ✘ | cordobita
-</option>
-
-<option value="catamarca/costa-de-reyes.html" style="color: darkred;">
-    ✘ | costa de reyes
-</option>
-
-<option value="catamarca/el-pueblito.html" style="color: darkred;">
-    ✘ | el pueblito
-</option>
-
-<option value="catamarca/el-salado.html" style="color: darkred;">
-    ✘ | el salado
-</option>
-
-<option value="catamarca/fiambala.html" style="color: darkred;">
-    ✘ | fiambalá
-</option>
-
-<option value="catamarca/los-balverdis.html" style="color: darkred;">
-    ✘ | los balverdis
-</option>
-
-<option value="catamarca/medanitos.html" style="color: darkred;">
-    ✘ | medanitos
-</option>
-
-<option value="catamarca/palo-blanco.html" style="color: darkred;">
-    ✘ | palo blanco
-</option>
-
-<option value="catamarca/punta-del-agua.html" style="color: darkred;">
-    ✘ | punta del agua
-</option>
-
-<option value="catamarca/taton.html" style="color: darkred;">
-    ✘ | tatón
-</option>
-
-<option value="catamarca/tinogasta.html" style="color: darkred;">
-    ✘ | tinogasta
-</option>
-
-<option value="catamarca/el-portezuelo.html" style="color: darkred;">
-    ✘ | el portezuelo
-</option>
-
-<option value="catamarca/las-tejas.html" style="color: darkred;">
-    ✘ | las tejas
-</option>
-
-<option value="catamarca/san-isidro.html" style="color: darkred;">
-    ✘ | san isidro
-</option>
-
-<option value="catamarca/santa-cruz.html" style="color: darkred;">
-    ✘ | santa cruz
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -2064,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -2137,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -2203,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -2239,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2322,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2490,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2576,6 +1959,616 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="catamarca/chuchucaruana.html" style="color: darkred;">
+    ✘ | chuchucaruana
+</option>
+
+<option value="catamarca/colpes.html" style="color: darkred;">
+    ✘ | colpes
+</option>
+
+<option value="catamarca/el-bolson.html" style="color: darkred;">
+    ✘ | el bolsón
+</option>
+
+<option value="catamarca/el-rodeo.html" style="color: darkred;">
+    ✘ | el rodeo
+</option>
+
+<option value="catamarca/huaycama.html" style="color: darkred;">
+    ✘ | huaycama
+</option>
+
+<option value="catamarca/la-puerta.html" style="color: darkred;">
+    ✘ | la puerta
+</option>
+
+<option value="catamarca/las-chacritas.html" style="color: darkred;">
+    ✘ | las chacritas
+</option>
+
+<option value="catamarca/las-juntas.html" style="color: darkred;">
+    ✘ | las juntas
+</option>
+
+<option value="catamarca/los-castillos.html" style="color: darkred;">
+    ✘ | los castillos
+</option>
+
+<option value="catamarca/los-talas.html" style="color: darkred;">
+    ✘ | los talas
+</option>
+
+<option value="catamarca/los-varela.html" style="color: darkred;">
+    ✘ | los varela
+</option>
+
+<option value="catamarca/singuil.html" style="color: darkred;">
+    ✘ | singuil
+</option>
+
+<option value="catamarca/ancasti.html" style="color: darkred;">
+    ✘ | ancasti
+</option>
+
+<option value="catamarca/anquincila.html" style="color: darkred;">
+    ✘ | anquincila
+</option>
+
+<option value="catamarca/la-candelaria.html" style="color: darkred;">
+    ✘ | la candelaria
+</option>
+
+<option value="catamarca/la-majada.html" style="color: darkred;">
+    ✘ | la majada
+</option>
+
+<option value="catamarca/amanao.html" style="color: darkred;">
+    ✘ | amanao
+</option>
+
+<option value="catamarca/andalgala.html" style="color: darkred;">
+    ✘ | andalgalá
+</option>
+
+<option value="catamarca/chaquiago.html" style="color: darkred;">
+    ✘ | chaquiago
+</option>
+
+<option value="catamarca/choya.html" style="color: darkred;">
+    ✘ | choya
+</option>
+
+<option value="catamarca/el-alamito.html" style="color: darkred;">
+    ✘ | el alamito
+</option>
+
+<option value="catamarca/el-lindero.html" style="color: darkred;">
+    ✘ | el lindero
+</option>
+
+<option value="catamarca/el-potrero.html" style="color: darkred;">
+    ✘ | el potrero
+</option>
+
+<option value="catamarca/la-aguada.html" style="color: darkred;">
+    ✘ | la aguada
+</option>
+
+<option value="catamarca/antofagasta-de-la-sierra.html" style="color: darkred;">
+    ✘ | antofagasta de la sierra
+</option>
+
+<option value="catamarca/antofalla.html" style="color: darkred;">
+    ✘ | antofalla
+</option>
+
+<option value="catamarca/el-penon.html" style="color: darkred;">
+    ✘ | el peñón
+</option>
+
+<option value="catamarca/los-nacimientos.html" style="color: darkred;">
+    ✘ | los nacimientos
+</option>
+
+<option value="catamarca/barranca-larga.html" style="color: darkred;">
+    ✘ | barranca larga
+</option>
+
+<option value="catamarca/belen.html" style="color: darkred;">
+    ✘ | belén
+</option>
+
+<option value="catamarca/condor-huasi.html" style="color: darkred;">
+    ✘ | cóndor huasi
+</option>
+
+<option value="catamarca/corral-quemado.html" style="color: darkred;">
+    ✘ | corral quemado
+</option>
+
+<option value="catamarca/el-durazno.html" style="color: darkred;">
+    ✘ | el durazno
+</option>
+
+<option value="catamarca/farallon-negro.html" style="color: darkred;">
+    ✘ | farallón negro
+</option>
+
+<option value="catamarca/hualfin.html" style="color: darkred;">
+    ✘ | hualfín
+</option>
+
+<option value="catamarca/jacipunco.html" style="color: darkred;">
+    ✘ | jacipunco
+</option>
+
+<option value="catamarca/la-puntilla.html" style="color: darkred;">
+    ✘ | la puntilla
+</option>
+
+<option value="catamarca/londres.html" style="color: darkred;">
+    ✘ | londres
+</option>
+
+<option value="catamarca/puerta-de-corral-quemado.html" style="color: darkred;">
+    ✘ | puerta de corral quemado
+</option>
+
+<option value="catamarca/puerta-de-san-jose.html" style="color: darkred;">
+    ✘ | puerta de san josé
+</option>
+
+<option value="catamarca/villa-vil.html" style="color: darkred;">
+    ✘ | villa vil
+</option>
+
+<option value="catamarca/adolfo-e-carranza.html" style="color: darkred;">
+    ✘ | adolfo e. carranza
+</option>
+
+<option value="catamarca/balde-de-la-punta.html" style="color: darkred;">
+    ✘ | balde de la punta
+</option>
+
+<option value="catamarca/capayan.html" style="color: darkred;">
+    ✘ | capayán
+</option>
+
+<option value="catamarca/chumbicha.html" style="color: darkred;">
+    ✘ | chumbicha
+</option>
+
+<option value="catamarca/colonia-del-valle.html" style="color: darkred;">
+    ✘ | colonia del valle
+</option>
+
+<option value="catamarca/colonia-nueva-coneta.html" style="color: darkred;">
+    ✘ | colonia nueva coneta
+</option>
+
+<option value="catamarca/concepcion.html" style="color: darkred;">
+    ✘ | concepción
+</option>
+
+<option value="catamarca/coneta.html" style="color: darkred;">
+    ✘ | coneta
+</option>
+
+<option value="catamarca/el-banado.html" style="color: darkred;">
+    ✘ | el bañado
+</option>
+
+<option value="catamarca/huillapima.html" style="color: darkred;">
+    ✘ | huillapima
+</option>
+
+<option value="catamarca/los-angeles.html" style="color: darkred;">
+    ✘ | los angeles
+</option>
+
+<option value="catamarca/miraflores.html" style="color: darkred;">
+    ✘ | miraflores
+</option>
+
+<option value="catamarca/san-martin.html" style="color: darkred;">
+    ✘ | san martín
+</option>
+
+<option value="catamarca/san-pablo.html" style="color: darkred;">
+    ✘ | san pablo
+</option>
+
+<option value="catamarca/san-pedro.html" style="color: darkred;">
+    ✘ | san pedro
+</option>
+
+<option value="catamarca/el-pantanillo.html" style="color: darkred;">
+    ✘ | el pantanillo
+</option>
+
+<option value="catamarca/san-fernando-del-valle-de-catamarca.html" style="color: darkred;">
+    ✘ | san fernando del valle de catamarca
+</option>
+
+<option value="catamarca/el-alto.html" style="color: darkred;">
+    ✘ | el alto
+</option>
+
+<option value="catamarca/guayamba.html" style="color: darkred;">
+    ✘ | guayamba
+</option>
+
+<option value="catamarca/infanzon.html" style="color: darkred;">
+    ✘ | infanzón
+</option>
+
+<option value="catamarca/los-corrales.html" style="color: darkred;">
+    ✘ | los corrales
+</option>
+
+<option value="catamarca/tapso.html" style="color: darkred;">
+    ✘ | tapso
+</option>
+
+<option value="catamarca/vilisman.html" style="color: darkred;">
+    ✘ | vilismán
+</option>
+
+<option value="catamarca/collagasta.html" style="color: darkred;">
+    ✘ | collagasta
+</option>
+
+<option value="catamarca/pomancillo-este.html" style="color: darkred;">
+    ✘ | pomancillo este
+</option>
+
+<option value="catamarca/pomancillo-oeste.html" style="color: darkred;">
+    ✘ | pomancillo oeste
+</option>
+
+<option value="catamarca/san-jose.html" style="color: darkred;">
+    ✘ | san josé
+</option>
+
+<option value="catamarca/villa-las-pirquitas.html" style="color: darkred;">
+    ✘ | villa las pirquitas
+</option>
+
+<option value="catamarca/casa-de-piedra.html" style="color: darkred;">
+    ✘ | casa de piedra
+</option>
+
+<option value="catamarca/el-aybal.html" style="color: darkred;">
+    ✘ | el aybal
+</option>
+
+<option value="catamarca/el-divisadero.html" style="color: darkred;">
+    ✘ | el divisadero
+</option>
+
+<option value="catamarca/el-quimilo.html" style="color: darkred;">
+    ✘ | el quimilo
+</option>
+
+<option value="catamarca/esquiu.html" style="color: darkred;">
+    ✘ | esquiú
+</option>
+
+<option value="catamarca/icano.html" style="color: darkred;">
+    ✘ | icaño
+</option>
+
+<option value="catamarca/la-dorada.html" style="color: darkred;">
+    ✘ | la dorada
+</option>
+
+<option value="catamarca/la-guardia.html" style="color: darkred;">
+    ✘ | la guardia
+</option>
+
+<option value="catamarca/las-esquinas.html" style="color: darkred;">
+    ✘ | las esquinas
+</option>
+
+<option value="catamarca/las-palmitas.html" style="color: darkred;">
+    ✘ | las palmitas
+</option>
+
+<option value="catamarca/quiros.html" style="color: darkred;">
+    ✘ | quirós
+</option>
+
+<option value="catamarca/ramblones.html" style="color: darkred;">
+    ✘ | ramblones
+</option>
+
+<option value="catamarca/recreo.html" style="color: darkred;">
+    ✘ | recreo
+</option>
+
+<option value="catamarca/san-antonio.html" style="color: darkred;">
+    ✘ | san antonio
+</option>
+
+<option value="catamarca/amadores.html" style="color: darkred;">
+    ✘ | amadores
+</option>
+
+<option value="catamarca/el-rosario.html" style="color: darkred;">
+    ✘ | el rosario
+</option>
+
+<option value="catamarca/la-bajada.html" style="color: darkred;">
+    ✘ | la bajada
+</option>
+
+<option value="catamarca/la-higuera.html" style="color: darkred;">
+    ✘ | la higuera
+</option>
+
+<option value="catamarca/la-merced.html" style="color: darkred;">
+    ✘ | la merced
+</option>
+
+<option value="catamarca/la-vina.html" style="color: darkred;">
+    ✘ | la viña
+</option>
+
+<option value="catamarca/las-lajas.html" style="color: darkred;">
+    ✘ | las lajas
+</option>
+
+<option value="catamarca/monte-potrero.html" style="color: darkred;">
+    ✘ | monte potrero
+</option>
+
+<option value="catamarca/palo-labrado.html" style="color: darkred;">
+    ✘ | palo labrado
+</option>
+
+<option value="catamarca/villa-de-balcozna.html" style="color: darkred;">
+    ✘ | villa de balcozna
+</option>
+
+<option value="catamarca/apoyaco.html" style="color: darkred;">
+    ✘ | apoyaco
+</option>
+
+<option value="catamarca/colana.html" style="color: darkred;">
+    ✘ | colana
+</option>
+
+<option value="catamarca/el-pajonal.html" style="color: darkred;">
+    ✘ | el pajonal
+</option>
+
+<option value="catamarca/joyango.html" style="color: darkred;">
+    ✘ | joyango
+</option>
+
+<option value="catamarca/mutquin.html" style="color: darkred;">
+    ✘ | mutquin
+</option>
+
+<option value="catamarca/poman.html" style="color: darkred;">
+    ✘ | pomán
+</option>
+
+<option value="catamarca/rincon.html" style="color: darkred;">
+    ✘ | rincón
+</option>
+
+<option value="catamarca/san-miguel.html" style="color: darkred;">
+    ✘ | san miguel
+</option>
+
+<option value="catamarca/saujil.html" style="color: darkred;">
+    ✘ | saujil
+</option>
+
+<option value="catamarca/sijan.html" style="color: darkred;">
+    ✘ | siján
+</option>
+
+<option value="catamarca/andalhuala.html" style="color: darkred;">
+    ✘ | andalhualá
+</option>
+
+<option value="catamarca/caspichango.html" style="color: darkred;">
+    ✘ | caspichango
+</option>
+
+<option value="catamarca/chanar-punco.html" style="color: darkred;">
+    ✘ | chañar punco
+</option>
+
+<option value="catamarca/el-cajon.html" style="color: darkred;">
+    ✘ | el cajón
+</option>
+
+<option value="catamarca/el-desmonte.html" style="color: darkred;">
+    ✘ | el desmonte
+</option>
+
+<option value="catamarca/el-puesto.html" style="color: darkred;">
+    ✘ | el puesto
+</option>
+
+<option value="catamarca/famatanca.html" style="color: darkred;">
+    ✘ | famatanca
+</option>
+
+<option value="catamarca/fuerte-quemado.html" style="color: darkred;">
+    ✘ | fuerte quemado
+</option>
+
+<option value="catamarca/la-hoyada.html" style="color: darkred;">
+    ✘ | la hoyada
+</option>
+
+<option value="catamarca/la-loma.html" style="color: darkred;">
+    ✘ | la loma
+</option>
+
+<option value="catamarca/las-mojarras.html" style="color: darkred;">
+    ✘ | las mojarras
+</option>
+
+<option value="catamarca/loro-huasi.html" style="color: darkred;">
+    ✘ | loro huasi
+</option>
+
+<option value="catamarca/punta-de-balasto.html" style="color: darkred;">
+    ✘ | punta de balasto
+</option>
+
+<option value="catamarca/santa-maria.html" style="color: darkred;">
+    ✘ | santa maría
+</option>
+
+<option value="catamarca/yapes.html" style="color: darkred;">
+    ✘ | yapes
+</option>
+
+<option value="catamarca/alijilan.html" style="color: darkred;">
+    ✘ | alijilán
+</option>
+
+<option value="catamarca/banado-de-ovanta.html" style="color: darkred;">
+    ✘ | bañado de ovanta
+</option>
+
+<option value="catamarca/las-canas.html" style="color: darkred;">
+    ✘ | las cañas
+</option>
+
+<option value="catamarca/lavalle.html" style="color: darkred;">
+    ✘ | lavalle
+</option>
+
+<option value="catamarca/los-altos.html" style="color: darkred;">
+    ✘ | los altos
+</option>
+
+<option value="catamarca/manantiales.html" style="color: darkred;">
+    ✘ | manantiales
+</option>
+
+<option value="catamarca/anillaco.html" style="color: darkred;">
+    ✘ | anillaco
+</option>
+
+<option value="catamarca/antinaco.html" style="color: darkred;">
+    ✘ | antinaco
+</option>
+
+<option value="catamarca/banda-de-lucero.html" style="color: darkred;">
+    ✘ | banda de lucero
+</option>
+
+<option value="catamarca/cerro-negro.html" style="color: darkred;">
+    ✘ | cerro negro
+</option>
+
+<option value="catamarca/copacabana.html" style="color: darkred;">
+    ✘ | copacabana
+</option>
+
+<option value="catamarca/cordobita.html" style="color: darkred;">
+    ✘ | cordobita
+</option>
+
+<option value="catamarca/costa-de-reyes.html" style="color: darkred;">
+    ✘ | costa de reyes
+</option>
+
+<option value="catamarca/el-pueblito.html" style="color: darkred;">
+    ✘ | el pueblito
+</option>
+
+<option value="catamarca/el-salado.html" style="color: darkred;">
+    ✘ | el salado
+</option>
+
+<option value="catamarca/fiambala.html" style="color: darkred;">
+    ✘ | fiambalá
+</option>
+
+<option value="catamarca/los-balverdis.html" style="color: darkred;">
+    ✘ | los balverdis
+</option>
+
+<option value="catamarca/medanitos.html" style="color: darkred;">
+    ✘ | medanitos
+</option>
+
+<option value="catamarca/palo-blanco.html" style="color: darkred;">
+    ✘ | palo blanco
+</option>
+
+<option value="catamarca/punta-del-agua.html" style="color: darkred;">
+    ✘ | punta del agua
+</option>
+
+<option value="catamarca/taton.html" style="color: darkred;">
+    ✘ | tatón
+</option>
+
+<option value="catamarca/tinogasta.html" style="color: darkred;">
+    ✘ | tinogasta
+</option>
+
+<option value="catamarca/el-portezuelo.html" style="color: darkred;">
+    ✘ | el portezuelo
+</option>
+
+<option value="catamarca/las-tejas.html" style="color: darkred;">
+    ✘ | las tejas
+</option>
+
+<option value="catamarca/san-isidro.html" style="color: darkred;">
+    ✘ | san isidro
+</option>
+
+<option value="catamarca/santa-cruz.html" style="color: darkred;">
+    ✘ | santa cruz
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2601,7 +2594,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">3</div>
+        <div class="stat-value">6</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>

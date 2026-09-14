@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,330 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de chubut, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="chubut/arroyo-verde.html" style="color: darkred;">
-    ✘ | arroyo verde
-</option>
-
-<option value="chubut/puerto-madryn.html" style="color: darkred;">
-    ✘ | puerto madryn
-</option>
-
-<option value="chubut/puerto-piramides.html" style="color: darkred;">
-    ✘ | puerto pirámides
-</option>
-
-<option value="chubut/quintas-el-mirador.html" style="color: darkred;">
-    ✘ | quintas el mirador
-</option>
-
-<option value="chubut/reserva-area-protegida-el-doradillo.html" style="color: darkred;">
-    ✘ | reserva area protegida el doradillo
-</option>
-
-<option value="chubut/buenos-aires-chico.html" style="color: darkred;">
-    ✘ | buenos aires chico
-</option>
-
-<option value="chubut/cholila.html" style="color: darkred;">
-    ✘ | cholila
-</option>
-
-<option value="chubut/costa-del-chubut.html" style="color: darkred;">
-    ✘ | costa del chubut
-</option>
-
-<option value="chubut/cushamen-centro.html" style="color: darkred;">
-    ✘ | cushamen centro
-</option>
-
-<option value="chubut/el-hoyo.html" style="color: darkred;">
-    ✘ | el hoyo
-</option>
-
-<option value="chubut/el-maiten.html" style="color: darkred;">
-    ✘ | el maitén
-</option>
-
-<option value="chubut/epuyen.html" style="color: darkred;">
-    ✘ | epuyén
-</option>
-
-<option value="chubut/fofo-cahuel.html" style="color: darkred;">
-    ✘ | fofo cahuel
-</option>
-
-<option value="chubut/gualjaina.html" style="color: darkred;">
-    ✘ | gualjaina
-</option>
-
-<option value="chubut/lago-epuyen.html" style="color: darkred;">
-    ✘ | lago epuyén
-</option>
-
-<option value="chubut/lago-puelo.html" style="color: darkred;">
-    ✘ | lago puelo
-</option>
-
-<option value="chubut/leleque.html" style="color: darkred;">
-    ✘ | leleque
-</option>
-
-<option value="chubut/astra.html" style="color: darkred;">
-    ✘ | astra
-</option>
-
-<option value="chubut/bahia-bustamante.html" style="color: darkred;">
-    ✘ | bahía bustamante
-</option>
-
-<option value="chubut/comodoro-rivadavia.html" style="color: darkred;">
-    ✘ | comodoro rivadavia
-</option>
-
-<option value="chubut/diadema-argentina.html" style="color: darkred;">
-    ✘ | diadema argentina
-</option>
-
-<option value="chubut/rada-tilly.html" style="color: darkred;">
-    ✘ | rada tilly
-</option>
-
-<option value="chubut/camarones.html" style="color: darkred;">
-    ✘ | camarones
-</option>
-
-<option value="chubut/garayalde.html" style="color: darkred;">
-    ✘ | garayalde
-</option>
-
-<option value="chubut/aldea-escolar-los-rapidos.html" style="color: darkred;">
-    ✘ | aldea escolar (los rápidos)
-</option>
-
-<option value="chubut/corcovado.html" style="color: darkred;">
-    ✘ | corcovado
-</option>
-
-<option value="chubut/esquel.html" style="color: darkred;">
-    ✘ | esquel
-</option>
-
-<option value="chubut/lago-rosario.html" style="color: darkred;">
-    ✘ | lago rosario
-</option>
-
-<option value="chubut/los-cipreses.html" style="color: darkred;">
-    ✘ | los cipreses
-</option>
-
-<option value="chubut/trevelin.html" style="color: darkred;">
-    ✘ | trevelín
-</option>
-
-<option value="chubut/villa-futalaufquen.html" style="color: darkred;">
-    ✘ | villa futalaufquen
-</option>
-
-<option value="chubut/dique-florentino-ameghino.html" style="color: darkred;">
-    ✘ | dique florentino ameghino
-</option>
-
-<option value="chubut/dolavon.html" style="color: darkred;">
-    ✘ | dolavon
-</option>
-
-<option value="chubut/gaiman.html" style="color: darkred;">
-    ✘ | gaiman
-</option>
-
-<option value="chubut/28-de-julio.html" style="color: darkred;">
-    ✘ | 28 de julio
-</option>
-
-<option value="chubut/blancuntre.html" style="color: darkred;">
-    ✘ | blancuntre
-</option>
-
-<option value="chubut/el-escorial.html" style="color: darkred;">
-    ✘ | el escorial
-</option>
-
-<option value="chubut/gastre.html" style="color: darkred;">
-    ✘ | gastre
-</option>
-
-<option value="chubut/lagunita-salada.html" style="color: darkred;">
-    ✘ | lagunita salada
-</option>
-
-<option value="chubut/yala-laubat.html" style="color: darkred;">
-    ✘ | yala laubat
-</option>
-
-<option value="chubut/aldea-epulef.html" style="color: darkred;">
-    ✘ | aldea epulef
-</option>
-
-<option value="chubut/carrenleufu.html" style="color: darkred;">
-    ✘ | carrenleufú
-</option>
-
-<option value="chubut/colan-conhue.html" style="color: darkred;">
-    ✘ | colan conhué
-</option>
-
-<option value="chubut/paso-del-sapo.html" style="color: darkred;">
-    ✘ | paso del sapo
-</option>
-
-<option value="chubut/tecka.html" style="color: darkred;">
-    ✘ | tecka
-</option>
-
-<option value="chubut/el-mirasol.html" style="color: darkred;">
-    ✘ | el mirasol
-</option>
-
-<option value="chubut/las-plumas.html" style="color: darkred;">
-    ✘ | las plumas
-</option>
-
-<option value="chubut/cerro-condor.html" style="color: darkred;">
-    ✘ | cerro cóndor
-</option>
-
-<option value="chubut/los-altares.html" style="color: darkred;">
-    ✘ | los altares
-</option>
-
-<option value="chubut/paso-de-indios.html" style="color: darkred;">
-    ✘ | paso de indios
-</option>
-
-<option value="chubut/playa-magagna.html" style="color: darkred;">
-    ✘ | playa magagna
-</option>
-
-<option value="chubut/playa-union.html" style="color: darkred;">
-    ✘ | playa unión
-</option>
-
-<option value="chubut/rawson.html" style="color: darkred;">
-    ✘ | rawson
-</option>
-
-<option value="chubut/trelew.html" style="color: darkred;">
-    ✘ | trelew
-</option>
-
-<option value="chubut/aldea-apeleg.html" style="color: darkred;">
-    ✘ | aldea apeleg
-</option>
-
-<option value="chubut/aldea-beleiro.html" style="color: darkred;">
-    ✘ | aldea beleiro
-</option>
-
-<option value="chubut/alto-rio-senguer.html" style="color: darkred;">
-    ✘ | alto río senguer
-</option>
-
-<option value="chubut/doctor-ricardo-rojas.html" style="color: darkred;">
-    ✘ | doctor ricardo rojas
-</option>
-
-<option value="chubut/facundo.html" style="color: darkred;">
-    ✘ | facundo
-</option>
-
-<option value="chubut/lago-blanco.html" style="color: darkred;">
-    ✘ | lago blanco
-</option>
-
-<option value="chubut/rio-mayo.html" style="color: darkred;">
-    ✘ | río mayo
-</option>
-
-<option value="chubut/buen-pasto.html" style="color: darkred;">
-    ✘ | buen pasto
-</option>
-
-<option value="chubut/sarmiento.html" style="color: darkred;">
-    ✘ | sarmiento
-</option>
-
-<option value="chubut/doctor-oscar-atilio-viglione-frontera-de-rio-pico.html" style="color: darkred;">
-    ✘ | doctor oscar atilio viglione (frontera de río pico)
-</option>
-
-<option value="chubut/gobernador-costa.html" style="color: darkred;">
-    ✘ | gobernador costa
-</option>
-
-<option value="chubut/jose-de-san-martin.html" style="color: darkred;">
-    ✘ | josé de san martín
-</option>
-
-<option value="chubut/rio-pico.html" style="color: darkred;">
-    ✘ | río pico
-</option>
-
-<option value="chubut/gan-gan.html" style="color: darkred;">
-    ✘ | gan gan
-</option>
-
-<option value="chubut/telsen.html" style="color: darkred;">
-    ✘ | telsen
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -1764,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -1837,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -1903,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -1939,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2022,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2190,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2275,6 +1958,316 @@
         );
       }
     });
+
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="chubut/arroyo-verde.html" style="color: darkred;">
+    ✘ | arroyo verde
+</option>
+
+<option value="chubut/puerto-madryn.html" style="color: darkred;">
+    ✘ | puerto madryn
+</option>
+
+<option value="chubut/puerto-piramides.html" style="color: darkred;">
+    ✘ | puerto pirámides
+</option>
+
+<option value="chubut/quintas-el-mirador.html" style="color: darkred;">
+    ✘ | quintas el mirador
+</option>
+
+<option value="chubut/reserva-area-protegida-el-doradillo.html" style="color: darkred;">
+    ✘ | reserva area protegida el doradillo
+</option>
+
+<option value="chubut/buenos-aires-chico.html" style="color: darkred;">
+    ✘ | buenos aires chico
+</option>
+
+<option value="chubut/cholila.html" style="color: darkred;">
+    ✘ | cholila
+</option>
+
+<option value="chubut/costa-del-chubut.html" style="color: darkred;">
+    ✘ | costa del chubut
+</option>
+
+<option value="chubut/cushamen-centro.html" style="color: darkred;">
+    ✘ | cushamen centro
+</option>
+
+<option value="chubut/el-hoyo.html" style="color: darkred;">
+    ✘ | el hoyo
+</option>
+
+<option value="chubut/el-maiten.html" style="color: darkred;">
+    ✘ | el maitén
+</option>
+
+<option value="chubut/epuyen.html" style="color: darkred;">
+    ✘ | epuyén
+</option>
+
+<option value="chubut/fofo-cahuel.html" style="color: darkred;">
+    ✘ | fofo cahuel
+</option>
+
+<option value="chubut/gualjaina.html" style="color: darkred;">
+    ✘ | gualjaina
+</option>
+
+<option value="chubut/lago-epuyen.html" style="color: darkred;">
+    ✘ | lago epuyén
+</option>
+
+<option value="chubut/lago-puelo.html" style="color: darkred;">
+    ✘ | lago puelo
+</option>
+
+<option value="chubut/leleque.html" style="color: darkred;">
+    ✘ | leleque
+</option>
+
+<option value="chubut/astra.html" style="color: darkred;">
+    ✘ | astra
+</option>
+
+<option value="chubut/bahia-bustamante.html" style="color: darkred;">
+    ✘ | bahía bustamante
+</option>
+
+<option value="chubut/comodoro-rivadavia.html" style="color: darkred;">
+    ✘ | comodoro rivadavia
+</option>
+
+<option value="chubut/diadema-argentina.html" style="color: darkred;">
+    ✘ | diadema argentina
+</option>
+
+<option value="chubut/rada-tilly.html" style="color: darkred;">
+    ✘ | rada tilly
+</option>
+
+<option value="chubut/camarones.html" style="color: darkred;">
+    ✘ | camarones
+</option>
+
+<option value="chubut/garayalde.html" style="color: darkred;">
+    ✘ | garayalde
+</option>
+
+<option value="chubut/aldea-escolar-los-rapidos.html" style="color: darkred;">
+    ✘ | aldea escolar (los rápidos)
+</option>
+
+<option value="chubut/corcovado.html" style="color: darkred;">
+    ✘ | corcovado
+</option>
+
+<option value="chubut/esquel.html" style="color: darkred;">
+    ✘ | esquel
+</option>
+
+<option value="chubut/lago-rosario.html" style="color: darkred;">
+    ✘ | lago rosario
+</option>
+
+<option value="chubut/los-cipreses.html" style="color: darkred;">
+    ✘ | los cipreses
+</option>
+
+<option value="chubut/trevelin.html" style="color: darkred;">
+    ✘ | trevelín
+</option>
+
+<option value="chubut/villa-futalaufquen.html" style="color: darkred;">
+    ✘ | villa futalaufquen
+</option>
+
+<option value="chubut/dique-florentino-ameghino.html" style="color: darkred;">
+    ✘ | dique florentino ameghino
+</option>
+
+<option value="chubut/dolavon.html" style="color: darkred;">
+    ✘ | dolavon
+</option>
+
+<option value="chubut/gaiman.html" style="color: darkred;">
+    ✘ | gaiman
+</option>
+
+<option value="chubut/28-de-julio.html" style="color: darkred;">
+    ✘ | 28 de julio
+</option>
+
+<option value="chubut/blancuntre.html" style="color: darkred;">
+    ✘ | blancuntre
+</option>
+
+<option value="chubut/el-escorial.html" style="color: darkred;">
+    ✘ | el escorial
+</option>
+
+<option value="chubut/gastre.html" style="color: darkred;">
+    ✘ | gastre
+</option>
+
+<option value="chubut/lagunita-salada.html" style="color: darkred;">
+    ✘ | lagunita salada
+</option>
+
+<option value="chubut/yala-laubat.html" style="color: darkred;">
+    ✘ | yala laubat
+</option>
+
+<option value="chubut/aldea-epulef.html" style="color: darkred;">
+    ✘ | aldea epulef
+</option>
+
+<option value="chubut/carrenleufu.html" style="color: darkred;">
+    ✘ | carrenleufú
+</option>
+
+<option value="chubut/colan-conhue.html" style="color: darkred;">
+    ✘ | colan conhué
+</option>
+
+<option value="chubut/paso-del-sapo.html" style="color: darkred;">
+    ✘ | paso del sapo
+</option>
+
+<option value="chubut/tecka.html" style="color: darkred;">
+    ✘ | tecka
+</option>
+
+<option value="chubut/el-mirasol.html" style="color: darkred;">
+    ✘ | el mirasol
+</option>
+
+<option value="chubut/las-plumas.html" style="color: darkred;">
+    ✘ | las plumas
+</option>
+
+<option value="chubut/cerro-condor.html" style="color: darkred;">
+    ✘ | cerro cóndor
+</option>
+
+<option value="chubut/los-altares.html" style="color: darkred;">
+    ✘ | los altares
+</option>
+
+<option value="chubut/paso-de-indios.html" style="color: darkred;">
+    ✘ | paso de indios
+</option>
+
+<option value="chubut/playa-magagna.html" style="color: darkred;">
+    ✘ | playa magagna
+</option>
+
+<option value="chubut/playa-union.html" style="color: darkred;">
+    ✘ | playa unión
+</option>
+
+<option value="chubut/rawson.html" style="color: darkred;">
+    ✘ | rawson
+</option>
+
+<option value="chubut/trelew.html" style="color: darkred;">
+    ✘ | trelew
+</option>
+
+<option value="chubut/aldea-apeleg.html" style="color: darkred;">
+    ✘ | aldea apeleg
+</option>
+
+<option value="chubut/aldea-beleiro.html" style="color: darkred;">
+    ✘ | aldea beleiro
+</option>
+
+<option value="chubut/alto-rio-senguer.html" style="color: darkred;">
+    ✘ | alto río senguer
+</option>
+
+<option value="chubut/doctor-ricardo-rojas.html" style="color: darkred;">
+    ✘ | doctor ricardo rojas
+</option>
+
+<option value="chubut/facundo.html" style="color: darkred;">
+    ✘ | facundo
+</option>
+
+<option value="chubut/lago-blanco.html" style="color: darkred;">
+    ✘ | lago blanco
+</option>
+
+<option value="chubut/rio-mayo.html" style="color: darkred;">
+    ✘ | río mayo
+</option>
+
+<option value="chubut/buen-pasto.html" style="color: darkred;">
+    ✘ | buen pasto
+</option>
+
+<option value="chubut/sarmiento.html" style="color: darkred;">
+    ✘ | sarmiento
+</option>
+
+<option value="chubut/doctor-oscar-atilio-viglione-frontera-de-rio-pico.html" style="color: darkred;">
+    ✘ | doctor oscar atilio viglione (frontera de río pico)
+</option>
+
+<option value="chubut/gobernador-costa.html" style="color: darkred;">
+    ✘ | gobernador costa
+</option>
+
+<option value="chubut/jose-de-san-martin.html" style="color: darkred;">
+    ✘ | josé de san martín
+</option>
+
+<option value="chubut/rio-pico.html" style="color: darkred;">
+    ✘ | río pico
+</option>
+
+<option value="chubut/gan-gan.html" style="color: darkred;">
+    ✘ | gan gan
+</option>
+
+<option value="chubut/telsen.html" style="color: darkred;">
+    ✘ | telsen
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
 
 </script></body>
 

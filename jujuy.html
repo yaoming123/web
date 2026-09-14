@@ -134,7 +134,7 @@
             <a href="index.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'index')">🗺️ Cerrajeros en Argentina</a>
         </li>
         <li>
-            <a href="#encontrar_proveedor" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
             <a href="terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
@@ -613,654 +613,6 @@
 </div>            </div>
 
             <p style="font-size: 1.25em;text-align: right; padding: 1em;">Fin del Espacio Publicitario</p>
-
-
-                <div id="opciones" style="background-color: var(--rojo);">
-
-
-
-                        <div class="scroll-section" id="encontrar_proveedor">
-<section id="busqueda-por-ubicacion" class="contenedor"
-    style="width: 90%;padding: 2em;background: var(--gris-claro);color: var(--texto);margin: 1em auto;">
-    <h2>📍 Buscar  cerrajero  por geolocalización</h2>
-
-    <p>Escribe una distancia máxima para mostrar resultados y si hay proveedores aparecerán del más cercano al más lejano</p>
-
-    <label>
-        Distancia máxima (km):
-        <input type="number" id="umbral-km" value="50" step="0.1" min="0" style="width: 100%; text-align: center;">
-    </label>
-
-    <br><br>
-    <button
-        onclick="buscarPorUbicacion(); trackEvent(this, 'click_buscar_proveedor_geolocalizacion', 'buscar proveedor geolocalización', 'click', 'buscar proveedor de servicios')"
-        class="button button1">🔍 Buscar
-        proveedor de servicios</button>
-        
-    <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Al usar el buscador confirmas que
-        has
-        leído y aceptas <a href="                    terminos-y-condiciones.html
-">
-            Términos y Condiciones
-        </a>.</p>
-
-</section>                        </div>
-                        <h2>Encuentre un Cerrajero en las localidades de la provincia de jujuy, Argentina.
-                        </h2>
-
-                        <p>Los botones en <span style="color: darkred;font-size: 1.2em;">Rojo</span> indican que no
-                            hay un cerrajero disponible.</p>
-                        <p>Los botones en <span style="color: darkgreen;font-size: 1.2em;">Verde</span> indican que sí
-                            hay un cerrajero disponible.</p>
-
-<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;">
-<option value="">Seleccione una opción</option>
-
-
-<option value="jujuy/abdon-castro-tolay.html" style="color: darkred;">
-    ✘ | abdón castro tolay
-</option>
-
-<option value="jujuy/abra-pampa.html" style="color: darkred;">
-    ✘ | abra pampa
-</option>
-
-<option value="jujuy/abralaite.html" style="color: darkred;">
-    ✘ | abralaite
-</option>
-
-<option value="jujuy/agua-de-castilla.html" style="color: darkred;">
-    ✘ | agua de castilla
-</option>
-
-<option value="jujuy/casabindo.html" style="color: darkred;">
-    ✘ | casabindo
-</option>
-
-<option value="jujuy/cochinoca.html" style="color: darkred;">
-    ✘ | cochinoca
-</option>
-
-<option value="jujuy/la-redonda.html" style="color: darkred;">
-    ✘ | la redonda
-</option>
-
-<option value="jujuy/puesto-del-marquez.html" style="color: darkred;">
-    ✘ | puesto del marquéz
-</option>
-
-<option value="jujuy/quebralena.html" style="color: darkred;">
-    ✘ | quebraleña
-</option>
-
-<option value="jujuy/quera.html" style="color: darkred;">
-    ✘ | quera
-</option>
-
-<option value="jujuy/rinconadillas.html" style="color: darkred;">
-    ✘ | rinconadillas
-</option>
-
-<option value="jujuy/san-francisco-de-alfarcito.html" style="color: darkred;">
-    ✘ | san francisco de alfarcito
-</option>
-
-<option value="jujuy/santa-ana-de-la-puna.html" style="color: darkred;">
-    ✘ | santa ana de la puna
-</option>
-
-<option value="jujuy/santuario-de-tres-pozos.html" style="color: darkred;">
-    ✘ | santuario de tres pozos
-</option>
-
-<option value="jujuy/tambillos.html" style="color: darkred;">
-    ✘ | tambillos
-</option>
-
-<option value="jujuy/tusaquillas.html" style="color: darkred;">
-    ✘ | tusaquillas
-</option>
-
-<option value="jujuy/aguas-calientes.html" style="color: darkred;">
-    ✘ | aguas calientes
-</option>
-
-<option value="jujuy/barrio-el-milagro.html" style="color: darkred;">
-    ✘ | barrio el milagro
-</option>
-
-<option value="jujuy/barrio-la-union.html" style="color: darkred;">
-    ✘ | barrio la unión
-</option>
-
-<option value="jujuy/el-carmen.html" style="color: darkred;">
-    ✘ | el carmen
-</option>
-
-<option value="jujuy/los-lapachos.html" style="color: darkred;">
-    ✘ | los lapachos
-</option>
-
-<option value="jujuy/loteo-san-vicente.html" style="color: darkred;">
-    ✘ | loteo san vicente
-</option>
-
-<option value="jujuy/manantiales.html" style="color: darkred;">
-    ✘ | manantiales
-</option>
-
-<option value="jujuy/monterrico.html" style="color: darkred;">
-    ✘ | monterrico
-</option>
-
-<option value="jujuy/pampa-blanca.html" style="color: darkred;">
-    ✘ | pampa blanca
-</option>
-
-<option value="jujuy/perico.html" style="color: darkred;">
-    ✘ | perico
-</option>
-
-<option value="jujuy/puesto-viejo.html" style="color: darkred;">
-    ✘ | puesto viejo
-</option>
-
-<option value="jujuy/san-isidro.html" style="color: darkred;">
-    ✘ | san isidro
-</option>
-
-<option value="jujuy/san-juancito.html" style="color: darkred;">
-    ✘ | san juancito
-</option>
-
-<option value="jujuy/guerrero.html" style="color: darkred;">
-    ✘ | guerrero
-</option>
-
-<option value="jujuy/la-almona.html" style="color: darkred;">
-    ✘ | la almona
-</option>
-
-<option value="jujuy/leon.html" style="color: darkred;">
-    ✘ | león
-</option>
-
-<option value="jujuy/lozano.html" style="color: darkred;">
-    ✘ | lozano
-</option>
-
-<option value="jujuy/ocloyas.html" style="color: darkred;">
-    ✘ | ocloyas
-</option>
-
-<option value="jujuy/san-salvador-de-jujuy.html" style="color: darkred;">
-    ✘ | san salvador de jujuy
-</option>
-
-<option value="jujuy/tesorero.html" style="color: darkred;">
-    ✘ | tesorero
-</option>
-
-<option value="jujuy/yala.html" style="color: darkred;">
-    ✘ | yala
-</option>
-
-<option value="jujuy/aparzo.html" style="color: darkred;">
-    ✘ | aparzo
-</option>
-
-<option value="jujuy/cianzo.html" style="color: darkred;">
-    ✘ | cianzo
-</option>
-
-<option value="jujuy/coctaca.html" style="color: darkred;">
-    ✘ | coctaca
-</option>
-
-<option value="jujuy/el-aguilar.html" style="color: darkred;">
-    ✘ | el aguilar
-</option>
-
-<option value="jujuy/hipolito-yrigoyen.html" style="color: darkred;">
-    ✘ | hipólito yrigoyen
-</option>
-
-<option value="jujuy/humahuaca.html" style="color: darkred;">
-    ✘ | humahuaca
-</option>
-
-<option value="jujuy/palca-de-aparzo.html" style="color: darkred;">
-    ✘ | palca de aparzo
-</option>
-
-<option value="jujuy/palca-de-varas.html" style="color: darkred;">
-    ✘ | palca de varas
-</option>
-
-<option value="jujuy/rodero.html" style="color: darkred;">
-    ✘ | rodero
-</option>
-
-<option value="jujuy/tres-cruces.html" style="color: darkred;">
-    ✘ | tres cruces
-</option>
-
-<option value="jujuy/uquia.html" style="color: darkred;">
-    ✘ | uquía
-</option>
-
-<option value="jujuy/bananal.html" style="color: darkred;">
-    ✘ | bananal
-</option>
-
-<option value="jujuy/bermejito.html" style="color: darkred;">
-    ✘ | bermejito
-</option>
-
-<option value="jujuy/caimancito.html" style="color: darkred;">
-    ✘ | caimancito
-</option>
-
-<option value="jujuy/calilegua.html" style="color: darkred;">
-    ✘ | calilegua
-</option>
-
-<option value="jujuy/chalican.html" style="color: darkred;">
-    ✘ | chalicán
-</option>
-
-<option value="jujuy/fraile-pintado.html" style="color: darkred;">
-    ✘ | fraile pintado
-</option>
-
-<option value="jujuy/libertad.html" style="color: darkred;">
-    ✘ | libertad
-</option>
-
-<option value="jujuy/libertador-general-san-martin.html" style="color: darkred;">
-    ✘ | libertador general san martín
-</option>
-
-<option value="jujuy/maiz-negro.html" style="color: darkred;">
-    ✘ | maíz negro
-</option>
-
-<option value="jujuy/paulina.html" style="color: darkred;">
-    ✘ | paulina
-</option>
-
-<option value="jujuy/yuto.html" style="color: darkred;">
-    ✘ | yuto
-</option>
-
-<option value="jujuy/carahunco.html" style="color: darkred;">
-    ✘ | carahunco
-</option>
-
-<option value="jujuy/centro-forestal.html" style="color: darkred;">
-    ✘ | centro forestal
-</option>
-
-<option value="jujuy/palpala.html" style="color: darkred;">
-    ✘ | palpalá
-</option>
-
-<option value="jujuy/casa-colorada.html" style="color: darkred;">
-    ✘ | casa colorada
-</option>
-
-<option value="jujuy/coyaguaima.html" style="color: darkred;">
-    ✘ | coyaguaima
-</option>
-
-<option value="jujuy/lagunillas-de-farallon.html" style="color: darkred;">
-    ✘ | lagunillas de farallón
-</option>
-
-<option value="jujuy/liviara.html" style="color: darkred;">
-    ✘ | liviara
-</option>
-
-<option value="jujuy/loma-blanca.html" style="color: darkred;">
-    ✘ | loma blanca
-</option>
-
-<option value="jujuy/nuevo-pirquitas.html" style="color: darkred;">
-    ✘ | nuevo pirquitas
-</option>
-
-<option value="jujuy/orosmayo.html" style="color: darkred;">
-    ✘ | orosmayo
-</option>
-
-<option value="jujuy/rinconada.html" style="color: darkred;">
-    ✘ | rinconada
-</option>
-
-<option value="jujuy/el-ceibal.html" style="color: darkred;">
-    ✘ | el ceibal
-</option>
-
-<option value="jujuy/los-alisos.html" style="color: darkred;">
-    ✘ | los alisos
-</option>
-
-<option value="jujuy/loteo-navea.html" style="color: darkred;">
-    ✘ | loteo navea
-</option>
-
-<option value="jujuy/nuestra-senora-del-rosario.html" style="color: darkred;">
-    ✘ | nuestra señora del rosario
-</option>
-
-<option value="jujuy/san-antonio.html" style="color: darkred;">
-    ✘ | san antonio
-</option>
-
-<option value="jujuy/arrayanal.html" style="color: darkred;">
-    ✘ | arrayanal
-</option>
-
-<option value="jujuy/arroyo-colorado.html" style="color: darkred;">
-    ✘ | arroyo colorado
-</option>
-
-<option value="jujuy/don-emilio.html" style="color: darkred;">
-    ✘ | don emilio
-</option>
-
-<option value="jujuy/el-acheral.html" style="color: darkred;">
-    ✘ | el acheral
-</option>
-
-<option value="jujuy/el-puesto.html" style="color: darkred;">
-    ✘ | el puesto
-</option>
-
-<option value="jujuy/el-quemado.html" style="color: darkred;">
-    ✘ | el quemado
-</option>
-
-<option value="jujuy/la-esperanza.html" style="color: darkred;">
-    ✘ | la esperanza
-</option>
-
-<option value="jujuy/la-manga.html" style="color: darkred;">
-    ✘ | la manga
-</option>
-
-<option value="jujuy/la-mendieta.html" style="color: darkred;">
-    ✘ | la mendieta
-</option>
-
-<option value="jujuy/miraflores.html" style="color: darkred;">
-    ✘ | miraflores
-</option>
-
-<option value="jujuy/palos-blancos.html" style="color: darkred;">
-    ✘ | palos blancos
-</option>
-
-<option value="jujuy/parapeti.html" style="color: darkred;">
-    ✘ | parapetí
-</option>
-
-<option value="jujuy/piedritas.html" style="color: darkred;">
-    ✘ | piedritas
-</option>
-
-<option value="jujuy/rodeito.html" style="color: darkred;">
-    ✘ | rodeito
-</option>
-
-<option value="jujuy/rosario-de-rio-grande-ex-barro-negro.html" style="color: darkred;">
-    ✘ | rosario de río grande (ex barro negro)
-</option>
-
-<option value="jujuy/san-lucas.html" style="color: darkred;">
-    ✘ | san lucas
-</option>
-
-<option value="jujuy/san-pedro.html" style="color: darkred;">
-    ✘ | san pedro
-</option>
-
-<option value="jujuy/sauzal.html" style="color: darkred;">
-    ✘ | sauzal
-</option>
-
-<option value="jujuy/el-fuerte.html" style="color: darkred;">
-    ✘ | el fuerte
-</option>
-
-<option value="jujuy/el-piquete.html" style="color: darkred;">
-    ✘ | el piquete
-</option>
-
-<option value="jujuy/el-talar.html" style="color: darkred;">
-    ✘ | el talar
-</option>
-
-<option value="jujuy/palma-sola.html" style="color: darkred;">
-    ✘ | palma sola
-</option>
-
-<option value="jujuy/puente-lavayen.html" style="color: darkred;">
-    ✘ | puente lavayén
-</option>
-
-<option value="jujuy/santa-clara.html" style="color: darkred;">
-    ✘ | santa clara
-</option>
-
-<option value="jujuy/vinalito.html" style="color: darkred;">
-    ✘ | vinalito
-</option>
-
-<option value="jujuy/casira.html" style="color: darkred;">
-    ✘ | casira
-</option>
-
-<option value="jujuy/cienega-de-paicone.html" style="color: darkred;">
-    ✘ | ciénega de paicone
-</option>
-
-<option value="jujuy/cieneguillas.html" style="color: darkred;">
-    ✘ | cieneguillas
-</option>
-
-<option value="jujuy/cusi-cusi.html" style="color: darkred;">
-    ✘ | cusi cusi
-</option>
-
-<option value="jujuy/el-angosto.html" style="color: darkred;">
-    ✘ | el angosto
-</option>
-
-<option value="jujuy/la-cienega.html" style="color: darkred;">
-    ✘ | la ciénega
-</option>
-
-<option value="jujuy/misarrumi.html" style="color: darkred;">
-    ✘ | misarrumi
-</option>
-
-<option value="jujuy/oratorio.html" style="color: darkred;">
-    ✘ | oratorio
-</option>
-
-<option value="jujuy/paicone.html" style="color: darkred;">
-    ✘ | paicone
-</option>
-
-<option value="jujuy/san-juan-de-oros.html" style="color: darkred;">
-    ✘ | san juan de oros
-</option>
-
-<option value="jujuy/santa-catalina.html" style="color: darkred;">
-    ✘ | santa catalina
-</option>
-
-<option value="jujuy/yoscaba.html" style="color: darkred;">
-    ✘ | yoscaba
-</option>
-
-<option value="jujuy/catua.html" style="color: darkred;">
-    ✘ | catua
-</option>
-
-<option value="jujuy/coranzuli.html" style="color: darkred;">
-    ✘ | coranzuli
-</option>
-
-<option value="jujuy/el-toro.html" style="color: darkred;">
-    ✘ | el toro
-</option>
-
-<option value="jujuy/huancar.html" style="color: darkred;">
-    ✘ | huáncar
-</option>
-
-<option value="jujuy/jama.html" style="color: darkred;">
-    ✘ | jama
-</option>
-
-<option value="jujuy/mina-providencia.html" style="color: darkred;">
-    ✘ | mina providencia
-</option>
-
-<option value="jujuy/olacapato.html" style="color: darkred;">
-    ✘ | olacapato
-</option>
-
-<option value="jujuy/olaroz-chico.html" style="color: darkred;">
-    ✘ | olaroz chico
-</option>
-
-<option value="jujuy/pastos-chicos.html" style="color: darkred;">
-    ✘ | pastos chicos
-</option>
-
-<option value="jujuy/puesto-sey.html" style="color: darkred;">
-    ✘ | puesto sey
-</option>
-
-<option value="jujuy/san-juan-de-quillaques.html" style="color: darkred;">
-    ✘ | san juan de quillaqués
-</option>
-
-<option value="jujuy/susques.html" style="color: darkred;">
-    ✘ | susques
-</option>
-
-<option value="jujuy/colonia-san-jose.html" style="color: darkred;">
-    ✘ | colonia san josé
-</option>
-
-<option value="jujuy/huacalera.html" style="color: darkred;">
-    ✘ | huacalera
-</option>
-
-<option value="jujuy/juella.html" style="color: darkred;">
-    ✘ | juella
-</option>
-
-<option value="jujuy/maimara.html" style="color: darkred;">
-    ✘ | maimará
-</option>
-
-<option value="jujuy/tilcara.html" style="color: darkred;">
-    ✘ | tilcara
-</option>
-
-<option value="jujuy/barcena.html" style="color: darkred;">
-    ✘ | bárcena
-</option>
-
-<option value="jujuy/el-moreno.html" style="color: darkred;">
-    ✘ | el moreno
-</option>
-
-<option value="jujuy/puerta-de-colorados.html" style="color: darkred;">
-    ✘ | puerta de colorados
-</option>
-
-<option value="jujuy/purmamarca.html" style="color: darkred;">
-    ✘ | purmamarca
-</option>
-
-<option value="jujuy/tumbaya.html" style="color: darkred;">
-    ✘ | tumbaya
-</option>
-
-<option value="jujuy/volcan.html" style="color: darkred;">
-    ✘ | volcán
-</option>
-
-<option value="jujuy/caspala.html" style="color: darkred;">
-    ✘ | caspalá
-</option>
-
-<option value="jujuy/pampichuela.html" style="color: darkred;">
-    ✘ | pampichuela
-</option>
-
-<option value="jujuy/san-francisco.html" style="color: darkred;">
-    ✘ | san francisco
-</option>
-
-<option value="jujuy/santa-ana.html" style="color: darkred;">
-    ✘ | santa ana
-</option>
-
-<option value="jujuy/valle-colorado.html" style="color: darkred;">
-    ✘ | valle colorado
-</option>
-
-<option value="jujuy/valle-grande.html" style="color: darkred;">
-    ✘ | valle grande
-</option>
-
-<option value="jujuy/barrios.html" style="color: darkred;">
-    ✘ | barrios
-</option>
-
-<option value="jujuy/cangrejillos.html" style="color: darkred;">
-    ✘ | cangrejillos
-</option>
-
-<option value="jujuy/el-condor.html" style="color: darkred;">
-    ✘ | el cóndor
-</option>
-
-<option value="jujuy/la-intermedia.html" style="color: darkred;">
-    ✘ | la intermedia
-</option>
-
-<option value="jujuy/la-quiaca.html" style="color: darkred;">
-    ✘ | la quiaca
-</option>
-
-<option value="jujuy/llulluchayoc.html" style="color: darkred;">
-    ✘ | llulluchayoc
-</option>
-
-<option value="jujuy/pumahuasi.html" style="color: darkred;">
-    ✘ | pumahuasi
-</option>
-
-<option value="jujuy/yavi.html" style="color: darkred;">
-    ✘ | yavi
-</option>
-
-<option value="jujuy/yavi-chico.html" style="color: darkred;">
-    ✘ | yavi chico
-</option>
-
-
-</select>
-
-                    </div>
 
 
 
@@ -2088,7 +1440,8 @@
                         <input type="checkbox" id="terminos-form" name="terminos" required>
                         <label for="terminos-form">
                             Al enviar este formulario, confirmás que leíste y aceptás los
-                            <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>.
+                            <a href="                    terminos-y-condiciones.html
+">Términos y Condiciones</a>.
                         </label>
                     </div>
 
@@ -2161,7 +1514,6 @@
 </footer>
 
 
-
 <script>
   // Copiar datos del proveedor
   function copiarDatosProveedor() {
@@ -2227,9 +1579,13 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
+  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+  let ultimoUmbralKm = 50;
 
   // Cerrar modal
   function cerrarModal() {
+    const umbralInput = document.getElementById("umbral-km");
+    if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
     modal.classList.remove("active");
     abortController = null;
   }
@@ -2263,7 +1619,7 @@
         <button class="button button-danger" onclick="cerrarModal();">❌ Cancelar</button>
       </div>
             <div style="margin: 1.5rem 0;">
-        <a href="#encontrar_proveedor" class="button" onclick="cerrarModal();">📣 ¡Encontrar cerrajero!</a>
+        <a class="button" onclick="mostrarModalBuscarProveedor()">🔍 ¡Encontrar cerrajero!</a>
         <button class="button" onclick="compartirSeccion();">🗣️ Compartir a un cerrajero conocido</button>
       </div>
       <div class="modal-legal">
@@ -2346,7 +1702,7 @@
                 <div style="display: flex; justify-content: space-between; padding: 8px 0;">
           <span style="font-weight: 500; color: #5f6368; font-size: 13px;">Fecha y hora</span>
           <span style="color: #202124; font-size: 13px;" id="modal-pagado">
-            <p id="reloj">18/03/2026, 09:26:39</p>
+            <p id="reloj"></p>
           </span>
         </div>
 
@@ -2514,6 +1870,9 @@
     if (abortController) abortController.abort();
     abortController = new AbortController();
 
+    const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
+    ultimoUmbralKm = umbral;
+
     try {
       if (!navigator.geolocation) {
         throw new Error("Tu navegador no permite geolocalización.");
@@ -2600,6 +1959,640 @@
       }
     });
 
+
+
+ function mostrarModalBuscarProveedor() {
+    const html = `
+      <h1 id="modal-title">Buscar cerrajero</h1>
+      
+      <p>Encontrá cerrajeros cerca tuyo ordenados por distancia.</p>
+      <br>
+      <p>Escribe una Distancia máxima (km):</p>
+      
+      <input type="number" id="umbral-km" value="${ultimoUmbralKm}" step="1" min="0" style="width: 100%; text-align: center;">
+      <p>Si hay proveedores aparecerán del más cercano al más lejano.</p>
+      <button onclick="buscarPorUbicacion();" class="button button1">🔍 Buscar proveedor de servicios</button>
+      <button class="button button-danger" onclick="cerrarModal();">❌ Cerrar</button>
+     
+
+<select id="localidades" onchange="window.location.href=this.value;" class="button button2" style="width:80%;background-color: var(--fondo);color: white;">
+<option value="">Seleccione una opción</option>
+
+
+<option value="jujuy/abdon-castro-tolay.html" style="color: darkred;">
+    ✘ | abdón castro tolay
+</option>
+
+<option value="jujuy/abra-pampa.html" style="color: darkred;">
+    ✘ | abra pampa
+</option>
+
+<option value="jujuy/abralaite.html" style="color: darkred;">
+    ✘ | abralaite
+</option>
+
+<option value="jujuy/agua-de-castilla.html" style="color: darkred;">
+    ✘ | agua de castilla
+</option>
+
+<option value="jujuy/casabindo.html" style="color: darkred;">
+    ✘ | casabindo
+</option>
+
+<option value="jujuy/cochinoca.html" style="color: darkred;">
+    ✘ | cochinoca
+</option>
+
+<option value="jujuy/la-redonda.html" style="color: darkred;">
+    ✘ | la redonda
+</option>
+
+<option value="jujuy/puesto-del-marquez.html" style="color: darkred;">
+    ✘ | puesto del marquéz
+</option>
+
+<option value="jujuy/quebralena.html" style="color: darkred;">
+    ✘ | quebraleña
+</option>
+
+<option value="jujuy/quera.html" style="color: darkred;">
+    ✘ | quera
+</option>
+
+<option value="jujuy/rinconadillas.html" style="color: darkred;">
+    ✘ | rinconadillas
+</option>
+
+<option value="jujuy/san-francisco-de-alfarcito.html" style="color: darkred;">
+    ✘ | san francisco de alfarcito
+</option>
+
+<option value="jujuy/santa-ana-de-la-puna.html" style="color: darkred;">
+    ✘ | santa ana de la puna
+</option>
+
+<option value="jujuy/santuario-de-tres-pozos.html" style="color: darkred;">
+    ✘ | santuario de tres pozos
+</option>
+
+<option value="jujuy/tambillos.html" style="color: darkred;">
+    ✘ | tambillos
+</option>
+
+<option value="jujuy/tusaquillas.html" style="color: darkred;">
+    ✘ | tusaquillas
+</option>
+
+<option value="jujuy/aguas-calientes.html" style="color: darkred;">
+    ✘ | aguas calientes
+</option>
+
+<option value="jujuy/barrio-el-milagro.html" style="color: darkred;">
+    ✘ | barrio el milagro
+</option>
+
+<option value="jujuy/barrio-la-union.html" style="color: darkred;">
+    ✘ | barrio la unión
+</option>
+
+<option value="jujuy/el-carmen.html" style="color: darkred;">
+    ✘ | el carmen
+</option>
+
+<option value="jujuy/los-lapachos.html" style="color: darkred;">
+    ✘ | los lapachos
+</option>
+
+<option value="jujuy/loteo-san-vicente.html" style="color: darkred;">
+    ✘ | loteo san vicente
+</option>
+
+<option value="jujuy/manantiales.html" style="color: darkred;">
+    ✘ | manantiales
+</option>
+
+<option value="jujuy/monterrico.html" style="color: darkred;">
+    ✘ | monterrico
+</option>
+
+<option value="jujuy/pampa-blanca.html" style="color: darkred;">
+    ✘ | pampa blanca
+</option>
+
+<option value="jujuy/perico.html" style="color: darkred;">
+    ✘ | perico
+</option>
+
+<option value="jujuy/puesto-viejo.html" style="color: darkred;">
+    ✘ | puesto viejo
+</option>
+
+<option value="jujuy/san-isidro.html" style="color: darkred;">
+    ✘ | san isidro
+</option>
+
+<option value="jujuy/san-juancito.html" style="color: darkred;">
+    ✘ | san juancito
+</option>
+
+<option value="jujuy/guerrero.html" style="color: darkred;">
+    ✘ | guerrero
+</option>
+
+<option value="jujuy/la-almona.html" style="color: darkred;">
+    ✘ | la almona
+</option>
+
+<option value="jujuy/leon.html" style="color: darkred;">
+    ✘ | león
+</option>
+
+<option value="jujuy/lozano.html" style="color: darkred;">
+    ✘ | lozano
+</option>
+
+<option value="jujuy/ocloyas.html" style="color: darkred;">
+    ✘ | ocloyas
+</option>
+
+<option value="jujuy/san-salvador-de-jujuy.html" style="color: darkred;">
+    ✘ | san salvador de jujuy
+</option>
+
+<option value="jujuy/tesorero.html" style="color: darkred;">
+    ✘ | tesorero
+</option>
+
+<option value="jujuy/yala.html" style="color: darkred;">
+    ✘ | yala
+</option>
+
+<option value="jujuy/aparzo.html" style="color: darkred;">
+    ✘ | aparzo
+</option>
+
+<option value="jujuy/cianzo.html" style="color: darkred;">
+    ✘ | cianzo
+</option>
+
+<option value="jujuy/coctaca.html" style="color: darkred;">
+    ✘ | coctaca
+</option>
+
+<option value="jujuy/el-aguilar.html" style="color: darkred;">
+    ✘ | el aguilar
+</option>
+
+<option value="jujuy/hipolito-yrigoyen.html" style="color: darkred;">
+    ✘ | hipólito yrigoyen
+</option>
+
+<option value="jujuy/humahuaca.html" style="color: darkred;">
+    ✘ | humahuaca
+</option>
+
+<option value="jujuy/palca-de-aparzo.html" style="color: darkred;">
+    ✘ | palca de aparzo
+</option>
+
+<option value="jujuy/palca-de-varas.html" style="color: darkred;">
+    ✘ | palca de varas
+</option>
+
+<option value="jujuy/rodero.html" style="color: darkred;">
+    ✘ | rodero
+</option>
+
+<option value="jujuy/tres-cruces.html" style="color: darkred;">
+    ✘ | tres cruces
+</option>
+
+<option value="jujuy/uquia.html" style="color: darkred;">
+    ✘ | uquía
+</option>
+
+<option value="jujuy/bananal.html" style="color: darkred;">
+    ✘ | bananal
+</option>
+
+<option value="jujuy/bermejito.html" style="color: darkred;">
+    ✘ | bermejito
+</option>
+
+<option value="jujuy/caimancito.html" style="color: darkred;">
+    ✘ | caimancito
+</option>
+
+<option value="jujuy/calilegua.html" style="color: darkred;">
+    ✘ | calilegua
+</option>
+
+<option value="jujuy/chalican.html" style="color: darkred;">
+    ✘ | chalicán
+</option>
+
+<option value="jujuy/fraile-pintado.html" style="color: darkred;">
+    ✘ | fraile pintado
+</option>
+
+<option value="jujuy/libertad.html" style="color: darkred;">
+    ✘ | libertad
+</option>
+
+<option value="jujuy/libertador-general-san-martin.html" style="color: darkred;">
+    ✘ | libertador general san martín
+</option>
+
+<option value="jujuy/maiz-negro.html" style="color: darkred;">
+    ✘ | maíz negro
+</option>
+
+<option value="jujuy/paulina.html" style="color: darkred;">
+    ✘ | paulina
+</option>
+
+<option value="jujuy/yuto.html" style="color: darkred;">
+    ✘ | yuto
+</option>
+
+<option value="jujuy/carahunco.html" style="color: darkred;">
+    ✘ | carahunco
+</option>
+
+<option value="jujuy/centro-forestal.html" style="color: darkred;">
+    ✘ | centro forestal
+</option>
+
+<option value="jujuy/palpala.html" style="color: darkred;">
+    ✘ | palpalá
+</option>
+
+<option value="jujuy/casa-colorada.html" style="color: darkred;">
+    ✘ | casa colorada
+</option>
+
+<option value="jujuy/coyaguaima.html" style="color: darkred;">
+    ✘ | coyaguaima
+</option>
+
+<option value="jujuy/lagunillas-de-farallon.html" style="color: darkred;">
+    ✘ | lagunillas de farallón
+</option>
+
+<option value="jujuy/liviara.html" style="color: darkred;">
+    ✘ | liviara
+</option>
+
+<option value="jujuy/loma-blanca.html" style="color: darkred;">
+    ✘ | loma blanca
+</option>
+
+<option value="jujuy/nuevo-pirquitas.html" style="color: darkred;">
+    ✘ | nuevo pirquitas
+</option>
+
+<option value="jujuy/orosmayo.html" style="color: darkred;">
+    ✘ | orosmayo
+</option>
+
+<option value="jujuy/rinconada.html" style="color: darkred;">
+    ✘ | rinconada
+</option>
+
+<option value="jujuy/el-ceibal.html" style="color: darkred;">
+    ✘ | el ceibal
+</option>
+
+<option value="jujuy/los-alisos.html" style="color: darkred;">
+    ✘ | los alisos
+</option>
+
+<option value="jujuy/loteo-navea.html" style="color: darkred;">
+    ✘ | loteo navea
+</option>
+
+<option value="jujuy/nuestra-senora-del-rosario.html" style="color: darkred;">
+    ✘ | nuestra señora del rosario
+</option>
+
+<option value="jujuy/san-antonio.html" style="color: darkred;">
+    ✘ | san antonio
+</option>
+
+<option value="jujuy/arrayanal.html" style="color: darkred;">
+    ✘ | arrayanal
+</option>
+
+<option value="jujuy/arroyo-colorado.html" style="color: darkred;">
+    ✘ | arroyo colorado
+</option>
+
+<option value="jujuy/don-emilio.html" style="color: darkred;">
+    ✘ | don emilio
+</option>
+
+<option value="jujuy/el-acheral.html" style="color: darkred;">
+    ✘ | el acheral
+</option>
+
+<option value="jujuy/el-puesto.html" style="color: darkred;">
+    ✘ | el puesto
+</option>
+
+<option value="jujuy/el-quemado.html" style="color: darkred;">
+    ✘ | el quemado
+</option>
+
+<option value="jujuy/la-esperanza.html" style="color: darkred;">
+    ✘ | la esperanza
+</option>
+
+<option value="jujuy/la-manga.html" style="color: darkred;">
+    ✘ | la manga
+</option>
+
+<option value="jujuy/la-mendieta.html" style="color: darkred;">
+    ✘ | la mendieta
+</option>
+
+<option value="jujuy/miraflores.html" style="color: darkred;">
+    ✘ | miraflores
+</option>
+
+<option value="jujuy/palos-blancos.html" style="color: darkred;">
+    ✘ | palos blancos
+</option>
+
+<option value="jujuy/parapeti.html" style="color: darkred;">
+    ✘ | parapetí
+</option>
+
+<option value="jujuy/piedritas.html" style="color: darkred;">
+    ✘ | piedritas
+</option>
+
+<option value="jujuy/rodeito.html" style="color: darkred;">
+    ✘ | rodeito
+</option>
+
+<option value="jujuy/rosario-de-rio-grande-ex-barro-negro.html" style="color: darkred;">
+    ✘ | rosario de río grande (ex barro negro)
+</option>
+
+<option value="jujuy/san-lucas.html" style="color: darkred;">
+    ✘ | san lucas
+</option>
+
+<option value="jujuy/san-pedro.html" style="color: darkred;">
+    ✘ | san pedro
+</option>
+
+<option value="jujuy/sauzal.html" style="color: darkred;">
+    ✘ | sauzal
+</option>
+
+<option value="jujuy/el-fuerte.html" style="color: darkred;">
+    ✘ | el fuerte
+</option>
+
+<option value="jujuy/el-piquete.html" style="color: darkred;">
+    ✘ | el piquete
+</option>
+
+<option value="jujuy/el-talar.html" style="color: darkred;">
+    ✘ | el talar
+</option>
+
+<option value="jujuy/palma-sola.html" style="color: darkred;">
+    ✘ | palma sola
+</option>
+
+<option value="jujuy/puente-lavayen.html" style="color: darkred;">
+    ✘ | puente lavayén
+</option>
+
+<option value="jujuy/santa-clara.html" style="color: darkred;">
+    ✘ | santa clara
+</option>
+
+<option value="jujuy/vinalito.html" style="color: darkred;">
+    ✘ | vinalito
+</option>
+
+<option value="jujuy/casira.html" style="color: darkred;">
+    ✘ | casira
+</option>
+
+<option value="jujuy/cienega-de-paicone.html" style="color: darkred;">
+    ✘ | ciénega de paicone
+</option>
+
+<option value="jujuy/cieneguillas.html" style="color: darkred;">
+    ✘ | cieneguillas
+</option>
+
+<option value="jujuy/cusi-cusi.html" style="color: darkred;">
+    ✘ | cusi cusi
+</option>
+
+<option value="jujuy/el-angosto.html" style="color: darkred;">
+    ✘ | el angosto
+</option>
+
+<option value="jujuy/la-cienega.html" style="color: darkred;">
+    ✘ | la ciénega
+</option>
+
+<option value="jujuy/misarrumi.html" style="color: darkred;">
+    ✘ | misarrumi
+</option>
+
+<option value="jujuy/oratorio.html" style="color: darkred;">
+    ✘ | oratorio
+</option>
+
+<option value="jujuy/paicone.html" style="color: darkred;">
+    ✘ | paicone
+</option>
+
+<option value="jujuy/san-juan-de-oros.html" style="color: darkred;">
+    ✘ | san juan de oros
+</option>
+
+<option value="jujuy/santa-catalina.html" style="color: darkred;">
+    ✘ | santa catalina
+</option>
+
+<option value="jujuy/yoscaba.html" style="color: darkred;">
+    ✘ | yoscaba
+</option>
+
+<option value="jujuy/catua.html" style="color: darkred;">
+    ✘ | catua
+</option>
+
+<option value="jujuy/coranzuli.html" style="color: darkred;">
+    ✘ | coranzuli
+</option>
+
+<option value="jujuy/el-toro.html" style="color: darkred;">
+    ✘ | el toro
+</option>
+
+<option value="jujuy/huancar.html" style="color: darkred;">
+    ✘ | huáncar
+</option>
+
+<option value="jujuy/jama.html" style="color: darkred;">
+    ✘ | jama
+</option>
+
+<option value="jujuy/mina-providencia.html" style="color: darkred;">
+    ✘ | mina providencia
+</option>
+
+<option value="jujuy/olacapato.html" style="color: darkred;">
+    ✘ | olacapato
+</option>
+
+<option value="jujuy/olaroz-chico.html" style="color: darkred;">
+    ✘ | olaroz chico
+</option>
+
+<option value="jujuy/pastos-chicos.html" style="color: darkred;">
+    ✘ | pastos chicos
+</option>
+
+<option value="jujuy/puesto-sey.html" style="color: darkred;">
+    ✘ | puesto sey
+</option>
+
+<option value="jujuy/san-juan-de-quillaques.html" style="color: darkred;">
+    ✘ | san juan de quillaqués
+</option>
+
+<option value="jujuy/susques.html" style="color: darkred;">
+    ✘ | susques
+</option>
+
+<option value="jujuy/colonia-san-jose.html" style="color: darkred;">
+    ✘ | colonia san josé
+</option>
+
+<option value="jujuy/huacalera.html" style="color: darkred;">
+    ✘ | huacalera
+</option>
+
+<option value="jujuy/juella.html" style="color: darkred;">
+    ✘ | juella
+</option>
+
+<option value="jujuy/maimara.html" style="color: darkred;">
+    ✘ | maimará
+</option>
+
+<option value="jujuy/tilcara.html" style="color: darkred;">
+    ✘ | tilcara
+</option>
+
+<option value="jujuy/barcena.html" style="color: darkred;">
+    ✘ | bárcena
+</option>
+
+<option value="jujuy/el-moreno.html" style="color: darkred;">
+    ✘ | el moreno
+</option>
+
+<option value="jujuy/puerta-de-colorados.html" style="color: darkred;">
+    ✘ | puerta de colorados
+</option>
+
+<option value="jujuy/purmamarca.html" style="color: darkred;">
+    ✘ | purmamarca
+</option>
+
+<option value="jujuy/tumbaya.html" style="color: darkred;">
+    ✘ | tumbaya
+</option>
+
+<option value="jujuy/volcan.html" style="color: darkred;">
+    ✘ | volcán
+</option>
+
+<option value="jujuy/caspala.html" style="color: darkred;">
+    ✘ | caspalá
+</option>
+
+<option value="jujuy/pampichuela.html" style="color: darkred;">
+    ✘ | pampichuela
+</option>
+
+<option value="jujuy/san-francisco.html" style="color: darkred;">
+    ✘ | san francisco
+</option>
+
+<option value="jujuy/santa-ana.html" style="color: darkred;">
+    ✘ | santa ana
+</option>
+
+<option value="jujuy/valle-colorado.html" style="color: darkred;">
+    ✘ | valle colorado
+</option>
+
+<option value="jujuy/valle-grande.html" style="color: darkred;">
+    ✘ | valle grande
+</option>
+
+<option value="jujuy/barrios.html" style="color: darkred;">
+    ✘ | barrios
+</option>
+
+<option value="jujuy/cangrejillos.html" style="color: darkred;">
+    ✘ | cangrejillos
+</option>
+
+<option value="jujuy/el-condor.html" style="color: darkred;">
+    ✘ | el cóndor
+</option>
+
+<option value="jujuy/la-intermedia.html" style="color: darkred;">
+    ✘ | la intermedia
+</option>
+
+<option value="jujuy/la-quiaca.html" style="color: darkred;">
+    ✘ | la quiaca
+</option>
+
+<option value="jujuy/llulluchayoc.html" style="color: darkred;">
+    ✘ | llulluchayoc
+</option>
+
+<option value="jujuy/pumahuasi.html" style="color: darkred;">
+    ✘ | pumahuasi
+</option>
+
+<option value="jujuy/yavi.html" style="color: darkred;">
+    ✘ | yavi
+</option>
+
+<option value="jujuy/yavi-chico.html" style="color: darkred;">
+    ✘ | yavi chico
+</option>
+
+
+
+</option>
+</select>
+      <div class="modal-legal">
+        Al contactar a un proveedor, confirmas que aceptas 
+        <a href="terminos-y-condiciones.html">Términos y Condiciones</a>.
+      </div>
+      `;
+    abrirModal(html);
+
+      inicializarSelect2("#localidades", "Buscar localidad");
+  }
+
 </script></body>
 
 <script>
@@ -2625,7 +2618,7 @@
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">4</div>
+        <div class="stat-value">6</div>
       </div>
       <div class="stat">
         <div class="stat-label">Clics a WhatsApp</div>
