@@ -241,7 +241,6 @@
 </head>
 
 <body>
-
 <a class="button-flotante" href="#footer" aria-label="Ir a la sección del pie de pagina"
     title="Ir a la sección del pie de pagina">⬇️ Pie de Página</a>
 
@@ -293,7 +292,6 @@
 
     
     <ul style="background-color: var(--verde-intenso);">
-
         <li>
             <a href="#" style="color: var(--gris-claro);" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Top')">⬆️ Top</a>
         </li>
@@ -943,10 +941,8 @@
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close-btn");
   let abortController = null;
-  const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
   let ultimoUmbralKm = 50;
 
-  // Cerrar modal
   function cerrarModal() {
     const umbralInput = document.getElementById("umbral-km");
     if (umbralInput) ultimoUmbralKm = parseFloat(umbralInput.value) || 50;
@@ -1253,9 +1249,8 @@
       const posicion = await obtenerUbicacionConFallback();
       const userLat = posicion.coords.latitude;
       const userLon = posicion.coords.longitude;
-      const umbral = parseFloat(document.getElementById("umbral-km")?.value) || 50;
 
-      const res = await fetch("../disponibles.json", { signal: abortController.signal });
+      const res = await fetch("/disponibles.json", { signal: abortController.signal });
       const data = await res.json();
 
       data.forEach(item => {
