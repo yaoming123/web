@@ -1,10 +1,49 @@
 /* =====================================================================
-   tracking.js - plomero.net.ar
+   tracking.js - cerrajero.net.ar
    Va en el <head>. No requiere cambios en el HTML.
    ===================================================================== */
 
 window.dataLayer = window.dataLayer || [];
 window.formEnviado = false;
+
+/* Links de navegación restantes, Términos y pie de página */
+document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    const enNav = !!a.closest('nav'), enPie = !!a.closest('footer');
+    let ev = null;
+
+    if (/terminos-y-condiciones/.test(href)) ev = 'click_terminos';
+    else if (enNav && /mostrarModalBuscarProveedor/.test(a.getAttribute('onclick') || '')) ev = 'click_nav_buscar';
+    else if (enNav && href && href[0] !== '#') ev = 'click_nav_zona_padre';
+    else if (enPie && /facebook\.com/.test(href)) ev = 'click_facebook_pie';
+    else if (enPie) ev = 'click_inicio_pie';
+
+    if (ev) {
+        track(ev, {
+            categoria: 'navegacion',
+            accion: ev.replace('click_', ''),
+            etiqueta: a.textContent.trim().substring(0, 60),
+            origen: enNav ? 'nav' : enPie ? 'pie' : a.closest('#modal') ? 'modal'
+                  : a.closest('#formulario-publicidad') ? 'formulario' : 'pagina'
+        });
+    }
+}, true);
+
+/* Navegación: Top / Contacto / Servicios / Pie de página */
+const NAV_EVENTOS = {
+    '#':          'click_nav_top',
+    '#contacto':  'click_nav_contacto',
+    '#servicios': 'click_nav_servicios',
+    '#footer':    'click_pie_pagina'
+};
+
+document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('nav a[href^="#"], a.button-flotante');
+    const ev = a && NAV_EVENTOS[a.getAttribute('href')];
+    if (ev) track(ev, { categoria: 'navegacion', accion: ev.replace('click_', ''), etiqueta: a.textContent.trim().substring(0, 60) });
+}, true);
 
 /* ---------- Parámetros que se "limpian" en cada evento ----------
    GTM conserva en memoria los valores del dataLayer entre eventos.
@@ -193,8 +232,6 @@ function galeriaAbierta() {
 }
 
 function trackCierreGaleria(metodo) {
-    track('galeria_cerrar', { metodo: metodo });
-    /* También cuenta como cierre de modal. Si no lo querés duplicado, borrá esta línea. */
     track('modal_cerrar', { metodo: metodo, tipo_modal: 'galeria' });
 }
 
@@ -496,3 +533,10 @@ document.addEventListener('DOMContentLoaded', function () {
         track('share', { metodo: navigator.share ? 'web_share' : 'copiar_link' });
     });
 });
+
+
+
+
+
+
+
