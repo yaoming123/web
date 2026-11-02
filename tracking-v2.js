@@ -14,7 +14,7 @@ const VOLATILES = [
     'valor', 'marcado', 'radio_km', 'cantidad', 'porcentaje', 'destino',
     'destino_con_anunciante', 'origen', 'form', 'resultado', 'tipo_archivo',
     'kb', 'metodo', 'referido', 'direccion', 'mensaje', 'archivo', 'linea',
-    'clics_totales'
+    'clics_totales', 'tipo_modal'
 ];
 
 const _contadores = {};
@@ -137,6 +137,149 @@ function verUnaVez(selector, nombre, params) {
     }, { threshold: 0.1 });
     io.observe(el);
 }
+
+/* =====================================================================
+   NUEVOS EVENTOS
+   - click_anunciar_aqui   (botón "¡Anunciá aquí!" de la página y de los modales)
+   - click_copiar_info / click_descargar_info / click_reportar_problema (modal con anunciante)
+   - modal_cerrar          (cualquier modal: X, botón Cerrar/Cancelar, clic afuera, Escape)
+   - galeria_cerrar        (galería ampliada: X, clic afuera, Escape)
+   - form_limpiar          (botón "Limpiar formulario")
+
+   IMPORTANTE: este bloque va ANTES del listener de clics principal, porque
+   necesita leer window.ultimoContacto antes de que ese listener lo ponga en null.
+   ===================================================================== */
+
+/* Detecta "¡Anunciá aquí!", "¡Anunciate aquí!", "Anuncia aquí", etc. */
+const RE_ANUNCIAR = /an[uú]nci(?:a|á|ate|áte)\s+aqu[ií]/i;
+
+/* Acciones de abajo del modal con anunciante */
+const ACCIONES_MODAL = [
+    { re: /copiar/i,    evento: 'click_copiar_info',       accion: 'copiar_info' },
+    { re: /descargar/i, evento: 'click_descargar_info',    accion: 'descargar_info' },
+    { re: /reportar/i,  evento: 'click_reportar_problema', accion: 'reportar_problema' }
+];
+
+/* Canal y servicio del contacto que abrió el modal (solo si es un modal de contacto) */
+function contextoContacto() {
+    const c = window.ultimoContacto;
+    return (c && modalTieneContinuar())
+        ? { canal: canalDeUrl(c.url), servicio: c.servicio }
+        : {};
+}
+
+/* Qué modal es, según su contenido */
+function tipoModal() {
+    if (modalTieneContinuar()) return 'contacto';
+    if (document.getElementById('loader')) return 'cargando';
+    const h = document.getElementById('modal-title');
+    const titulo = h ? h.textContent : '';
+    if (/Buscar cerrajero/i.test(titulo)) return 'buscar';
+    if (/Proveedores Cercanos/i.test(titulo)) return 'resultados';
+    if (/Geolocalizaci/i.test(titulo)) return 'sin_resultados';
+    if (/Error en la B/i.test(titulo)) return 'error';
+    if (/Aviso/i.test(titulo)) return 'aviso';
+    return 'otro';
+}
+
+function modalAbierto() {
+    const m = document.getElementById('modal');
+    return !!(m && m.classList.contains('active'));
+}
+
+function galeriaAbierta() {
+    const g = document.getElementById('modalFoto');
+    return !!(g && g.classList.contains('visible'));
+}
+
+function trackCierreGaleria(metodo) {
+    track('galeria_cerrar', { metodo: metodo });
+    /* También cuenta como cierre de modal. Si no lo querés duplicado, borrá esta línea. */
+    track('modal_cerrar', { metodo: metodo, tipo_modal: 'galeria' });
+}
+
+document.addEventListener('click', function (e) {
+    const t = e.target;
+    if (!t || !t.closest) return;
+
+    /* 1) "¡Anunciá aquí!" (botón de arriba de todo y botones dentro de los modales) */
+    const cand = t.closest('a, button');
+    if (cand && (cand.matches('a[href*="#formulario-publicidad"]') || RE_ANUNCIAR.test(cand.textContent))) {
+        let extra;
+        if (!cand.closest('#modal')) {
+            extra = { origen: 'pagina' };
+        } else {
+            const ctx = contextoContacto();
+            extra = ctx.canal
+                ? Object.assign({ origen: 'modal_contacto' }, ctx)
+                : { origen: 'modal_busqueda' };
+        }
+        track('click_anunciar_aqui', Object.assign({
+            categoria: 'anunciantes',
+            accion: 'anunciar_aqui',
+            etiqueta: 'botón anunciar aquí'
+        }, extra));
+    }
+
+    /* 2) Copiar / Descargar / Reportar (modal con anunciante) */
+    const linkModal = t.closest('#modal a');
+    if (linkModal) {
+        const txt = linkModal.textContent;
+        const a = ACCIONES_MODAL.find(x => x.re.test(txt));
+        if (a) {
+            track(a.evento, Object.assign({
+                categoria: 'modal',
+                accion: a.accion,
+                etiqueta: txt.trim().substring(0, 60)
+            }, contextoContacto()));
+        }
+    }
+
+    /* 3) Cierre de modales (Continuar NO cuenta como cierre: es una confirmación) */
+    if (modalAbierto()) {
+        let metodo = null;
+        if (t.id === 'modal') {
+            metodo = 'fuera';
+        } else if (t.closest('#modal-close-btn')) {
+            metodo = 'x';
+        } else {
+            const b = t.closest('#modal button');
+            if (b && !/continuar/i.test(b.textContent) && /cancelar|cerrar/i.test(b.textContent)) {
+                metodo = /cancelar/i.test(b.textContent) ? 'cancelar' : 'boton';
+            }
+        }
+        if (metodo) {
+            track('modal_cerrar', Object.assign(
+                { metodo: metodo, tipo_modal: tipoModal() },
+                contextoContacto()
+            ));
+        }
+    }
+
+    /* 4) Cierre de la galería ampliada */
+    if (galeriaAbierta()) {
+        if (t.closest('#modalFoto .cerrar')) trackCierreGaleria('boton');
+        else if (t.id === 'modalFoto') trackCierreGaleria('fuera');
+    }
+
+    /* 5) Limpiar formulario */
+    if (t.closest('#clear-form-button')) {
+        track('form_limpiar', { form: 'publicidad' });
+    }
+}, true);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+
+    if (galeriaAbierta()) { trackCierreGaleria('escape'); return; }
+
+    if (modalAbierto()) {
+        track('modal_cerrar', Object.assign(
+            { metodo: 'escape', tipo_modal: tipoModal() },
+            contextoContacto()
+        ));
+    }
+}, true);
 
 /* =====================================================================
    Errores de JavaScript (máximo 5 por visita)
