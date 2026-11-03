@@ -39,7 +39,9 @@
     <link rel="canonical" href="https://www.cerrajero.net.ar/buenos-aires/general-rodriguez.html">
 
     <script defer src="../busqueda.js"></script>
-    <script defer src="../form.js"></script>
+
+
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -250,23 +252,21 @@
     ⚠️ Esta sección del sitio es un espacio publicitario de <u><a>serviciosweb.net.ar</a></u>. <br>
     🟢 Hay cerrajero disponible en esta zona.<br>
     <a href="#contacto" class="button button1" aria-label="Ir a la sección de contacto"
-        title="Ir a la sección de contacto" style="text-align: center;color: var(--gris-claro); text-decoration: none;"
-        onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Contacto')">
+        title="Ir a la sección de contacto" style="text-align: center;color: var(--gris-claro); text-decoration: none;">
         📲 Ir a sección de contacto
     </a>
 </p>
 
 <div class="box_logo">
     <img src="../logo.png" class="animation_back_in_rigth" alt="logotipo" loading="lazy">
+    
     <p>Anuncia tu servicio de cerrajería o encuentra un proveedor en nuestro sitio web.</p>
     <p>https://www.cerrajero.net.ar/buenos-aires/general-rodriguez.html</p>
     <p>¡<b>Cerrajería Carkeys</b> está disponible ahora!<br>
 
         <a href="https://wa.me/+5491122413762?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%21%20Avisame%20cuando%20este%20espacio%20publicitario%20est%C3%A9%20disponible%2C%20por%20favor.%20%F0%9F%99%8B%E2%80%8D%E2%99%82%EF%B8%8F" class="back-button" aria-label="Ir a WhatsApp" title="Ir a WhatsApp"
-            style="text-align: center;color: var(--verde-intenso); text-decoration: none; font-size:0.9rem;"
+            style="text-align: center; color: var(--verde-intenso); text-decoration: none; font-size:0.9rem;"
             target="_blank" rel="noopener noreferrer nofollow">
-            <b><u>¿Ofrecés servicios de cerrajería? | Haz click y te avisamos cuando esta sección esté
-                    disponible</u></b>
         </a>
     </p>
 </div>
@@ -280,26 +280,27 @@
             <a href="./../buenos-aires.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'provincia')">🗺️ Cerrajeros en buenos aires</a>
         </li>
         <li>
-            <a onclick="mostrarModalBuscarProveedor(); trackEvent(this, 'click_menu', 'navegacion', 'click', 'Encontrar proveedor')">🔍 Encontrar Cerrajeros</a>
+            <a onclick="mostrarModalBuscarProveedor();">🔍 Encontrar Cerrajeros</a>
         </li>
         <li>
-            <a href="../terminos-y-condiciones.html" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Términos y Condiciones')">📋 Términos y Condiciones</a>
+            <a href="../terminos-y-condiciones.html">📋 Términos y Condiciones</a>
         </li>
 
-        <li><a href="#stats-widget" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Estadísticas')">📊 Estadísticas</a></li>
     </ul>
     
 
     
-    <ul style="background-color: var(--verde-intenso);">
+
+    
+    <ul style="background-color: var(--estado);">
         <li>
-            <a href="#" style="color: var(--gris-claro);" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Top')">⬆️ Top</a>
+            <a href="#" style="color: var(--gris-claro);">⬆️ Top</a>
         </li>
         <li>
-            <a href="#contacto" style="color: var(--gris-claro);" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Contacto')">📞 Contacto</a>
+            <a href="#contacto" style="color: var(--gris-claro);">📞 Contacto</a>
         </li>
         <li>
-            <a href="#servicios" style="color: var(--gris-claro);" onclick="trackEvent(this, 'click_menu', 'navegacion', 'click', 'Servicios')">🧰 Servicios</a>
+            <a href="#servicios" style="color: var(--gris-claro);">🧰 Servicios</a>
         </li>
     </ul>
 </nav>
@@ -307,8 +308,6 @@
     <header>
         <div class="contenedor">
             <div id="contenido-principal">
-                <p style="font-size: 1.25em;text-align: center;text-align: left;padding: 1em;">Inicio del Espacio
-                    Publicitario</p>
 
                 <h1>¿Busca un cerrajero en general rodríguez?</h1>
 
@@ -317,7 +316,10 @@
                     necesidades.<br>Atendemos urgencias. Estamos disponibles las 24 horas del día, los 7 días de la
                     semana, para atender cualquier emergencia de cerrajería que puedas tener.</p>
 
-                <p>Efectivo, Transferencia, Débito, Crédito, MercadoPago, Ualá</p>
+                <p>
+                    Aceptamos los siguientes medios de pago:
+                    Efectivo, Transferencia, Débito, Crédito, MercadoPago, Ualá
+                </p>
 
             </div>
 
@@ -435,7 +437,6 @@
 
 
 
-
 <div class="scroll-section" id="contacto">
 
         <h3>Contacto</h3>
@@ -448,16 +449,20 @@
             <i class="fa fa-phone"></i> ¡Haz clic para llamar al celular!
         </a>
 
+            <a class="button button1" href="tel:1142647788">
+                <i class="fa fa-phone"></i> ¡Haz clic para llamar al teléfono fijo!
+            </a>
 
         <a class="button button1"
             href="https://wa.me/+5491126394107?text=%C2%A1Hola%21%20Vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20tengo%20una%20consulta%20sobre%20tus%20servicios."
-            onclick="trackDynamicWhatsAppClick(this)"
             target="_blank"
             rel="noopener noreferrer nofollow"
             aria-label="Enviar un WhatsApp"
             title="Enviar un WhatsApp">
             <i class="fa fa-whatsapp"></i> ¡Haz clic para enviar WhatsApp!
         </a>
+
+
 
 
 
@@ -470,14 +475,20 @@
     <br>
 </p>
 
-
+        <div class="mapa-container">
         <iframe class="responsive-iframe"
             title="Mapa con la ubicación del anunciante"
-            src=""
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52545.2193663069!2d-58.97815299727255!3d-34.602234340327975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc8e48e4cd75cb%3A0xaa5203098e3dc2c3!2sGral.%20Rodr%C3%ADguez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1793218549252!5m2!1ses-419!2sar"
             width="100%" height="450"
             style="border:0; max-width: 100%;"
             allowfullscreen loading="lazy">
         </iframe>
+<a class="mapa-overlay" href="https://www.google.com/maps?cid=12272875274114024131" target="_blank" rel="noopener noreferrer nofollow" aria-label="Abrir la ficha de empresa en Google Maps" title="Abrir la ficha de empresa en Google Maps"></a>
+<a class="button button1 btn-mapa" href="https://www.google.com/maps?cid=12272875274114024131" target="_blank" rel="noopener noreferrer nofollow">
+    <i class="fa fa-map-marker"></i> Abrir en Google Maps
+</a>
+
+        </div>
 
 
 
@@ -537,7 +548,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Servicios%20de%20urgencias"
                     data-servicio="Consultar por Servicios de urgencias"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -554,7 +564,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Apertura%20de%20automotores"
                     data-servicio="Consultar por Apertura de automotores"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -571,7 +580,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Apertura%20en%20domicilios"
                     data-servicio="Consultar por Apertura en domicilios"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -588,7 +596,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Apertura%20de%20cajas%20fuertes"
                     data-servicio="Consultar por Apertura de cajas fuertes"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -605,7 +612,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Apertura%20judiciales"
                     data-servicio="Consultar por Apertura judiciales"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -622,7 +628,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Instalaci%C3%B3n%20de%20cerraduras"
                     data-servicio="Consultar por Instalación de cerraduras"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -639,7 +644,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Reparaci%C3%B3n%20de%20cerraduras"
                     data-servicio="Consultar por Reparación de cerraduras"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -656,7 +660,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Cambio%20de%20cerraduras"
                     data-servicio="Consultar por Cambio de cerraduras"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -673,7 +676,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Cambio%20de%20combinaciones"
                     data-servicio="Consultar por Cambio de combinaciones"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -690,7 +692,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Llaves%20codificadas"
                     data-servicio="Consultar por Llaves codificadas"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -707,7 +708,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Copias%20de%20llaves"
                     data-servicio="Consultar por Copias de llaves"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -724,7 +724,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Servicio%20para%20puertas%20blindadas"
                     data-servicio="Consultar por Servicio para puertas blindadas"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -741,7 +740,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Diagn%C3%B3stico%20computarizado"
                     data-servicio="Consultar por Diagnóstico computarizado"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -758,7 +756,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Llaves%20desde%20cero%20por%20p%C3%A9rdida%20total"
                     data-servicio="Consultar por Llaves desde cero por pérdida total"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -775,7 +772,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Destrabe%20de%20volante"
                     data-servicio="Consultar por Destrabe de volante"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -792,7 +788,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Reparaci%C3%B3n%20de%20cilindros"
                     data-servicio="Consultar por Reparación de cilindros"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -809,7 +804,6 @@
                 <a class="button button1"
                     href="https://wa.me/+5491126394107?text=%C2%A1Hola%2C%20vengo%20desde%20https%3A//www.cerrajero.net.ar/buenos-aires/general-rodriguez.html%20y%20quisiera%20consultar%20sobre%20Llaves%20con%20chip%20y%20programaci%C3%B3n%20de%20telemandos"
                     data-servicio="Consultar por Llaves con chip y programación de telemandos"
-                    onclick="trackDynamicWhatsAppClick(this)"
                     aria-label="Consultar sobre el servicio por whatsapp"
                     title="Consultar sobre el servicio por whatsapp"
                     target="_blank" rel="noopener noreferrer nofollow">
@@ -822,25 +816,6 @@
 
 </div>
             </div>
-
-            <p style="font-size: 1.25em;text-align: center;text-align: right; padding: 1em;">Fin del Espacio
-                Publicitario</p>
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1068,9 +1043,7 @@
 
         <a onclick="copiarDatosProveedor()" href="#" style="font-size: 1rem; float: inline-start;">📋 Copiar al portapapeles esta información</a><br>
         <a onclick="descargarModalImagen()" href="#" style="font-size: 1rem; float: inline-start;">⬇️ Descargar imagen de esta información</a><br>
-        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante
-
-        </a>
+        <a href="#" style="font-size:1rem; color:#d93025; float: inline-start;">⚠️ Reportar problema con este anunciante</a>
         <div class="modal-legal">
           Al contactar, confirmas que aceptas 
           <a href="../terminos-y-condiciones.html">Términos y Condiciones</a>.
@@ -1273,47 +1246,42 @@
     }
   }
 
- 
-  
-  document.addEventListener("click", function(e) {
- 
 
-      if (e.target.matches('a[href^="tel:"]')) {
+  const AVISO_FINAL = `<br><b>Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`;
+
+  const CANALES = [
+    {
+      selector: 'a[href^="tel:"]',
+      msg: `Estás por llamar a un anunciante de cerrajero.net.ar.`
+    },
+    {
+      selector: '#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"], div.servicio a.button1',
+      msg: `Estás por contactar por WhatsApp a un anunciante de cerrajero.net.ar.`
+    },
+    {
+      selector: '#contacto a[href*="instagram.com"]',
+      msg: `Estás por visitar el Instagram de un anunciante de cerrajero.net.ar.`
+    },
+    {
+      selector: '#contacto a[href*="facebook.com"]',
+      msg: `Estás por visitar el Facebook de un anunciante de cerrajero.net.ar.`
+    },
+    {
+        selector: '#contacto a.mapa-overlay, #contacto a.btn-mapa',
+        msg: `Estás por abrir un perfil de empresa de google o la ubicacion de donde trabaja de un anunciante de cerrajero.net.ar.`
+      },
+  ];
+
+  document.addEventListener("click", function (e) {
+    for (const canal of CANALES) {
+      const link = e.target.closest(canal.selector);
+      if (!link) continue;
+
       e.preventDefault();
-      mostrarModalAdvertenciaDemo(`⚠️ Aviso Importante`, `Estás por llamar a un anunciante de cerrajero.net.ar. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-        e.target.href
-      );
+      mostrarModalAdvertenciaDemo("⚠️ Aviso Importante", canal.msg + AVISO_FINAL, link.href);
+      return;
     }
-
-      if (e.target.matches('#contacto a[href*="wa.me"], #contacto a[href*="api.whatsapp.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertenciaDemo(`⚠️ Aviso Importante`, `Estás por contactar por WhatsApp a un anunciante de cerrajero.net.ar. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('div.servicio a.button1')) {
-        e.preventDefault();
-        mostrarModalAdvertenciaDemo(`⚠️ Aviso Importante`, `Estás por contactar por WhatsApp a un anunciante de cerrajero.net.ar. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('#contacto a[href*="instagram.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertenciaDemo("⚠️ Aviso Importante", `Estás por visitar el Instagram de un anunciante de cerrajero.net.ar. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-
-      if (e.target.matches('#contacto a[href*="facebook.com"]')) {
-        e.preventDefault();
-        mostrarModalAdvertenciaDemo("⚠️ Aviso Importante", `⚠️ Estás por visitar el Facebook de un anunciante de cerrajero.net.ar. <br><b> Este sitio funciona exclusivamente como medio publicitario y no presta servicios de cerrajería.</b>`,
-          e.target.href
-        );
-      }
-    });
-
+  });
 
 
 
@@ -1349,10 +1317,6 @@
 
 <option value="general-rodriguez/c-c-bosque-real.html" style="color: darkred;">
     ✘ | c.c. bosque real
-</option>
-
-<option value="general-rodriguez/general-rodrguez.html" style="color: darkred;">
-    ✘ | general rodrguez
 </option>
 
 </option>
@@ -1394,10 +1358,10 @@
 </script></body>
 
 <script>
-    var numeroWhatsApp = "+5491122413762";
-    var numeroWhatsAppAnunciante = "+5491126394107";
+        var numeroWhatsApp = "+5491122413762";
+        var numeroWhatsAppAnunciante = "+5491126394107";
 
-    var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
+            var urlMessengerNegocio = "https://www.messenger.com/t/cerrajero.net.ar";
 </script>
 
 <script>
@@ -1407,40 +1371,7 @@
             nav.classList.toggle('active');
         });
     });
-</script><section id="stats-widget" data-price="10000" aria-live="polite">
-  <div class="stats-card">
-    <header class="stats-head">
-      <strong>📊 Estadísticas de este espacio (últimos 30 días)</strong>
-      <span class="stats-path">https://www.cerrajero.net.ar/buenos-aires/general-rodriguez.html</span>
-    </header>
-
-    <div class="stats-grid">
-      <div class="stat">
-        <div class="stat-label">Vistas a esta página</div>
-        <div class="stat-value">6</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Clics a WhatsApp</div>
-        <div class="stat-value">-</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Tasa de clic (CTR)</div>
-        <div class="stat-value">
--</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Clics a Teléfono</div>
-        <div class="stat-value">-</div>
-      </div>
-    </div>
-
-    <footer class="stats-foot">
-        <span class="badge badge-gray">Espacio disponible</span>
-        <span>Podés anunciar aquí por <b>ARS 10.000</b>/mes o <b>ARS 25.000</b>/3 meses.</span>
-    </footer>
-  </div>
-</section>
-
+</script>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-552P4L5P" height="0"
         width="0" style="display:none;visibility:hidden"></iframe></noscript>
